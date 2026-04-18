@@ -9,11 +9,13 @@ This repo is the output directory for the `github-top-10` scheduled task (define
 
 ## Daily report contract
 
-Each run must produce a single file at the repo root with filename:
+Each run must produce a single file at this **Jekyll post path**:
 
 ```
-YYYY-MM-DD_<每日一字>.md
+_posts/YYYY-MM-DD-<每日一字>.md
 ```
+
+**重要**：Jekyll post 慣例要求 `_posts/` 目錄 + 日期與標題用**連字號**（`-`）分隔，不能用底線。檔名錯會導致 GitHub Pages 不把它當成 post、不出現在首頁。
 
 The 每日一字 (word-of-the-day) is derived from the one-sentence summary of that day's trends — it's not arbitrary, it should be the thematic keyword that falls out of the summary.
 
@@ -21,6 +23,8 @@ The 每日一字 (word-of-the-day) is derived from the one-sentence summary of t
 
 ```yaml
 ---
+layout: post
+title: "YYYY-MM-DD 每日一字：<每日一字>"
 date: YYYY-MM-DD
 word_of_day: 進化              # 每日一字（中文）
 word_of_day_en: Evolution       # 英文對應詞
@@ -36,9 +40,11 @@ projects:                       # 10 項，依絕對榜排名
   - { rank: 1, repo: "owner/repo", category: "...", language: "...", stars_total: 0, stars_today: 0, growth_rate: 0.00 }
 growth_top_10:                  # 10 項，依 growth_rate 降冪；候選池 = 當日絕對榜 projects
   - { rank: 1, repo: "owner/repo", growth_rate: 24.74 }
-previous_report: 2026-04-17_XXX.md   # 前一日檔名，首日為 null
+previous_report: _posts/2026-04-17-XXX.md   # 前一日檔路徑，首日為 null
 ---
 ```
+
+`layout: post` 與 `title:` 是 Jekyll 專用欄位——`layout` 決定套版，`title` 決定首頁列表與 `<title>` 標籤顯示。其餘 frontmatter 保持原契約，用於跨日 diff。
 
 `growth_rate` 公式：`stars_today / stars_total * 100`，保留 2 位小數。
 
@@ -57,7 +63,7 @@ Data source: `https://github.com/trending` (fetch via WebFetch).
 
 ## Comparing against the past week
 
-Prior days' reports live as siblings at the repo root (`YYYY-MM-DD_*.md`). Parse their YAML frontmatter (`projects` 陣列) to diff — don't re-parse the markdown tables. A project "被踢出 Top 10" means it appeared in yesterday's `projects` but not today's; "增長最快" compares `stars_today` deltas across days for repos that appear in both. Don't invent trend data when the history is shorter than a week — say so.
+Prior days' reports live in `_posts/` (`_posts/YYYY-MM-DD-*.md`). Parse their YAML frontmatter (`projects` 陣列) to diff — don't re-parse the markdown tables. A project "被踢出 Top 10" means it appeared in yesterday's `projects` but not today's; "增長最快" compares `stars_today` deltas across days for repos that appear in both. Don't invent trend data when the history is shorter than a week — say so.
 
 ## Deep research per project (`research/`)
 
@@ -113,6 +119,20 @@ latest_release: v1.2.3             # 無則 null
 
 **提到任何 GitHub 專案名稱（包含本專案）一律用 markdown 超連結**，格式 `[owner/repo](https://github.com/owner/repo)`。日報正文、研究檔、CLAUDE.md 都適用。
 
+## Publishing（Jekyll + GitHub Pages）
+
+本 repo 已設定為 Jekyll 靜態網站，push 到 `main` 後 GitHub Pages 自動 build，網址：
+<https://jiangway.github.io/github-top-10/>
+
+- `_config.yml`：minima 主題 + `jekyll-relative-links`（相對 `.md` 連結自動轉為正確的頁面 URL，寫研究檔連結時可保留 `research/xxx.md` 這種寫法）
+- `_posts/`：日報放這裡，首頁（`index.md`，`layout: home`）會自動列出
+- `research/`：深度研究檔，`_config.yml` 中 `defaults` 已自動套 `layout: page`，研究檔本身**不需**加 `layout` frontmatter
+- 本機預覽（選用）：`bundle exec jekyll serve`（需要先 `bundle install`，尚未設置 Gemfile）
+
 ## Git
 
-Commits are made by the user on request (`git commit`). The repo tracks only the daily `.md` files; `.claude/` stays untracked unless the user says otherwise.
+1. `git add _posts/<今日檔> research/ CLAUDE.md`（**不要** `git add .`，以免誤加 `.claude/`、`_site/`、`.jekyll-cache/`；`.gitignore` 已列出但仍建議明確 add）
+2. `git commit -m "<訊息>"`
+3. `git push origin main` — 觸發 GitHub Pages 重新 build，1–2 分鐘內可在上述網址看到新文章
+
+`.claude/` 永遠不 commit（已在 `.gitignore`）。
