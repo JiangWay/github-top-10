@@ -1,0 +1,28 @@
+title: GitHub Top 10 每日觀察
+description: 每日追蹤 GitHub trending 前十專案與深度研究
+theme: minima
+lang: zh-TW
+
+plugins:
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+
+permalink: /:year/:month/:day/:title/
+
+relative_links:
+  enabled: true
+  collections: false
+
+defaults:
+  - scope:
+      path: "research"
+    values:
+      layout: page
+
+exclude:
+  - CLAUDE.md
+  - README.md
+  - .claude/
+  - Gemfile
+  - Gemfile.lock
