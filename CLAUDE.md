@@ -119,6 +119,20 @@ latest_release: v1.2.3             # 無則 null
 
 **提到任何 GitHub 專案名稱（包含本專案）一律用 markdown 超連結**，格式 `[owner/repo](https://github.com/owner/repo)`。日報正文、研究檔、CLAUDE.md 都適用。
 
+## 站內連結規則（Jekyll 專用）
+
+連到站內其他 `.md` 檔（研究檔、其他日報）**一律用 `{% link %}` Liquid 標籤**，Jekyll 會在 build 時解析到含 baseurl 的正確 URL。
+
+```markdown
+[顯示文字]({% link research/obra__superpowers.md %})
+```
+
+**不要**用相對路徑如 `[text](research/xxx.md)`——`_posts/` 下的 post 渲染後 URL 是 `/2026/04/18/進化/`，瀏覽器會把 `research/xxx.md` 錯接成 `/2026/04/18/進化/research/xxx.md`，造成 404。`jekyll-relative-links` plugin 無法處理這種跨目錄情境（它以**源檔位置**為基準，從 `_posts/` 找不到 `research/`）。
+
+`{% link %}` 的好處：檔名錯 → build fail，直接抓到問題。
+
+**外部連結**（GitHub repo、Release 頁、第三方評論）照常用 Markdown 超連結：`[owner/repo](https://github.com/owner/repo)`。
+
 ## Publishing（Jekyll + GitHub Pages）
 
 本 repo 已設定為 Jekyll 靜態網站，push 到 `main` 後 GitHub Pages 自動 build，網址：
