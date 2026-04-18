@@ -32,6 +32,10 @@ relative_links:
 
 defaults:
   - scope:
+      path: ""
+    values:
+      image: /assets/og-default.png
+  - scope:
       path: "research"
     values:
       layout: page
