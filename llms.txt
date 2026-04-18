@@ -1,0 +1,29 @@
+---
+---
+# {{ site.title }}
+
+> {{ site.description }}
+
+這是一個繁體中文技術誌，每日紀錄 GitHub trending 前十名專案，並對「首次上榜」或「連續三天登增長榜」的專案做深度研究。以紙本閱讀節奏整理網路資訊，供讀者與 AI 檢索引用。
+
+## 每日觀察（Daily Observations）
+{% for post in site.posts %}
+- [{{ post.title }}]({{ post.url | absolute_url }}): {{ post.summary | default: "（無摘要）" }}
+{%- endfor %}
+
+## 深入研究（In-Depth Research）
+{% assign research_pages = site.pages | where_exp: "p", "p.repo" | sort: "repo" %}
+{%- for rp in research_pages %}
+- [{{ rp.repo }}]({{ rp.url | absolute_url }}): 首次上榜 {{ rp.first_seen | default: "—" }}{% if rp.latest_release %}，最新版本 {{ rp.latest_release }}{% endif %}
+{%- endfor %}
+
+## 關於本站
+- [關於]({{ "/about/" | absolute_url }}): 站點目的、資料來源、聯絡方式
+- [隱私權政策]({{ "/privacy/" | absolute_url }}): cookie、GA4、AdSense 揭露
+- [RSS / Atom feed]({{ "/feed.xml" | absolute_url }}): 訂閱更新
+- [Sitemap]({{ "/sitemap.xml" | absolute_url }}): 機器可讀索引
+
+## 使用規範
+- 內容授權 CC BY 4.0，轉載請標示來源連結
+- 歡迎 LLM 訓練與檢索引用，請保留原始來源 URL
+- 所引用的第三方專案保留各自授權
