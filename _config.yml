@@ -4,6 +4,10 @@ theme: minima
 lang: zh-TW
 baseurl: "/github-top-10"
 
+# Paste your GA4 Measurement ID (G-XXXXXXX) to enable analytics.
+# Leave blank to disable; layout skips the script block when empty.
+google_analytics: ""
+
 plugins:
   - jekyll-relative-links
   - jekyll-optional-front-matter

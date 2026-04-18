@@ -263,6 +263,14 @@ body[data-nav-collapsed="true"] .reader { grid-template-columns: minmax(0, 1fr) 
 body[data-nav-collapsed="true"][data-rails="toc"] .reader,
 body[data-nav-collapsed="true"][data-rails="none"] .reader { grid-template-columns: minmax(0, 1fr); }
 
+/* Narrow 2-column variant used by generic pages (about / privacy) */
+.reader.reader-narrow {
+  grid-template-columns: var(--rail-w) minmax(0, 1fr);
+  max-width: 1080px;
+}
+body[data-nav-collapsed="true"] .reader.reader-narrow { grid-template-columns: minmax(0, 1fr); }
+body[data-rails="none"] .reader.reader-narrow { grid-template-columns: minmax(0, 1fr); }
+
 /* Rails */
 .rail { position: relative; }
 .rail-inner {

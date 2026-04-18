@@ -11,7 +11,7 @@ layout: default
   {%- endfor -%}
 {%- endif -%}
 
-<main class="reader" id="top">
+<main class="reader{% unless page.repo %} reader-narrow{% endunless %}" id="top">
 
   <aside class="rail rail-left" aria-label="文章導覽">
     <div class="rail-inner">
@@ -23,7 +23,7 @@ layout: default
         <span class="dn-arrow">←</span>
         <span>所有文章</span>
       </a>
-      {% if latest_post %}
+      {% if latest_post and page.repo %}
       <a class="docnav-back" href="{{ latest_post.url | relative_url }}">
         <span class="dn-arrow">↩</span>
         <span>最新每日觀察</span>
@@ -54,14 +54,20 @@ layout: default
         {% if page.growth_appearances %}<span><span class="m-k">增長榜上榜</span><span class="m-v">{{ page.growth_appearances.size }} 天</span></span>{% endif %}
       </div>
     </header>
+    {% elsif page.title %}
+    <header class="hero">
+      {% if page.kicker %}<div class="hero-kicker">{{ page.kicker }}</div>{% endif %}
+      <h1>{{ page.title }}</h1>
+      {% if page.summary %}<p class="hero-summary">{{ page.summary }}</p>{% endif %}
+    </header>
     {% endif %}
 
     {{ content }}
   </article>
 
+  {% if page.repo %}
   <aside class="rail rail-right" aria-label="專案資訊">
     <div class="rail-inner" id="metaRail">
-      {% if page.repo %}
       <div class="meta-group">
         <div class="meta-label">專案</div>
         <div style="font-family:var(--font-mono);font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px;word-break:break-all">{{ page.repo }}</div>
@@ -91,7 +97,6 @@ layout: default
           <a class="jump-item" href="https://github.com/{{ page.repo }}/releases" target="_blank" rel="noopener"><span>Releases</span><span class="k">↗</span></a>
         </div>
       </div>
-      {% endif %}
 
       <div class="meta-group">
         <div class="meta-label">其他研究</div>
@@ -106,5 +111,6 @@ layout: default
       </div>
     </div>
   </aside>
+  {% endif %}
 
 </main>

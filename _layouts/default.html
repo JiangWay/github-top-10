@@ -12,6 +12,17 @@
 
 <link rel="stylesheet" href="{{ '/assets/css/reader.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/index.css' | relative_url }}">
+
+{%- if site.google_analytics -%}
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.google_analytics }}', { 'anonymize_ip': true });
+</script>
+{%- endif -%}
 </head>
 <body data-theme="paper" data-body-font="serif" data-measure="comfy" data-density="cozy">
 
