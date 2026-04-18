@@ -142,7 +142,7 @@ layout: default
     "@type": "SoftwareApplication",
     "name": {{ page.repo | jsonify }},
     "applicationCategory": "DeveloperApplication",
-    "url": "https://github.com/{{ page.repo }}"
+    "url": {{ page.repo | prepend: "https://github.com/" | jsonify }}
   }
 }
 </script>

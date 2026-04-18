@@ -163,6 +163,7 @@ layout: default
     "name": {{ site.title | jsonify }}
   },
   "keywords": {{ page.dominant_category | default: "" | jsonify }},
-  "url": {{ page.url | absolute_url | jsonify }}
+  "url": {{ page.url | absolute_url | jsonify }},
+  "image": {{ page.image | default: "/assets/og-default.png" | absolute_url | jsonify }}
 }
 </script>
