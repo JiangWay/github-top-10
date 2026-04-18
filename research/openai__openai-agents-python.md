@@ -1,11 +1,11 @@
 ---
 repo: openai/openai-agents-python
 first_seen: 2026-04-18
-last_updated: 2026-04-18
-appearances: [2026-04-18]
-growth_appearances: [2026-04-18]
+last_updated: 2026-04-19
+appearances: [2026-04-18, 2026-04-19]
+growth_appearances: [2026-04-18, 2026-04-19]
 has_releases: true
-latest_release: v0.14.1
+latest_release: v0.14.2
 ---
 
 # [openai/openai-agents-python](https://github.com/openai/openai-agents-python)
@@ -43,3 +43,7 @@ latest_release: v0.14.1
 MIT 授權；約 21,690 stars、3,480 forks、僅 60 open issues（2026-04-17），issue 消化率高，社群熱度與維護品質兼具。
 
 ## 更新紀錄
+
+### 2026-04-19
+- 今日絕對榜 #3（22,223 stars，+473）、增長率榜 #6（2.13%），連續第 2 天上榜，但今日新增 star 數較昨日 +624 略降。
+- 新版本：[v0.14.2](https://github.com/openai/openai-agents-python/releases/tag/v0.14.2)（2026-04-18），緊接 v0.14.0 的 Sandbox Agents 之後的 patch 版本，持續以 minor patch 密集迭代。

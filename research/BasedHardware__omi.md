@@ -1,11 +1,11 @@
 ---
 repo: BasedHardware/omi
 first_seen: 2026-04-18
-last_updated: 2026-04-18
-appearances: [2026-04-18]
-growth_appearances: [2026-04-18]
+last_updated: 2026-04-19
+appearances: [2026-04-18, 2026-04-19]
+growth_appearances: [2026-04-18, 2026-04-19]
 has_releases: true
-latest_release: Omi Desktop v0.11.327
+latest_release: Omi Desktop v0.11.333
 ---
 
 # [BasedHardware/omi](https://github.com/BasedHardware/omi)
@@ -122,3 +122,7 @@ omi 的設計主張集中在「**開源對位閉源穿戴 AI**」。README 與 o
 - Rewind（macOS 純軟體）
 
 ## 更新紀錄
+
+### 2026-04-19
+- 今日絕對榜 #2（10,319 stars，+617）、增長率榜 #5（5.98%），連續第 2 天上榜。
+- 新版本：[Omi Desktop v0.11.328 → v0.11.333](https://github.com/BasedHardware/omi/releases)（2026-04-17 ~ 2026-04-18 連發 6 版 macOS build，為 Omi Desktop 桌面端迭代，版本號跳動顯示為 CI/build pipeline 自動化發版；主要以版本修復為主，無功能分水嶺。

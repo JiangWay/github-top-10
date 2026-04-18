@@ -1,9 +1,9 @@
 ---
 repo: Lordog/dive-into-llms
 first_seen: 2026-04-18
-last_updated: 2026-04-18
-appearances: [2026-04-18]
-growth_appearances: [2026-04-18]
+last_updated: 2026-04-19
+appearances: [2026-04-18, 2026-04-19]
+growth_appearances: [2026-04-18, 2026-04-19]
 has_releases: true
 latest_release: v1
 ---
@@ -34,3 +34,6 @@ latest_release: v1
 授權資訊於 README 未明示，資料不足（建議以倉庫 LICENSE 檔為準）。社群由上海交大 BCMI 實驗室主導，含新加坡國立大學合作者與華為昇騰社群支持；Open Issues 約 5 個，活躍度集中於內容更新而非大量 PR。
 
 ## 更新紀錄
+
+### 2026-04-19
+- 今日絕對榜 #6（31,971 stars，+562）、增長率榜 #7（1.76%），連續第 2 天上榜。本次無新 release（仍停留在 2025-06-12 發布的 [v1](https://github.com/Lordog/dive-into-llms/releases/tag/v1)）；教材型專案的星增主要來自社群外部推薦而非版本更新。

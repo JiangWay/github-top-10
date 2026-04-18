@@ -1,11 +1,11 @@
 ---
 repo: EvoMap/evolver
 first_seen: 2026-04-18
-last_updated: 2026-04-18
-appearances: [2026-04-18]
-growth_appearances: [2026-04-18]
+last_updated: 2026-04-19
+appearances: [2026-04-18, 2026-04-19]
+growth_appearances: [2026-04-18, 2026-04-19]
 has_releases: true
-latest_release: v1.67.1
+latest_release: v1.68.0-beta.1
 ---
 
 # [EvoMap/evolver](https://github.com/EvoMap/evolver)
@@ -125,3 +125,7 @@ evolver 的設計主張圍繞「**協定約束的可追溯性**」，在官方 R
 - Hermes Agent（Nous Research，爭議對象）
 
 ## 更新紀錄
+
+### 2026-04-19
+- 今日絕對榜 #4（4,911 stars，+1,150），**增長率榜 #2（23.42%）**——連續第 2 天佔據增長率榜前二；今日新增 stars 反而比昨日 +750 更多。
+- 新版本：[v1.67.2](https://github.com/EvoMap/evolver/releases/tag/v1.67.2) → [v1.67.4](https://github.com/EvoMap/evolver/releases/tag/v1.67.4) → [v1.67.6](https://github.com/EvoMap/evolver/releases/tag/v1.67.6) → [v1.68.0-beta.1](https://github.com/EvoMap/evolver/releases/tag/v1.68.0-beta.1)（2026-04-18 單日四連發），進入 1.68 beta 通道，迭代速度極高。

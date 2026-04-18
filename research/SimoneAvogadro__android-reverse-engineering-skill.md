@@ -1,9 +1,9 @@
 ---
 repo: SimoneAvogadro/android-reverse-engineering-skill
 first_seen: 2026-04-18
-last_updated: 2026-04-18
-appearances: []
-growth_appearances: []
+last_updated: 2026-04-19
+appearances: [2026-04-19]
+growth_appearances: [2026-04-19]
 has_releases: false
 latest_release: null
 ---
@@ -40,3 +40,6 @@ GitHub Releases API 回傳空陣列，尚無正式 tag；最後 push 於 2026-03
 Apache-2.0；建立於 2026-02-02，目前約 2,649 stars、277 forks、3 open issues、2 open PRs，成長迅速但貢獻者集中於作者本人。README 附合法使用免責聲明。
 
 ## 更新紀錄
+
+### 2026-04-19
+- 今日**首次**正式進入絕對榜 #9（3,048 stars，+408）、增長率榜 #4（13.39%）。研究檔早於 2026-04-18 建立但當日未擠進 top 10，今日補齊首度上榜紀錄。無 GitHub Release（`has_releases: false`）。
