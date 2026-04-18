@@ -2,8 +2,8 @@
 repo: Donchitos/Claude-Code-Game-Studios
 first_seen: 2026-04-18
 last_updated: 2026-04-18
-appearances: [2026-04-18]
-growth_appearances: [2026-04-18]
+appearances: []
+growth_appearances: []
 has_releases: true
 latest_release: v1.0.0-beta
 ---

@@ -2,8 +2,8 @@
 repo: SimoneAvogadro/android-reverse-engineering-skill
 first_seen: 2026-04-18
 last_updated: 2026-04-18
-appearances: [2026-04-18]
-growth_appearances: [2026-04-18]
+appearances: []
+growth_appearances: []
 has_releases: false
 latest_release: null
 ---
