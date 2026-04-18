@@ -85,6 +85,10 @@ Prior days' reports live in `_posts/` (`_posts/YYYY-MM-DD-*.md`). Parse their YA
 3. `gh api repos/{owner}/{repo}/releases` — 無 release 則於 frontmatter `has_releases: false` 並在 Release 區寫「尚無 GitHub Release」
 4. WebSearch 外部評論（HN / Reddit / 部落格 / Twitter / 中文社群）— **外部評論必附來源超連結**
 
+### 研究檔章節與寫法
+
+首次上榜研究檔的必填 10 段骨架、依類型加重、9 項寫法守則與機器可驗證檢查清單，見 [docs/research-style.md](docs/research-style.md)。該檔是 research/*.md 的風格契約，寫研究前**必讀**。
+
 ### 再次上榜（檔案已存在）
 **不重做研究**。流程：
 1. 讀既有檔 frontmatter 的 `last_updated`
