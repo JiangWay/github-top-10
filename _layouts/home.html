@@ -1,0 +1,95 @@
+---
+layout: default
+---
+
+{%- comment -%}
+  Build the entries list.
+  - Posts come from site.posts.
+  - Research pages come from site.pages filtered by path starts-with "research/".
+  - Language + stars for research files are looked up from the latest post's `projects` array.
+{%- endcomment -%}
+
+{%- assign latest_post = site.posts | first -%}
+{%- assign research_pages = site.pages | where_exp: "p", "p.repo" -%}
+
+<main class="idx-page">
+
+  <section class="idx-hero">
+    <div class="idx-hero-kicker">Vol. {{ site.posts.size | prepend: "00" | slice: -3, 3 }} · {{ latest_post.date | date: "%Y-%m-%d" }} 更新</div>
+    <h1 class="idx-hero-title">觀察 GitHub，記錄<br>每一種正在進化的想法。</h1>
+    <p class="idx-hero-sub">每天抓住趨勢榜上的十個專案；把連續三天登榜、或首次衝進榜單的值得寫一篇。以紙本閱讀的節奏，讀完一份清晰的研究。</p>
+
+    <div class="idx-stats">
+      <div class="idx-stat"><span class="k">最新發刊</span><span class="v">{{ latest_post.date | date: "%Y-%m-%d" }}</span></div>
+      <div class="idx-stat"><span class="k">文章總數</span><span class="v" id="statTotal">—</span></div>
+      <div class="idx-stat"><span class="k">每日觀察</span><span class="v" id="statDaily">—</span></div>
+      <div class="idx-stat"><span class="k">深入研究</span><span class="v" id="statResearch">—</span></div>
+    </div>
+  </section>
+
+  {% if content and content != "" %}
+    <div class="idx-intro">{{ content }}</div>
+  {% endif %}
+
+  <section class="idx-toolbar">
+    <div class="idx-tabs" role="tablist">
+      <button class="idx-tab is-active" data-filter="all" role="tab">全部</button>
+      <button class="idx-tab" data-filter="post" role="tab">每日觀察</button>
+      <button class="idx-tab" data-filter="research" role="tab">深入研究</button>
+    </div>
+    <div class="idx-sort">
+      <span class="idx-sort-label">排序</span>
+      <button class="idx-sort-btn is-active" data-sort="date">日期</button>
+      <button class="idx-sort-btn" data-sort="stars">星數</button>
+      <button class="idx-sort-btn" data-sort="title">字母</button>
+    </div>
+  </section>
+
+  <section class="idx-sections" id="idxSections"></section>
+
+  <footer class="idx-footer">
+    <div class="idx-footer-rule"></div>
+    <div class="idx-footer-text">
+      <span>GitHub Top 10 · 每日觀察</span>
+      <span class="sep">·</span>
+      <span>資料來源：<a href="https://github.com/trending">github.com/trending</a></span>
+      <span class="sep">·</span>
+      <span>以紙本閱讀的節奏閱讀網路。</span>
+    </div>
+  </footer>
+</main>
+
+<script type="application/json" id="idxData">[
+  {%- for post in site.posts -%}
+    {
+      "kind": "post",
+      "id": {{ post.url | jsonify }},
+      "url": {{ post.url | relative_url | jsonify }},
+      "title": {{ post.title | jsonify }},
+      "summary": {{ post.summary | default: "" | jsonify }},
+      "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
+      "stars": {{ post.total_stars_today | default: 0 }},
+      "lang": {{ post.dominant_category | default: "" | jsonify }},
+      "word": {{ post.word_of_day | default: "" | jsonify }},
+      "wordEn": {{ post.word_of_day_en | default: "" | jsonify }}
+    }{% unless forloop.last and research_pages.size == 0 %},{% endunless %}
+  {%- endfor -%}
+  {%- for rp in research_pages -%}
+    {%- assign repo_slug = rp.repo -%}
+    {%- assign project_match = "" -%}
+    {%- for p in latest_post.projects -%}
+      {%- if p.repo == repo_slug -%}{%- assign project_match = p -%}{%- endif -%}
+    {%- endfor -%}
+    {%- assign summary = rp.content | strip_html | strip_newlines | replace: "　", " " | truncate: 140 -%}
+    {
+      "kind": "research",
+      "id": {{ rp.url | jsonify }},
+      "url": {{ rp.url | relative_url | jsonify }},
+      "title": {{ rp.repo | jsonify }},
+      "summary": {{ summary | jsonify }},
+      "date": {{ rp.first_seen | date: "%Y-%m-%d" | jsonify }},
+      "stars": {% if project_match != "" %}{{ project_match.stars_total | default: 0 }}{% else %}0{% endif %},
+      "lang": {% if project_match != "" %}{{ project_match.language | jsonify }}{% else %}""{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+  {%- endfor -%}
+]</script>

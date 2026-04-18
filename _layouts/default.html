@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'zh-TW' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+{% if page.summary or site.description %}<meta name="description" content="{{ page.summary | default: site.description }}">{% endif %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ '/assets/css/reader.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/index.css' | relative_url }}">
+</head>
+<body data-theme="paper" data-body-font="serif" data-measure="comfy" data-density="cozy">
+
+{% if page.layout == 'post' or page.layout == 'page' %}
+<div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+{% endif %}
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">GitHub Top 10<span class="brand-sub">每日觀察</span></span>
+    </a>
+
+    <nav class="idx-topnav">
+      <a class="idx-topnav-link{% if page.url == '/' or page.layout == 'home' %} is-active{% endif %}" href="{{ '/' | relative_url }}">文章</a>
+      {% assign latest_post = site.posts | first %}
+      {% if latest_post %}
+        <a class="idx-topnav-link{% if page.layout == 'post' or page.layout == 'page' %} is-active{% endif %}" href="{{ latest_post.url | relative_url }}">閱讀</a>
+      {% endif %}
+    </nav>
+
+    <div class="topbar-date" id="topbarDate">
+      {% if page.date %}
+        {% assign w = page.date | date: "%w" %}
+        {% case w %}
+          {% when "0" %}{% assign wd = "週日" %}
+          {% when "1" %}{% assign wd = "週一" %}
+          {% when "2" %}{% assign wd = "週二" %}
+          {% when "3" %}{% assign wd = "週三" %}
+          {% when "4" %}{% assign wd = "週四" %}
+          {% when "5" %}{% assign wd = "週五" %}
+          {% when "6" %}{% assign wd = "週六" %}
+        {% endcase %}
+        {{ page.date | date: "%Y-%m-%d" }}　{{ wd }}　·　{% if page.layout == 'post' %}每日觀察{% else %}深入研究{% endif %}
+      {% elsif latest_post %}
+        {{ latest_post.date | date: "%Y-%m-%d" }}　·　最新
+      {% endif %}
+    </div>
+
+    {% if page.layout == 'post' or page.layout == 'page' %}
+    <div class="topbar-actions">
+      <button class="icon-btn icon-btn-ghost" id="navToggle" title="切換文章側邊欄" aria-label="切換側邊欄">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <button class="icon-btn" id="themeToggle" title="切換淺色 / 深色">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="icon-btn" id="tweaksToggle" title="外觀設定">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M8 14v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    {% endif %}
+  </div>
+</header>
+
+{{ content }}
+
+{% if page.layout == 'post' or page.layout == 'page' %}
+<section class="tweaks" id="tweaks" hidden aria-label="外觀設定">
+  <header class="tweaks-header">
+    <span>Tweaks</span>
+    <button class="icon-btn" id="tweaksClose" aria-label="關閉">✕</button>
+  </header>
+
+  <div class="tweak-group">
+    <div class="tweak-label">主題</div>
+    <div class="seg" data-tweak="theme">
+      <button data-val="paper">米白</button>
+      <button data-val="slate">石板</button>
+      <button data-val="ink">墨夜</button>
+    </div>
+  </div>
+
+  <div class="tweak-group">
+    <div class="tweak-label">內文字型</div>
+    <div class="seg" data-tweak="bodyFont">
+      <button data-val="serif">宋體</button>
+      <button data-val="sans">黑體</button>
+    </div>
+  </div>
+
+  <div class="tweak-group">
+    <div class="tweak-label">版面寬度</div>
+    <div class="seg" data-tweak="measure">
+      <button data-val="tight">窄</button>
+      <button data-val="comfy">適中</button>
+      <button data-val="wide">寬</button>
+    </div>
+  </div>
+
+  <div class="tweak-group">
+    <div class="tweak-label">行距密度</div>
+    <div class="seg" data-tweak="density">
+      <button data-val="tight">緊</button>
+      <button data-val="cozy">舒適</button>
+      <button data-val="airy">寬鬆</button>
+    </div>
+  </div>
+
+  <div class="tweak-group">
+    <div class="tweak-label">字級</div>
+    <div class="slider-row">
+      <input type="range" id="fsSlider" min="16" max="22" step="1" value="19">
+      <span class="slider-val" id="fsVal">19px</span>
+    </div>
+  </div>
+
+  <div class="tweak-group">
+    <div class="tweak-label">側欄</div>
+    <div class="seg" data-tweak="rails">
+      <button data-val="both">雙側</button>
+      <button data-val="toc">僅目錄</button>
+      <button data-val="none">隱藏</button>
+    </div>
+  </div>
+</section>
+
+<script src="{{ '/assets/js/reader.js' | relative_url }}"></script>
+{% endif %}
+
+{% if page.layout == 'home' %}
+<script src="{{ '/assets/js/index.js' | relative_url }}"></script>
+{% endif %}
+
+</body>
+</html>

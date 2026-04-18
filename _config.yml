@@ -2,6 +2,7 @@ title: GitHub Top 10 每日觀察
 description: 每日追蹤 GitHub trending 前十專案與深度研究
 theme: minima
 lang: zh-TW
+baseurl: "/github-top-10"
 
 plugins:
   - jekyll-relative-links

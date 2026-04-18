@@ -1,0 +1,142 @@
+---
+layout: default
+---
+
+{%- assign posts = site.posts -%}
+{%- assign this_idx = 0 -%}
+{%- for p in posts -%}{% if p.url == page.url %}{% assign this_idx = forloop.index0 %}{% endif %}{%- endfor -%}
+{%- assign prev_post = posts[this_idx | plus: 1] -%}
+{%- assign next_idx = this_idx | minus: 1 -%}
+{%- if next_idx >= 0 -%}{% assign next_post = posts[next_idx] %}{%- endif -%}
+
+<main class="reader" id="top">
+
+  <aside class="rail rail-left" aria-label="文章導覽">
+    <div class="rail-inner">
+      <div class="rail-label">目錄</div>
+      <nav class="toc" id="toc"></nav>
+
+      <div class="rail-label rail-label-alt">文章</div>
+      <a class="docnav-back" href="{{ '/' | relative_url }}">
+        <span class="dn-arrow">←</span>
+        <span>所有文章</span>
+      </a>
+      <nav class="docnav-mini" aria-label="上下篇">
+        {% if prev_post %}
+          <a class="docnav-row" href="{{ prev_post.url | relative_url }}">
+            <span class="dn-dir">← 上一篇</span>
+            <span class="dn-title-mini">{{ prev_post.title }}</span>
+          </a>
+        {% else %}
+          <div class="docnav-row is-disabled"><span class="dn-dir">上一篇</span><span class="dn-title-mini">—</span></div>
+        {% endif %}
+        {% if next_post %}
+          <a class="docnav-row" href="{{ next_post.url | relative_url }}">
+            <span class="dn-dir">→ 下一篇</span>
+            <span class="dn-title-mini">{{ next_post.title }}</span>
+          </a>
+        {% else %}
+          <div class="docnav-row is-disabled"><span class="dn-dir">下一篇</span><span class="dn-title-mini">—</span></div>
+        {% endif %}
+      </nav>
+
+      <div class="rail-label rail-label-alt">閱讀狀態</div>
+      <div class="reading-stats">
+        <div class="stat-row"><span class="stat-k">預估閱讀</span><span class="stat-v" id="readTime">—</span></div>
+        <div class="stat-row"><span class="stat-k">字數</span><span class="stat-v" id="wordCount">—</span></div>
+        <div class="stat-row"><span class="stat-k">已讀</span><span class="stat-v" id="readPct">0%</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <article class="article" id="article">
+    <header class="hero">
+      <div class="hero-kicker">
+        {% assign w = page.date | date: "%w" %}
+        {% case w %}
+          {% when "0" %}{% assign wd = "週日" %}
+          {% when "1" %}{% assign wd = "週一" %}
+          {% when "2" %}{% assign wd = "週二" %}
+          {% when "3" %}{% assign wd = "週三" %}
+          {% when "4" %}{% assign wd = "週四" %}
+          {% when "5" %}{% assign wd = "週五" %}
+          {% when "6" %}{% assign wd = "週六" %}
+        {% endcase %}
+        {{ page.date | date: "%Y-%m-%d" }} · {{ wd }} · 每日觀察
+      </div>
+      <h1>{{ page.title }}</h1>
+      {% if page.summary %}<p class="hero-summary">{{ page.summary }}</p>{% endif %}
+      <div class="hero-meta">
+        {% if page.dominant_category %}<span><span class="m-k">主導類型</span><span class="m-v">{{ page.dominant_category }}</span></span>{% endif %}
+        {% if page.total_stars_today %}<span><span class="m-k">今日累加</span><span class="m-v">+{{ page.total_stars_today }}</span></span>{% endif %}
+        {% if page.top_project %}<span><span class="m-k">榜首</span><span class="m-v">{{ page.top_project }}</span></span>{% endif %}
+        {% if page.top_growth_project %}<span><span class="m-k">增長王</span><span class="m-v">{{ page.top_growth_project }}</span></span>{% endif %}
+      </div>
+      {% if page.word_of_day %}
+        <div class="wod">
+          <div class="wod-char">{{ page.word_of_day }}</div>
+          <div class="wod-body">
+            <div class="wod-en">{{ page.word_of_day_en }}</div>
+            <div class="wod-label">每日一字 · 從今日十個專案的主題凝結而成</div>
+          </div>
+        </div>
+      {% endif %}
+    </header>
+
+    {{ content }}
+  </article>
+
+  <aside class="rail rail-right" aria-label="專案資訊">
+    <div class="rail-inner" id="metaRail">
+      {% if page.total_stars_today %}
+      <div class="meta-group">
+        <div class="meta-label">今日總漲幅</div>
+        <div class="stat-big">+{{ page.total_stars_today }}</div>
+        <div class="stat-small">⭐ 今日累加（十專案）</div>
+      </div>
+      {% endif %}
+
+      {% if page.projects and page.projects.size > 0 %}
+      <div class="meta-group">
+        <div class="meta-label">絕對榜 · 今日前十</div>
+        <div class="chip-list">
+          {% for p in page.projects %}
+            <a class="chip" href="https://github.com/{{ p.repo }}" target="_blank" rel="noopener">
+              <span class="chip-rank">#{{ p.rank }}</span>
+              <span class="chip-repo">{{ p.repo }}</span>
+              <span class="chip-delta">+{{ p.stars_today }}</span>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if page.growth_top_10 and page.growth_top_10.size > 0 %}
+      <div class="meta-group">
+        <div class="meta-label">增長率榜 · Top 10</div>
+        <div class="chip-list">
+          {% for p in page.growth_top_10 limit: 5 %}
+            <a class="chip" href="https://github.com/{{ p.repo }}" target="_blank" rel="noopener">
+              <span class="chip-rank">#{{ p.rank }}</span>
+              <span class="chip-repo">{{ p.repo }}</span>
+              <span class="chip-delta">{{ p.growth_rate }}%</span>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if page.languages and page.languages.size > 0 %}
+      <div class="meta-group">
+        <div class="meta-label">當日語言</div>
+        <div class="lang-legend">
+          {% for l in page.languages %}
+            <div class="lang-row"><span style="color:var(--ink-soft)">{{ l }}</span></div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </aside>
+
+</main>

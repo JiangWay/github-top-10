@@ -1,0 +1,110 @@
+---
+layout: default
+---
+
+{%- comment -%} Look up the latest project entry for this repo across posts {%- endcomment -%}
+{%- assign latest_post = site.posts | first -%}
+{%- assign project_match = "" -%}
+{%- if page.repo -%}
+  {%- for p in latest_post.projects -%}
+    {%- if p.repo == page.repo -%}{%- assign project_match = p -%}{%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+<main class="reader" id="top">
+
+  <aside class="rail rail-left" aria-label="文章導覽">
+    <div class="rail-inner">
+      <div class="rail-label">目錄</div>
+      <nav class="toc" id="toc"></nav>
+
+      <div class="rail-label rail-label-alt">返回</div>
+      <a class="docnav-back" href="{{ '/' | relative_url }}">
+        <span class="dn-arrow">←</span>
+        <span>所有文章</span>
+      </a>
+      {% if latest_post %}
+      <a class="docnav-back" href="{{ latest_post.url | relative_url }}">
+        <span class="dn-arrow">↩</span>
+        <span>最新每日觀察</span>
+      </a>
+      {% endif %}
+
+      <div class="rail-label rail-label-alt">閱讀狀態</div>
+      <div class="reading-stats">
+        <div class="stat-row"><span class="stat-k">預估閱讀</span><span class="stat-v" id="readTime">—</span></div>
+        <div class="stat-row"><span class="stat-k">字數</span><span class="stat-v" id="wordCount">—</span></div>
+        <div class="stat-row"><span class="stat-k">已讀</span><span class="stat-v" id="readPct">0%</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <article class="article" id="article">
+    {% if page.repo %}
+    <header class="hero">
+      <div class="hero-kicker">
+        深入研究{% if page.first_seen %} · 首次上榜 {{ page.first_seen }}{% endif %}
+      </div>
+      <h1 style="font-family: var(--font-mono); font-size: clamp(28px, 3.6vw, 40px); letter-spacing: -0.01em; word-break: break-all;">{{ page.repo }}</h1>
+      <div class="hero-meta">
+        {% if page.first_seen %}<span><span class="m-k">首次上榜</span><span class="m-v">{{ page.first_seen }}</span></span>{% endif %}
+        {% if page.last_updated %}<span><span class="m-k">最近更新</span><span class="m-v">{{ page.last_updated }}</span></span>{% endif %}
+        {% if page.latest_release %}<span><span class="m-k">最新 Release</span><span class="m-v">{{ page.latest_release }}</span></span>{% endif %}
+        {% if page.appearances %}<span><span class="m-k">絕對榜上榜</span><span class="m-v">{{ page.appearances.size }} 天</span></span>{% endif %}
+        {% if page.growth_appearances %}<span><span class="m-k">增長榜上榜</span><span class="m-v">{{ page.growth_appearances.size }} 天</span></span>{% endif %}
+      </div>
+    </header>
+    {% endif %}
+
+    {{ content }}
+  </article>
+
+  <aside class="rail rail-right" aria-label="專案資訊">
+    <div class="rail-inner" id="metaRail">
+      {% if page.repo %}
+      <div class="meta-group">
+        <div class="meta-label">專案</div>
+        <div style="font-family:var(--font-mono);font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px;word-break:break-all">{{ page.repo }}</div>
+        {% if project_match != "" %}
+          <div class="stat-small">{{ project_match.category }}</div>
+        {% endif %}
+      </div>
+
+      {% if project_match != "" %}
+      <div class="meta-group">
+        <div class="meta-label">指標</div>
+        <div class="chip-list">
+          <div class="chip" style="cursor:default"><span class="chip-rank" style="font-size:11.5px;color:var(--ink-faint);min-width:72px">今日排名</span><span class="chip-repo" style="text-align:right;color:var(--ink)">#{{ project_match.rank }}</span></div>
+          <div class="chip" style="cursor:default"><span class="chip-rank" style="font-size:11.5px;color:var(--ink-faint);min-width:72px">語言</span><span class="chip-repo" style="text-align:right;color:var(--ink)">{{ project_match.language }}</span></div>
+          <div class="chip" style="cursor:default"><span class="chip-rank" style="font-size:11.5px;color:var(--ink-faint);min-width:72px">⭐ 總</span><span class="chip-repo" style="text-align:right;color:var(--ink)">{{ project_match.stars_total }}</span></div>
+          <div class="chip" style="cursor:default"><span class="chip-rank" style="font-size:11.5px;color:var(--ink-faint);min-width:72px">⭐ 今日</span><span class="chip-repo" style="text-align:right;color:var(--ink)">+{{ project_match.stars_today }}</span></div>
+          <div class="chip" style="cursor:default"><span class="chip-rank" style="font-size:11.5px;color:var(--ink-faint);min-width:72px">增長率</span><span class="chip-repo" style="text-align:right;color:var(--ink)">{{ project_match.growth_rate }}%</span></div>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="meta-group">
+        <div class="meta-label">外部連結</div>
+        <div class="jump-list">
+          <a class="jump-item" href="https://github.com/{{ page.repo }}" target="_blank" rel="noopener"><span>GitHub Repo</span><span class="k">↗</span></a>
+          <a class="jump-item" href="https://github.com/{{ page.repo }}/issues" target="_blank" rel="noopener"><span>Issues</span><span class="k">↗</span></a>
+          <a class="jump-item" href="https://github.com/{{ page.repo }}/releases" target="_blank" rel="noopener"><span>Releases</span><span class="k">↗</span></a>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="meta-group">
+        <div class="meta-label">其他研究</div>
+        <div class="jump-list">
+          {% assign others = site.pages | where_exp: "p", "p.repo" %}
+          {% for rp in others %}
+            {% if rp.url != page.url %}
+              <a class="jump-item" href="{{ rp.url | relative_url }}"><span>{{ rp.repo }}</span><span class="k">→</span></a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </aside>
+
+</main>
