@@ -114,3 +114,48 @@ layout: default
   {% endif %}
 
 </main>
+
+{% if page.repo %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ page.url | absolute_url | jsonify }}
+  },
+  "headline": {{ page.repo | jsonify }},
+  "description": {{ page.content | strip_html | strip_newlines | truncate: 200 | jsonify }},
+  "datePublished": {{ page.first_seen | date_to_xmlschema | jsonify }},
+  "dateModified": {{ page.last_updated | default: page.first_seen | date_to_xmlschema | jsonify }},
+  "inLanguage": "zh-TW",
+  "author": {
+    "@type": "Person",
+    "name": {{ site.author.name | default: site.title | jsonify }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.title | jsonify }}
+  },
+  "url": {{ page.url | absolute_url | jsonify }},
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": {{ page.repo | jsonify }},
+    "applicationCategory": "DeveloperApplication",
+    "url": "https://github.com/{{ page.repo }}"
+  }
+}
+</script>
+{% elsif page.title %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": {{ page.url | absolute_url | jsonify }},
+  "name": {{ page.title | jsonify }},
+  "description": {{ page.summary | default: site.description | jsonify }},
+  "inLanguage": "zh-TW",
+  "url": {{ page.url | absolute_url | jsonify }}
+}
+</script>
+{% endif %}

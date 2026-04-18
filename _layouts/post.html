@@ -140,3 +140,29 @@ layout: default
   </aside>
 
 </main>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ page.url | absolute_url | jsonify }}
+  },
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.summary | default: site.description | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  "dateModified": {{ page.date | date_to_xmlschema | jsonify }},
+  "inLanguage": "zh-TW",
+  "author": {
+    "@type": "Person",
+    "name": {{ site.author.name | default: site.title | jsonify }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.title | jsonify }}
+  },
+  "keywords": {{ page.dominant_category | default: "" | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }}
+}
+</script>
