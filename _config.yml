@@ -3,15 +3,26 @@ description: 每日追蹤 GitHub trending 前十專案與深度研究
 theme: minima
 lang: zh-TW
 baseurl: "/github-top-10"
+url: "https://jiangway.github.io"
 
 # Paste your GA4 Measurement ID (G-XXXXXXX) to enable analytics.
 # Leave blank to disable; layout skips the script block when empty.
 google_analytics: "G-02T7HZHN3B"
 
+twitter:
+  card: "summary_large_image"
+
+author:
+  name: "JiangWay"
+  email: "ru8jo0312@gmail.com"
+
 plugins:
   - jekyll-relative-links
   - jekyll-optional-front-matter
   - jekyll-readme-index
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
 
 permalink: /:year/:month/:day/:title/
 
@@ -29,5 +40,6 @@ exclude:
   - CLAUDE.md
   - README.md
   - .claude/
+  - docs/
   - Gemfile
   - Gemfile.lock
