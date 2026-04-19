@@ -125,15 +125,15 @@ latest_release: v1.2.3             # 無則 null
 
 ## 站內連結規則（Jekyll 專用）
 
-連到站內其他 `.md` 檔（研究檔、其他日報）**一律用 `{% link %}` Liquid 標籤**，Jekyll 會在 build 時解析到含 baseurl 的正確 URL。
+連到站內其他 `.md` 檔（研究檔、其他日報）**一律用 `{{ site.baseurl }}{% link %}` 組合**。Jekyll 的 `{% link %}` 只會輸出 site-relative path（`/research/xxx/`），**不會**自動加上 `baseurl`；本站 `baseurl: /github-top-10`，少了前綴就 404，所以必須手動串上 `{{ site.baseurl }}`。
 
 ```markdown
-[顯示文字]({% link research/obra__superpowers.md %})
+[顯示文字]({{ site.baseurl }}{% link research/obra__superpowers.md %})
 ```
 
-**不要**用相對路徑如 `[text](research/xxx.md)`——`_posts/` 下的 post 渲染後 URL 是 `/2026/04/18/進化/`，瀏覽器會把 `research/xxx.md` 錯接成 `/2026/04/18/進化/research/xxx.md`，造成 404。`jekyll-relative-links` plugin 無法處理這種跨目錄情境（它以**源檔位置**為基準，從 `_posts/` 找不到 `research/`）。
+**不要**只寫 `{% link research/xxx.md %}`——渲染出的 href 會是 `/research/xxx/`，缺 baseurl，線上 404。也**不要**用相對路徑如 `[text](research/xxx.md)`——`_posts/` 下的 post 渲染後 URL 是 `/2026/04/18/進化/`，瀏覽器會把 `research/xxx.md` 錯接成 `/2026/04/18/進化/research/xxx.md`，一樣 404。`jekyll-relative-links` plugin 無法處理這種跨目錄情境（它以**源檔位置**為基準，從 `_posts/` 找不到 `research/`）。
 
-`{% link %}` 的好處：檔名錯 → build fail，直接抓到問題。
+`{% link %}` 的好處：檔名錯 → build fail，直接抓到問題；`{{ site.baseurl }}` 則確保部署到子路徑時 URL 正確。
 
 **外部連結**（GitHub repo、Release 頁、第三方評論）照常用 Markdown 超連結：`[owner/repo](https://github.com/owner/repo)`。
 
