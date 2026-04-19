@@ -20,6 +20,54 @@
   if (statDaily) statDaily.textContent = ENTRIES.filter(e => e.kind === "post").length;
   if (statResearch) statResearch.textContent = ENTRIES.filter(e => e.kind === "research").length;
 
+  /* Count the current consecutive streak ending at the latest appearance.
+     A gap of more than one calendar day resets the count — only the most
+     recent unbroken run contributes. */
+  function currentStreak(appearances) {
+    if (!Array.isArray(appearances) || appearances.length === 0) return 0;
+    const sorted = appearances.slice().sort();
+    const DAY = 86400000;
+    let streak = 1;
+    for (let i = sorted.length - 1; i > 0; i--) {
+      const curr = Date.parse(sorted[i] + "T00:00:00Z");
+      const prev = Date.parse(sorted[i - 1] + "T00:00:00Z");
+      if (Number.isNaN(curr) || Number.isNaN(prev)) break;
+      if (curr - prev === DAY) streak++;
+      else break;
+    }
+    return streak;
+  }
+
+  function renderStreakBoard() {
+    const host = $("#idxStreak");
+    const listEl = $("#idxStreakList");
+    const countEl = $("#idxStreakCount");
+    if (!host || !listEl) return;
+
+    const ranked = ENTRIES
+      .filter(e => e.kind === "research" && Array.isArray(e.appearances) && e.appearances.length)
+      .map(e => ({
+        title: e.title,
+        url: e.url,
+        streak: currentStreak(e.appearances),
+        lastDate: e.appearances.slice().sort().pop(),
+      }))
+      .sort((a, b) => b.streak - a.streak || b.lastDate.localeCompare(a.lastDate))
+      .slice(0, 10);
+
+    if (!ranked.length) { host.hidden = true; return; }
+    host.hidden = false;
+
+    if (countEl) countEl.textContent = `${ranked.length} 個`;
+    listEl.innerHTML = ranked.map((r, i) => `
+      <li class="idx-streak-row">
+        <span class="idx-streak-rank">${String(i + 1).padStart(2, "0")}</span>
+        <a class="idx-streak-title mono" href="${escapeHtml(r.url)}">${escapeHtml(r.title)}</a>
+        <span class="idx-streak-days"><span class="fv">${r.streak}</span> 天</span>
+        <span class="idx-streak-last">最近 ${escapeHtml(r.lastDate)}</span>
+      </li>`).join("");
+  }
+
   function sortEntries(list) {
     const arr = list.slice();
     if (state.sort === "stars") arr.sort((a, b) => (b.stars || 0) - (a.stars || 0));
@@ -116,5 +164,6 @@
     });
   });
 
+  renderStreakBoard();
   render();
 })();

@@ -87,6 +87,77 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* --- Streak board (consecutive appearances top 10) --- */
+.idx-streak {
+  margin-bottom: 40px;
+  padding: 20px 24px 22px;
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  background: var(--bg-sunken);
+}
+.idx-streak .idx-section-head {
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+}
+.idx-streak-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+.idx-streak-row {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) auto auto;
+  align-items: baseline;
+  gap: 14px;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--rule);
+  font-size: 14px;
+}
+.idx-streak-row:last-child { border-bottom: 0; }
+.idx-streak-rank {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+}
+.idx-streak-title {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.idx-streak-title:hover { text-decoration: underline; }
+.idx-streak-days {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.idx-streak-days .fv {
+  font-weight: 700;
+  font-size: 16px;
+  margin-right: 2px;
+}
+.idx-streak-last {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+.idx-streak-note {
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+@media (max-width: 560px) {
+  .idx-streak-row { grid-template-columns: 24px minmax(0, 1fr) auto; }
+  .idx-streak-last { display: none; }
+}
+
 /* --- Toolbar (filter tabs + sort) --- */
 .idx-toolbar {
   display: flex;
