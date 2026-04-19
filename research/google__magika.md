@@ -6,6 +6,9 @@ appearances: [2026-04-18]
 growth_appearances: [2026-04-18]
 has_releases: true
 latest_release: python-v1.0.2
+tags: [資安, 應用程式]
+domain: 資安
+form: 應用程式
 ---
 
 # [google/magika](https://github.com/google/magika)

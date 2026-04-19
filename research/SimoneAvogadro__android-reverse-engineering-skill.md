@@ -6,6 +6,9 @@ appearances: [2026-04-19]
 growth_appearances: [2026-04-19]
 has_releases: false
 latest_release: null
+tags: [資安, Skill 外掛]
+domain: 資安
+form: Skill 外掛
 ---
 
 # [SimoneAvogadro/android-reverse-engineering-skill](https://github.com/SimoneAvogadro/android-reverse-engineering-skill)

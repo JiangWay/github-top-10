@@ -104,6 +104,16 @@
       kickerSuffix = isReturning ? " · 再次上榜" : " · 首次上榜";
     }
 
+    let tagsHtml = "";
+    const tags = Array.isArray(e.tags) ? e.tags : [];
+    if (tags.length > 0) {
+      const shown = tags.slice(0, 3);
+      const overflow = tags.length - shown.length;
+      const chips = shown.map(t => '<span class="idx-tag-chip">' + escapeHtml(t) + "</span>").join("");
+      const more = overflow > 0 ? '<span class="idx-tag-chip idx-tag-chip-more">+' + overflow + "</span>" : "";
+      tagsHtml = '<div class="idx-card-tags">' + chips + more + "</div>";
+    }
+
     return `
       <a class="idx-card" data-kind="${e.kind}" href="${escapeHtml(e.url)}">
         <div class="idx-card-head">
@@ -111,6 +121,7 @@
         </div>
         <div class="idx-card-title">${titleHtml}</div>
         <div class="idx-card-sub">${escapeHtml(e.summary || "")}</div>
+        ${tagsHtml}
         ${wordTag}
         <div class="idx-card-foot">${foot}</div>
         <span class="idx-card-arrow" aria-hidden="true">→</span>

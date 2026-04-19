@@ -6,6 +6,10 @@ appearances: [2026-04-19]
 growth_appearances: [2026-04-19]
 has_releases: true
 latest_release: "1.4.6"
+tags: [遠端桌面, 應用程式, 自架, 開源替代]
+domain: 遠端桌面
+form: 應用程式
+themes: [自架, 開源替代]
 ---
 
 # [rustdesk/rustdesk](https://github.com/rustdesk/rustdesk)

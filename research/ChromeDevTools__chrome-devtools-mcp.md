@@ -6,6 +6,9 @@ appearances: [2026-04-18]
 growth_appearances: []
 has_releases: true
 latest_release: chrome-devtools-mcp-v0.21.0
+tags: [MCP 協定, MCP Server]
+domain: MCP 協定
+form: MCP Server
 ---
 
 # [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp)

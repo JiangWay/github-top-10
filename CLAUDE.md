@@ -116,8 +116,65 @@ appearances: [2026-04-18]          # 每次上絕對榜補一筆
 growth_appearances: [2026-04-18]   # 每次上增長率榜補一筆
 has_releases: true                 # 有無 release
 latest_release: v1.2.3             # 無則 null
+tags: [AI Agent 框架, 框架, 多代理編排]   # 扁平 tag 清單 = domain + form + themes
+domain: AI Agent 框架              # 軸 A：領域（必填，單值，見 Tag taxonomy）
+form: 框架                         # 軸 B：形態（必填，單值）
+themes: [多代理編排]                # 軸 C：屬性主題（0–3 個，可省略）
 ---
 ```
+
+## Tag taxonomy
+
+每篇 post 與每份 research 都必須掛 tag，分類、知識圖譜以此為依據。三軸皆採 **controlled vocabulary**——擴充新 tag 前先改這份表；不得臨場造字。
+
+### 軸 A — `domain`（必填，單值）
+專案「做什麼」的最高層分類。11 類：
+- `AI Agent 框架` — agent 編排、自主工作流、多代理系統
+- `LLM 客戶端` — chat 客戶端、IDE 整合、桌面 / Linux port
+- `LLM 訓練` — 訓練腳本、資料集工具、SFT/RLHF pipeline
+- `LLM 基礎建設` — GPU kernel、量化、推理引擎、serving
+- `MCP 協定` — MCP server、瀏覽器自動化整合層
+- `資安` — 資安工具、逆向、威脅分析、檔案偵測
+- `遠端桌面` — remote desktop、VPN、網路穿透
+- `語音與多媒體` — TTS/STT、音訊處理、影音生成
+- `企業治理` — 架構治理、合規、供應商管理、EA
+- `教學資源` — 課程、教材、tutorial 合集
+- `硬體` — 可攜裝置、穿戴、edge device
+
+### 軸 B — `form`（必填，單值）
+「是什麼樣的產物」。7 類：
+- `框架` — SDK / library / runtime
+- `應用程式` — GUI app / CLI tool / 完整產品
+- `Skill 外掛` — Claude Code Skill、VS Code extension、類似擴充
+- `Kernel` — 低層 compute / runtime（GPU kernel、kv cache 等）
+- `MCP Server` — 實作 MCP 協定的 server
+- `課程教材` — tutorial notebook / slide / repo
+- `硬體裝置` — 實體硬體產品、BOM 開源
+
+### 軸 C — `themes`（可選，0–3 個陣列）
+跨領域共享的屬性，知識圖譜關聯時最有用。6 類：
+- `自架` — 強調 self-hosted / on-prem
+- `資料主權` — local-first、資料不離境、自備 API key
+- `自進化` — self-evolving agent / prompt 自動演化
+- `開源替代` — 開源 drop-in alternative to proprietary
+- `多代理編排` — multi-agent orchestration
+- `企業級` — 企業採購導向、合規 / SSO / RBAC
+
+### 扁平 `tags`
+`tags` 欄位 = `[domain, form, ...themes]` 的串接，方便前端 JSON 與 liquid 統一遍歷；**寫入時要保持與三軸欄位一致**（手寫易錯，建議用腳本或機械展開）。
+
+### Post 的 tag
+日報本身不屬於某種 `form`，只掛 `tags`，取當日主要涵蓋的 2–4 個 domain：
+
+```yaml
+tags: [LLM 客戶端, AI Agent 框架, 遠端桌面, LLM 基礎建設]
+```
+
+### 新 tag 規則
+出現現有 vocabulary 涵蓋不到的專案時：
+1. **先試**將 domain 擴解為既有類別（例如純 MLOps 工具可落在 `LLM 基礎建設`）
+2. 若確實需要新類別，**先改 `CLAUDE.md` 的 controlled vocabulary**，再回填到該次研究檔
+3. 新增 domain 時記得同步更新首頁 `/tags/` 索引頁能正確分組（該頁直接以 `site.pages.domain` 分組）
 
 ### 全域連結規則
 

@@ -6,6 +6,10 @@ appearances: [2026-04-18, 2026-04-19]
 growth_appearances: [2026-04-18, 2026-04-19]
 has_releases: true
 latest_release: v1.68.0-beta.1
+tags: [AI Agent 框架, 框架, 自進化]
+domain: AI Agent 框架
+form: 框架
+themes: [自進化]
 ---
 
 # [EvoMap/evolver](https://github.com/EvoMap/evolver)

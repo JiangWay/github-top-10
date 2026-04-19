@@ -6,6 +6,10 @@ appearances: [2026-04-18, 2026-04-19]
 growth_appearances: [2026-04-18, 2026-04-19]
 has_releases: true
 latest_release: v0.14.2
+tags: [AI Agent 框架, 框架, 多代理編排]
+domain: AI Agent 框架
+form: 框架
+themes: [多代理編排]
 ---
 
 # [openai/openai-agents-python](https://github.com/openai/openai-agents-python)

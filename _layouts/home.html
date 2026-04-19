@@ -66,6 +66,8 @@ layout: default
       <span class="sep">·</span>
       <span>以紙本閱讀的節奏閱讀網路。</span>
       <span class="sep">·</span>
+      <a href="{{ '/tags/' | relative_url }}">分類</a>
+      <span class="sep">·</span>
       <a href="{{ '/about/' | relative_url }}">關於</a>
       <span class="sep">·</span>
       <a href="{{ '/privacy/' | relative_url }}">隱私權</a>
@@ -85,7 +87,8 @@ layout: default
       "stars": {{ post.total_stars_today | default: 0 }},
       "lang": {{ post.dominant_category | default: "" | jsonify }},
       "word": {{ post.word_of_day | default: "" | jsonify }},
-      "wordEn": {{ post.word_of_day_en | default: "" | jsonify }}
+      "wordEn": {{ post.word_of_day_en | default: "" | jsonify }},
+      "tags": {% if post.tags %}{{ post.tags | jsonify }}{% else %}[]{% endif %}
     }{% unless forloop.last and research_pages.size == 0 %},{% endunless %}
   {%- endfor -%}
   {%- for rp in research_pages -%}
@@ -108,7 +111,8 @@ layout: default
       "lastUpdated": {{ last_updated_str | jsonify }},
       "appearances": [{%- for d in rp.appearances -%}{{ d | date: "%Y-%m-%d" | jsonify }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%}],
       "stars": {% if project_match != "" %}{{ project_match.stars_total | default: 0 }}{% else %}0{% endif %},
-      "lang": {% if project_match != "" %}{{ project_match.language | jsonify }}{% else %}""{% endif %}
+      "lang": {% if project_match != "" %}{{ project_match.language | jsonify }}{% else %}""{% endif %},
+      "tags": {% if rp.tags %}{{ rp.tags | jsonify }}{% else %}[]{% endif %}
     }{% unless forloop.last %},{% endunless %}
   {%- endfor -%}
 ]</script>

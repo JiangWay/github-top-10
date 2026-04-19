@@ -39,9 +39,10 @@
 
     <nav class="idx-topnav">
       <a class="idx-topnav-link{% if page.url == '/' or page.layout == 'home' %} is-active{% endif %}" href="{{ '/' | relative_url }}">文章</a>
+      <a class="idx-topnav-link{% if page.url == '/tags/' %} is-active{% endif %}" href="{{ '/tags/' | relative_url }}">分類</a>
       {% assign latest_post = site.posts | first %}
       {% if latest_post %}
-        <a class="idx-topnav-link{% if page.layout == 'post' or page.layout == 'page' %} is-active{% endif %}" href="{{ latest_post.url | relative_url }}">閱讀</a>
+        <a class="idx-topnav-link{% if page.layout == 'post' or (page.layout == 'page' and page.url != '/tags/') %} is-active{% endif %}" href="{{ latest_post.url | relative_url }}">閱讀</a>
       {% endif %}
     </nav>
 

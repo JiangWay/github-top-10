@@ -6,6 +6,9 @@ appearances: [2026-04-18, 2026-04-19]
 growth_appearances: [2026-04-18, 2026-04-19]
 has_releases: true
 latest_release: v1
+tags: [教學資源, 課程教材]
+domain: 教學資源
+form: 課程教材
 ---
 
 # [Lordog/dive-into-llms](https://github.com/Lordog/dive-into-llms)

@@ -6,6 +6,10 @@ appearances: [2026-04-18, 2026-04-19]
 growth_appearances: [2026-04-18, 2026-04-19]
 has_releases: true
 latest_release: Omi Desktop v0.11.333
+tags: [硬體, 硬體裝置, 資料主權, 開源替代]
+domain: 硬體
+form: 硬體裝置
+themes: [資料主權, 開源替代]
 ---
 
 # [BasedHardware/omi](https://github.com/BasedHardware/omi)

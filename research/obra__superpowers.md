@@ -6,6 +6,9 @@ appearances: [2026-04-18]
 growth_appearances: [2026-04-18]
 has_releases: true
 latest_release: v5.0.7
+tags: [AI Agent 框架, Skill 外掛]
+domain: AI Agent 框架
+form: Skill 外掛
 ---
 
 # [obra/superpowers](https://github.com/obra/superpowers)

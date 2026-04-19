@@ -6,6 +6,9 @@ appearances: [2026-04-18]
 growth_appearances: []
 has_releases: true
 latest_release: v0.0.20
+tags: [AI Agent 框架, 應用程式]
+domain: AI Agent 框架
+form: 應用程式
 ---
 
 # [pingdotgg/t3code](https://github.com/pingdotgg/t3code)

@@ -6,6 +6,10 @@ appearances: [2026-04-19]
 growth_appearances: [2026-04-19]
 has_releases: true
 latest_release: v0.1.87-nightly.20260418
+tags: [LLM 客戶端, 應用程式, 自架, 資料主權, 企業級]
+domain: LLM 客戶端
+form: 應用程式
+themes: [自架, 資料主權, 企業級]
 ---
 
 # [thunderbird/thunderbolt](https://github.com/thunderbird/thunderbolt)：Thunderbird 出手打造的「AI You Control」開源企業級 AI 客戶端

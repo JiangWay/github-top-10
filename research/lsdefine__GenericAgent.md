@@ -6,6 +6,10 @@ appearances: [2026-04-18]
 growth_appearances: [2026-04-18]
 has_releases: false
 latest_release: null
+tags: [AI Agent 框架, 框架, 自進化]
+domain: AI Agent 框架
+form: 框架
+themes: [自進化]
 ---
 
 # [lsdefine/GenericAgent](https://github.com/lsdefine/GenericAgent)

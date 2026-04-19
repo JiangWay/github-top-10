@@ -6,6 +6,10 @@ appearances: [2026-04-19]
 growth_appearances: [2026-04-19]
 has_releases: true
 latest_release: v1.3.32+claude1.3109.0
+tags: [LLM 客戶端, 應用程式, 自架]
+domain: LLM 客戶端
+form: 應用程式
+themes: [自架]
 ---
 
 # [aaddrick/claude-desktop-debian](https://github.com/aaddrick/claude-desktop-debian)

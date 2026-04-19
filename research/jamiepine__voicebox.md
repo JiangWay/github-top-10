@@ -6,6 +6,10 @@ appearances: [2026-04-18]
 growth_appearances: [2026-04-18]
 has_releases: true
 latest_release: v0.4.0
+tags: [語音與多媒體, 應用程式, 資料主權, 開源替代]
+domain: 語音與多媒體
+form: 應用程式
+themes: [資料主權, 開源替代]
 ---
 
 # [jamiepine/voicebox](https://github.com/jamiepine/voicebox)

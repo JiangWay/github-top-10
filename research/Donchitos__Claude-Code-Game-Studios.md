@@ -6,6 +6,10 @@ appearances: []
 growth_appearances: []
 has_releases: true
 latest_release: v1.0.0-beta
+tags: [AI Agent 框架, Skill 外掛, 多代理編排]
+domain: AI Agent 框架
+form: Skill 外掛
+themes: [多代理編排]
 ---
 
 # [Donchitos/Claude-Code-Game-Studios](https://github.com/Donchitos/Claude-Code-Game-Studios)

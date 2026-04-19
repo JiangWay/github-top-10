@@ -6,6 +6,9 @@ appearances: [2026-04-19]
 growth_appearances: [2026-04-19]
 has_releases: true
 latest_release: nv_dev_4ff3f54
+tags: [LLM 基礎建設, Kernel]
+domain: LLM 基礎建設
+form: Kernel
 ---
 
 # [deepseek-ai/DeepGEMM](https://github.com/deepseek-ai/DeepGEMM)

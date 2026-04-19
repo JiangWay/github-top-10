@@ -6,6 +6,10 @@ appearances: [2026-04-19]
 growth_appearances: [2026-04-19]
 has_releases: true
 latest_release: v4.6.11
+tags: [企業治理, 應用程式, 企業級]
+domain: 企業治理
+form: 應用程式
+themes: [企業級]
 ---
 
 # [tractorjuice/arc-kit](https://github.com/tractorjuice/arc-kit)
