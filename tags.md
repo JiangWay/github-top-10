@@ -28,7 +28,7 @@ description: "以 domain（領域）、form（形態）、themes（主題）三�
   {%- assign research_here = research_pages | where: "domain", d -%}
   {%- assign total = posts_here.size | plus: research_here.size -%}
 
-<section class="tags-group" id="d-{{ d_slug }}">
+<section class="tags-group" markdown="1" id="d-{{ d_slug }}">
 
 ### {{ d }} <span class="tags-count">{{ total }} 篇</span>
 
@@ -68,7 +68,7 @@ description: "以 domain（領域）、form（形態）、themes（主題）三�
   {%- assign f_slug = f | slugify -%}
   {%- assign research_here = research_pages | where: "form", f -%}
 
-<section class="tags-group" id="f-{{ f_slug }}">
+<section class="tags-group" markdown="1" id="f-{{ f_slug }}">
 
 ### {{ f }} <span class="tags-count">{{ research_here.size }} 篇</span>
 
@@ -98,7 +98,7 @@ description: "以 domain（領域）、form（形態）、themes（主題）三�
   {%- assign t_slug = t | slugify -%}
   {%- assign research_here = research_pages | where_exp: "r", "r.themes contains t" -%}
 
-<section class="tags-group" id="t-{{ t_slug }}">
+<section class="tags-group" markdown="1" id="t-{{ t_slug }}">
 
 ### {{ t }} <span class="tags-count">{{ research_here.size }} 篇</span>
 
