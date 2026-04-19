@@ -1,9 +1,9 @@
 ---
 repo: Donchitos/Claude-Code-Game-Studios
 first_seen: 2026-04-18
-last_updated: 2026-04-18
-appearances: []
-growth_appearances: []
+last_updated: 2026-04-20
+appearances: [2026-04-20]
+growth_appearances: [2026-04-20]
 has_releases: true
 latest_release: v1.0.0-beta
 tags: [AI Agent 框架, Skill 外掛, 多代理編排]
@@ -46,3 +46,7 @@ themes: [多代理編排]
 MIT License；約 11.6k stars、1.7k forks，Shell 100%；開啟 GitHub Discussions 與 Issues，接受贊助，作者持續維護。
 
 ## 更新紀錄
+
+### 2026-04-20
+- 首次進入日報 Top 10：絕對榜 #5（13,241 stars，+698）、增長率榜 #6（5.27%）；對比 v1.0.0-beta 發布時（2026-04-07）至今兩週內累積成長相當可觀。
+- 無新 release，仍為 [v1.0.0-beta](https://github.com/Donchitos/Claude-Code-Game-Studios/releases/tag/v1.0.0-beta)。

@@ -1,11 +1,11 @@
 ---
 repo: tractorjuice/arc-kit
 first_seen: 2026-04-19
-last_updated: 2026-04-19
-appearances: [2026-04-19]
-growth_appearances: [2026-04-19]
+last_updated: 2026-04-20
+appearances: [2026-04-19, 2026-04-20]
+growth_appearances: [2026-04-19, 2026-04-20]
 has_releases: true
-latest_release: v4.6.11
+latest_release: v4.7.0
 tags: [企業治理, 應用程式, 企業級]
 domain: 企業治理
 form: 應用程式
@@ -125,3 +125,7 @@ ArcKit 卡在一個夾縫：它不是 TOGAF 工具，不是純 Wardley 工具，
 - [OnlineWardleyMaps](https://onlinewardleymaps.com/)（ArcKit 採用的 Wardley 格式來源）
 
 ## 更新紀錄
+
+### 2026-04-20
+- 今日絕對榜 #9（932 stars，+263）、**增長率榜 #2（28.22%）**——連續第 2 天擠進絕對榜，同時連續第 2 天佔據增長率榜前三，強勢小型專案。
+- 新版本：[ArcKit v4.6.12](https://github.com/tractorjuice/arc-kit/releases/tag/v4.6.12) → [v4.6.13](https://github.com/tractorjuice/arc-kit/releases/tag/v4.6.13) → [v4.7.0](https://github.com/tractorjuice/arc-kit/releases/tag/v4.7.0)（2026-04-19 當日三連發，直接推進到 v4.7 minor），延續高頻迭代。

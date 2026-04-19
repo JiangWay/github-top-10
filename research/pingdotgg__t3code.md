@@ -1,11 +1,11 @@
 ---
 repo: pingdotgg/t3code
 first_seen: 2026-04-18
-last_updated: 2026-04-18
-appearances: [2026-04-18]
-growth_appearances: []
+last_updated: 2026-04-20
+appearances: [2026-04-18, 2026-04-20]
+growth_appearances: [2026-04-18, 2026-04-20]
 has_releases: true
-latest_release: v0.0.20
+latest_release: v0.0.21-nightly.20260419.73
 tags: [AI Agent 框架, 應用程式]
 domain: AI Agent 框架
 form: 應用程式
@@ -50,3 +50,7 @@ form: 應用程式
 MIT 授權；9,373 stars、1,769 forks、737 open issues（2026-04-18 數據），顯示話題高但 issue 堆積快。由 [pingdotgg](https://github.com/pingdotgg) 組織維護，主導者為 Theo Browne。社群透過官方 Discord 支援，文件站 [mintlify.com/pingdotgg/t3code](https://www.mintlify.com/pingdotgg/t3code/introduction) 提供使用與 observability 說明。
 
 ## 更新紀錄
+
+### 2026-04-20
+- 再度進入 Top 10：今日絕對榜 #10（9,799 stars，+96）、增長率榜 #9（0.98%）；距離首次登榜（2026-04-18，當日 +229）已隔 1 日，回升力道相對溫和。
+- 新版本：[T3 Code Nightly v0.0.21-nightly.20260419.73](https://github.com/pingdotgg/t3code/releases/tag/v0.0.21-nightly.20260419.73)（2026-04-19，CI 自動 nightly），仍停留在 0.0.x「very very early」階段，尚無新 stable release。

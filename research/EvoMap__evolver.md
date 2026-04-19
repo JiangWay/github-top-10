@@ -1,11 +1,11 @@
 ---
 repo: EvoMap/evolver
 first_seen: 2026-04-18
-last_updated: 2026-04-19
-appearances: [2026-04-18, 2026-04-19]
-growth_appearances: [2026-04-18, 2026-04-19]
+last_updated: 2026-04-20
+appearances: [2026-04-18, 2026-04-19, 2026-04-20]
+growth_appearances: [2026-04-18, 2026-04-19, 2026-04-20]
 has_releases: true
-latest_release: v1.68.0-beta.1
+latest_release: v1.69.0
 tags: [AI Agent 框架, 框架, 自進化]
 domain: AI Agent 框架
 form: 框架
@@ -133,3 +133,7 @@ evolver 的設計主張圍繞「**協定約束的可追溯性**」，在官方 R
 ### 2026-04-19
 - 今日絕對榜 #4（4,911 stars，+1,150），**增長率榜 #2（23.42%）**——連續第 2 天佔據增長率榜前二；今日新增 stars 反而比昨日 +750 更多。
 - 新版本：[v1.67.2](https://github.com/EvoMap/evolver/releases/tag/v1.67.2) → [v1.67.4](https://github.com/EvoMap/evolver/releases/tag/v1.67.4) → [v1.67.6](https://github.com/EvoMap/evolver/releases/tag/v1.67.6) → [v1.68.0-beta.1](https://github.com/EvoMap/evolver/releases/tag/v1.68.0-beta.1)（2026-04-18 單日四連發），進入 1.68 beta 通道，迭代速度極高。
+
+### 2026-04-20
+- 今日絕對榜 #6（5,418 stars，+525）、增長率榜 #4（9.69%），**連續第 3 天同時上絕對榜與增長率榜**；單日 stars 增量相對前兩天（+750、+1,150）明顯降溫，熱度出現拐點。
+- 新版本：[v1.68.0-beta.2](https://github.com/EvoMap/evolver/releases/tag/v1.68.0-beta.2)、[v1.69.0](https://github.com/EvoMap/evolver/releases/tag/v1.69.0)（2026-04-19 當日先 beta.2 後直接進入 v1.69.0 stable），自 2026-04-18 首次登榜起 48 小時內已走完 v1.67.2 → v1.69.0 的 minor 迭代。
