@@ -364,11 +364,61 @@
   padding: 2px 8px;
   border-radius: 999px;
   white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color .15s, background .15s, border-color .15s;
+}
+.idx-tag-chip:hover {
+  color: var(--ink);
+  background: var(--bg-elev);
+  border-color: var(--ink-faint);
 }
 .idx-tag-chip-more {
   color: var(--ink-faint);
   font-variant-numeric: tabular-nums;
+  cursor: default;
 }
+.idx-tag-chip-more:hover {
+  color: var(--ink-faint);
+  background: var(--bg-sunken);
+  border-color: var(--rule);
+}
+/* Slight spacing tweak when chips live in reader right rail */
+.meta-tags { margin-top: 6px; gap: 5px; }
+
+/* Active tag filter pill (homepage) */
+.idx-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: -8px 0 24px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--ink-mute);
+}
+.idx-filter-bar[hidden] { display: none; }
+.idx-filter-label { color: var(--ink-faint); font-size: 12px; }
+.idx-filter-active {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px 4px 12px;
+  background: var(--bg-elev);
+  border: 1px solid var(--ink-faint);
+  border-radius: 999px;
+  color: var(--ink);
+  font-weight: 500;
+}
+.idx-filter-clear {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: var(--ink-faint);
+  font-size: 14px;
+  line-height: 1;
+  padding: 0 2px;
+}
+.idx-filter-clear:hover { color: var(--ink); }
 
 /* Word-of-day highlight for daily post */
 .idx-card-word {

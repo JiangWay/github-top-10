@@ -96,6 +96,15 @@ layout: default
       </div>
       {% endif %}
 
+      {% if page.tags and page.tags.size > 0 %}
+      <div class="meta-group">
+        <div class="meta-label">分類</div>
+        <div class="idx-card-tags meta-tags">
+          {% for t in page.tags %}<a class="idx-tag-chip" href="{{ '/tags/' | relative_url }}#d-{{ t | slugify }}">{{ t }}</a>{% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
       {% if page.projects and page.projects.size > 0 %}
       <div class="meta-group">
         <div class="meta-label">絕對榜 · 今日前十</div>
@@ -162,7 +171,7 @@ layout: default
     "@type": "Organization",
     "name": {{ site.title | jsonify }}
   },
-  "keywords": {{ page.dominant_category | default: "" | jsonify }},
+  "keywords": {{ page.tags | default: page.dominant_category | jsonify }},
   "url": {{ page.url | absolute_url | jsonify }},
   "image": {{ page.image | default: "/assets/og-default.png" | absolute_url | jsonify }}
 }

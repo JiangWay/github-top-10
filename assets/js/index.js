@@ -10,7 +10,19 @@
   try { ENTRIES = JSON.parse(dataEl.textContent) || []; }
   catch (_) { ENTRIES = []; }
 
-  const state = { filter: "all", sort: "date" };
+  const state = { filter: "all", sort: "date", tag: null };
+
+  /* Read initial tag filter from URL hash (e.g. #tag=AI%20Agent%20框架).
+     Keeps back/forward history intact and lets share URLs include a filter. */
+  function readTagFromHash() {
+    const h = window.location.hash || "";
+    const m = /^#tag=(.+)$/.exec(h);
+    if (m) {
+      try { return decodeURIComponent(m[1]); } catch (_) { return null; }
+    }
+    return null;
+  }
+  state.tag = readTagFromHash();
 
   const sectionsEl = $("#idxSections");
   const statTotal = $("#statTotal");
@@ -142,9 +154,26 @@
       </section>`;
   }
 
+  function matchesTag(e) {
+    if (!state.tag) return true;
+    return Array.isArray(e.tags) && e.tags.includes(state.tag);
+  }
+
+  function updateFilterBar() {
+    const bar = $("#idxFilterBar");
+    const label = $("#idxFilterActiveLabel");
+    if (!bar || !label) return;
+    if (state.tag) {
+      label.textContent = state.tag;
+      bar.hidden = false;
+    } else {
+      bar.hidden = true;
+    }
+  }
+
   function render() {
-    const posts    = sortEntries(ENTRIES.filter(e => e.kind === "post"));
-    const research = sortEntries(ENTRIES.filter(e => e.kind === "research"));
+    const posts    = sortEntries(ENTRIES.filter(e => e.kind === "post" && matchesTag(e)));
+    const research = sortEntries(ENTRIES.filter(e => e.kind === "research" && matchesTag(e)));
 
     let html = "";
     if (state.filter === "all") {
@@ -156,8 +185,22 @@
       html += sectionHtml("01", "深入研究", research);
     }
 
-    if (!html) html = `<div class="idx-empty">沒有符合條件的文章</div>`;
+    if (!html) {
+      const hint = state.tag ? `沒有符合此 tag 的文章（${escapeHtml(state.tag)}）` : "沒有符合條件的文章";
+      html = `<div class="idx-empty">${hint}</div>`;
+    }
     sectionsEl.innerHTML = html;
+    updateFilterBar();
+  }
+
+  function setTagFilter(tag) {
+    state.tag = tag;
+    const hash = tag ? "#tag=" + encodeURIComponent(tag) : "";
+    if (window.location.hash !== hash) {
+      history.replaceState(null, "", window.location.pathname + window.location.search + hash);
+    }
+    render();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   $$(".idx-tab").forEach(btn => {
@@ -173,6 +216,26 @@
       $$(".idx-sort-btn").forEach(b => b.classList.toggle("is-active", b === btn));
       render();
     });
+  });
+
+  /* Chip click → set tag filter. Delegated so we catch chips
+     re-rendered by every render() call. The chip is nested inside
+     an <a class="idx-card">, so we preventDefault to keep the click
+     on the chip from navigating to the card's URL. */
+  sectionsEl.addEventListener("click", (ev) => {
+    const chip = ev.target.closest(".idx-tag-chip");
+    if (!chip || chip.classList.contains("idx-tag-chip-more")) return;
+    ev.preventDefault();
+    ev.stopPropagation();
+    setTagFilter(chip.textContent.trim());
+  });
+
+  const clearBtn = $("#idxFilterClear");
+  if (clearBtn) clearBtn.addEventListener("click", () => setTagFilter(null));
+
+  window.addEventListener("hashchange", () => {
+    const t = readTagFromHash();
+    if (t !== state.tag) { state.tag = t; render(); }
   });
 
   renderStreakBoard();

@@ -76,6 +76,17 @@ layout: default
         {% endif %}
       </div>
 
+      {% if page.tags and page.tags.size > 0 %}
+      <div class="meta-group">
+        <div class="meta-label">分類</div>
+        <div class="idx-card-tags meta-tags">
+          {% if page.domain %}<a class="idx-tag-chip" href="{{ '/tags/' | relative_url }}#d-{{ page.domain | slugify }}">{{ page.domain }}</a>{% endif %}
+          {% if page.form %}<a class="idx-tag-chip" href="{{ '/tags/' | relative_url }}#f-{{ page.form | slugify }}">{{ page.form }}</a>{% endif %}
+          {% if page.themes %}{% for t in page.themes %}<a class="idx-tag-chip" href="{{ '/tags/' | relative_url }}#t-{{ t | slugify }}">{{ t }}</a>{% endfor %}{% endif %}
+        </div>
+      </div>
+      {% endif %}
+
       {% if project_match != "" %}
       <div class="meta-group">
         <div class="meta-label">指標</div>
