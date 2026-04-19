@@ -50,7 +50,11 @@
       ? `<div class="idx-card-word">${escapeHtml(e.word)}<span class="en">${escapeHtml(e.wordEn || "")}</span></div>`
       : "";
 
-    const kickerSuffix = e.kind === "research" ? " · 首次上榜" : "";
+    let kickerSuffix = "";
+    if (e.kind === "research") {
+      const isReturning = e.firstSeen && e.lastUpdated && e.firstSeen !== e.lastUpdated;
+      kickerSuffix = isReturning ? " · 再次上榜" : " · 首次上榜";
+    }
 
     return `
       <a class="idx-card" data-kind="${e.kind}" href="${escapeHtml(e.url)}">

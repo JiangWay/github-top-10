@@ -85,13 +85,17 @@ layout: default
       {%- if p.repo == repo_slug -%}{%- assign project_match = p -%}{%- endif -%}
     {%- endfor -%}
     {%- assign summary = rp.content | strip_html | strip_newlines | replace: "　", " " | truncate: 140 -%}
+    {%- assign first_seen_str = rp.first_seen | date: "%Y-%m-%d" -%}
+    {%- assign last_updated_str = rp.last_updated | default: rp.first_seen | date: "%Y-%m-%d" -%}
     {
       "kind": "research",
       "id": {{ rp.url | jsonify }},
       "url": {{ rp.url | relative_url | jsonify }},
       "title": {{ rp.repo | jsonify }},
       "summary": {{ summary | jsonify }},
-      "date": {{ rp.first_seen | date: "%Y-%m-%d" | jsonify }},
+      "date": {{ last_updated_str | jsonify }},
+      "firstSeen": {{ first_seen_str | jsonify }},
+      "lastUpdated": {{ last_updated_str | jsonify }},
       "stars": {% if project_match != "" %}{{ project_match.stars_total | default: 0 }}{% else %}0{% endif %},
       "lang": {% if project_match != "" %}{{ project_match.language | jsonify }}{% else %}""{% endif %}
     }{% unless forloop.last %},{% endunless %}
