@@ -1,9 +1,9 @@
 ---
 repo: Fincept-Corporation/FinceptTerminal
 first_seen: 2026-04-20
-last_updated: 2026-04-20
-appearances: [2026-04-20]
-growth_appearances: [2026-04-20]
+last_updated: 2026-04-21
+appearances: [2026-04-20, 2026-04-21]
+growth_appearances: [2026-04-20, 2026-04-21]
 has_releases: true
 latest_release: v4.0.1
 tags: [金融科技, 應用程式, 開源替代, 資料主權]
@@ -111,3 +111,8 @@ README 封面口號把立場寫得露骨：
 - [wilsonfreitas/awesome-quant](https://github.com/wilsonfreitas/awesome-quant)
 
 ## 更新紀錄
+
+### 2026-04-21
+- 連續第 2 天上榜（絕對榜 #1，stars_today +3,129，單日翻倍動能；增長率榜 #1，34.29%）
+- 無新 release（最新仍為 [v4.0.1](https://github.com/Fincept-Corporation/FinceptTerminal/releases/tag/v4.0.1)，發佈於 2026-04-15）
+- 觀察：stars 從昨日 6,094 暴增至今日 9,125（+50%）；顯示昨日「對標 Bloomberg」敘事外溢至更大社群；值得追蹤是否很快超越 [OpenBB-finance/OpenBB](https://github.com/OpenBB-finance/OpenBB) 的 stars 規模（後者約 36k）

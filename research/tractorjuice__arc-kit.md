@@ -1,11 +1,11 @@
 ---
 repo: tractorjuice/arc-kit
 first_seen: 2026-04-19
-last_updated: 2026-04-20
-appearances: [2026-04-19, 2026-04-20]
-growth_appearances: [2026-04-19, 2026-04-20]
+last_updated: 2026-04-21
+appearances: [2026-04-19, 2026-04-20, 2026-04-21]
+growth_appearances: [2026-04-19, 2026-04-20, 2026-04-21]
 has_releases: true
-latest_release: v4.7.0
+latest_release: v4.8.0
 tags: [企業治理, 應用程式, 企業級]
 domain: 企業治理
 form: 應用程式
@@ -129,3 +129,7 @@ ArcKit 卡在一個夾縫：它不是 TOGAF 工具，不是純 Wardley 工具，
 ### 2026-04-20
 - 今日絕對榜 #9（932 stars，+263）、**增長率榜 #2（28.22%）**——連續第 2 天擠進絕對榜，同時連續第 2 天佔據增長率榜前三，強勢小型專案。
 - 新版本：[ArcKit v4.6.12](https://github.com/tractorjuice/arc-kit/releases/tag/v4.6.12) → [v4.6.13](https://github.com/tractorjuice/arc-kit/releases/tag/v4.6.13) → [v4.7.0](https://github.com/tractorjuice/arc-kit/releases/tag/v4.7.0)（2026-04-19 當日三連發，直接推進到 v4.7 minor），延續高頻迭代。
+
+### 2026-04-21
+- 連續第 3 天上榜（絕對榜 #5，+334；增長率榜 #2，26.26%）——達成「絕對 × 增長」雙榜三連霸（繼 openai-agents-python、omi、evolver 之後的第四個）；stars 累計 1,272（三天 +597，總量近乎三倍）
+- 新版本高頻迭代持續：[v4.7.1](https://github.com/tractorjuice/arc-kit/releases/tag/v4.7.1)、[v4.7.2](https://github.com/tractorjuice/arc-kit/releases/tag/v4.7.2)（2026-04-19 晚間 patch 兩連發）、[v4.8.0](https://github.com/tractorjuice/arc-kit/releases/tag/v4.8.0)（2026-04-20 直接推進 minor）——48 小時內完成 v4.6.12 → v4.8.0 共 6 個 release

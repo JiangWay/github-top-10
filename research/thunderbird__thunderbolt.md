@@ -1,9 +1,9 @@
 ---
 repo: thunderbird/thunderbolt
 first_seen: 2026-04-19
-last_updated: 2026-04-20
-appearances: [2026-04-19, 2026-04-20]
-growth_appearances: [2026-04-19, 2026-04-20]
+last_updated: 2026-04-21
+appearances: [2026-04-19, 2026-04-20, 2026-04-21]
+growth_appearances: [2026-04-19, 2026-04-20, 2026-04-21]
 has_releases: true
 latest_release: v0.1.87-nightly.20260419
 tags: [LLM 客戶端, 應用程式, 自架, 資料主權, 企業級]
@@ -127,3 +127,7 @@ README 首段明文宣示：
 ### 2026-04-20
 - 今日絕對榜 #3（2,095 stars，+696）、**增長率榜 #1（33.22%）**——連續第 2 天蟬聯增長率榜榜首；累計總 stars 在兩天內從 1,433 → 2,095（+662），顯示首次登頂後動能仍強。
 - 新版本：[Nightly Build v0.1.87-nightly.20260419](https://github.com/thunderbird/thunderbolt/releases/tag/v0.1.87-nightly.20260419)（2026-04-19），延續 github-actions[bot] 每日自動發版節奏；版本號仍卡在 0.1.87-nightly，顯示 stable release 尚未推進。
+
+### 2026-04-21
+- 連續第 3 天登榜（絕對榜 #3，+667；增長率榜 #3，24.52%）；stars 累計 2,720（3 天 +1,287，約翻倍）——「自架 AI 客戶端」敘事動能持續但增長率從 33% 降至 24%，呈現**高位盤整**態勢
+- 無新 nightly release（github-actions bot 20260420、20260421 兩日皆未產新版），打破原本每日發版節奏，值得追蹤是否與 main 分支重整或假期相關

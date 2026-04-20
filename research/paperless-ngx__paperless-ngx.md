@@ -1,9 +1,9 @@
 ---
 repo: paperless-ngx/paperless-ngx
 first_seen: 2026-04-20
-last_updated: 2026-04-20
-appearances: [2026-04-20]
-growth_appearances: [2026-04-20]
+last_updated: 2026-04-21
+appearances: [2026-04-20, 2026-04-21]
+growth_appearances: [2026-04-20, 2026-04-21]
 has_releases: true
 latest_release: v2.20.14
 tags: [文件管理, 應用程式, 自架, 資料主權, 開源替代]
@@ -117,3 +117,8 @@ themes: [自架, 資料主權, 開源替代]
 - [ocrmypdf/OCRmyPDF](https://github.com/ocrmypdf/OCRmyPDF)（底層依賴）
 
 ## 更新紀錄
+
+### 2026-04-21
+- 連續第 2 天上榜（絕對榜 #4，+611；增長率榜 #6，1.55%）；stars 累計 39,315（兩天 +558，持續加速靠近 40k）
+- 無新 release（最新仍為 [v2.20.14](https://github.com/paperless-ngx/paperless-ngx/releases/tag/v2.20.14)，2026-04-14）
+- 觀察：與今日另一個新進榜自架工具 [pi-hole/pi-hole](https://github.com/pi-hole/pi-hole) 共組「自架基礎建設老牌專案回流」現象——兩者皆屬建立多年、動能重啟的類型

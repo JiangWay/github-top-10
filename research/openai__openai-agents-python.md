@@ -1,9 +1,9 @@
 ---
 repo: openai/openai-agents-python
 first_seen: 2026-04-18
-last_updated: 2026-04-20
-appearances: [2026-04-18, 2026-04-19, 2026-04-20]
-growth_appearances: [2026-04-18, 2026-04-19, 2026-04-20]
+last_updated: 2026-04-21
+appearances: [2026-04-18, 2026-04-19, 2026-04-20, 2026-04-21]
+growth_appearances: [2026-04-18, 2026-04-19, 2026-04-20, 2026-04-21]
 has_releases: true
 latest_release: v0.14.2
 tags: [AI Agent 框架, 框架, 多代理編排]
@@ -55,3 +55,8 @@ MIT 授權；約 21,690 stars、3,480 forks、僅 60 open issues（2026-04-17）
 ### 2026-04-20
 - 今日絕對榜 #2（23,020 stars，+751）、增長率榜 #7（3.26%），**連續第 3 天上絕對榜與增長率榜**；今日新增 star 反向回升，可能與 Sandbox Agents 後續生態傳播有關。
 - 無新 stable release（仍停在 v0.14.2）。
+
+### 2026-04-21
+- 連續第 4 天上榜（絕對榜 #7，+909；增長率榜 #4，3.81%）——stars_today 再創新高（昨日 +751 → 今日 +909）；累計 23,848 stars，4 天總增 +2,098
+- 無新 release（仍為 [v0.14.2](https://github.com/openai/openai-agents-python/releases/tag/v0.14.2)，2026-04-18 發佈）
+- 觀察：絕對榜從 #3 → #2 → #2 → #7 顯示相對排名下滑，但絕對 stars_today 反而創高，意味今日榜內大型變動來自新進榜的 FinceptTerminal、pi-hole 等——本專案熱度仍在持續擴散，只是被新爆款擠開

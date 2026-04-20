@@ -1,9 +1,9 @@
 ---
 repo: deepseek-ai/DeepGEMM
 first_seen: 2026-04-19
-last_updated: 2026-04-19
-appearances: [2026-04-19]
-growth_appearances: [2026-04-19]
+last_updated: 2026-04-21
+appearances: [2026-04-19, 2026-04-21]
+growth_appearances: [2026-04-19, 2026-04-21]
 has_releases: true
 latest_release: nv_dev_4ff3f54
 tags: [LLM 基礎建設, Kernel]
@@ -109,3 +109,8 @@ form: Kernel
 - [vllm-project/vllm DeepGEMM benchmark](https://github.com/vllm-project/vllm/blob/main/benchmarks/kernels/deepgemm/README.md)
 
 ## 更新紀錄
+
+### 2026-04-21
+- 再次上榜（絕對榜 #8，+155；增長率榜 #5，2.28%）；缺席 2026-04-20 一天後回流
+- 無新 release（仍為 [nv_dev_4ff3f54](https://github.com/deepseek-ai/DeepGEMM/releases/tag/nv_dev_4ff3f54)，2026-01-05）；意味近期 stars 增長不由新版本驅動，可能與 FP8 / MFP8 訓練在開源社群擴散（DeepSeek V4 模型相關）有關
+- stars 從昨日缺榜基礎 6,795（估）仍維持在 Top 10，顯示為**穩定擴散型**趨勢而非單次爆紅
