@@ -1,9 +1,9 @@
 ---
 repo: Fincept-Corporation/FinceptTerminal
 first_seen: 2026-04-20
-last_updated: 2026-04-21
-appearances: [2026-04-20, 2026-04-21]
-growth_appearances: [2026-04-20, 2026-04-21]
+last_updated: 2026-04-22
+appearances: [2026-04-20, 2026-04-21, 2026-04-22]
+growth_appearances: [2026-04-20, 2026-04-21, 2026-04-22]
 has_releases: true
 latest_release: v4.0.1
 tags: [金融科技, 應用程式, 開源替代, 資料主權]
@@ -116,3 +116,8 @@ README 封面口號把立場寫得露骨：
 - 連續第 2 天上榜（絕對榜 #1，stars_today +3,129，單日翻倍動能；增長率榜 #1，34.29%）
 - 無新 release（最新仍為 [v4.0.1](https://github.com/Fincept-Corporation/FinceptTerminal/releases/tag/v4.0.1)，發佈於 2026-04-15）
 - 觀察：stars 從昨日 6,094 暴增至今日 9,125（+50%）；顯示昨日「對標 Bloomberg」敘事外溢至更大社群；值得追蹤是否很快超越 [OpenBB-finance/OpenBB](https://github.com/OpenBB-finance/OpenBB) 的 stars 規模（後者約 36k）
+
+### 2026-04-22
+- **連續第 3 天雙榜上榜**（絕對榜 #1、增長率榜 #1，stars_today +2,595，growth_rate 22.91%）
+- 無新 release（最新仍為 [v4.0.1](https://github.com/Fincept-Corporation/FinceptTerminal/releases/tag/v4.0.1)）
+- 觀察：stars 從 9,125 → 11,325，3 日累積 +6,893，已是 04-19 日前 stars 基數的 2.5 倍；每日增量從 +3,129 收斂至 +2,595，絕對值仍高但首見遞減斜率——社群關注度可能開始進入高原期，接下來觀察有無超越 [OpenBB-finance/OpenBB](https://github.com/OpenBB-finance/OpenBB) 的 stars 規模
