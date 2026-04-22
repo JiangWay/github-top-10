@@ -1,9 +1,9 @@
 ---
 repo: sansan0/TrendRadar
 first_seen: 2026-04-22
-last_updated: 2026-04-22
-appearances: [2026-04-22]
-growth_appearances: [2026-04-22]
+last_updated: 2026-04-23
+appearances: [2026-04-22, 2026-04-23]
+growth_appearances: [2026-04-22, 2026-04-23]
 has_releases: false
 latest_release: null
 tags: [情報監測, 應用程式, 自架, 資料主權, 開源替代]
@@ -59,3 +59,10 @@ themes: [自架, 資料主權, 開源替代]
 - 授權：GPL-3.0（強 copyleft，fork 再散佈須同授權）。
 - 主線貢獻高度集中於 [sansan0](https://github.com/sansan0) 本人（226 commits），其餘 contributor 多為一次性 PR。
 - 社群熱度集中於微信公眾號（作者在 README 導流）、B 站影片與少數派文章，**屬典型中文圈單人開源項目**——爆量 fork（23k+）與相對少的深度合作者形成強烈對比，也是近一年中文 GitHub「個人爆款」模式的代表之一。
+
+## 更新紀錄
+
+### 2026-04-23
+- **連續第 2 天雙榜**（絕對榜 #9，stars_today +932，growth_rate 1.71%；增長率榜 #5）
+- 無 GitHub Release（`has_releases: false` 維持）
+- 觀察：stars 從 53,534 升至 54,355（+821），2 日累積 +1,405；首次上榜後熱度未退，中文圈自架輿情監測賽道的代表作地位鞏固

@@ -1,9 +1,9 @@
 ---
 repo: zilliztech/claude-context
 first_seen: 2026-04-22
-last_updated: 2026-04-22
-appearances: [2026-04-22]
-growth_appearances: [2026-04-22]
+last_updated: 2026-04-23
+appearances: [2026-04-22, 2026-04-23]
+growth_appearances: [2026-04-22, 2026-04-23]
 has_releases: false
 latest_release: null
 tags: [MCP 協定, MCP Server, 開源替代]
@@ -47,3 +47,10 @@ monorepo 切成三塊：`@zilliz/claude-context-core` 負責 AST 切塊與增量
 ### 授權與社群
 
 MIT 授權。主要貢獻者集中在 Zilliz 內部：`zc277584121`（108 commits）、`Shawnzheng011019`（31）、`codingjaguar`（6），外部貢獻長尾零星 1–4 commits，顯示仍是單一公司主導的官方專案而非廣泛社群共筆。Node 版本要求 20.x 至 22.x，與 24+ 不相容，部署時需留意。
+
+## 更新紀錄
+
+### 2026-04-23
+- **連續第 2 天雙榜**（絕對榜由 #3 升至 #1，stars_today +873，growth_rate 11.87%；增長率榜 #2）
+- 無 GitHub Release（仍 `has_releases: false`），npm 上 `@zilliz/claude-context-mcp` 版號續推
+- 觀察：stars 從 6,456 升至 7,354（+898），首次擠下 [Fincept-Corporation/FinceptTerminal](https://github.com/Fincept-Corporation/FinceptTerminal) 成為絕對榜 #1；Zilliz/Milvus 生態 + MCP 熱潮雙重加持，code search MCP 類別的標竿地位進一步鞏固

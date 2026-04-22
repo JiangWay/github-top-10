@@ -1,8 +1,8 @@
 ---
 repo: koala73/worldmonitor
 first_seen: 2026-04-21
-last_updated: 2026-04-21
-appearances: [2026-04-21]
+last_updated: 2026-04-23
+appearances: [2026-04-21, 2026-04-23]
 growth_appearances: []
 has_releases: true
 latest_release: v2.5.23
@@ -124,4 +124,8 @@ README 中最具辨識度的一段：
 
 ## 更新紀錄
 
-<!-- append future re-appearances here -->
+### 2026-04-23
+- 再次登榜（絕對榜 #3，stars_today +449，growth_rate 0.87%；未進入增長率榜 Top 10）
+- 無新 release（最新仍為 [v2.5.23](https://github.com/koala73/worldmonitor/releases/tag/v2.5.23)，2026-03-01）
+- 觀察：stars 從 49,841（04-21）升至 51,381；04-21 初登榜後 04-22 消失 1 日、04-23 強勢回歸——顯示 OSINT 儀表板 + AI 本地摘要敘事仍在多日循環外溢
+
