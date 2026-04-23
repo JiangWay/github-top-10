@@ -1,9 +1,9 @@
 ---
 repo: zilliztech/claude-context
 first_seen: 2026-04-22
-last_updated: 2026-04-23
-appearances: [2026-04-22, 2026-04-23]
-growth_appearances: [2026-04-22, 2026-04-23]
+last_updated: 2026-04-24
+appearances: [2026-04-22, 2026-04-23, 2026-04-24]
+growth_appearances: [2026-04-22, 2026-04-23, 2026-04-24]
 has_releases: false
 latest_release: null
 tags: [MCP 協定, MCP Server, 開源替代]
@@ -54,3 +54,8 @@ MIT 授權。主要貢獻者集中在 Zilliz 內部：`zc277584121`（108 commit
 - **連續第 2 天雙榜**（絕對榜由 #3 升至 #1，stars_today +873，growth_rate 11.87%；增長率榜 #2）
 - 無 GitHub Release（仍 `has_releases: false`），npm 上 `@zilliz/claude-context-mcp` 版號續推
 - 觀察：stars 從 6,456 升至 7,354（+898），首次擠下 [Fincept-Corporation/FinceptTerminal](https://github.com/Fincept-Corporation/FinceptTerminal) 成為絕對榜 #1；Zilliz/Milvus 生態 + MCP 熱潮雙重加持，code search MCP 類別的標竿地位進一步鞏固
+
+### 2026-04-24
+- **連續第 3 天雙榜**（絕對榜 #2，stars_today +1,023，growth_rate 12.32%；增長率榜 #3）
+- 無新 GitHub Release（仍 `has_releases: false`），發行續走 npm 通道
+- 觀察：stars 從 7,354 升至 8,302（+948），stars_today 首次破千，日增量連三日遞增（+259 → +873 → +1,023），顯示「code context MCP」敘事進入外部社群持續擴散階段；絕對榜位置由 #1 下滑至 #2 係因今日 #1 [huggingface/ml-intern](https://github.com/huggingface/ml-intern) 首登榜，而非本專案動能衰退

@@ -1,9 +1,9 @@
 ---
 repo: microsoft/ai-agents-for-beginners
 first_seen: 2026-04-22
-last_updated: 2026-04-22
-appearances: [2026-04-22]
-growth_appearances: [2026-04-22]
+last_updated: 2026-04-24
+appearances: [2026-04-22, 2026-04-24]
+growth_appearances: [2026-04-22, 2026-04-24]
 has_releases: false
 latest_release: null
 tags: [教學資源, 課程教材]
@@ -43,3 +43,10 @@ themes: []
 ### 授權與社群
 
 授權 MIT。主要貢獻者為 [leestott](https://github.com/leestott)（380 commits，微軟 Academic Advocacy 負責人）、[skytin1004](https://github.com/skytin1004)（284）、[koreyspace](https://github.com/koreyspace)。topics 標註 `agentic-ai`、`autogen`、`semantic-kernel`。學員可透過 Microsoft Foundry Discord 與 GitHub Issues 交流。
+
+## 更新紀錄
+
+### 2026-04-24
+- **跳 1 日後回歸**（04-22 首次 → 04-23 跳出 → 04-24 再上榜，絕對榜 #8，stars_today +177，growth_rate 0.30%；增長率榜 #8）
+- 無新 release（仍 rolling update 模式，`has_releases: false`）
+- 觀察：stars 從 57,513 升至 58,686（間隔 2 日 +1,173），stars_today 量級（+177）明顯小於首登時的爆發——教學資源類專案的典型「低持續熱度」模式；與今日同榜的 [huggingface/ml-intern](https://github.com/huggingface/ml-intern)（AI Agent 框架）、[cline/cline](https://github.com/cline/cline)（LLM 客戶端）形成「agent 學習 + agent 實作 + agent 客戶端」三位一體

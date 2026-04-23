@@ -1,9 +1,9 @@
 ---
 repo: Z4nzu/hackingtool
 first_seen: 2026-04-23
-last_updated: 2026-04-23
-appearances: [2026-04-23]
-growth_appearances: []
+last_updated: 2026-04-24
+appearances: [2026-04-23, 2026-04-24]
+growth_appearances: [2026-04-24]
 has_releases: false
 latest_release: null
 tags: [資安, 應用程式, 自架]
@@ -80,4 +80,7 @@ CTF 參賽者、資安課程學生、Bug Bounty 初期偵察、紅隊內部 lab 
 
 ## 更新紀錄
 
-<!-- append future re-appearances here -->
+### 2026-04-24
+- **連續第 2 天上榜**（絕對榜 #4，stars_today +1,366，growth_rate 2.25%；增長率榜 #6）
+- 無新 release（仍 `has_releases: false`，版本迭代全部走 master branch）
+- 觀察：stars 從 59,436 升至 60,802（+1,366），日增量由首日 +509 翻近 3× 至 +1,366，首日上榜反而不是峰值——罕見的「第二日爆發」模式，通常意味外部媒體（TikTok / 中文資安自媒體）於首日曝光後 24 小時內二次擴散

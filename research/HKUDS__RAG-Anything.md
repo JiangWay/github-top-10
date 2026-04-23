@@ -1,9 +1,9 @@
 ---
 repo: HKUDS/RAG-Anything
 first_seen: 2026-04-22
-last_updated: 2026-04-23
-appearances: [2026-04-22, 2026-04-23]
-growth_appearances: [2026-04-22, 2026-04-23]
+last_updated: 2026-04-24
+appearances: [2026-04-22, 2026-04-23, 2026-04-24]
+growth_appearances: [2026-04-22, 2026-04-23, 2026-04-24]
 has_releases: true
 latest_release: v1.2.10
 tags: [RAG 框架, 框架, 開源替代]
@@ -52,3 +52,8 @@ MIT 授權，開 Discussions、Issues 兩條管道。貢獻者分布以華人開
 - **連續第 2 天雙榜**（絕對榜 #8，stars_today +770，growth_rate 4.41%；增長率榜 #4）
 - 無新 release（最新仍為 [v1.2.10](https://github.com/HKUDS/RAG-Anything/releases/tag/v1.2.10)，2026-03-24）
 - 觀察：stars 從 16,730 升至 17,444（+714），2 日累積 +970，首次上榜後動能延續；在「RAG 框架」domain 內與 [HKUDS/LightRAG](https://github.com/HKUDS/LightRAG) 母專案雙軌擴散
+
+### 2026-04-24
+- **連續第 3 天雙榜**（絕對榜 #3，stars_today +574，growth_rate 3.18%；增長率榜 #5）
+- 無新 release（最新仍為 [v1.2.10](https://github.com/HKUDS/RAG-Anything/releases/tag/v1.2.10)）
+- 觀察：stars 從 17,444 升至 18,055（+611），三日累積 +1,325；stars_today 從 770 回落至 574，首次出現日對日下降，但絕對榜排名反升至 #3——象徵多模態 RAG 由高爆發階段進入「穩態滯銷」；與 [zilliztech/claude-context](https://github.com/zilliztech/claude-context)（code 透視）、[open-metadata/OpenMetadata](https://github.com/open-metadata/OpenMetadata)（資料血緣）同榜三日，形成「agent 可觀測 × 知識可觀測」雙頻共振
