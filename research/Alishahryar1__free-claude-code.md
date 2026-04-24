@@ -1,9 +1,9 @@
 ---
 repo: Alishahryar1/free-claude-code
 first_seen: 2026-04-24
-last_updated: 2026-04-24
-appearances: [2026-04-24]
-growth_appearances: [2026-04-24]
+last_updated: 2026-04-25
+appearances: [2026-04-24, 2026-04-25]
+growth_appearances: [2026-04-24, 2026-04-25]
 has_releases: false
 latest_release: null
 tags: [LLM 客戶端, 應用程式, 開源替代]
@@ -43,6 +43,14 @@ Claude Code proxy 這類專案在 2026-04 已是一個小生態：[1rgs/claude-c
 ## 授權與社群
 
 授權 MIT，對使用、修改、再散布幾乎無限制。社群方面：5,168 stars、905 forks、39 watchers、21 open issues、作者 [Alishahryar1](https://github.com/Alishahryar1)（Ali Khokhar）看來是個人開發者，同時維護 [cc-nim](https://github.com/Alishahryar1/cc-nim) 等相關專案。沒有 Discussions、沒有 CODE_OF_CONDUCT、沒有 CONTRIBUTING——是典型 solo project 爆紅的型態。真正的**紅旗**有三個：（1）**README 完全沒處理 Anthropic ToS 合規問題**，把 `ccnim` 這個 dummy token 當成功能特點示範，等同教使用者繞過客戶端驗證；（2）**專案名「free-claude-code」帶有誘導性**——Claude Code 是 Anthropic 商標，用這個名字容易讓人誤會是官方或授權版本；（3）**大量近似名稱的 fork 同步存在**（Rishurajgautam24、rishiskhare、Andrewkeith83 等），可能有刷 star 或 SEO farming 的嫌疑，也可能只是 hype 自然擴散，資料不足以斷定。整體而言：它不是盜版、不是 key-sharing 黑市，但它是一個**立場模糊的灰色工具**——技術上合法，倫理上把 Anthropic 的品牌價值用在不付費給 Anthropic 的使用流程，而且作者對此零說明。
+
+---
+
+## 更新紀錄
+
+### 2026-04-25
+- 連續第 2 天上榜，今日衝上絕對榜 #1（昨日 #6），增長率榜 #2（昨日 #1）。stars_today 從 +2,388 上升到 +2,640，總 stars 從 5,166 → 8,191。
+- Release 狀態無變化：`gh api repos/Alishahryar1/free-claude-code/releases` 仍回 `[]`，`has_releases: false` 維持不變。
 
 ---
 

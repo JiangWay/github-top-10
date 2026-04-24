@@ -1,9 +1,9 @@
 ---
 repo: zilliztech/claude-context
 first_seen: 2026-04-22
-last_updated: 2026-04-24
-appearances: [2026-04-22, 2026-04-23, 2026-04-24]
-growth_appearances: [2026-04-22, 2026-04-23, 2026-04-24]
+last_updated: 2026-04-25
+appearances: [2026-04-22, 2026-04-23, 2026-04-24, 2026-04-25]
+growth_appearances: [2026-04-22, 2026-04-23, 2026-04-24, 2026-04-25]
 has_releases: false
 latest_release: null
 tags: [MCP 協定, MCP Server, 開源替代]
@@ -59,3 +59,7 @@ MIT 授權。主要貢獻者集中在 Zilliz 內部：`zc277584121`（108 commit
 - **連續第 3 天雙榜**（絕對榜 #2，stars_today +1,023，growth_rate 12.32%；增長率榜 #3）
 - 無新 GitHub Release（仍 `has_releases: false`），發行續走 npm 通道
 - 觀察：stars 從 7,354 升至 8,302（+948），stars_today 首次破千，日增量連三日遞增（+259 → +873 → +1,023），顯示「code context MCP」敘事進入外部社群持續擴散階段；絕對榜位置由 #1 下滑至 #2 係因今日 #1 [huggingface/ml-intern](https://github.com/huggingface/ml-intern) 首登榜，而非本專案動能衰退
+
+### 2026-04-25
+- 連續第 4 天雙榜（絕對榜 #5、增長率榜 #4）。stars_today 從 +1,023 回落至 +706，總 stars 從 8,302 → 8,917。爆發期進入穩態。
+- 無新 GitHub Release（`gh api` 仍回傳空陣列，維持 `has_releases: false`），發行通道續走 npm。

@@ -1,9 +1,9 @@
 ---
 repo: open-metadata/OpenMetadata
 first_seen: 2026-04-23
-last_updated: 2026-04-24
-appearances: [2026-04-23, 2026-04-24]
-growth_appearances: [2026-04-23, 2026-04-24]
+last_updated: 2026-04-25
+appearances: [2026-04-23, 2026-04-24, 2026-04-25]
+growth_appearances: [2026-04-23, 2026-04-24, 2026-04-25]
 has_releases: true
 latest_release: 1.12.6-release
 tags: [企業治理, 應用程式, 自架, 企業級]
@@ -82,5 +82,8 @@ Apache-2.0。12,066 stars、1,988 forks、54 subscribers、16,179+ commits、729
 - 無新 release（最新仍為 [1.12.6-release](https://github.com/open-metadata/OpenMetadata/releases/tag/1.12.6-release)，2026-04-22）
 - 觀察：stars 從 12,066 升至 12,854（+788），stars_today 從 609 再升至 771（+27%）——首次上榜次日仍加速，與多數「一日熱度」專案形成對比；data catalog + MCP server 內建的敘事在企業資料圈擴散延續，增長率榜排名由 #3 升至 #4 僅因 [Alishahryar1/free-claude-code](https://github.com/Alishahryar1/free-claude-code) 以 46% 極端值插入
 - **Taxonomy 註記**：本專案被歸為 `企業治理`（涵蓋架構治理、合規、EA）。但嚴格看 OpenMetadata 屬「資料治理 / 資料基礎建設」，與 EA 類專案（如 Archimate）的氣味其實不同；若未來同類專案（DataHub、Atlas、Amundsen、Marquez）也陸續登榜，建議擴充 controlled vocabulary 新增 `資料治理` domain（涵蓋 data catalog / lineage / observability / quality），以避免與 EA 類混在同一桶。此次先維持既有 vocab 不動，待第 2 件同類專案出現時再一次性調整 CLAUDE.md。
+
+### 2026-04-25
+- 連續第 3 天雙榜（絕對榜 #6、增長率榜 #5）。stars_today 從 +771 回落至 +530，總 stars 12,854 → 13,277。
 
 <!-- append future re-appearances here -->

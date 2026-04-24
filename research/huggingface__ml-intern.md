@@ -1,9 +1,9 @@
 ---
 repo: huggingface/ml-intern
 first_seen: 2026-04-24
-last_updated: 2026-04-24
-appearances: [2026-04-24]
-growth_appearances: [2026-04-24]
+last_updated: 2026-04-25
+appearances: [2026-04-24, 2026-04-25]
+growth_appearances: [2026-04-24, 2026-04-25]
 has_releases: false
 latest_release: null
 tags: [AI Agent 框架, 應用程式, 自進化, 開源替代]
@@ -52,3 +52,9 @@ themes: [自進化, 開源替代]
 ### 授權與社群
 
 GitHub API 回傳 `license: null`——**repo 目前未掛明確開源授權**，這對 Hugging Face 官方 repo 來說偏罕見，使用或 fork 前需留意。Stars 2,781、forks 252、open issues 33、watchers 19，為上線數日內新 repo（創建於 2025-10-30）。主要語言 Python 70% + TypeScript 30%（後者推測為 Web 介面）。尚無 topics，無 homepage 欄位。
+
+## 更新紀錄
+
+### 2026-04-25
+- 連續第 2 天上絕對榜（#2，較昨日 #1 微降一名）與增長率榜（#1，較昨日 #2 升至榜首）。
+- 仍無 GitHub Release（`has_releases: false`）。
