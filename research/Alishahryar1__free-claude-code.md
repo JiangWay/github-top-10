@@ -52,6 +52,11 @@ Claude Code proxy 這類專案在 2026-04 已是一個小生態：[1rgs/claude-c
 - 連續第 2 天上榜，今日衝上絕對榜 #1（昨日 #6），增長率榜 #2（昨日 #1）。stars_today 從 +2,388 上升到 +2,640，總 stars 從 5,166 → 8,191。
 - Release 狀態無變化：`gh api repos/Alishahryar1/free-claude-code/releases` 仍回 `[]`，`has_releases: false` 維持不變。
 
+### 2026-04-27
+- **中斷一日後回榜**（4/26 跌出 Top 10，今日重返絕對榜 #3、增長率榜 #2）。stars_today +1,694，總 stars 8,191 → 13,136（兩日內 +4,945），growth_rate 12.90%。
+- Release 狀態無變化（`has_releases: false`）。
+- 觀察：絕對榜名次從 #6 → #1 → 跌出 → #3，stars_today 從 +2,388 → +2,640 → +1,694，呈現「衝高—持平—回穩」三段式衰退，但仍維持兩位數 growth rate；BYOK Claude Code 代理的需求未退潮。
+
 ---
 
 生成時間：2026-04-24　資料來源：[GitHub repo](https://github.com/Alishahryar1/free-claude-code)、`gh api`、相關 fork 與社群文章（內文已附連結）。

@@ -1,9 +1,9 @@
 ---
 repo: codecrafters-io/build-your-own-x
 first_seen: 2026-04-25
-last_updated: 2026-04-25
-appearances: [2026-04-25]
-growth_appearances: []
+last_updated: 2026-04-27
+appearances: [2026-04-25, 2026-04-27]
+growth_appearances: [2026-04-27]
 has_releases: false
 latest_release: null
 tags: [教學資源, 課程教材]
@@ -107,3 +107,8 @@ CodeCrafters 在官網把這個學派的口號寫得很白：
 - [jnv/lists](https://github.com/jnv/lists)
 
 ## 更新紀錄
+
+### 2026-04-27
+- **中斷一日後回榜**（4/26 跌出 Top 10，今日重返絕對榜 #4、首次進增長率榜 #9）。stars_today +1,074，總 stars 494,481 → 496,674（兩日內 +2,193），growth_rate 0.22%。
+- 無新 release（`has_releases: false` 維持不變）。
+- 觀察：500k stars 大山首次連續上榜（雖中斷一日），絕對榜名次從 #10 → #4 反而走高，反映 awesome-list 在「skills 周」中作為「親手造每一個 X」的元教材也被重新被翻出來討論。

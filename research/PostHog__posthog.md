@@ -1,9 +1,9 @@
 ---
 repo: PostHog/posthog
 first_seen: 2026-04-25
-last_updated: 2026-04-25
-appearances: [2026-04-25]
-growth_appearances: []
+last_updated: 2026-04-27
+appearances: [2026-04-25, 2026-04-27]
+growth_appearances: [2026-04-27]
 has_releases: true
 latest_release: agent-skills-v0.65.0
 tags: [開發者工具, 應用程式, 自架, 開源替代]
@@ -102,5 +102,10 @@ License `Other`（核心 MIT + `/ee` 為 PostHog License + 鏡像 [PostHog/posth
 ## 更新紀錄
 
 - **2026-04-25（首次上榜）**：完成首次完整深度研究。
+
+### 2026-04-27
+- **中斷一日後回榜**（4/26 跌出 Top 10，今日重返絕對榜 #8、首次進增長率榜 #7）。stars_today +338，總 stars 33,011 → 33,755（兩日內 +744），growth_rate 1.00%。
+- 無新主要 release：`gh api repos/PostHog/posthog/releases` 列表中 4/25 後無新版本，仍維持 `agent-skills-v0.65.0`（2026-04-24）為最新；trunk-based CD 子產品 channel 持續每日發版但未在 GitHub Release 標記。
+- 觀察：YC W20 老牌平台首次連續上榜（雖中斷一日），佐證「資安單日 3 檔退潮、開發者工具填補」的趨勢輪替。
 
 <!-- append future re-appearances here -->

@@ -1,9 +1,9 @@
 ---
 repo: Z4nzu/hackingtool
 first_seen: 2026-04-23
-last_updated: 2026-04-25
-appearances: [2026-04-23, 2026-04-24, 2026-04-25]
-growth_appearances: [2026-04-24, 2026-04-25]
+last_updated: 2026-04-27
+appearances: [2026-04-23, 2026-04-24, 2026-04-25, 2026-04-27]
+growth_appearances: [2026-04-24, 2026-04-25, 2026-04-27]
 has_releases: false
 latest_release: null
 tags: [資安, 應用程式, 自架]
@@ -88,3 +88,8 @@ CTF 參賽者、資安課程學生、Bug Bounty 初期偵察、紅隊內部 lab 
 ### 2026-04-25
 - 連續第 3 天上絕對榜（#4），增長率榜 #6（連 2 天）。stars_today 從 +1,366 略降至 +1,377（持平爆發），總 stars 60,802 → 62,096。
 - 無新 release（`gh api repos/Z4nzu/hackingtool/releases` 仍回傳 `[]`，`has_releases: false` 維持不變）。
+
+### 2026-04-27
+- **中斷一日後回榜**（4/26 跌出 Top 10，今日重返絕對榜 #2、增長率榜 #4）。stars_today +1,724（首次破 +1,500），總 stars 62,096 → 65,149，growth_rate 2.65%（為三日上榜以來最高）。
+- 無新 release（`has_releases: false` 維持不變）。
+- 觀察：第 4 次上榜 stars_today 創新高，且絕對榜名次從 #4/#10 一路爬到今日 #2，是本站歷史首見「跌出後反彈更強」案例。
