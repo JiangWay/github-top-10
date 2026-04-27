@@ -1,9 +1,9 @@
 ---
 repo: gastownhall/beads
 first_seen: 2026-04-27
-last_updated: 2026-04-27
-appearances: [2026-04-27]
-growth_appearances: [2026-04-27]
+last_updated: 2026-04-28
+appearances: [2026-04-27, 2026-04-28]
+growth_appearances: [2026-04-27, 2026-04-28]
 has_releases: true
 latest_release: v1.0.3
 tags: [AI Agent 框架, 框架, 多代理編排]

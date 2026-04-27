@@ -1,9 +1,9 @@
 ---
 repo: mattpocock/skills
 first_seen: 2026-04-27
-last_updated: 2026-04-27
-appearances: [2026-04-27]
-growth_appearances: [2026-04-27]
+last_updated: 2026-04-28
+appearances: [2026-04-27, 2026-04-28]
+growth_appearances: [2026-04-27, 2026-04-28]
 has_releases: false
 latest_release: null
 tags: [開發者工具, Skill 外掛]

@@ -1,9 +1,9 @@
 ---
 repo: Alishahryar1/free-claude-code
 first_seen: 2026-04-24
-last_updated: 2026-04-25
-appearances: [2026-04-24, 2026-04-25]
-growth_appearances: [2026-04-24, 2026-04-25]
+last_updated: 2026-04-28
+appearances: [2026-04-24, 2026-04-25, 2026-04-27, 2026-04-28]
+growth_appearances: [2026-04-24, 2026-04-25, 2026-04-27, 2026-04-28]
 has_releases: false
 latest_release: null
 tags: [LLM 客戶端, 應用程式, 開源替代]

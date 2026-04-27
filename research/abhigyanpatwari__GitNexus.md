@@ -1,9 +1,9 @@
 ---
 repo: abhigyanpatwari/GitNexus
 first_seen: 2026-04-27
-last_updated: 2026-04-27
-appearances: [2026-04-27]
-growth_appearances: [2026-04-27]
+last_updated: 2026-04-28
+appearances: [2026-04-27, 2026-04-28]
+growth_appearances: [2026-04-27, 2026-04-28]
 has_releases: true
 latest_release: v1.6.3
 tags: [RAG 框架, 應用程式, 自架, 資料主權]
@@ -103,3 +103,7 @@ GitNexus 的差異點是**同時把「圖譜」和「瀏覽器執行」兩件事
 - 作者個人頁 [abhigyanpatwari](https://github.com/abhigyanpatwari)
 
 ## 更新紀錄
+
+### 2026-04-28
+- 連兩日上絕對榜（#5 → #2），stars_today 從 +667 增至 +1,074；growth_rate 從 2.22% 升至 3.43%。
+- 自 `last_updated`（2026-04-27）以來的新版：[v1.6.4-rc.7](https://github.com/abhigyanpatwari/GitNexus/releases/tag/v1.6.4-rc.7)、[v1.6.4-rc.8](https://github.com/abhigyanpatwari/GitNexus/releases/tag/v1.6.4-rc.8)、[v1.6.4-rc.9](https://github.com/abhigyanpatwari/GitNexus/releases/tag/v1.6.4-rc.9)（皆 2026-04-27 同日由 `github-actions[bot]` 自動發布的 RC，仍未 promote 為 stable）。`latest_release` 維持 v1.6.3。
