@@ -1,11 +1,11 @@
 ---
 repo: abhigyanpatwari/GitNexus
 first_seen: 2026-04-27
-last_updated: 2026-04-28
-appearances: [2026-04-27, 2026-04-28]
-growth_appearances: [2026-04-27, 2026-04-28]
+last_updated: 2026-04-29
+appearances: [2026-04-27, 2026-04-28, 2026-04-29]
+growth_appearances: [2026-04-27, 2026-04-28, 2026-04-29]
 has_releases: true
-latest_release: v1.6.3
+latest_release: v1.6.4-rc.21
 tags: [RAG 框架, 應用程式, 自架, 資料主權]
 domain: RAG 框架
 form: 應用程式
@@ -107,3 +107,7 @@ GitNexus 的差異點是**同時把「圖譜」和「瀏覽器執行」兩件事
 ### 2026-04-28
 - 連兩日上絕對榜（#5 → #2），stars_today 從 +667 增至 +1,074；growth_rate 從 2.22% 升至 3.43%。
 - 自 `last_updated`（2026-04-27）以來的新版：[v1.6.4-rc.7](https://github.com/abhigyanpatwari/GitNexus/releases/tag/v1.6.4-rc.7)、[v1.6.4-rc.8](https://github.com/abhigyanpatwari/GitNexus/releases/tag/v1.6.4-rc.8)、[v1.6.4-rc.9](https://github.com/abhigyanpatwari/GitNexus/releases/tag/v1.6.4-rc.9)（皆 2026-04-27 同日由 `github-actions[bot]` 自動發布的 RC，仍未 promote 為 stable）。`latest_release` 維持 v1.6.3。
+
+### 2026-04-29
+- 連三日上絕對榜，名次 #2 → #2（總 32,525 / 今日 +1,565），但 stars_today 從 +1,074 升至 +1,565（+45.7%）、growth_rate 從 3.43% 升至 4.81%；增長率榜由 #4 升至 #6（被 awesome-codex-skills 與 mattpocock/skills 雙頭壓制）。
+- 自 `last_updated`（2026-04-28）以來新增 12 個 RC：[v1.6.4-rc.10](https://github.com/abhigyanpatwari/GitNexus/releases/tag/v1.6.4-rc.10) ~ [v1.6.4-rc.21](https://github.com/abhigyanpatwari/GitNexus/releases/tag/v1.6.4-rc.21)（其中 rc.18–rc.21 於 2026-04-28 由 `github-actions[bot]` 連續自動發布）。`latest_release` 更新為 [v1.6.4-rc.21](https://github.com/abhigyanpatwari/GitNexus/releases/tag/v1.6.4-rc.21)，但 v1.6.4 stable 仍未 promote——RC 累計已達 21 個，連發 RC 而不發 stable 的節奏在本站歷史研究檔中極罕見。
