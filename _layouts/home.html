@@ -92,7 +92,7 @@ layout: default
       "id": {{ post.url | jsonify }},
       "url": {{ post.url | relative_url | jsonify }},
       "title": {{ post.title | jsonify }},
-      "summary": {{ post.summary | default: "" | jsonify }},
+      "summary": {{ post.summary | default: "" | markdownify | strip_html | strip_newlines | jsonify }},
       "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
       "stars": {{ post.total_stars_today | default: 0 }},
       "lang": {{ post.dominant_category | default: "" | jsonify }},

@@ -58,7 +58,7 @@ layout: default
     <header class="hero">
       {% if page.kicker %}<div class="hero-kicker">{{ page.kicker }}</div>{% endif %}
       <h1>{{ page.title }}</h1>
-      {% if page.summary %}<p class="hero-summary">{{ page.summary }}</p>{% endif %}
+      {% if page.summary %}<p class="hero-summary">{{ page.summary | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</p>{% endif %}
     </header>
     {% endif %}
 
@@ -164,7 +164,7 @@ layout: default
   "@type": "WebPage",
   "@id": {{ page.url | absolute_url | jsonify }},
   "name": {{ page.title | jsonify }},
-  "description": {{ page.summary | default: site.description | jsonify }},
+  "description": {{ page.summary | default: site.description | markdownify | strip_html | strip_newlines | jsonify }},
   "inLanguage": "zh-TW",
   "url": {{ page.url | absolute_url | jsonify }}
 }

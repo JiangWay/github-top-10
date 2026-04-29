@@ -65,7 +65,7 @@ layout: default
         {{ page.date | date: "%Y-%m-%d" }} · {{ wd }} · 每日觀察
       </div>
       <h1>{{ page.title }}</h1>
-      {% if page.summary %}<p class="hero-summary">{{ page.summary }}</p>{% endif %}
+      {% if page.summary %}<p class="hero-summary">{{ page.summary | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</p>{% endif %}
       <div class="hero-meta">
         {% if page.dominant_category %}<span><span class="m-k">主導類型</span><span class="m-v">{{ page.dominant_category }}</span></span>{% endif %}
         {% if page.total_stars_today %}<span><span class="m-k">今日累加</span><span class="m-v">+{{ page.total_stars_today }}</span></span>{% endif %}
@@ -159,7 +159,7 @@ layout: default
     "@id": {{ page.url | absolute_url | jsonify }}
   },
   "headline": {{ page.title | jsonify }},
-  "description": {{ page.summary | default: site.description | jsonify }},
+  "description": {{ page.summary | default: site.description | markdownify | strip_html | strip_newlines | jsonify }},
   "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
   "dateModified": {{ page.date | date_to_xmlschema | jsonify }},
   "inLanguage": "zh-TW",
