@@ -263,6 +263,41 @@ body[data-nav-collapsed="true"] .reader { grid-template-columns: minmax(0, 1fr) 
 body[data-nav-collapsed="true"][data-rails="toc"] .reader,
 body[data-nav-collapsed="true"][data-rails="none"] .reader { grid-template-columns: minmax(0, 1fr); }
 
+/* -------- Immersive reading mode -------- */
+body[data-immersive="true"] .rail { display: none; }
+body[data-immersive="true"] .reader,
+body[data-immersive="true"] .reader.reader-narrow {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 920px;
+  padding-top: 56px;
+  padding-bottom: 160px;
+}
+body[data-immersive="true"] .article { max-width: 48rem; }
+body[data-immersive="true"][data-measure="tight"] .article { max-width: 40rem; }
+body[data-immersive="true"][data-measure="wide"]  .article { max-width: 56rem; }
+
+body[data-immersive="true"] .topbar {
+  background: transparent;
+  border-bottom-color: transparent;
+  opacity: 0.25;
+  transition: opacity .25s ease, background .25s ease, border-color .25s ease;
+}
+body[data-immersive="true"] .topbar:hover,
+body[data-immersive="true"] .topbar:focus-within {
+  opacity: 1;
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+  border-bottom-color: var(--rule-soft);
+}
+
+/* Icon swap: show "exit" icon when active */
+#immersiveToggle .ic-exit { display: none; }
+body[data-immersive="true"] #immersiveToggle { color: var(--accent); background: var(--bg-sunken); }
+body[data-immersive="true"] #immersiveToggle .ic-enter { display: none; }
+body[data-immersive="true"] #immersiveToggle .ic-exit  { display: inline-block; }
+
+/* Hide nav-collapse button while immersive (rails are already gone) */
+body[data-immersive="true"] #navToggle { display: none; }
+
 /* Narrow 2-column variant used by generic pages (about / privacy) */
 .reader.reader-narrow {
   grid-template-columns: var(--rail-w) minmax(0, 1fr);

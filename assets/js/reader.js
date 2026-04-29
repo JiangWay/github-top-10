@@ -254,7 +254,8 @@
     measure: "comfy",
     density: "cozy",
     rails: "both",
-    fontSize: 19
+    fontSize: 19,
+    immersive: false
   };
 
   let state = loadTweaks();
@@ -274,6 +275,10 @@
     document.body.dataset.measure = state.measure;
     document.body.dataset.density = state.density;
     document.body.dataset.rails = state.rails;
+    if (state.immersive) document.body.dataset.immersive = "true";
+    else delete document.body.dataset.immersive;
+    const immBtn = $("#immersiveToggle");
+    if (immBtn) immBtn.setAttribute("aria-pressed", state.immersive ? "true" : "false");
     document.documentElement.style.setProperty("--body-fs", state.fontSize + "px");
     $$(".seg").forEach(seg => {
       const k = seg.dataset.tweak;
@@ -284,6 +289,12 @@
       fs.value = state.fontSize;
       const v = $("#fsVal"); if (v) v.textContent = state.fontSize + "px";
     }
+  }
+
+  function toggleImmersive(force) {
+    state.immersive = (typeof force === "boolean") ? force : !state.immersive;
+    applyTweaks();
+    saveTweaks();
   }
 
   $$(".seg").forEach(seg => {
@@ -321,6 +332,21 @@
       document.body.dataset.navCollapsed = collapsed ? "false" : "true";
     });
   }
+
+  const immersiveBtn = $("#immersiveToggle");
+  if (immersiveBtn) immersiveBtn.addEventListener("click", () => toggleImmersive());
+
+  document.addEventListener("keydown", (e) => {
+    if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+    if (e.target && e.target.isContentEditable) return;
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === "f" || e.key === "F") {
+      e.preventDefault();
+      toggleImmersive();
+    } else if (e.key === "Escape" && state.immersive) {
+      toggleImmersive(false);
+    }
+  });
 
   /* ---------------- Boot ---------------- */
 
