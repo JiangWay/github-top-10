@@ -1,9 +1,9 @@
 ---
 repo: ComposioHQ/awesome-codex-skills
 first_seen: 2026-04-27
-last_updated: 2026-04-29
-appearances: [2026-04-27, 2026-04-28, 2026-04-29]
-growth_appearances: [2026-04-27, 2026-04-28, 2026-04-29]
+last_updated: 2026-04-30
+appearances: [2026-04-27, 2026-04-28, 2026-04-29, 2026-04-30]
+growth_appearances: [2026-04-27, 2026-04-28, 2026-04-29, 2026-04-30]
 has_releases: false
 latest_release: null
 tags: [教學資源, 課程教材]

@@ -1,9 +1,9 @@
 ---
 repo: microsoft/VibeVoice
 first_seen: 2026-04-28
-last_updated: 2026-04-29
-appearances: [2026-04-28, 2026-04-29]
-growth_appearances: [2026-04-29]
+last_updated: 2026-04-30
+appearances: [2026-04-28, 2026-04-29, 2026-04-30]
+growth_appearances: [2026-04-29, 2026-04-30]
 has_releases: false
 latest_release: null
 tags: [語音與多媒體, 框架, 開源替代]

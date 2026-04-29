@@ -1,9 +1,9 @@
 ---
 repo: HunxByts/GhostTrack
 first_seen: 2026-04-29
-last_updated: 2026-04-29
-appearances: [2026-04-29]
-growth_appearances: [2026-04-29]
+last_updated: 2026-04-30
+appearances: [2026-04-29, 2026-04-30]
+growth_appearances: [2026-04-29, 2026-04-30]
 has_releases: false
 latest_release: null
 tags: [資安, 應用程式, 自架]

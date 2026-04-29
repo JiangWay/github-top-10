@@ -1,9 +1,9 @@
 ---
 repo: obra/superpowers
 first_seen: 2026-04-18
-last_updated: 2026-04-18
-appearances: [2026-04-18]
-growth_appearances: [2026-04-18]
+last_updated: 2026-04-30
+appearances: [2026-04-18, 2026-04-30]
+growth_appearances: [2026-04-18, 2026-04-30]
 has_releases: true
 latest_release: v5.0.7
 tags: [AI Agent 框架, Skill 外掛]
@@ -41,4 +41,7 @@ form: Skill 外掛
 MIT License；主要作者 Jesse Vincent（obra）及 Prime Radiant 團隊，透過 Discord 與 GitHub Issues 接受社群貢獻，自 2025-10 建立以來迅速累積數萬星（2026-04 已達十萬級），屬高活躍度、已進入 Anthropic 官方 plugin marketplace 的旗艦專案。
 
 ## 更新紀錄
-<!-- 第二次以後 append -->
+
+### 2026-04-30
+- 距首次上榜（2026-04-18）已 12 天後再度入絕對榜，名次 #9（總 172,913 / 今日 +1,683），growth_rate 0.97%、增長率榜 #10。stars 由 4-18 的約 122k 漲至 173k（12 天 +51k，仍呈指數爆紅曲線），與當日 [warpdotdev/warp](https://github.com/warpdotdev/warp) 開源（+11,955）形成「agentic dev tooling 大舉再上榜」的氛圍。
+- 自 `last_updated`（2026-04-18）以來無新 release：最新版仍為 [v5.0.7](https://github.com/obra/superpowers/releases/tag/v5.0.7)（2026-03-31），等同近一個月未發版。`latest_release` 維持 v5.0.7。
