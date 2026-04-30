@@ -1,9 +1,9 @@
 ---
 repo: public-apis/public-apis
 first_seen: 2026-04-29
-last_updated: 2026-04-29
-appearances: [2026-04-29]
-growth_appearances: [2026-04-29]
+last_updated: 2026-05-01
+appearances: [2026-04-29, 2026-05-01]
+growth_appearances: [2026-04-29, 2026-05-01]
 has_releases: false
 latest_release: null
 tags: [教學資源, 課程教材, 開源替代]

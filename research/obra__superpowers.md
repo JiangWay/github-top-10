@@ -1,9 +1,9 @@
 ---
 repo: obra/superpowers
 first_seen: 2026-04-18
-last_updated: 2026-04-30
-appearances: [2026-04-18, 2026-04-30]
-growth_appearances: [2026-04-18, 2026-04-30]
+last_updated: 2026-05-01
+appearances: [2026-04-18, 2026-04-30, 2026-05-01]
+growth_appearances: [2026-04-18, 2026-04-30, 2026-05-01]
 has_releases: true
 latest_release: v5.0.7
 tags: [AI Agent 框架, Skill 外掛]

@@ -1,9 +1,9 @@
 ---
 repo: iamgio/quarkdown
 first_seen: 2026-04-29
-last_updated: 2026-04-29
-appearances: [2026-04-29]
-growth_appearances: [2026-04-29]
+last_updated: 2026-05-01
+appearances: [2026-04-29, 2026-05-01]
+growth_appearances: [2026-04-29, 2026-05-01]
 has_releases: true
 latest_release: v2.0.0
 domain: 開發者工具
