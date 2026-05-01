@@ -1,11 +1,11 @@
 ---
 repo: warpdotdev/warp
 first_seen: 2026-04-30
-last_updated: 2026-05-01
-appearances: [2026-04-30, 2026-05-01]
-growth_appearances: [2026-04-30, 2026-05-01]
+last_updated: 2026-05-02
+appearances: [2026-04-30, 2026-05-01, 2026-05-02]
+growth_appearances: [2026-04-30, 2026-05-01, 2026-05-02]
 has_releases: true
-latest_release: v0.2026.04.29.08.56.stable_00
+latest_release: v0.2026.05.01.08.50.dev_00
 tags: [LLM 客戶端, 應用程式, 開源替代, 多代理編排]
 domain: LLM 客戶端
 form: 應用程式

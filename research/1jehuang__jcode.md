@@ -1,11 +1,11 @@
 ---
 repo: 1jehuang/jcode
 first_seen: 2026-04-30
-last_updated: 2026-05-01
-appearances: [2026-04-30, 2026-05-01]
-growth_appearances: [2026-04-30, 2026-05-01]
+last_updated: 2026-05-02
+appearances: [2026-04-30, 2026-05-01, 2026-05-02]
+growth_appearances: [2026-04-30, 2026-05-01, 2026-05-02]
 has_releases: true
-latest_release: v0.11.5
+latest_release: v0.11.6
 tags: [AI Agent 框架, 框架, 多代理編排, 開源替代]
 domain: AI Agent 框架
 form: 框架

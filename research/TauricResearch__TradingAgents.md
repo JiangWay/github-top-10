@@ -1,9 +1,9 @@
 ---
 repo: TauricResearch/TradingAgents
 first_seen: 2026-04-28
-last_updated: 2026-05-01
-appearances: [2026-04-28, 2026-05-01]
-growth_appearances: [2026-05-01]
+last_updated: 2026-05-02
+appearances: [2026-04-28, 2026-05-01, 2026-05-02]
+growth_appearances: [2026-05-01, 2026-05-02]
 has_releases: true
 latest_release: v0.2.4
 tags: [金融科技, 框架, 多代理編排]
