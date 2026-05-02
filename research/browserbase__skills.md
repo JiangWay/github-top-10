@@ -1,9 +1,9 @@
 ---
 repo: browserbase/skills
 first_seen: 2026-05-02
-last_updated: 2026-05-02
-appearances: [2026-05-02]
-growth_appearances: [2026-05-02]
+last_updated: 2026-05-03
+appearances: [2026-05-02, 2026-05-03]
+growth_appearances: [2026-05-02, 2026-05-03]
 has_releases: false
 latest_release: null
 tags: [AI Agent 框架, Skill 外掛, 多代理編排]

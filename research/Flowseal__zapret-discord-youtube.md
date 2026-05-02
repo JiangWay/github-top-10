@@ -1,9 +1,9 @@
 ---
 repo: Flowseal/zapret-discord-youtube
 first_seen: 2026-05-02
-last_updated: 2026-05-02
-appearances: [2026-05-02]
-growth_appearances: [2026-05-02]
+last_updated: 2026-05-03
+appearances: [2026-05-02, 2026-05-03]
+growth_appearances: [2026-05-02, 2026-05-03]
 has_releases: true
 latest_release: 1.9.8b
 tags: [網路工具, 應用程式, 自架]
