@@ -1,9 +1,9 @@
 ---
 repo: ruvnet/ruflo
 first_seen: 2026-05-03
-last_updated: 2026-05-03
-appearances: [2026-05-03]
-growth_appearances: []
+last_updated: 2026-05-04
+appearances: [2026-05-03, 2026-05-04]
+growth_appearances: [2026-05-04]
 has_releases: true
 latest_release: v3.6.10
 tags: [AI Agent 框架, 框架, 多代理編排, 企業級]
@@ -62,3 +62,7 @@ ruflo 把資料流分成五層：使用者輸入 → orchestration 層（MCP ser
 MIT License。Stars 36,429、forks 4,177、watchers 311、open issues 486。Contributors 顯示 20+ 人，但分布極不平均：作者 [ruvnet](https://github.com/ruvnet) 一人就 5,931 commits，第二名是 `claude` bot 50 commits、其餘多為個位數，是典型「單一作者高速產出 + 自動化機器人」的型態。Topics 涵蓋 `agentic-ai`、`multi-agent-systems`、`swarm-intelligence`、`mcp-server`、`claude-code`、`huggingface`，官網 [Cognitum.One](https://Cognitum.One) 與 web UI [flo.ruv.io](https://flo.ruv.io) 同步運作。社群熱度高（Discussions 活躍、PR 流量穩定），但批評聲量同樣明顯，採用前建議參考 Discussion #1666 與 roman-rr 稽核 Gist 自行驗證。
 
 ## 更新紀錄
+
+### 2026-05-04
+- 連榜 Day 2（5-03、5-04），絕對榜由 #2 升至 **#1**（替代 [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) 的 #1 位置）；首次擠入增長率榜（4.77%、growth #6）；stars_today +1,258 → +1,834（+45.8%）、total stars 36,419 → 38,477（+2,058），改名為 ruflo 後第二日加速、外部質疑（Discussion #1666、roman-rr 稽核 Gist）並未壓住擴散。
+- Release 端**無新版本**（最新仍為 [v3.6.10](https://github.com/ruvnet/ruflo/releases/tag/v3.6.10)，2026-04-30）。

@@ -1,9 +1,9 @@
 ---
 repo: TauricResearch/TradingAgents
 first_seen: 2026-04-28
-last_updated: 2026-05-03
-appearances: [2026-04-28, 2026-05-01, 2026-05-02, 2026-05-03]
-growth_appearances: [2026-05-01, 2026-05-02, 2026-05-03]
+last_updated: 2026-05-04
+appearances: [2026-04-28, 2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04]
+growth_appearances: [2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04]
 has_releases: true
 latest_release: v0.2.4
 tags: [金融科技, 框架, 多代理編排]
@@ -191,3 +191,7 @@ README 同時也把研究框架的邊界寫得很清楚：
 - [ValueCell-AI/ValueCell](https://github.com/ValueCell-AI/ValueCell)（整合 TradingAgents 的上層框架）
 
 ## 更新紀錄
+
+### 2026-05-04
+- 連榜 Day 4（5-01、5-02、5-03、5-04），絕對榜由 #1 退至 #2，但 stars_today +2,227 → +3,315（**+48.9%**）為今日全榜最大絕對增量、第二度單日破 3k；total stars 由 61,952 → 64,875 過 6.4 萬，growth_rate 3.59% → 5.11%（單日 +1.52pp）。
+- Release 端**無新版本**（最新仍為 [v0.2.4](https://github.com/TauricResearch/TradingAgents/releases/tag/v0.2.4)，2026-04-25），純粹由 [hsliuping/TradingAgents-CN](https://github.com/hsliuping/TradingAgents-CN) 中文 fork 與 [ValueCell-AI/ValueCell](https://github.com/ValueCell-AI/ValueCell) 等下游整合的長尾擴散推升熱度。

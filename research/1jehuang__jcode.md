@@ -1,11 +1,11 @@
 ---
 repo: 1jehuang/jcode
 first_seen: 2026-04-30
-last_updated: 2026-05-03
-appearances: [2026-04-30, 2026-05-01, 2026-05-02, 2026-05-03]
-growth_appearances: [2026-04-30, 2026-05-01, 2026-05-02, 2026-05-03]
+last_updated: 2026-05-04
+appearances: [2026-04-30, 2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04]
+growth_appearances: [2026-04-30, 2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04]
 has_releases: true
-latest_release: v0.11.6
+latest_release: v0.11.9
 tags: [AI Agent 框架, 框架, 多代理編排, 開源替代]
 domain: AI Agent 框架
 form: 框架
@@ -55,3 +55,8 @@ MIT License。Stars 1,243、forks 120、watchers 13、open issues 44。貢獻者
 - 連榜 Day 2，stars 總量由昨日 1,242 漲至 1,818（24 小時 +576），今日 stars_today +386 → +670（+73.6%），growth_rate 31.08% → 36.85% 為今日全榜第一；絕對榜由昨日 #5 退至 #7，但增長率榜由昨日 #1 守住 #1。
 - 4-30 一日連發 4 個 release：[v0.11.2](https://github.com/1jehuang/jcode/releases/tag/v0.11.2)、[v0.11.3](https://github.com/1jehuang/jcode/releases/tag/v0.11.3)、[v0.11.4](https://github.com/1jehuang/jcode/releases/tag/v0.11.4)、[v0.11.5](https://github.com/1jehuang/jcode/releases/tag/v0.11.5)（由 13:10–18:29 UTC，5 小時內 4 版），延續首日紀錄的「個人作者高速迭代」節奏；累計 release 數由 30 增至 34。
 - 主要變更：以 patch 級別連續修補首日上榜後湧入的 issue，未見 changelog 摘要，body 僅附 GitHub compare diff 連結。
+
+### 2026-05-04
+- **連榜 Day 5**（4-30、5-01、5-02、5-03、5-04），距離本站歷來連榜紀錄保持人 [mattpocock/skills](https://github.com/mattpocock/skills) 的 6 日只差一日，是當前榜內唯一仍在累積連榜天數的種子；絕對榜由 #6 升至 #8（嗯實為小升、實際排名因今日榜內僅 9 檔波動有限），但 growth_rate 17.70% → 17.57% 幾乎持平、增長榜由 #2 退至 **#3**（讓位給首次上榜的 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI) 19.25%）；stars_today +482 → +587（+21.8%），total stars 2,723 → 3,341（+618）首度過 3k。
+- 新版本：[v0.11.9](https://github.com/1jehuang/jcode/releases/tag/v0.11.9)（2026-05-03 01:09:45 UTC，於上次更新時間之後釋出）；累計 release 數由 35 升至約 38（v0.11.7、v0.11.8、v0.11.9 三檔在 5-01～5-03 間連發）。
+- 主要變更：仍為 patch 級別 / 沒有 changelog 摘要的高速迭代節奏，與首日以來「個人作者每日多版」風格一致。

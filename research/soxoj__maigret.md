@@ -1,9 +1,9 @@
 ---
 repo: soxoj/maigret
 first_seen: 2026-05-01
-last_updated: 2026-05-03
-appearances: [2026-05-01, 2026-05-02, 2026-05-03]
-growth_appearances: [2026-05-01, 2026-05-02, 2026-05-03]
+last_updated: 2026-05-04
+appearances: [2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04]
+growth_appearances: [2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04]
 has_releases: true
 latest_release: v0.6.0
 tags: [情報監測, 應用程式, 開源替代, 自架]
@@ -40,3 +40,9 @@ Python 3.10+ CLI，主邏輯是「站台清單 + per-site 規則」資料庫（2
 
 ### 授權與社群
 MIT 授權、Python 主導，repo 已累積 20.7k stars / 1.4k forks / 1280+ commits / 124 watchers，作者 [@soxoj](https://github.com/soxoj) 為主要維護者並貢獻 600+ commits，另有官方文件站 [maigret.readthedocs.io](https://maigret.readthedocs.io) 與品牌站 [maigret.dev](https://maigret.dev/)，社群動能穩定且被 Bellingcat 等指標性機構背書。
+
+## 更新紀錄
+
+### 2026-05-04
+- 連榜 Day 4（5-01、5-02、5-03、5-04），為當日榜內 OSINT 類唯一連榜檔；絕對榜由 #4 守 #3，stars_today +1,065 → +1,117（+4.9%）連續第二日上行，total stars 22,449 → 23,609（+1,160）續創歷史新高；growth_rate 4.74% → 4.73% 幾乎持平，增長榜排名 #3 → #7（被新進的三檔小型 AI 工具擠下）。
+- Release 端**無新版本**（最新仍為 [v0.6.0](https://github.com/soxoj/maigret/releases/tag/v0.6.0)，2026-04-10），4-26 後僅 `main` / `dev` 滾動標籤，無新 semver。

@@ -1,9 +1,9 @@
 ---
 repo: browserbase/skills
 first_seen: 2026-05-02
-last_updated: 2026-05-03
-appearances: [2026-05-02, 2026-05-03]
-growth_appearances: [2026-05-02, 2026-05-03]
+last_updated: 2026-05-04
+appearances: [2026-05-02, 2026-05-03, 2026-05-04]
+growth_appearances: [2026-05-02, 2026-05-03, 2026-05-04]
 has_releases: false
 latest_release: null
 tags: [AI Agent 框架, Skill 外掛, 多代理編排]
@@ -46,3 +46,9 @@ themes: [多代理編排]
 ### 授權與社群
 
 授權欄位為 `null`——**未附 LICENSE**，使用前需自行評估法律風險或向 Browserbase 詢問。主要貢獻者集中在 Browserbase 員工：[shrey150](https://github.com/shrey150)（15 commits）、[miguelg719](https://github.com/miguelg719)（11）、[pkiv](https://github.com/pkiv)（5），加上少量社群 PR。32 open issues、75 forks，社群活躍度中等偏上，屬於商業公司主導的 SDK 範例庫。
+
+## 更新紀錄
+
+### 2026-05-04
+- 連榜 Day 3（5-02、5-03、5-04），增長率榜由連任 #1 退至 **#2**（讓位給首次上榜的 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI) 19.25%）；growth_rate 24.13% → 18.31%（−5.82pp）連 2 日下行但仍守 18% 以上區間；絕對榜由 #3 退至 #6，stars_today +347 → +322（−7.2%）、total stars 1,438 → 1,759（+321）續過 1.7k。
+- Release 端維持 `has_releases: false`（仍走 `main` 分支滾動更新，5-04 仍無 GitHub Release）。
