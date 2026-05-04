@@ -1,11 +1,11 @@
 ---
 repo: Hmbown/DeepSeek-TUI
 first_seen: 2026-05-04
-last_updated: 2026-05-04
-appearances: [2026-05-04]
-growth_appearances: [2026-05-04]
+last_updated: 2026-05-05
+appearances: [2026-05-04, 2026-05-05]
+growth_appearances: [2026-05-04, 2026-05-05]
 has_releases: true
-latest_release: v0.8.7
+latest_release: v0.8.10
 tags: [AI Agent 框架, 應用程式, 開源替代, 多代理編排]
 domain: AI Agent 框架
 form: 應用程式
@@ -51,3 +51,10 @@ themes: [開源替代, 多代理編排]
 - **授權**：MIT。
 - **社群規模**：2,022 stars、117 forks、6 watchers、106 open issues。
 - **貢獻者**：以作者 [Hmbown](https://github.com/Hmbown)（Hayden Brown）為主（523 commits），目前僅 1 名外部貢獻者 [pizofreude](https://github.com/pizofreude)。屬於典型「個人主導、社群剛點火」階段的快速崛起專案。
+
+## 更新紀錄
+
+### 2026-05-05
+- 連榜 Day 2（5-04、5-05），絕對榜由 #4 退至 **#4**（持平）；增長率榜守 **#1**，growth_rate 19.25% → **33.91%**（+14.66pp）為當日最大跳升、亦改寫本專案歷來增長率高點；stars_today +389 → **+1,277（+228%）**；total stars 2,021 → 3,766（+1,745）兩日累計成長近 **86.4%**。
+- Release 端 5-04 一日連跳 v0.8.8 / v0.8.9 / v0.8.10 三個 patch，最新版本 [v0.8.10](https://github.com/Hmbown/DeepSeek-TUI/releases/tag/v0.8.10)（5-04 16:42 UTC），主要強調**雙 binary 安裝模型**——npm `deepseek-tui` wrapper 把 `deepseek-tui-cli`（dispatcher）與 `deepseek-tui`（runtime）一次拉下，避免 `MISSING_COMPANION_BINARY` 報錯。
+- 與另一檔 Rust coding agent [1jehuang/jcode](https://github.com/1jehuang/jcode)（連 6 日）形成「Rust agentic dev tooling 雙王」並列，加上 [browserbase/skills](https://github.com/browserbase/skills) 連 4 日仍在前段，agentic dev tooling 賽道密集競爭格局再度延續一日。

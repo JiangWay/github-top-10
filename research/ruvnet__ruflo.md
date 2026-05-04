@@ -1,11 +1,11 @@
 ---
 repo: ruvnet/ruflo
 first_seen: 2026-05-03
-last_updated: 2026-05-04
-appearances: [2026-05-03, 2026-05-04]
-growth_appearances: [2026-05-04]
+last_updated: 2026-05-05
+appearances: [2026-05-03, 2026-05-04, 2026-05-05]
+growth_appearances: [2026-05-04, 2026-05-05]
 has_releases: true
-latest_release: v3.6.10
+latest_release: v3.6.27
 tags: [AI Agent 框架, 框架, 多代理編排, 企業級]
 domain: AI Agent 框架
 form: 框架
@@ -66,3 +66,7 @@ MIT License。Stars 36,429、forks 4,177、watchers 311、open issues 486。Cont
 ### 2026-05-04
 - 連榜 Day 2（5-03、5-04），絕對榜由 #2 升至 **#1**（替代 [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) 的 #1 位置）；首次擠入增長率榜（4.77%、growth #6）；stars_today +1,258 → +1,834（+45.8%）、total stars 36,419 → 38,477（+2,058），改名為 ruflo 後第二日加速、外部質疑（Discussion #1666、roman-rr 稽核 Gist）並未壓住擴散。
 - Release 端**無新版本**（最新仍為 [v3.6.10](https://github.com/ruvnet/ruflo/releases/tag/v3.6.10)，2026-04-30）。
+
+### 2026-05-05
+- 連榜 Day 3（5-03～5-05），絕對榜守住 **#1**；增長率榜由 #6 升至 **#4**（4.77% → **6.34%**）；stars_today 由 +1,834 再上升到 **+2,594（+41.4%）**；total stars 38,477 → 40,926（+2,449）首度站上 4 萬大關。
+- Release 端 **5-04 一天連 jump 17 個 patch**（v3.6.11–v3.6.27），最新版本 [v3.6.27](https://github.com/ruvnet/ruflo/releases/tag/v3.6.27)（5-04 02:55 UTC）以「Ollama 升為一級 provider（Tier-2）」作主題，修復 Anthropic Max plan 用戶（API key 不外露）與 Ollama Cloud 訂戶在 `workflow_execute` 等 agent 路徑無法走 `callAnthropicMessages` 的 #1725 問題。版本號跳速顯示 maintainer [ruvnet](https://github.com/ruvnet) 仍在密集 patch，配合上榜熱度未見鬆手。

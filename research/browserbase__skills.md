@@ -1,9 +1,9 @@
 ---
 repo: browserbase/skills
 first_seen: 2026-05-02
-last_updated: 2026-05-04
-appearances: [2026-05-02, 2026-05-03, 2026-05-04]
-growth_appearances: [2026-05-02, 2026-05-03, 2026-05-04]
+last_updated: 2026-05-05
+appearances: [2026-05-02, 2026-05-03, 2026-05-04, 2026-05-05]
+growth_appearances: [2026-05-02, 2026-05-03, 2026-05-04, 2026-05-05]
 has_releases: false
 latest_release: null
 tags: [AI Agent 框架, Skill 外掛, 多代理編排]
@@ -52,3 +52,8 @@ themes: [多代理編排]
 ### 2026-05-04
 - 連榜 Day 3（5-02、5-03、5-04），增長率榜由連任 #1 退至 **#2**（讓位給首次上榜的 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI) 19.25%）；growth_rate 24.13% → 18.31%（−5.82pp）連 2 日下行但仍守 18% 以上區間；絕對榜由 #3 退至 #6，stars_today +347 → +322（−7.2%）、total stars 1,438 → 1,759（+321）續過 1.7k。
 - Release 端維持 `has_releases: false`（仍走 `main` 分支滾動更新，5-04 仍無 GitHub Release）。
+
+### 2026-05-05
+- 連榜 Day 4（5-02～5-05），絕對榜由 #6 升至 **#3**；增長率榜由 #2 退至 **#2**（同位）但 growth_rate 18.31% → **15.56%**（−2.75pp）連 3 日下行；stars_today +322 → +320（持平）、total stars 1,759 → 2,057 首次站上 2k。
+- Release 端仍無 GitHub Release（`has_releases: false`，**第 4 日**滾動 main）。
+- AI coding tooling 賽道今日有 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI)（增長率 #1）、[1jehuang/jcode](https://github.com/1jehuang/jcode)（增長率 #3、連 6 日寫紀錄）夾擊，三檔小型專案同場競技已是連 2 日的常態。

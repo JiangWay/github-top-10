@@ -1,9 +1,9 @@
 ---
 repo: soxoj/maigret
 first_seen: 2026-05-01
-last_updated: 2026-05-04
-appearances: [2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04]
-growth_appearances: [2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04]
+last_updated: 2026-05-05
+appearances: [2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04, 2026-05-05]
+growth_appearances: [2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04, 2026-05-05]
 has_releases: true
 latest_release: v0.6.0
 tags: [情報監測, 應用程式, 開源替代, 自架]
@@ -46,3 +46,8 @@ MIT 授權、Python 主導，repo 已累積 20.7k stars / 1.4k forks / 1280+ com
 ### 2026-05-04
 - 連榜 Day 4（5-01、5-02、5-03、5-04），為當日榜內 OSINT 類唯一連榜檔；絕對榜由 #4 守 #3，stars_today +1,065 → +1,117（+4.9%）連續第二日上行，total stars 22,449 → 23,609（+1,160）續創歷史新高；growth_rate 4.74% → 4.73% 幾乎持平，增長榜排名 #3 → #7（被新進的三檔小型 AI 工具擠下）。
 - Release 端**無新版本**（最新仍為 [v0.6.0](https://github.com/soxoj/maigret/releases/tag/v0.6.0)，2026-04-10），4-26 後僅 `main` / `dev` 滾動標籤，無新 semver。
+
+### 2026-05-05
+- 連榜 Day 5（5-01～5-05），與 [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) 並列為當日最長連榜檔；絕對榜由 #3 退至 **#5**，stars_today +1,117 → +1,116（持平），total stars 23,609 → 24,646（+1,037）；growth_rate 4.73% → 4.53%（−0.20pp），增長率榜由 #7 升至 **#5**（雖 growth_rate 微降，但今日榜內 growth_rate 整體向兩端拉開——前 3 檔逼近 14–34%、其餘多在個位數，maigret 5% 區間相對不變）。
+- Release 端**仍無新版本**（[v0.6.0](https://github.com/soxoj/maigret/releases/tag/v0.6.0) 已 25 天未更，5-04 至今 main/dev 滾動）。
+- 連 5 日 stars_today 維持在 +1,065 ~ +1,117 區間異常穩定（標準差不到 30），是「老牌 OSINT + 持續曝光」的長尾範例，不需 release 推力即可長期掛榜。

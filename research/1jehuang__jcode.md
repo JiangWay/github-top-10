@@ -1,9 +1,9 @@
 ---
 repo: 1jehuang/jcode
 first_seen: 2026-04-30
-last_updated: 2026-05-04
-appearances: [2026-04-30, 2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04]
-growth_appearances: [2026-04-30, 2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04]
+last_updated: 2026-05-05
+appearances: [2026-04-30, 2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04, 2026-05-05]
+growth_appearances: [2026-04-30, 2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04, 2026-05-05]
 has_releases: true
 latest_release: v0.11.9
 tags: [AI Agent 框架, 框架, 多代理編排, 開源替代]
@@ -60,3 +60,9 @@ MIT License。Stars 1,243、forks 120、watchers 13、open issues 44。貢獻者
 - **連榜 Day 5**（4-30、5-01、5-02、5-03、5-04），距離本站歷來連榜紀錄保持人 [mattpocock/skills](https://github.com/mattpocock/skills) 的 6 日只差一日，是當前榜內唯一仍在累積連榜天數的種子；絕對榜由 #6 升至 #8（嗯實為小升、實際排名因今日榜內僅 9 檔波動有限），但 growth_rate 17.70% → 17.57% 幾乎持平、增長榜由 #2 退至 **#3**（讓位給首次上榜的 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI) 19.25%）；stars_today +482 → +587（+21.8%），total stars 2,723 → 3,341（+618）首度過 3k。
 - 新版本：[v0.11.9](https://github.com/1jehuang/jcode/releases/tag/v0.11.9)（2026-05-03 01:09:45 UTC，於上次更新時間之後釋出）；累計 release 數由 35 升至約 38（v0.11.7、v0.11.8、v0.11.9 三檔在 5-01～5-03 間連發）。
 - 主要變更：仍為 patch 級別 / 沒有 changelog 摘要的高速迭代節奏，與首日以來「個人作者每日多版」風格一致。
+
+### 2026-05-05
+- **連榜 Day 6（4-30～5-05）— 追平本站歷來連榜紀錄保持人 [mattpocock/skills](https://github.com/mattpocock/skills) 的 6 日紀錄**；絕對榜由 #8 升至 **#8**（持平），growth_rate 17.57% → 14.23%（−3.34pp）連續 3 日守在 14% 以上區間；stars_today +587 → +545（−7.2%）首度小幅冷卻；total stars 3,341 → 3,830（+489）；增長率榜守 **#3**。
+- Release 端**無新版本**（最新仍為 [v0.11.9](https://github.com/1jehuang/jcode/releases/tag/v0.11.9)，2026-05-03），是連榜以來首次出現 release 端「靜止 24+ 小時」，但 stars 仍續增——顯示連榜後段已脫離「靠頻繁版本推熱度」階段，進入有機曝光擴散。
+- 與另一檔 Rust agentic dev tooling [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI)（連 2 日、growth #1）形成「Rust agent 雙王」並列：兩檔合計貢獻今日 stars_today +1,822（佔當日全榜的 18.4%），是本日最大共振類別。
+- **明日（5-06）若 jcode 仍在榜，將寫下本站歷來首個 7 日連榜紀錄**——值得緊盯。

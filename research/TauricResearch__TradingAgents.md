@@ -1,9 +1,9 @@
 ---
 repo: TauricResearch/TradingAgents
 first_seen: 2026-04-28
-last_updated: 2026-05-04
-appearances: [2026-04-28, 2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04]
-growth_appearances: [2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04]
+last_updated: 2026-05-05
+appearances: [2026-04-28, 2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04, 2026-05-05]
+growth_appearances: [2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04, 2026-05-05]
 has_releases: true
 latest_release: v0.2.4
 tags: [金融科技, 框架, 多代理編排]
@@ -195,3 +195,7 @@ README 同時也把研究框架的邊界寫得很清楚：
 ### 2026-05-04
 - 連榜 Day 4（5-01、5-02、5-03、5-04），絕對榜由 #1 退至 #2，但 stars_today +2,227 → +3,315（**+48.9%**）為今日全榜最大絕對增量、第二度單日破 3k；total stars 由 61,952 → 64,875 過 6.4 萬，growth_rate 3.59% → 5.11%（單日 +1.52pp）。
 - Release 端**無新版本**（最新仍為 [v0.2.4](https://github.com/TauricResearch/TradingAgents/releases/tag/v0.2.4)，2026-04-25），純粹由 [hsliuping/TradingAgents-CN](https://github.com/hsliuping/TradingAgents-CN) 中文 fork 與 [ValueCell-AI/ValueCell](https://github.com/ValueCell-AI/ValueCell) 等下游整合的長尾擴散推升熱度。
+
+### 2026-05-05
+- 連榜 Day 5（5-01～5-05），絕對榜守 **#2**；stars_today +3,315 → +2,181（−34.2%）首度回落但仍居當日第二高絕對增量；total stars 64,875 → 67,044 過 6.7 萬；growth_rate 5.11% → 3.25%（−1.86pp）。增長率榜由 #4 退至 **#6**。
+- Release 端**仍無新版本**（[v0.2.4](https://github.com/TauricResearch/TradingAgents/releases/tag/v0.2.4) 已 10 天未更）；今日金融科技賽道新增 [virattt/dexter](https://github.com/virattt/dexter)（rank #10，首次）形成同類兩檔同框，連榜的 TradingAgents 維持絕對量領先地位。
