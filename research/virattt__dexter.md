@@ -1,9 +1,9 @@
 ---
 repo: virattt/dexter
 first_seen: 2026-05-05
-last_updated: 2026-05-05
-appearances: [2026-05-05]
-growth_appearances: []
+last_updated: 2026-05-06
+appearances: [2026-05-05, 2026-05-06]
+growth_appearances: [2026-05-06]
 has_releases: true
 latest_release: v2026.5.1
 tags: [金融科技, 應用程式]
@@ -39,3 +39,10 @@ themes: []
 
 ### 授權與社群
 **目前 repo 未掛任何 license**（GitHub API `license: null`），對企業採用是潛在阻力，建議使用前確認商用條件。社群以單一作者為主：[virattt](https://github.com/virattt)（Virat Singh）獨佔 395 commits，第二名 MkDev11 僅 10 commits、長尾貢獻者各 1–6 commits，open issues 84，2,828 forks 顯示生態高度集中於原作者。
+
+## 更新紀錄
+
+### 2026-05-06
+- 連榜 Day 2（5-05、5-06），絕對榜由 **#10 → #3**（一夜跳 7 名）；首次擠入增長率榜（**#6**，growth_rate 2.16% → **2.79%**，+0.63pp）；stars_today 497 → **660（+32.8%）**、total stars 23,065 → 23,668（+603）。
+- Release 端**無新版本**（最新仍為 [v2026.5.1](https://github.com/virattt/dexter/releases/tag/v2026.5.1)，2026-05-01 發布）。
+- 在「金融科技」類別昨日同框的 [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) 退榜後，dexter 成為當日金融科技類別唯一代表，承接該賽道話題流量。

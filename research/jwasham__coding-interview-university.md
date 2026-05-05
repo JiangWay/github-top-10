@@ -1,9 +1,9 @@
 ---
 repo: jwasham/coding-interview-university
 first_seen: 2026-05-03
-last_updated: 2026-05-03
-appearances: [2026-05-03]
-growth_appearances: []
+last_updated: 2026-05-06
+appearances: [2026-05-03, 2026-05-06]
+growth_appearances: [2026-05-06]
 has_releases: false
 latest_release: null
 tags: [教學資源, 課程教材, 開源替代]
@@ -111,3 +111,8 @@ themes: [開源替代]
   - [kdn251/interviews](https://github.com/kdn251/interviews)
 
 ## 更新紀錄
+
+### 2026-05-06
+- 隔 2 日後返榜（5-03 上榜後 5-04、5-05 缺席，5-06 重返），絕對榜 **#9**；首次擠入增長率榜（**#10**，growth_rate **0.14%**——當日榜末），仍是最大量級的「歷史巨星型」資源庫（345,700 stars）。
+- Release 端維持 `has_releases: false`，最新 push 仍為長期維護中的 markdown 教材更新。
+- 與當日另兩檔教學 / 工具型上榜（[D4Vinci/Scrapling](https://github.com/D4Vinci/Scrapling)、[bwya77/vscode-dark-islands](https://github.com/bwya77/vscode-dark-islands)）共同形成「非 AI 也能上榜」的賽道分散現象，呼應 6/10 換血、7 個 domain 並存的當日格局。

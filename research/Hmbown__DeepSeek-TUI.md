@@ -1,11 +1,11 @@
 ---
 repo: Hmbown/DeepSeek-TUI
 first_seen: 2026-05-04
-last_updated: 2026-05-05
-appearances: [2026-05-04, 2026-05-05]
-growth_appearances: [2026-05-04, 2026-05-05]
+last_updated: 2026-05-06
+appearances: [2026-05-04, 2026-05-05, 2026-05-06]
+growth_appearances: [2026-05-04, 2026-05-05, 2026-05-06]
 has_releases: true
-latest_release: v0.8.10
+latest_release: v0.8.12
 tags: [AI Agent 框架, 應用程式, 開源替代, 多代理編排]
 domain: AI Agent 框架
 form: 應用程式
@@ -58,3 +58,8 @@ themes: [開源替代, 多代理編排]
 - 連榜 Day 2（5-04、5-05），絕對榜由 #4 退至 **#4**（持平）；增長率榜守 **#1**，growth_rate 19.25% → **33.91%**（+14.66pp）為當日最大跳升、亦改寫本專案歷來增長率高點；stars_today +389 → **+1,277（+228%）**；total stars 2,021 → 3,766（+1,745）兩日累計成長近 **86.4%**。
 - Release 端 5-04 一日連跳 v0.8.8 / v0.8.9 / v0.8.10 三個 patch，最新版本 [v0.8.10](https://github.com/Hmbown/DeepSeek-TUI/releases/tag/v0.8.10)（5-04 16:42 UTC），主要強調**雙 binary 安裝模型**——npm `deepseek-tui` wrapper 把 `deepseek-tui-cli`（dispatcher）與 `deepseek-tui`（runtime）一次拉下，避免 `MISSING_COMPANION_BINARY` 報錯。
 - 與另一檔 Rust coding agent [1jehuang/jcode](https://github.com/1jehuang/jcode)（連 6 日）形成「Rust agentic dev tooling 雙王」並列，加上 [browserbase/skills](https://github.com/browserbase/skills) 連 4 日仍在前段，agentic dev tooling 賽道密集競爭格局再度延續一日。
+
+### 2026-05-06
+- 連榜 Day 3（5-04～5-06），**首奪雙冠**：絕對榜由 #4 直跳 **#1**（取代昨日榜首 [ruvnet/ruflo](https://github.com/ruvnet/ruflo)）、增長率榜守 **#1** 連 3 日；growth_rate 33.91% → **35.21%**（+1.30pp，再創本專案歷來新高）；stars_today 1,277 → **2,389（+87.1%）**；total stars 3,766 → 6,784（+3,018，3 日累計成長近 **236%**）。
+- Release 端 5-05 一日連 jump v0.8.11 / v0.8.12 兩個 patch，最新版本 [v0.8.12](https://github.com/Hmbown/DeepSeek-TUI/releases/tag/v0.8.12)（5-05 08:33 UTC）；安裝路徑維持 `npm install -g deepseek-tui` wrapper 自動下載 dispatcher + runtime 雙 binary 模型。
+- 同時 6 檔被踢出榜（TauricResearch/TradingAgents、browserbase/skills、soxoj/maigret、qbittorrent/qBittorrent、czlonkowski/n8n-mcp、1jehuang/jcode），昨日「Rust agentic dev tooling 雙王」格局中 [1jehuang/jcode](https://github.com/1jehuang/jcode) 連 6 日紀錄結束，DeepSeek-TUI 獨自留榜並升頂。

@@ -1,9 +1,9 @@
 ---
 repo: msitarzewski/agency-agents
 first_seen: 2026-05-05
-last_updated: 2026-05-05
-appearances: [2026-05-05]
-growth_appearances: []
+last_updated: 2026-05-06
+appearances: [2026-05-05, 2026-05-06]
+growth_appearances: [2026-05-06]
 has_releases: false
 latest_release: null
 tags: [AI Agent 框架, Skill 外掛, 開源替代]
@@ -41,3 +41,10 @@ themes: [開源替代]
 
 ### 授權與社群
 MIT License。主作者 [@msitarzewski](https://github.com/msitarzewski) 累計 120 commits，社群貢獻者前 10 名（[@jnMetaCode](https://github.com/jnMetaCode) 21、[@epowelljr](https://github.com/epowelljr) 15、[@4shil](https://github.com/4shil) 9⋯⋯）合計貢獻約 80 個 PR，多為新 agent / 平台整合。Open issues 120 個，subscribers 734 人——subscriber 數對 92K stars 偏低（健康 repo 通常 1–2%，此處 0.8%），又是一個值得留意的訊號。
+
+## 更新紀錄
+
+### 2026-05-06
+- 連榜 Day 2（5-05、5-06），絕對榜由 **#9 → #8**（小幅升 1 名）；首次擠入增長率榜（**#9**，growth_rate 0.90% → **1.31%**，+0.41pp）；stars_today 828 → **1,228（+48.3%）**、total stars 92,420 → 93,471（+1,051），距離 100K stars 大關剩 6.5K。
+- Release 端維持 `has_releases: false`，最新 push 仍為 2026-04-12 的文件 PR（無新 release tag），延續以 main branch rolling 發布的模式。
+- 賽道側日報統計顯示 AI Agent 框架今日 3/10 仍為當日最大類別、但比昨日 5/10 縮減；msitarzewski/agency-agents 在類別內以「最大 stars 體量」站穩老牌位置，與新興 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI)、[ruvnet/ruflo](https://github.com/ruvnet/ruflo) 形成「老＋新」並列。

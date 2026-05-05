@@ -1,11 +1,11 @@
 ---
 repo: ruvnet/ruflo
 first_seen: 2026-05-03
-last_updated: 2026-05-05
-appearances: [2026-05-03, 2026-05-04, 2026-05-05]
-growth_appearances: [2026-05-04, 2026-05-05]
+last_updated: 2026-05-06
+appearances: [2026-05-03, 2026-05-04, 2026-05-05, 2026-05-06]
+growth_appearances: [2026-05-04, 2026-05-05, 2026-05-06]
 has_releases: true
-latest_release: v3.6.27
+latest_release: v3.7.0-alpha.1
 tags: [AI Agent 框架, 框架, 多代理編排, 企業級]
 domain: AI Agent 框架
 form: 框架
@@ -70,3 +70,8 @@ MIT License。Stars 36,429、forks 4,177、watchers 311、open issues 486。Cont
 ### 2026-05-05
 - 連榜 Day 3（5-03～5-05），絕對榜守住 **#1**；增長率榜由 #6 升至 **#4**（4.77% → **6.34%**）；stars_today 由 +1,834 再上升到 **+2,594（+41.4%）**；total stars 38,477 → 40,926（+2,449）首度站上 4 萬大關。
 - Release 端 **5-04 一天連 jump 17 個 patch**（v3.6.11–v3.6.27），最新版本 [v3.6.27](https://github.com/ruvnet/ruflo/releases/tag/v3.6.27)（5-04 02:55 UTC）以「Ollama 升為一級 provider（Tier-2）」作主題，修復 Anthropic Max plan 用戶（API key 不外露）與 Ollama Cloud 訂戶在 `workflow_execute` 等 agent 路徑無法走 `callAnthropicMessages` 的 #1725 問題。版本號跳速顯示 maintainer [ruvnet](https://github.com/ruvnet) 仍在密集 patch，配合上榜熱度未見鬆手。
+
+### 2026-05-06
+- 連榜 Day 4（5-03～5-06），**讓出榜首**：絕對榜由 **#1 → #2**（被同為 AI Agent 框架的 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI) 雙冠取代）；增長率榜由 **#4 → #4**（持平，growth_rate 6.34% → **5.65%**，-0.69pp 為連榜以來首次回落）；stars_today 2,594 → **2,441（-5.9%）**首見負成長、total stars 40,926 → 43,237（+2,311）持續加溫但增速見緩。
+- Release 端 5-05 連發 v3.6.28 / v3.6.29 / v3.6.30 三個 patch + 推進 v3.7.0-alpha.1，最新版本 [v3.7.0-alpha.1](https://github.com/ruvnet/ruflo/releases/tag/v3.7.0-alpha.1)（5-05 17:46 UTC）以「cli-core split」為主題，把 plugin author 從 npx ruflo 啟動代理時的延遲降到 **22.9× faster** 之水準；同日 [v3.6.30](https://github.com/ruvnet/ruflo/releases/tag/v3.6.30) 把 7 個高重疊 MCP tool 描述改寫為「Use when native X is wrong because Y」格式，回應 issue #1748 的 4 大架構問題。
+- 賽道對手換血劇烈（昨日金融、情報、網路三檔皆退榜），ruflo 與 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI) 並肩成為留榜 4 檔中**僅 2 檔 AI Agent 框架雙頭**，其他兩檔 [virattt/dexter](https://github.com/virattt/dexter)、[msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) 屬不同類別。
