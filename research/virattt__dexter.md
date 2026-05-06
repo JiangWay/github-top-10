@@ -1,9 +1,9 @@
 ---
 repo: virattt/dexter
 first_seen: 2026-05-05
-last_updated: 2026-05-06
-appearances: [2026-05-05, 2026-05-06]
-growth_appearances: [2026-05-06]
+last_updated: 2026-05-07
+appearances: [2026-05-05, 2026-05-06, 2026-05-07]
+growth_appearances: [2026-05-06, 2026-05-07]
 has_releases: true
 latest_release: v2026.5.1
 tags: [金融科技, 應用程式]
@@ -46,3 +46,8 @@ themes: []
 - 連榜 Day 2（5-05、5-06），絕對榜由 **#10 → #3**（一夜跳 7 名）；首次擠入增長率榜（**#6**，growth_rate 2.16% → **2.79%**，+0.63pp）；stars_today 497 → **660（+32.8%）**、total stars 23,065 → 23,668（+603）。
 - Release 端**無新版本**（最新仍為 [v2026.5.1](https://github.com/virattt/dexter/releases/tag/v2026.5.1)，2026-05-01 發布）。
 - 在「金融科技」類別昨日同框的 [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents) 退榜後，dexter 成為當日金融科技類別唯一代表，承接該賽道話題流量。
+
+### 2026-05-07
+- 連榜 Day 3（5-05～5-07），絕對榜由 **#3 → #8**（-5），但 stars_today 微升 660 → **666**（+0.91%）顯示能量仍存；增長率榜 #6 → **#7**（-1，growth_rate 2.79% → **2.74%**，-0.05pp 幾乎持平）；total stars 23,668 → 24,272（+604）。
+- Release 端**無新版本**（最新仍為 [v2026.5.1](https://github.com/virattt/dexter/releases/tag/v2026.5.1)，2026-05-01）。
+- 同類金融科技類別當日新進 [anthropics/financial-services](https://github.com/anthropics/financial-services)（rank 9，Anthropic 官方推出 10 個金融服務 agent 模板），dexter 與其同框，金融科技類別由 1 檔擴增到 2 檔。

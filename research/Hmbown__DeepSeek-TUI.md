@@ -1,11 +1,11 @@
 ---
 repo: Hmbown/DeepSeek-TUI
 first_seen: 2026-05-04
-last_updated: 2026-05-06
-appearances: [2026-05-04, 2026-05-05, 2026-05-06]
-growth_appearances: [2026-05-04, 2026-05-05, 2026-05-06]
+last_updated: 2026-05-07
+appearances: [2026-05-04, 2026-05-05, 2026-05-06, 2026-05-07]
+growth_appearances: [2026-05-04, 2026-05-05, 2026-05-06, 2026-05-07]
 has_releases: true
-latest_release: v0.8.12
+latest_release: v0.8.14
 tags: [AI Agent 框架, 應用程式, 開源替代, 多代理編排]
 domain: AI Agent 框架
 form: 應用程式
@@ -63,3 +63,8 @@ themes: [開源替代, 多代理編排]
 - 連榜 Day 3（5-04～5-06），**首奪雙冠**：絕對榜由 #4 直跳 **#1**（取代昨日榜首 [ruvnet/ruflo](https://github.com/ruvnet/ruflo)）、增長率榜守 **#1** 連 3 日；growth_rate 33.91% → **35.21%**（+1.30pp，再創本專案歷來新高）；stars_today 1,277 → **2,389（+87.1%）**；total stars 3,766 → 6,784（+3,018，3 日累計成長近 **236%**）。
 - Release 端 5-05 一日連 jump v0.8.11 / v0.8.12 兩個 patch，最新版本 [v0.8.12](https://github.com/Hmbown/DeepSeek-TUI/releases/tag/v0.8.12)（5-05 08:33 UTC）；安裝路徑維持 `npm install -g deepseek-tui` wrapper 自動下載 dispatcher + runtime 雙 binary 模型。
 - 同時 6 檔被踢出榜（TauricResearch/TradingAgents、browserbase/skills、soxoj/maigret、qbittorrent/qBittorrent、czlonkowski/n8n-mcp、1jehuang/jcode），昨日「Rust agentic dev tooling 雙王」格局中 [1jehuang/jcode](https://github.com/1jehuang/jcode) 連 6 日紀錄結束，DeepSeek-TUI 獨自留榜並升頂。
+
+### 2026-05-07
+- 連榜 Day 4（5-04～5-07），**雙冠衛冕**：絕對榜守 **#1**、增長率榜守 **#1** 連 4 日；growth_rate 35.21% → **46.38%**（+11.17pp，再創本站歷來個股增長率新高）；stars_today 2,389 → **6,184（+158.8%）**單日吸星近本站歷來個股之最；total stars 6,784 → **13,334（+6,550，~96.5% 一日成長）**，4 日累計由 1,632 暴增至 13,334（**+717%**）。
+- Release 端 5-05 → 5-06 又連發 v0.8.13（5-05 22:25 UTC）、v0.8.14（5-06 01:23 UTC），最新版本 [v0.8.14](https://github.com/Hmbown/DeepSeek-TUI/releases/tag/v0.8.14)；自 5-04 上榜以來連續 4 天每日皆 push 新 patch，maintainer 維修強度極高。
+- 連榜 4 檔中 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI) 是唯一仍在加速的；同類 AI Agent 框架 [ruvnet/ruflo](https://github.com/ruvnet/ruflo) 由昨日 #2 退至 **#10**、stars_today 由 2,441 → 2,190（-10.3%），DeepSeek-TUI 已和 ruflo 拉開 3× 以上量級差距，獨佔 Rust agentic dev tooling 焦點。

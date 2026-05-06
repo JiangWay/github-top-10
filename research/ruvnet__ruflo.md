@@ -1,11 +1,11 @@
 ---
 repo: ruvnet/ruflo
 first_seen: 2026-05-03
-last_updated: 2026-05-06
-appearances: [2026-05-03, 2026-05-04, 2026-05-05, 2026-05-06]
-growth_appearances: [2026-05-04, 2026-05-05, 2026-05-06]
+last_updated: 2026-05-07
+appearances: [2026-05-03, 2026-05-04, 2026-05-05, 2026-05-06, 2026-05-07]
+growth_appearances: [2026-05-04, 2026-05-05, 2026-05-06, 2026-05-07]
 has_releases: true
-latest_release: v3.7.0-alpha.1
+latest_release: v3.7.0-alpha.8
 tags: [AI Agent 框架, 框架, 多代理編排, 企業級]
 domain: AI Agent 框架
 form: 框架
@@ -75,3 +75,8 @@ MIT License。Stars 36,429、forks 4,177、watchers 311、open issues 486。Cont
 - 連榜 Day 4（5-03～5-06），**讓出榜首**：絕對榜由 **#1 → #2**（被同為 AI Agent 框架的 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI) 雙冠取代）；增長率榜由 **#4 → #4**（持平，growth_rate 6.34% → **5.65%**，-0.69pp 為連榜以來首次回落）；stars_today 2,594 → **2,441（-5.9%）**首見負成長、total stars 40,926 → 43,237（+2,311）持續加溫但增速見緩。
 - Release 端 5-05 連發 v3.6.28 / v3.6.29 / v3.6.30 三個 patch + 推進 v3.7.0-alpha.1，最新版本 [v3.7.0-alpha.1](https://github.com/ruvnet/ruflo/releases/tag/v3.7.0-alpha.1)（5-05 17:46 UTC）以「cli-core split」為主題，把 plugin author 從 npx ruflo 啟動代理時的延遲降到 **22.9× faster** 之水準；同日 [v3.6.30](https://github.com/ruvnet/ruflo/releases/tag/v3.6.30) 把 7 個高重疊 MCP tool 描述改寫為「Use when native X is wrong because Y」格式，回應 issue #1748 的 4 大架構問題。
 - 賽道對手換血劇烈（昨日金融、情報、網路三檔皆退榜），ruflo 與 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI) 並肩成為留榜 4 檔中**僅 2 檔 AI Agent 框架雙頭**，其他兩檔 [virattt/dexter](https://github.com/virattt/dexter)、[msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) 屬不同類別。
+
+### 2026-05-07
+- 連榜 Day 5（5-03～5-07），但能量明顯回落：絕對榜由 **#2 → #10**（-8 為連榜以來最大跌幅，被 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI) 雙冠衛冕拉開差距）；增長率榜 #4 → **#5**（-1，growth_rate 5.65% → **4.86%**，-0.79pp 連 2 日下滑）；stars_today 2,441 → **2,190（-10.3%）**連 2 日負成長；total stars 43,237 → 45,031（+1,794）。
+- Release 端 5-05 → 5-06 連發 v3.7.0-alpha.2 ~ v3.7.0-alpha.8（2026-05-06 15:01 UTC）共 8 個 alpha patch，最新版本 [v3.7.0-alpha.8](https://github.com/ruvnet/ruflo/releases/tag/v3.7.0-alpha.8)；3.7.0 alpha 路線持續密集迭代但官方尚未發 stable，maintainer [ruvnet](https://github.com/ruvnet) 仍每日 push。
+- 同類 AI Agent 框架 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI) 與 ruflo 形成「絕對量級雙頭」（DeepSeek-TUI 6,184 today vs ruflo 2,190 today，比 yesterday 的兩檔比重 1.0× 拉開到 2.8×），ruflo 仍是當日 stars_today 第二高的個股，但領先差距由 ~50% 一夜縮為 ~3×。

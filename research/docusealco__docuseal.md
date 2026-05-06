@@ -1,9 +1,9 @@
 ---
 repo: docusealco/docuseal
 first_seen: 2026-05-06
-last_updated: 2026-05-06
-appearances: [2026-05-06]
-growth_appearances: [2026-05-06]
+last_updated: 2026-05-07
+appearances: [2026-05-06, 2026-05-07]
+growth_appearances: [2026-05-06, 2026-05-07]
 has_releases: true
 latest_release: 2.5.2
 tags: [文件管理, 應用程式, 自架, 開源替代, 資料主權]
@@ -39,3 +39,8 @@ themes: [自架, 開源替代, 資料主權]
 
 ### 授權與社群
 AGPL-3.0；13,856 stars、1,251 forks、115 open issues、56 watchers。核心貢獻者 [omohokcoj](https://github.com/omohokcoj)（2,072 commits，作者）與 [AlexBTurchyn](https://github.com/AlexBTurchyn)（555 commits）為長期主力，搭配 Dependabot 與少量外部 PR；倉庫開啟 GitHub Discussions，官方另有 SaaS 版（docuseal.com）與 PRO 訂閱支撐商業化。
+
+### 2026-05-07
+- 連榜 Day 2（5-06、5-07），絕對榜守 **#4**（持平）；增長率榜由 **#3 → #4**（-1）；growth_rate 6.70% → **5.25%**（-1.45pp）；stars_today 929 → **772（-16.9%）**；total stars 13,856 → 14,712（+856）。
+- Release 端**無新版本**（最新仍為 [2.5.2](https://github.com/docusealco/docuseal/releases/tag/2.5.2)，2026-05-04 發布）。
+- 在 6 檔換血、7 個 domain 大洗牌的當日，[docusealco/docuseal](https://github.com/docusealco/docuseal) 是文件管理類別唯一守住絕對榜位置的代表，連榜熱度雖回落但仍穩定貢獻當日 6.4% 的 stars_today。
