@@ -1,9 +1,9 @@
 ---
 repo: InsForge/InsForge
 first_seen: 2026-05-07
-last_updated: 2026-05-07
-appearances: [2026-05-07]
-growth_appearances: []
+last_updated: 2026-05-08
+appearances: [2026-05-07, 2026-05-08]
+growth_appearances: [2026-05-07, 2026-05-08]
 has_releases: true
 latest_release: v2.1.1
 tags: [LLM 基礎建設, 框架, 自架, 開源替代, 企業級]
@@ -42,3 +42,10 @@ Claude Code / Cursor / Windsurf 等 AI coding agent 的使用者、想用 vibe-c
 
 ### 授權與社群
 Apache-2.0；8,356 stars / 697 forks / 45 open issues。topics：`ai-agents`、`pgvector`、`embeddings`、`oauth2`、`realtime`、`websockets`。團隊位於 Seattle，5 人小組，2025-07 launch、4 個月已開出 2,000 個正式資料庫。
+
+## 更新紀錄
+
+### 2026-05-08
+- 連榜 Day 2（5-07～5-08），絕對榜由 #7 升至 **#4**、增長率榜由 #8 升至 **#8**（2.55% → 5.23%，+2.68pp）；stars_today 213 → **459（+115.5%）**翻倍以上；total stars 8,341 → **8,777（+436）**。
+- Release 端無新增，仍為 [v2.1.1](https://github.com/InsForge/InsForge/releases/tag/v2.1.1)（2026-05-06）。
+- 與 5-08 同日上榜的另一檔 cloud agent backend [vercel-labs/open-agents](https://github.com/vercel-labs/open-agents) 與 [decolua/9router](https://github.com/decolua/9router) 形成「LLM 基礎建設 三檔同日上榜」的罕見格局，與 3 檔 AI Agent 框架形成「6/10 是 AI infra+agent」的雙線並進結構。

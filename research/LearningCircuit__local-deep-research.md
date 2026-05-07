@@ -1,9 +1,9 @@
 ---
 repo: LearningCircuit/local-deep-research
 first_seen: 2026-05-07
-last_updated: 2026-05-07
-appearances: [2026-05-07]
-growth_appearances: []
+last_updated: 2026-05-08
+appearances: [2026-05-07, 2026-05-08]
+growth_appearances: [2026-05-07, 2026-05-08]
 has_releases: true
 latest_release: v1.6.9
 tags: [AI Agent 框架, 應用程式, 自架, 資料主權, 開源替代]
@@ -41,3 +41,10 @@ themes: [自架, 資料主權, 開源替代]
 
 ### 授權與社群
 MIT 授權、5,558 stars / 508 forks / 247 open issues，topics 涵蓋 `local-llm`、`searxng`、`pubmed`、`retrieval-augmented-generation`、`self-hosted`，定位明確。維護者公開徵求 code reviewer，社群協作活躍。
+
+## 更新紀錄
+
+### 2026-05-08
+- 連榜 Day 2（5-07～5-08），絕對榜由 #5 → **#5**（持平）、增長率榜由 #2 退至 **#5**（9.60% → 9.18%，-0.42pp 微降）；stars_today 532 → **564（+6.0%）**小幅加速；total stars 5,543 → **6,147（+604）**。
+- Release 端無新增，仍為 [v1.6.9](https://github.com/LearningCircuit/local-deep-research/releases/tag/v1.6.9)（2026-05-02）。
+- 與同日上榜的 [VectifyAI/PageIndex](https://github.com/VectifyAI/PageIndex)（vectorless RAG 框架）形成「自架知識/搜尋型 LLM 框架雙檔」並列；前者主打整合多搜尋引擎與本地端 LLM、後者主打文件樹索引，路徑不同但賽道相鄰，為當日 RAG/搜尋型工具熱度的兩個側面。

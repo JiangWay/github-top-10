@@ -1,11 +1,11 @@
 ---
 repo: Hmbown/DeepSeek-TUI
 first_seen: 2026-05-04
-last_updated: 2026-05-07
-appearances: [2026-05-04, 2026-05-05, 2026-05-06, 2026-05-07]
-growth_appearances: [2026-05-04, 2026-05-05, 2026-05-06, 2026-05-07]
+last_updated: 2026-05-08
+appearances: [2026-05-04, 2026-05-05, 2026-05-06, 2026-05-07, 2026-05-08]
+growth_appearances: [2026-05-04, 2026-05-05, 2026-05-06, 2026-05-07, 2026-05-08]
 has_releases: true
-latest_release: v0.8.14
+latest_release: v0.8.16
 tags: [AI Agent 框架, 應用程式, 開源替代, 多代理編排]
 domain: AI Agent 框架
 form: 應用程式
@@ -68,3 +68,8 @@ themes: [開源替代, 多代理編排]
 - 連榜 Day 4（5-04～5-07），**雙冠衛冕**：絕對榜守 **#1**、增長率榜守 **#1** 連 4 日；growth_rate 35.21% → **46.38%**（+11.17pp，再創本站歷來個股增長率新高）；stars_today 2,389 → **6,184（+158.8%）**單日吸星近本站歷來個股之最；total stars 6,784 → **13,334（+6,550，~96.5% 一日成長）**，4 日累計由 1,632 暴增至 13,334（**+717%**）。
 - Release 端 5-05 → 5-06 又連發 v0.8.13（5-05 22:25 UTC）、v0.8.14（5-06 01:23 UTC），最新版本 [v0.8.14](https://github.com/Hmbown/DeepSeek-TUI/releases/tag/v0.8.14)；自 5-04 上榜以來連續 4 天每日皆 push 新 patch，maintainer 維修強度極高。
 - 連榜 4 檔中 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI) 是唯一仍在加速的；同類 AI Agent 框架 [ruvnet/ruflo](https://github.com/ruvnet/ruflo) 由昨日 #2 退至 **#10**、stars_today 由 2,441 → 2,190（-10.3%），DeepSeek-TUI 已和 ruflo 拉開 3× 以上量級差距，獨佔 Rust agentic dev tooling 焦點。
+
+### 2026-05-08
+- 連榜 Day 5（5-04～5-08），**冠冕首失但增長榜五連霸**：絕對榜由 #1 退至 **#2**，被 Anthropic 官方 [anthropics/financial-services](https://github.com/anthropics/financial-services) 取代；增長率榜守 **#1** 連 5 日；growth_rate 46.38% → **31.50%**（-14.88pp，自 5-04 起首次回落，但仍是連榜第二高紀錄）；stars_today 6,184 → **5,787（-6.4%）**首日減速；total stars 13,334 → **18,373（+5,039，+37.8%）**，5 日累計由 1,632 暴增至 18,373（**+1,026%**）。
+- Release 端 5-07 一日連 jump v0.8.15（5-07 01:49 UTC）、[v0.8.16](https://github.com/Hmbown/DeepSeek-TUI/releases/tag/v0.8.16)（5-07 05:16 UTC）兩個 patch；自 5-04 起連 5 天每日皆有新 patch，5 日累積 v0.8.7 → v0.8.16 共 9 個版本，maintainer 維修強度持續最高水位。
+- 雖然 stars_today 首次出現負成長，但 31.50% 的 growth_rate 仍是當日第二名（[z-lab/dflash](https://github.com/z-lab/dflash) 19.15%）的 1.65×，獨擎拉動效應從「絕對量+增長率」的雙重壟斷，轉為「增長率」單軸獨大；佔當日 total stars_today（14,150）約 40.9%，相較 5-07 的 51.4% 市占下降但仍接近半數。

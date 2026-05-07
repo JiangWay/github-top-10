@@ -1,9 +1,9 @@
 ---
 repo: addyosmani/agent-skills
 first_seen: 2026-05-07
-last_updated: 2026-05-07
-appearances: [2026-05-07]
-growth_appearances: []
+last_updated: 2026-05-08
+appearances: [2026-05-07, 2026-05-08]
+growth_appearances: [2026-05-07, 2026-05-08]
 has_releases: true
 latest_release: 0.6.0
 tags: [開發者工具, Skill 外掛, 多代理編排, 企業級]
@@ -43,3 +43,10 @@ themes: [多代理編排, 企業級]
 
 ### 授權與社群
 MIT 授權；30,089 stars、3,603 forks、67 open issues。主要作者為個人開發者 [addyosmani](https://github.com/addyosmani)（Google Chrome 團隊），共 17 位 contributor，其餘多為單次小型修正（accessibility、performance checklist、Gemini CLI 指令）。topics 標註 `claude-code`、`cursor`、`antigravity`、`skills`。
+
+## 更新紀錄
+
+### 2026-05-08
+- 連榜 Day 2（5-07～5-08），絕對榜由 #2 退至 **#6**（持榜段位）、增長率榜由 #9 跳升至 **#4**（2.09% → 9.36%，+7.27pp）；stars_today 629 → **3,058（+386%）**幾近 5×，是當日跳幅最大的留榜檔；total stars 30,061 → **32,684（+2,623）**。
+- Release 端無新增，仍為 [0.6.0](https://github.com/addyosmani/agent-skills/releases/tag/0.6.0)（2026-04-28）；新增能量主要來自社群推薦放大，而非新版本發布。
+- stars_today 跳升幅度高於 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI) 的 -6.4% 與 [anthropics/financial-services](https://github.com/anthropics/financial-services) 的 +153%，agent-skills 的 +386% 為留榜段最劇烈加速；意味 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) 已從「首次上榜的新檔」進入「社群口碑放大」階段。

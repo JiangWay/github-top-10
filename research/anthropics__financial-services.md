@@ -1,9 +1,9 @@
 ---
 repo: anthropics/financial-services
 first_seen: 2026-05-07
-last_updated: 2026-05-07
-appearances: [2026-05-07]
-growth_appearances: []
+last_updated: 2026-05-08
+appearances: [2026-05-07, 2026-05-08]
+growth_appearances: [2026-05-07, 2026-05-08]
 has_releases: false
 latest_release: null
 tags: [金融科技, Skill 外掛, 企業級, 多代理編排]
@@ -43,3 +43,11 @@ themes: [企業級, 多代理編排]
 
 ### 授權與社群
 Apache-2.0；8,946 stars / 1,217 forks / 58 open issues，發佈兩日已累積大量 fork 顯示企業端正積極導入。Anthropic 官方倉庫，貢獻者多為 Anthropic 員工。
+
+## 更新紀錄
+
+### 2026-05-08
+- 連榜 Day 2（5-07～5-08），絕對榜由 #9 直跳 **#1** 首奪本檔絕對榜冠冕、增長率榜由 #3 升至 **#3**（6.06% → 12.34%，+6.28pp）；stars_today 540 → **1,367（+153%）**爆增；total stars 8,909 → **11,082（+2,173，+24.4%）**。
+- 終結 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI) 連 2 日衛冕的絕對榜冠冕，是「正規軍進場」的標誌——Anthropic 官方倉庫首度登頂本站，且發佈僅 72 小時內就達成 #1。
+- Release 端維持 `has_releases: false`，專案以主分支滾動更新為主。
+- 與另一檔金融科技 [virattt/dexter](https://github.com/virattt/dexter)（昨日 #8、今日退榜）形成對照：indie 金融 agent 退、官方旗艦 skill 升頂；金融 AI 賽道從 indie 探索進入官方背書階段。
