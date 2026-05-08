@@ -1,9 +1,9 @@
 ---
 repo: z-lab/dflash
 first_seen: 2026-05-08
-last_updated: 2026-05-08
-appearances: [2026-05-08]
-growth_appearances: [2026-05-08]
+last_updated: 2026-05-09
+appearances: [2026-05-08, 2026-05-09]
+growth_appearances: [2026-05-08, 2026-05-09]
 has_releases: false
 latest_release: null
 tags: [LLM 基礎建設, 框架, 開源替代]
@@ -66,3 +66,10 @@ themes: [開源替代]
 - 留意是否補上 GitHub Release / changelog；
 - 跟蹤 HF [z-lab/dflash collection](https://huggingface.co/collections/z-lab/dflash) 對 MiniMax / Kimi 等大模型 draft 權重的覆蓋速度；
 - 比較未來 EAGLE-4 / 新 MTP 變體出現時，6× 數字是否能守住領先。
+
+## 更新紀錄
+
+### 2026-05-09
+- 連榜 Day 2（5-08～5-09），絕對榜由 #3 退至 **#4**、增長率榜由 #2 退至 **#5**（19.15% → **10.26%**，-8.89pp）；stars_today 654 → **388（-40.7%）**首日減速；total stars 3,415 → **3,783（+368，+10.78%）**。
+- Release 端維持 `has_releases: false`，5/8 至今未補上 GitHub Release / changelog（昨日「觀察建議」未變）。
+- 流入動能由「論文發佈第二日」轉為「常態擴散」，growth_rate 仍是 LLM 基礎建設類今日最高（高於 [decolua/9router](https://github.com/decolua/9router) 18.95%、[CloakHQ/CloakBrowser](https://github.com/CloakHQ/CloakBrowser) 17.38%），speculative decoding 細分主題仍有獨立流量。

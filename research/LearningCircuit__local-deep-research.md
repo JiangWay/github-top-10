@@ -1,9 +1,9 @@
 ---
 repo: LearningCircuit/local-deep-research
 first_seen: 2026-05-07
-last_updated: 2026-05-08
-appearances: [2026-05-07, 2026-05-08]
-growth_appearances: [2026-05-07, 2026-05-08]
+last_updated: 2026-05-09
+appearances: [2026-05-07, 2026-05-08, 2026-05-09]
+growth_appearances: [2026-05-07, 2026-05-08, 2026-05-09]
 has_releases: true
 latest_release: v1.6.9
 tags: [AI Agent 框架, 應用程式, 自架, 資料主權, 開源替代]
@@ -48,3 +48,9 @@ MIT 授權、5,558 stars / 508 forks / 247 open issues，topics 涵蓋 `local-ll
 - 連榜 Day 2（5-07～5-08），絕對榜由 #5 → **#5**（持平）、增長率榜由 #2 退至 **#5**（9.60% → 9.18%，-0.42pp 微降）；stars_today 532 → **564（+6.0%）**小幅加速；total stars 5,543 → **6,147（+604）**。
 - Release 端無新增，仍為 [v1.6.9](https://github.com/LearningCircuit/local-deep-research/releases/tag/v1.6.9)（2026-05-02）。
 - 與同日上榜的 [VectifyAI/PageIndex](https://github.com/VectifyAI/PageIndex)（vectorless RAG 框架）形成「自架知識/搜尋型 LLM 框架雙檔」並列；前者主打整合多搜尋引擎與本地端 LLM、後者主打文件樹索引，路徑不同但賽道相鄰，為當日 RAG/搜尋型工具熱度的兩個側面。
+
+### 2026-05-09
+- 連榜 Day 3（5-07～5-09），絕對榜由 #5 升至 **#9**（退）、增長率榜由 #5 升至 **#6**（9.18% → 8.59%，-0.59pp 連 2 日微降）；stars_today 564 → **572（+1.4%）**幾乎持平；total stars 6,147 → **6,659（+512，+8.33%）**。
+- 流入動能進入「持榜衰退」段位：stars_today 連 3 日約落在 530–570 區間，為連榜 6 檔留榜中最穩定但增長最低的一檔。
+- Release 端仍為 [v1.6.9](https://github.com/LearningCircuit/local-deep-research/releases/tag/v1.6.9)（2026-05-02），距今 7 天無新版。
+- [VectifyAI/PageIndex](https://github.com/VectifyAI/PageIndex) 今日退榜，「自架知識/搜尋型 LLM 框架雙檔」並列結構解體，本檔成為 self-hosted 深度研究類型的當日獨苗。

@@ -1,9 +1,9 @@
 ---
 repo: decolua/9router
 first_seen: 2026-05-08
-last_updated: 2026-05-08
-appearances: [2026-05-08]
-growth_appearances: [2026-05-08]
+last_updated: 2026-05-09
+appearances: [2026-05-08, 2026-05-09]
+growth_appearances: [2026-05-08, 2026-05-09]
 has_releases: true
 latest_release: v0.4.20
 tags: [LLM 基礎建設, 應用程式, 自架, 開源替代]
@@ -61,3 +61,11 @@ MIT。`master` 為預設分支。stars 4,393、forks 966、subscribers 30、open
 ---
 
 資料來源：[GitHub repo](https://github.com/decolua/9router)、[GitHub README](https://github.com/decolua/9router/blob/master/README.md)、[GitHub Releases](https://github.com/decolua/9router/releases)、[npm 9router](https://www.npmjs.com/package/9router)、[Kiro Pricing](https://kiro.dev/pricing/)、[openaitoolshub Kiro 評測](https://www.openaitoolshub.org/en/blog/kiro-review-amazon-ide)、[BuildWithAngga 教學](https://buildwithangga.com/tips/mengenal-apa-itu-9router-beserta-benefit-ketika-pakai-ai)。
+
+## 更新紀錄
+
+### 2026-05-09
+- 連榜 Day 2（5-08～5-09），絕對榜由 #10 升至 **#5**、增長率榜由 #7 升至 **#2**（5.67% → **18.95%**，+13.28pp）；stars_today 249 → **1,028（+312.9%）**單日 4× 跳升、total stars 4,390 → **5,425（+1,035，+23.6%）**。
+- 跳幅與 5-07 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) +386% 同級的「留榜檔最劇烈加速」典型訊號，且首奪本檔絕對榜段位 / 增長率榜雙跳。
+- Release 端維持 [v0.4.20](https://github.com/decolua/9router/releases/tag/v0.4.20)（5-07 16:15 UTC），昨日 5-07 後未發新版；增長動能完全來自既有版本的擴散效應，與 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) 5-08 的「無新版本但社群口碑放大」結構相同。
+- 「免費 LLM 路由器」敘事仍未被 GitHub / Kiro 等 provider 公開封鎖，灰色地帶尚未爆發；下一里程碑為 v0.5 是否轉向「自帶 API key」合規化路線。

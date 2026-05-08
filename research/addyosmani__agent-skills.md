@@ -1,9 +1,9 @@
 ---
 repo: addyosmani/agent-skills
 first_seen: 2026-05-07
-last_updated: 2026-05-08
-appearances: [2026-05-07, 2026-05-08]
-growth_appearances: [2026-05-07, 2026-05-08]
+last_updated: 2026-05-09
+appearances: [2026-05-07, 2026-05-08, 2026-05-09]
+growth_appearances: [2026-05-07, 2026-05-08, 2026-05-09]
 has_releases: true
 latest_release: 0.6.0
 tags: [開發者工具, Skill 外掛, 多代理編排, 企業級]
@@ -50,3 +50,9 @@ MIT 授權；30,089 stars、3,603 forks、67 open issues。主要作者為個人
 - 連榜 Day 2（5-07～5-08），絕對榜由 #2 退至 **#6**（持榜段位）、增長率榜由 #9 跳升至 **#4**（2.09% → 9.36%，+7.27pp）；stars_today 629 → **3,058（+386%）**幾近 5×，是當日跳幅最大的留榜檔；total stars 30,061 → **32,684（+2,623）**。
 - Release 端無新增，仍為 [0.6.0](https://github.com/addyosmani/agent-skills/releases/tag/0.6.0)（2026-04-28）；新增能量主要來自社群推薦放大，而非新版本發布。
 - stars_today 跳升幅度高於 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI) 的 -6.4% 與 [anthropics/financial-services](https://github.com/anthropics/financial-services) 的 +153%，agent-skills 的 +386% 為留榜段最劇烈加速；意味 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) 已從「首次上榜的新檔」進入「社群口碑放大」階段。
+
+### 2026-05-09
+- 連榜 Day 3（5-07～5-09），絕對榜由 #6 升至 **#2**、增長率榜由 #4 退至 **#8**（9.36% → 5.14%，-4.22pp）；stars_today 3,058 → **1,794（-41.3%）**自昨日高點回落，但 total stars 32,684 → **34,921（+2,237，+6.84%）**仍維持高水位流入。
+- 絕對榜跳升 4 位顯示 stars 累積基數效應已超過昨日 stars_today 跳幅，社群口碑進入「持續放量但峰值已過」階段。
+- Release 端仍為 [0.6.0](https://github.com/addyosmani/agent-skills/releases/tag/0.6.0)（2026-04-28），距今 11 天無新版；增長動能完全來自既有版本的擴散效應。
+- 與 [anthropics/financial-services](https://github.com/anthropics/financial-services) 雙冠衛冕形成對照：官方 skill pack 仍在加速、社群策展 skill pack 進入退潮，這是 5/7 同日上榜的兩檔最早出現的分流訊號。

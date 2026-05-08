@@ -1,11 +1,11 @@
 ---
 repo: Hmbown/DeepSeek-TUI
 first_seen: 2026-05-04
-last_updated: 2026-05-08
-appearances: [2026-05-04, 2026-05-05, 2026-05-06, 2026-05-07, 2026-05-08]
-growth_appearances: [2026-05-04, 2026-05-05, 2026-05-06, 2026-05-07, 2026-05-08]
+last_updated: 2026-05-09
+appearances: [2026-05-04, 2026-05-05, 2026-05-06, 2026-05-07, 2026-05-08, 2026-05-09]
+growth_appearances: [2026-05-04, 2026-05-05, 2026-05-06, 2026-05-07, 2026-05-08, 2026-05-09]
 has_releases: true
-latest_release: v0.8.16
+latest_release: v0.8.22
 tags: [AI Agent 框架, 應用程式, 開源替代, 多代理編排]
 domain: AI Agent 框架
 form: 應用程式
@@ -73,3 +73,9 @@ themes: [開源替代, 多代理編排]
 - 連榜 Day 5（5-04～5-08），**冠冕首失但增長榜五連霸**：絕對榜由 #1 退至 **#2**，被 Anthropic 官方 [anthropics/financial-services](https://github.com/anthropics/financial-services) 取代；增長率榜守 **#1** 連 5 日；growth_rate 46.38% → **31.50%**（-14.88pp，自 5-04 起首次回落，但仍是連榜第二高紀錄）；stars_today 6,184 → **5,787（-6.4%）**首日減速；total stars 13,334 → **18,373（+5,039，+37.8%）**，5 日累計由 1,632 暴增至 18,373（**+1,026%**）。
 - Release 端 5-07 一日連 jump v0.8.15（5-07 01:49 UTC）、[v0.8.16](https://github.com/Hmbown/DeepSeek-TUI/releases/tag/v0.8.16)（5-07 05:16 UTC）兩個 patch；自 5-04 起連 5 天每日皆有新 patch，5 日累積 v0.8.7 → v0.8.16 共 9 個版本，maintainer 維修強度持續最高水位。
 - 雖然 stars_today 首次出現負成長，但 31.50% 的 growth_rate 仍是當日第二名（[z-lab/dflash](https://github.com/z-lab/dflash) 19.15%）的 1.65×，獨擎拉動效應從「絕對量+增長率」的雙重壟斷，轉為「增長率」單軸獨大；佔當日 total stars_today（14,150）約 40.9%，相較 5-07 的 51.4% 市占下降但仍接近半數。
+
+### 2026-05-09
+- 連榜 Day 6（5-04～5-09），**增長榜五連霸告終**：絕對榜守 **#3**、增長率榜由 #1 退至 **#3**（growth_rate 31.50% → **17.74%**，-13.76pp）；stars_today 5,787 → **3,827（-33.9%）**連 2 日減速；total stars 18,373 → **21,576（+3,203，+17.4%）**，6 日累計由 1,632 暴增至 21,576（**+1,222%**）。
+- 終結 5-04～5-08 連 5 日守增長榜 #1 的本站個股紀錄，被 [anthropics/financial-services](https://github.com/anthropics/financial-services) 取代（25.24% → 17.74% 雙冠衛冕），絕對榜冠冕同步由 anthropics 雙冠衛冕。
+- Release 端 5-07 → 5-08 連 jump v0.8.17（5-07 19:37 UTC）→ [v0.8.22](https://github.com/Hmbown/DeepSeek-TUI/releases/tag/v0.8.22)（5-08 19:07 UTC）共 6 個 patch（v0.8.18「tighter TUI/runtime/install pass with safer session startup semantics, Docker images promoted to a supported install path」），單日 6 個 patch 為 maintainer 維修強度新高、6 日累計共 v0.8.7 → v0.8.22 16 個版本（每日約 2.7 patch）。
+- 由「雙軸獨擎」回歸「單軸續強」：絕對量退至 #3、佔當日 total stars_today（12,108）約 31.6%（5-08 為 40.9%），相較 5-07 的 51.4% 連 2 日下滑但仍居首；本站歷來最長的連榜增長冠冕至此告終，後續觀察是否轉入「持榜衰退」段位。
