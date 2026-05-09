@@ -1,9 +1,9 @@
 ---
 repo: anthropics/financial-services
 first_seen: 2026-05-07
-last_updated: 2026-05-09
-appearances: [2026-05-07, 2026-05-08, 2026-05-09]
-growth_appearances: [2026-05-07, 2026-05-08, 2026-05-09]
+last_updated: 2026-05-10
+appearances: [2026-05-07, 2026-05-08, 2026-05-09, 2026-05-10]
+growth_appearances: [2026-05-07, 2026-05-08, 2026-05-09, 2026-05-10]
 has_releases: false
 latest_release: null
 tags: [金融科技, Skill 外掛, 企業級, 多代理編排]

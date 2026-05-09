@@ -1,11 +1,11 @@
 ---
 repo: ChromeDevTools/chrome-devtools-mcp
 first_seen: 2026-04-18
-last_updated: 2026-04-18
-appearances: [2026-04-18]
-growth_appearances: []
+last_updated: 2026-05-10
+appearances: [2026-04-18, 2026-05-10]
+growth_appearances: [2026-05-10]
 has_releases: true
-latest_release: chrome-devtools-mcp-v0.21.0
+latest_release: chrome-devtools-mcp-v0.25.0
 tags: [MCP 協定, MCP Server]
 domain: MCP 協定
 form: MCP Server
@@ -54,3 +54,11 @@ form: MCP Server
 - 已有 107 個 npm 套件將其列為相依，生態擴散中
 
 ## 更新紀錄
+
+### 2026-05-10
+- 自 2026-04-18 首次上榜後，距今 22 天再次出現於絕對榜（#7）。期間連發 4 個 release：
+  - [v0.22.0](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v0.22.0)（2026-04-21）
+  - [v0.23.0](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v0.23.0)（2026-04-22）
+  - [v0.24.0](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v0.24.0)（2026-05-04）
+  - [v0.25.0](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v0.25.0)（2026-05-06，最新）
+- 主要變更：迭代頻繁（22 天 4 版），維持「官方 Chrome DevTools MCP server」位置；具體 changelog 細節以 Release Notes 為準。
