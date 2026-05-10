@@ -1,9 +1,9 @@
 ---
 repo: bytedance/UI-TARS-desktop
 first_seen: 2026-05-10
-last_updated: 2026-05-10
-appearances: [2026-05-10]
-growth_appearances: [2026-05-10]
+last_updated: 2026-05-11
+appearances: [2026-05-10, 2026-05-11]
+growth_appearances: [2026-05-10, 2026-05-11]
 has_releases: true
 latest_release: v0.3.0
 tags: [AI Agent 框架, 應用程式, 自架, 多代理編排]

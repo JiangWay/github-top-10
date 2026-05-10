@@ -1,11 +1,11 @@
 ---
 repo: decolua/9router
 first_seen: 2026-05-08
-last_updated: 2026-05-09
-appearances: [2026-05-08, 2026-05-09]
-growth_appearances: [2026-05-08, 2026-05-09]
+last_updated: 2026-05-11
+appearances: [2026-05-08, 2026-05-09, 2026-05-11]
+growth_appearances: [2026-05-08, 2026-05-09, 2026-05-11]
 has_releases: true
-latest_release: v0.4.20
+latest_release: v0.4.29
 tags: [LLM 基礎建設, 應用程式, 自架, 開源替代]
 domain: LLM 基礎建設
 form: 應用程式
@@ -69,3 +69,10 @@ MIT。`master` 為預設分支。stars 4,393、forks 966、subscribers 30、open
 - 跳幅與 5-07 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) +386% 同級的「留榜檔最劇烈加速」典型訊號，且首奪本檔絕對榜段位 / 增長率榜雙跳。
 - Release 端維持 [v0.4.20](https://github.com/decolua/9router/releases/tag/v0.4.20)（5-07 16:15 UTC），昨日 5-07 後未發新版；增長動能完全來自既有版本的擴散效應，與 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) 5-08 的「無新版本但社群口碑放大」結構相同。
 - 「免費 LLM 路由器」敘事仍未被 GitHub / Kiro 等 provider 公開封鎖，灰色地帶尚未爆發；下一里程碑為 v0.5 是否轉向「自帶 API key」合規化路線。
+
+### 2026-05-11
+- 隔 1 日歸隊（5-10 缺榜後重返），絕對榜回到 **#10**、增長率榜 **#2**（11.27%）；stars_today 1,028 → **806（-21.6%）**雖回落但 growth_rate 仍居高、total stars 5,425 → **7,150（+1,725，+31.8%）**單日大增。
+- 5-10 短暫離榜可能與 5-10 那波「7 檔首登的歷史性洗牌」榜位被擠掉有關，並非動能消退；今日歸隊證明社群口碑仍在持續擴散。
+- 新版本：[v0.4.25](https://github.com/decolua/9router/releases/tag/v0.4.25)（5-09，SQLite DB migration、Cowork MCP Marketplace、Cloudflare image gen）、[v0.4.27](https://github.com/decolua/9router/releases/tag/v0.4.27)（5-09，例行 release）、[v0.4.28](https://github.com/decolua/9router/releases/tag/v0.4.28)（5-10，新增 `bun:sqlite` adapter、bulk API key import）、[v0.4.29](https://github.com/decolua/9router/releases/tag/v0.4.29)（5-10，Cline / Kilo cards、Tailscale TUN、字型 + Docker 改進）；2 天內連發 4 版，迭代密度本檔歷來最高。
+- 主要變更方向兩條：(1) **基礎建設下沉**——由 SQLite migration、bun adapter、Docker 改進可見正從「個人工具」轉「可長期運行的本地服務」；(2) **與 Cowork / Cline 等新興 CLI 客戶端整合擴大**，5-10 那兩版（v0.4.28、v0.4.29）首次把 Cline / Kilo 與 Tailscale 寫入官方支援，rapidly capturing 新興 IDE / VPN 用戶。
+- 仍未見 Kiro / Anthropic / GitHub 公開封鎖 OAuth 用法；合規化轉向（v0.5）尚未到來。

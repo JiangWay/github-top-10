@@ -1,9 +1,9 @@
 ---
 repo: addyosmani/agent-skills
 first_seen: 2026-05-07
-last_updated: 2026-05-10
-appearances: [2026-05-07, 2026-05-08, 2026-05-09, 2026-05-10]
-growth_appearances: [2026-05-07, 2026-05-08, 2026-05-09, 2026-05-10]
+last_updated: 2026-05-11
+appearances: [2026-05-07, 2026-05-08, 2026-05-09, 2026-05-10, 2026-05-11]
+growth_appearances: [2026-05-07, 2026-05-08, 2026-05-09, 2026-05-10, 2026-05-11]
 has_releases: true
 latest_release: 0.6.0
 tags: [開發者工具, Skill 外掛, 多代理編排, 企業級]

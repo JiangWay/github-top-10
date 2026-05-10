@@ -1,9 +1,9 @@
 ---
 repo: lsdefine/GenericAgent
 first_seen: 2026-04-18
-last_updated: 2026-04-18
-appearances: [2026-04-18]
-growth_appearances: [2026-04-18]
+last_updated: 2026-05-11
+appearances: [2026-04-18, 2026-05-11]
+growth_appearances: [2026-04-18, 2026-05-11]
 has_releases: false
 latest_release: null
 tags: [AI Agent 框架, 框架, 自進化]
