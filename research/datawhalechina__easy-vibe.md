@@ -1,9 +1,9 @@
 ---
 repo: datawhalechina/easy-vibe
 first_seen: 2026-05-10
-last_updated: 2026-05-11
-appearances: [2026-05-10, 2026-05-11]
-growth_appearances: [2026-05-10, 2026-05-11]
+last_updated: 2026-05-12
+appearances: [2026-05-10, 2026-05-11, 2026-05-12]
+growth_appearances: [2026-05-10, 2026-05-11, 2026-05-12]
 has_releases: false
 latest_release: null
 tags: [教學資源, 課程教材]

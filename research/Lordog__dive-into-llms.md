@@ -1,9 +1,9 @@
 ---
 repo: Lordog/dive-into-llms
 first_seen: 2026-04-18
-last_updated: 2026-04-19
-appearances: [2026-04-18, 2026-04-19]
-growth_appearances: [2026-04-18, 2026-04-19]
+last_updated: 2026-05-12
+appearances: [2026-04-18, 2026-04-19, 2026-05-12]
+growth_appearances: [2026-04-18, 2026-04-19, 2026-05-12]
 has_releases: true
 latest_release: v1
 tags: [教學資源, 課程教材]

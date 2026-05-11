@@ -1,11 +1,11 @@
 ---
 repo: decolua/9router
 first_seen: 2026-05-08
-last_updated: 2026-05-11
-appearances: [2026-05-08, 2026-05-09, 2026-05-11]
-growth_appearances: [2026-05-08, 2026-05-09, 2026-05-11]
+last_updated: 2026-05-12
+appearances: [2026-05-08, 2026-05-09, 2026-05-11, 2026-05-12]
+growth_appearances: [2026-05-08, 2026-05-09, 2026-05-11, 2026-05-12]
 has_releases: true
-latest_release: v0.4.29
+latest_release: v0.4.30
 tags: [LLM 基礎建設, 應用程式, 自架, 開源替代]
 domain: LLM 基礎建設
 form: 應用程式
@@ -76,3 +76,9 @@ MIT。`master` 為預設分支。stars 4,393、forks 966、subscribers 30、open
 - 新版本：[v0.4.25](https://github.com/decolua/9router/releases/tag/v0.4.25)（5-09，SQLite DB migration、Cowork MCP Marketplace、Cloudflare image gen）、[v0.4.27](https://github.com/decolua/9router/releases/tag/v0.4.27)（5-09，例行 release）、[v0.4.28](https://github.com/decolua/9router/releases/tag/v0.4.28)（5-10，新增 `bun:sqlite` adapter、bulk API key import）、[v0.4.29](https://github.com/decolua/9router/releases/tag/v0.4.29)（5-10，Cline / Kilo cards、Tailscale TUN、字型 + Docker 改進）；2 天內連發 4 版，迭代密度本檔歷來最高。
 - 主要變更方向兩條：(1) **基礎建設下沉**——由 SQLite migration、bun adapter、Docker 改進可見正從「個人工具」轉「可長期運行的本地服務」；(2) **與 Cowork / Cline 等新興 CLI 客戶端整合擴大**，5-10 那兩版（v0.4.28、v0.4.29）首次把 Cline / Kilo 與 Tailscale 寫入官方支援，rapidly capturing 新興 IDE / VPN 用戶。
 - 仍未見 Kiro / Anthropic / GitHub 公開封鎖 OAuth 用法；合規化轉向（v0.5）尚未到來。
+
+### 2026-05-12
+- 連 2 日上榜（5-11→5-12），絕對榜由 #10 升至 **#6**、增長率榜 **#3**（11.54%）；stars_today 806 → **942（+16.9%）**、total stars 7,150 → **8,161（+1,011，+14.1%）**單日續強。
+- 新版本：[v0.4.30](https://github.com/decolua/9router/releases/tag/v0.4.30)（5-11 16:51 UTC）。主要變更：(1) **MCP stdio→SSE bridge**，把本地 stdio MCP plugins 透過 SSE 暴露出去（`api/mcp/[plugin]/sse`、`/message`）——讓 9router 由「LLM 路由器」進一步擴展為「MCP plugin gateway」；(2) **Linux 憑證自動注入**，支援 Debian/Arch/Fedora/openSUSE + Chrome/Chromium/Firefox（含 snap）的 NSS DB 動態注入（#1010）；(3) **資安修補**——OAuth callback postMessage 限定 origin（CWE-1385）、DNS-bypass fetch 重啟 TLS 驗證（CWE-295）。
+- 從 v0.4.25→v0.4.30 共 6 個小版本、3 天內連發，主軸已從「擴 provider」轉「擴 MCP 與基礎設施」；MCP bridge 是策略性方向，把 [Cowork](https://github.com/decolua/9router) 賣點延伸到更廣的 plugin 生態。
+- TLS 驗證重啟與 OAuth scope 修補是社群審視壓力的回應，合規化動作初現但尚未動到 Kiro / Copilot ToS 核心爭議。

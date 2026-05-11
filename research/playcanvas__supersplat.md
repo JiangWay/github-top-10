@@ -1,9 +1,9 @@
 ---
 repo: playcanvas/supersplat
 first_seen: 2026-05-10
-last_updated: 2026-05-11
-appearances: [2026-05-10, 2026-05-11]
-growth_appearances: [2026-05-10, 2026-05-11]
+last_updated: 2026-05-12
+appearances: [2026-05-10, 2026-05-11, 2026-05-12]
+growth_appearances: [2026-05-10, 2026-05-11, 2026-05-12]
 has_releases: true
 latest_release: v2.25.1
 tags: [語音與多媒體, 應用程式, 開源替代]
