@@ -1,9 +1,9 @@
 ---
 repo: millionco/react-doctor
 first_seen: 2026-05-12
-last_updated: 2026-05-12
-appearances: [2026-05-12]
-growth_appearances: [2026-05-12]
+last_updated: 2026-05-13
+appearances: [2026-05-12, 2026-05-13]
+growth_appearances: [2026-05-12, 2026-05-13]
 has_releases: true
 latest_release: react-doctor@0.0.38
 tags: [開發者工具, Skill 外掛]

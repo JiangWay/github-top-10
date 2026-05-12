@@ -1,11 +1,11 @@
 ---
 repo: rohitg00/agentmemory
 first_seen: 2026-05-10
-last_updated: 2026-05-10
-appearances: [2026-05-10]
-growth_appearances: [2026-05-10]
+last_updated: 2026-05-13
+appearances: [2026-05-10, 2026-05-13]
+growth_appearances: [2026-05-10, 2026-05-13]
 has_releases: true
-latest_release: v0.9.5
+latest_release: v0.9.10
 tags: [LLM 基礎建設, 框架, 自架, 資料主權]
 domain: LLM 基礎建設
 form: 框架
@@ -48,3 +48,12 @@ themes: [自架, 資料主權]
 - 貢獻者高度集中於作者 [rohitg00](https://github.com/rohitg00)（249 commits），其餘 11 位貢獻者多為個位數 patch；屬典型「單人主導 + 外圍小修」的早期高熱度個人專案，社群治理尚淺。
 
 ## 更新紀錄
+
+### 2026-05-13
+- 自 2026-05-10 後三天內連發 5 版（[v0.9.6](https://github.com/rohitg00/agentmemory/releases/tag/v0.9.6) → [v0.9.10](https://github.com/rohitg00/agentmemory/releases/tag/v0.9.10)，2026-05-10 ~ 2026-05-12），全部圍繞自架部署與 MCP shim 的真實使用者回報修起：
+  - `v0.9.6`（5-10）：搜尋召回率 + MCP shim + hook 延遲調整
+  - `v0.9.7`（5-11）：MCP shim probe 診斷、compose volume 修補、log cap
+  - `v0.9.8`（5-11）：local fallback `tools/list` 回 7 不再回 4
+  - `v0.9.9`（5-11）：pinned slot injection + MiniMax env loader
+  - [v0.9.10](https://github.com/rohitg00/agentmemory/releases/tag/v0.9.10)（5-12）：distroless image 跑 UID 65532 但 docker volume 預設 `root:root mode 755` 寫不入 `/data/state_store.db`、引擎 silent buffer 在 RAM 重啟蒸發；以一個 `busybox:1.36` one-shot init 容器先 chown 修復；同步修 viewer reverse proxy 端口偵測（hardcoded `3113` → `window.location.origin`）、`mem::context` budget loop 不再因首個過大區塊 `break` 整個選取（改為 `continue`），均由用戶 [@flamerged](https://github.com/flamerged) 在 [#299](https://github.com/rohitg00/agentmemory/issues/299)／[#301](https://github.com/rohitg00/agentmemory/issues/301) 即時回報。
+- 連 4 版 patch 反映 self-hosted 部署形態（docker-compose + distroless + 反向代理）對 v0.9.5 的「快速可用」假設造成的壓力測試；目前對單一外部回報者依賴頗深。

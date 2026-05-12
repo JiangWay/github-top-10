@@ -1,9 +1,9 @@
 ---
 repo: datawhalechina/hello-agents
 first_seen: 2026-05-10
-last_updated: 2026-05-10
-appearances: [2026-05-10]
-growth_appearances: [2026-05-10]
+last_updated: 2026-05-13
+appearances: [2026-05-10, 2026-05-13]
+growth_appearances: [2026-05-10, 2026-05-13]
 has_releases: true
 latest_release: V1.0.2
 tags: [教學資源, 課程教材]

@@ -1,9 +1,9 @@
 ---
 repo: HKUDS/AI-Trader
 first_seen: 2026-05-09
-last_updated: 2026-05-11
-appearances: [2026-05-09, 2026-05-11]
-growth_appearances: [2026-05-09, 2026-05-11]
+last_updated: 2026-05-13
+appearances: [2026-05-09, 2026-05-11, 2026-05-13]
+growth_appearances: [2026-05-09, 2026-05-11, 2026-05-13]
 has_releases: false
 latest_release: null
 tags: [金融科技, 框架, 多代理編排, 開源替代]

@@ -1,9 +1,9 @@
 ---
 repo: tinyhumansai/openhuman
 first_seen: 2026-05-12
-last_updated: 2026-05-12
-appearances: [2026-05-12]
-growth_appearances: [2026-05-12]
+last_updated: 2026-05-13
+appearances: [2026-05-12, 2026-05-13]
+growth_appearances: [2026-05-12, 2026-05-13]
 has_releases: true
 latest_release: v0.53.22
 tags: [LLM 客戶端, 應用程式, 自架, 資料主權, 開源替代]
