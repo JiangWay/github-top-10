@@ -1,11 +1,11 @@
 ---
 repo: rohitg00/agentmemory
 first_seen: 2026-05-10
-last_updated: 2026-05-13
-appearances: [2026-05-10, 2026-05-13]
-growth_appearances: [2026-05-10, 2026-05-13]
+last_updated: 2026-05-14
+appearances: [2026-05-10, 2026-05-13, 2026-05-14]
+growth_appearances: [2026-05-10, 2026-05-13, 2026-05-14]
 has_releases: true
-latest_release: v0.9.10
+latest_release: v0.9.12
 tags: [LLM 基礎建設, 框架, 自架, 資料主權]
 domain: LLM 基礎建設
 form: 框架
@@ -57,3 +57,7 @@ themes: [自架, 資料主權]
   - `v0.9.9`（5-11）：pinned slot injection + MiniMax env loader
   - [v0.9.10](https://github.com/rohitg00/agentmemory/releases/tag/v0.9.10)（5-12）：distroless image 跑 UID 65532 但 docker volume 預設 `root:root mode 755` 寫不入 `/data/state_store.db`、引擎 silent buffer 在 RAM 重啟蒸發；以一個 `busybox:1.36` one-shot init 容器先 chown 修復；同步修 viewer reverse proxy 端口偵測（hardcoded `3113` → `window.location.origin`）、`mem::context` budget loop 不再因首個過大區塊 `break` 整個選取（改為 `continue`），均由用戶 [@flamerged](https://github.com/flamerged) 在 [#299](https://github.com/rohitg00/agentmemory/issues/299)／[#301](https://github.com/rohitg00/agentmemory/issues/301) 即時回報。
 - 連 4 版 patch 反映 self-hosted 部署形態（docker-compose + distroless + 反向代理）對 v0.9.5 的「快速可用」假設造成的壓力測試；目前對單一外部回報者依賴頗深。
+
+### 2026-05-14
+- 連 2 日守絕對榜 #2（5-13~5-14）、連 2 日守增長榜 #3；growth_rate 18.86% → **18.24%** 幾乎持平，stars_today 1,067 → 1,335（+25.1%）。
+- 自 v0.9.10 後再發兩版：[v0.9.11](https://github.com/rohitg00/agentmemory/releases/tag/v0.9.11)（2026-05-12 — Codex plugin platform + OpenClaw slot fix + website star button）、[v0.9.12](https://github.com/rohitg00/agentmemory/releases/tag/v0.9.12)（2026-05-13 — BM25 unicode + vector live-write + viewer hardening + plaintext-bearer guard）。從 distroless / docker / proxy 等部署層 bug 轉向 **multi-agent platform 整合（Codex 端）+ 搜尋索引底層強化（BM25 unicode、vector live-write）**，反映 user base 正從 self-host 試水溫進到「跨 IDE 整合 + 搜尋品質」階段。`latest_release` 更新為 **v0.9.12**。

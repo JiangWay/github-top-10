@@ -1,9 +1,9 @@
 ---
 repo: mattpocock/skills
 first_seen: 2026-04-27
-last_updated: 2026-05-13
-appearances: [2026-04-27, 2026-04-28, 2026-04-29, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-13]
-growth_appearances: [2026-04-27, 2026-04-28, 2026-04-29, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-13]
+last_updated: 2026-05-14
+appearances: [2026-04-27, 2026-04-28, 2026-04-29, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-13, 2026-05-14]
+growth_appearances: [2026-04-27, 2026-04-28, 2026-04-29, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-13, 2026-05-14]
 has_releases: false
 latest_release: null
 tags: [開發者工具, Skill 外掛]
@@ -104,3 +104,8 @@ README 沒有獨立 ETHOS 章節，這句 repo 描述本身就是宣言：直接
 - [Firecrawl — Best Claude Code Skills to Try in 2026](https://www.firecrawl.dev/blog/best-claude-code-skills)
 
 ## 更新紀錄
+
+### 2026-05-14
+- 連 2 日上絕對榜（5-13~5-14）、累計 8 次；名次 #5 → #6（總 78,634 / 今日 +3,372），stars_today 雖由昨日 3,886 略降至 3,372 卻**仍為今日全榜最大單日增量**（領先第 2 名 [CloakHQ/CloakBrowser](https://github.com/CloakHQ/CloakBrowser) 1,829 達 84%）。growth_rate 5.14% → **4.29%** 增長榜 #5。
+- 倉庫無 GitHub Release（`has_releases: false`），版本控制靠 git tag/commit，無更新可記錄。
+- 與 [obra/superpowers](https://github.com/obra/superpowers)、[github/spec-kit](https://github.com/github/spec-kit) 三檔今日同框，三家「AI 編碼方法論／Skill 框架」並列上榜，本站首見。

@@ -1,9 +1,9 @@
 ---
 repo: rasbt/LLMs-from-scratch
 first_seen: 2026-05-13
-last_updated: 2026-05-13
-appearances: [2026-05-13]
-growth_appearances: [2026-05-13]
+last_updated: 2026-05-14
+appearances: [2026-05-13, 2026-05-14]
+growth_appearances: [2026-05-13, 2026-05-14]
 has_releases: false
 latest_release: null
 tags: [教學資源, 課程教材]
@@ -44,3 +44,9 @@ themes: []
 
 ### 授權與社群
 License 欄位為 `Other / NOASSERTION`，README 與根目錄未列標準 OSI license——程式碼採書籍配套條款，學術與個人學習使用無虞，但商用 / 衍生作品前建議直接洽詢 Manning 與作者。社群面：14,407 forks、781 watchers、Discussions 與 Q&A 區活躍，作者 Sebastian Raschka 為威斯康辛大學麥迪遜分校前統計系副教授、現任 Lightning AI Staff Research Engineer，並維護 [magazine.sebastianraschka.com](https://magazine.sebastianraschka.com/) 的 *Ahead of AI* 電子報，是教材長期更新的最主要動能。
+
+## 更新紀錄
+
+### 2026-05-14
+- 連 2 日上絕對榜（5-13~5-14），名次 #8 → #7（總 94,366 / 今日 +824），stars_today 824 與昨日 776 幾乎持平（+6.2%），growth_rate 0.87%、增長榜 #8。
+- 無 GitHub Release（`has_releases: false`），無更新可記錄；持續性靠 main branch 持續加碼 bonus 資料夾。

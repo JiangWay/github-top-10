@@ -1,9 +1,9 @@
 ---
 repo: CloakHQ/CloakBrowser
 first_seen: 2026-05-09
-last_updated: 2026-05-13
-appearances: [2026-05-09, 2026-05-11, 2026-05-12, 2026-05-13]
-growth_appearances: [2026-05-09, 2026-05-11, 2026-05-12, 2026-05-13]
+last_updated: 2026-05-14
+appearances: [2026-05-09, 2026-05-11, 2026-05-12, 2026-05-13, 2026-05-14]
+growth_appearances: [2026-05-09, 2026-05-11, 2026-05-12, 2026-05-13, 2026-05-14]
 has_releases: true
 latest_release: chromium-v146.0.7680.177.4
 tags: [資安, 應用程式, 開源替代]
@@ -123,3 +123,7 @@ README 反覆主張「補丁要打在源碼，不能打在 runtime」：
   - [techinz/browsers-benchmark](https://github.com/techinz/browsers-benchmark)
 
 ## 更新紀錄
+
+### 2026-05-14
+- **連 4 日上絕對榜**（5-11 ~ 5-14）、累計 5 次（含 5-09）；今日由 #3 退到 #5（總 9,298 / 今日 +1,829），但 stars_today 反由昨日 1,589 上升至 1,829（+15.1%），growth_rate 19.67% 仍守增長榜 **#2**。連榜紀錄寫本站個股新高。
+- 自 `last_updated`（2026-05-13）以來無新 release：仍為 [chromium-v146.0.7680.177.4](https://github.com/CloakHQ/CloakBrowser/releases/tag/chromium-v146.0.7680.177.4)（2026-04-28），上游 Chromium 仍卡在同一基線。

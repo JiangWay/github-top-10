@@ -1,11 +1,11 @@
 ---
 repo: trycua/cua
 first_seen: 2026-04-27
-last_updated: 2026-04-27
-appearances: [2026-04-27]
-growth_appearances: [2026-04-27]
+last_updated: 2026-05-14
+appearances: [2026-04-27, 2026-05-14]
+growth_appearances: [2026-04-27, 2026-05-14]
 has_releases: true
-latest_release: cua-driver-v0.0.10
+latest_release: cua-driver-v0.1.9
 tags: [AI Agent 框架, 框架, 自架]
 domain: AI Agent 框架
 form: 框架
@@ -112,3 +112,7 @@ cua 的卡位明確：**比 stagehand 範圍更廣（整個桌面而非單一瀏
 - [trycua 官網與部落格](https://cua.ai/)
 
 ## 更新紀錄
+
+### 2026-05-14
+- 距首次上榜（2026-04-27）已 **17 天**後再度入絕對榜，名次 #8（總 16,476 / 今日 +307），growth_rate 1.86%、增長榜 #6。stars 由 4-27 的 14,305 漲至 **16,476**（17 天 +2,171，日均 +127），維持「Computer-Use Agents」賽道穩定領先。
+- 自 `last_updated`（2026-04-27）以來新發 12 版 cua-driver patch / minor，主要里程碑：[cua-driver-v0.1.0](https://github.com/trycua/cua/releases/tag/cua-driver-v0.1.0)（2026-05-01，跨入 0.1 minor 系列）→ [v0.1.9](https://github.com/trycua/cua/releases/tag/cua-driver-v0.1.9)（2026-05-12）。`latest_release` 由 cua-driver-v0.0.10 更新為 **cua-driver-v0.1.9**。版本跳躍反映 driver 層在 17 天內進入快速迭代週期，與同日 [github/spec-kit](https://github.com/github/spec-kit) 上榜共構「AI agent infra + AI 編碼方法論」雙軌成熟訊號。
