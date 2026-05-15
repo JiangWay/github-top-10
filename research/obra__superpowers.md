@@ -1,9 +1,9 @@
 ---
 repo: obra/superpowers
 first_seen: 2026-04-18
-last_updated: 2026-05-14
-appearances: [2026-04-18, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-14]
-growth_appearances: [2026-04-18, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-14]
+last_updated: 2026-05-16
+appearances: [2026-04-18, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-14, 2026-05-16]
+growth_appearances: [2026-04-18, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-14, 2026-05-16]
 has_releases: true
 latest_release: v5.1.0
 tags: [AI Agent 框架, Skill 外掛]
@@ -50,3 +50,8 @@ MIT License；主要作者 Jesse Vincent（obra）及 Prime Radiant 團隊，透
 - 距上次上榜（2026-05-02）已 **12 天**後再度入絕對榜，名次 #3（總 189,326 / 今日 +1,506），growth_rate 0.80%、增長榜 #10。stars 由 5-02 的 ~175k 漲至 **189k**（12 天 +14k），曲線從 4 月的指數爆紅期過渡到「持續穩定累積」期。
 - 自 v5.0.7（2026-03-31）後新發 [v5.1.0](https://github.com/obra/superpowers/releases/tag/v5.1.0)（2026-05-04），即跨入 5.1 minor 版本；`latest_release` 更新為 **v5.1.0**。
 - 同日 [mattpocock/skills](https://github.com/mattpocock/skills)、[github/spec-kit](https://github.com/github/spec-kit) 三檔 AI 編碼方法論 / Skills 框架同時在榜（5-14 個股研究檔均已就位），是本站首次「方法論型框架」三足鼎立同框。
+
+### 2026-05-16
+- 隔 1 日從 5-14 後歸隊，**累計 6 次上榜**；名次升至 #2（總 192,618 / 今日 +1,646）、growth_rate 0.85%、增長榜 #8。stars 由 5-14 的 189,326 漲至 192,618（2 天 +3,292），續穩定累積。
+- 同日 [mattpocock/skills](https://github.com/mattpocock/skills) 守 #10、[anthropics/skills](https://github.com/anthropics/skills) **首次上榜** #7、[K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) 首次上榜 #3——「Skill 外掛 / Agent 編碼方法論」單日 4 檔同框打破 5-14 三足鼎立紀錄。
+- `latest_release` 自 v5.1.0（2026-05-04）後 12 天無新 release——12 天無發版為自進入 5.x 以來最長空檔。

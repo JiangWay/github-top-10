@@ -1,9 +1,9 @@
 ---
 repo: mattpocock/skills
 first_seen: 2026-04-27
-last_updated: 2026-05-14
-appearances: [2026-04-27, 2026-04-28, 2026-04-29, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-13, 2026-05-14]
-growth_appearances: [2026-04-27, 2026-04-28, 2026-04-29, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-13, 2026-05-14]
+last_updated: 2026-05-16
+appearances: [2026-04-27, 2026-04-28, 2026-04-29, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-13, 2026-05-14, 2026-05-16]
+growth_appearances: [2026-04-27, 2026-04-28, 2026-04-29, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-13, 2026-05-14, 2026-05-16]
 has_releases: false
 latest_release: null
 tags: [開發者工具, Skill 外掛]
@@ -109,3 +109,8 @@ README 沒有獨立 ETHOS 章節，這句 repo 描述本身就是宣言：直接
 - 連 2 日上絕對榜（5-13~5-14）、累計 8 次；名次 #5 → #6（總 78,634 / 今日 +3,372），stars_today 雖由昨日 3,886 略降至 3,372 卻**仍為今日全榜最大單日增量**（領先第 2 名 [CloakHQ/CloakBrowser](https://github.com/CloakHQ/CloakBrowser) 1,829 達 84%）。growth_rate 5.14% → **4.29%** 增長榜 #5。
 - 倉庫無 GitHub Release（`has_releases: false`），版本控制靠 git tag/commit，無更新可記錄。
 - 與 [obra/superpowers](https://github.com/obra/superpowers)、[github/spec-kit](https://github.com/github/spec-kit) 三檔今日同框，三家「AI 編碼方法論／Skill 框架」並列上榜，本站首見。
+
+### 2026-05-16
+- **隔 1 日從 5-14 後歸隊**、累計 **9 次**——刷新本檔自家紀錄；名次落到 #10（總 84,641 / 今日 +3,155），stars_today 由昨日 3,372 略降至 3,155（−6.4%）；growth_rate 4.29% → **3.73%** 增長榜 #4。stars 由 5-14 的 78,634 漲至 **84,641**（2 天 +6,007，雙日均增約 3,000）。
+- 與 [obra/superpowers](https://github.com/obra/superpowers) #2、[anthropics/skills](https://github.com/anthropics/skills) **首次上榜** #7、[K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) 首次上榜 #3 四檔「Skill 外掛 / Agent 編碼方法論」同框，打破 5-14 三足鼎立紀錄為**單日 4 檔同框新高**；本檔由「個人 dotfiles 整批開源」承接源頭角色。
+- 仍無 GitHub Release，靠 git tag/commit 演進，本日無 release 紀錄更新。
