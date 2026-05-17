@@ -1,11 +1,11 @@
 ---
 repo: Anil-matcha/Open-Generative-AI
 first_seen: 2026-04-25
-last_updated: 2026-04-25
-appearances: [2026-04-25]
-growth_appearances: []
+last_updated: 2026-05-18
+appearances: [2026-04-25, 2026-04-27, 2026-05-18]
+growth_appearances: [2026-05-18]
 has_releases: true
-latest_release: v1.0.4
+latest_release: v1.0.11
 tags: [語音與多媒體, 應用程式, 開源替代]
 domain: 語音與多媒體
 form: 應用程式
@@ -65,3 +65,8 @@ themes: [開源替代]
 生成時間：2026-04-25　資料來源：[GitHub repo](https://github.com/Anil-matcha/Open-Generative-AI)、`gh api repos/Anil-matcha/Open-Generative-AI` 與 `/releases`、[Hongkiat 評論](https://www.hongkiat.com/blog/open-generative-ai-review/)、[作者 Medium](https://medium.com/@anilmatcha/building-open-higgsfield-ai-an-open-source-ai-cinema-studio-83c1e0a2a5f1)、[muapi.ai 官網](https://muapi.ai/)、[hosted 版](https://dev.muapi.ai/open-generative-ai)。
 
 ## 更新紀錄
+
+### 2026-05-18
+- 隔 21 天從 4-27 後歸隊（前次出現於 [2026-04-27 家當](https://github.com/JiangWay/github-top-10/blob/main/_posts/2026-04-27-%E5%AE%B6%E7%95%B6.md)），**累計 3 次上榜**（4-25、4-27、5-18）；今日 stars_total **14,954**、stars_today **704**、growth_rate **4.71%**，絕對榜 #5、**首登增長率榜 #5**（前 2 次純粹靠絕對量入榜未進增長榜）。
+- 23 天內 stars_total 7,539 → 14,954（+98.4% 接近翻倍）為本檔最大級數成長，但近期 9 天無新版（最後 release [v1.0.11](https://github.com/Anil-matcha/Open-Generative-AI/releases/tag/v1.0.11) 為 2026-05-11），與初登榜時「35 天 5 版同日 3 連發」的 launch 節奏對比明顯，本輪歸隊更像是**口碑與被 listicle 反覆引用的延遲爆發**而非新版催化。
+- 4-25 後共新增 7 個 release：[v1.0.5](https://github.com/Anil-matcha/Open-Generative-AI/releases/tag/v1.0.5)（4-25 Settings 按鈕＋submodule 修復）、[v1.0.6](https://github.com/Anil-matcha/Open-Generative-AI/releases/tag/v1.0.6)（4-25 Linux／Windows 本地推論修復）、[v1.0.7](https://github.com/Anil-matcha/Open-Generative-AI/releases/tag/v1.0.7)（4-25 Wan2GP local engine ＋ Dreamshaper URL 修復）、[v1.0.8](https://github.com/Anil-matcha/Open-Generative-AI/releases/tag/v1.0.8)（4-27 Windows build 還原 Tailwind v3 復原）、[v1.0.9](https://github.com/Anil-matcha/Open-Generative-AI/releases/tag/v1.0.9)（4-27 本地 Wan2GP 影片生成）、[v1.0.10](https://github.com/Anil-matcha/Open-Generative-AI/releases/tag/v1.0.10)（5-01 Lipsync Infinite Talk null-prompt 修復）、[v1.0.11](https://github.com/Anil-matcha/Open-Generative-AI/releases/tag/v1.0.11)（5-11 Wan2GP end-frame upload 略過 API-key 提示）。主軸明顯轉向 **Wan2GP 本地推論引擎**——這恰好回應首次研究檔最大保留意見「200+ 模型實質都打 muapi」，本地推論支線正在補洞，但 9 天無新版又顯示開發節奏明顯放緩。`latest_release` frontmatter 由 v1.0.4 更新為 **v1.0.11**。

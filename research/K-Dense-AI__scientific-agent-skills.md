@@ -1,9 +1,9 @@
 ---
 repo: K-Dense-AI/scientific-agent-skills
 first_seen: 2026-05-16
-last_updated: 2026-05-16
-appearances: [2026-05-16]
-growth_appearances: [2026-05-16]
+last_updated: 2026-05-18
+appearances: [2026-05-16, 2026-05-18]
+growth_appearances: [2026-05-16, 2026-05-18]
 has_releases: true
 latest_release: v2.38.0
 tags: [LLM 客戶端, Skill 外掛, 開源替代]
@@ -142,3 +142,8 @@ Agent Skills 賽道在 2026 上半年迅速擴張，本站 5-14 同框 [obra/sup
 - 安全掃描工具 [cisco-ai-defense/skill-scanner](https://github.com/cisco-ai-defense/skill-scanner)
 
 ## 更新紀錄
+
+### 2026-05-18
+- 隔 1 日從 5-16 後歸隊（5-17 缺席），**累計 2 次上榜**；今日 stars_total **23,724**、stars_today **764**、growth_rate **3.22%**，絕對榜 #10（前次 #3 大幅下滑）、增長榜 #6。
+- 兩日內 stars_total 22,327 → 23,724（+6.3%、+1,397 顆），相較 5-16 的 643 stars_today **再 +18.8%**，反映「science skill 議題」短期仍持續發酵但動能溫和。`latest_release` 仍為 [v2.38.0](https://github.com/K-Dense-AI/scientific-agent-skills/releases/tag/v2.38.0)（2026-05-01），自首次上榜後 17 天無新版。
+- 與 5-16 的「Skill 規範定義者 × 個人 dotfiles × 方法論 × 科學垂直」四線同框不同，今日 [anthropics/skills](https://github.com/anthropics/skills)／[obra/superpowers](https://github.com/obra/superpowers)／[mattpocock/skills](https://github.com/mattpocock/skills) **全數落榜**，僅 K-Dense 與今日真新進 [tech-leads-club/agent-skills](https://github.com/tech-leads-club/agent-skills)（registry / 企業驗證取向）同框，Skill 賽道**從「四線並立」收束為「科學垂直 vs 企業 registry」二線對話**。
