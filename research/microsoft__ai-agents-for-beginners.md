@@ -1,9 +1,9 @@
 ---
 repo: microsoft/ai-agents-for-beginners
 first_seen: 2026-04-22
-last_updated: 2026-04-24
-appearances: [2026-04-22, 2026-04-24]
-growth_appearances: [2026-04-22, 2026-04-24]
+last_updated: 2026-05-19
+appearances: [2026-04-22, 2026-04-24, 2026-05-19]
+growth_appearances: [2026-04-22, 2026-04-24, 2026-05-19]
 has_releases: false
 latest_release: null
 tags: [教學資源, 課程教材]

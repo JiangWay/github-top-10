@@ -1,9 +1,9 @@
 ---
 repo: BigBodyCobain/Shadowbroker
 first_seen: 2026-05-18
-last_updated: 2026-05-18
-appearances: [2026-05-18]
-growth_appearances: []
+last_updated: 2026-05-19
+appearances: [2026-05-18, 2026-05-19]
+growth_appearances: [2026-05-18, 2026-05-19]
 has_releases: true
 latest_release: v0.9.79
 tags: [情報監測, 應用程式, 自架, 資料主權, 開源替代]

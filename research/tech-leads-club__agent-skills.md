@@ -1,9 +1,9 @@
 ---
 repo: tech-leads-club/agent-skills
 first_seen: 2026-05-18
-last_updated: 2026-05-18
-appearances: [2026-05-18]
-growth_appearances: [2026-05-18]
+last_updated: 2026-05-19
+appearances: [2026-05-18, 2026-05-19]
+growth_appearances: [2026-05-18, 2026-05-19]
 has_releases: true
 latest_release: skills-catalog-v0.14.3
 tags: [開發者工具, Skill 外掛, 開源替代, 企業級]

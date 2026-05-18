@@ -1,9 +1,9 @@
 ---
 repo: CloakHQ/CloakBrowser
 first_seen: 2026-05-09
-last_updated: 2026-05-14
-appearances: [2026-05-09, 2026-05-11, 2026-05-12, 2026-05-13, 2026-05-14]
-growth_appearances: [2026-05-09, 2026-05-11, 2026-05-12, 2026-05-13, 2026-05-14]
+last_updated: 2026-05-19
+appearances: [2026-05-09, 2026-05-11, 2026-05-12, 2026-05-13, 2026-05-14, 2026-05-19]
+growth_appearances: [2026-05-09, 2026-05-11, 2026-05-12, 2026-05-13, 2026-05-14, 2026-05-19]
 has_releases: true
 latest_release: chromium-v146.0.7680.177.4
 tags: [資安, 應用程式, 開源替代]

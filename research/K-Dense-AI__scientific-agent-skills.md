@@ -1,9 +1,9 @@
 ---
 repo: K-Dense-AI/scientific-agent-skills
 first_seen: 2026-05-16
-last_updated: 2026-05-18
-appearances: [2026-05-16, 2026-05-18]
-growth_appearances: [2026-05-16, 2026-05-18]
+last_updated: 2026-05-19
+appearances: [2026-05-16, 2026-05-18, 2026-05-19]
+growth_appearances: [2026-05-16, 2026-05-18, 2026-05-19]
 has_releases: true
 latest_release: v2.38.0
 tags: [LLM 客戶端, Skill 外掛, 開源替代]

@@ -1,9 +1,9 @@
 ---
 repo: supertone-inc/supertonic
 first_seen: 2026-05-16
-last_updated: 2026-05-16
-appearances: [2026-05-16]
-growth_appearances: [2026-05-16]
+last_updated: 2026-05-19
+appearances: [2026-05-16, 2026-05-19]
+growth_appearances: [2026-05-16, 2026-05-19]
 has_releases: true
 latest_release: v2.0.0
 tags: [語音與多媒體, 框架, 資料主權, 開源替代]
