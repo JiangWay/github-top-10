@@ -1,9 +1,9 @@
 ---
 repo: Imbad0202/academic-research-skills
 first_seen: 2026-05-19
-last_updated: 2026-05-19
-appearances: [2026-05-19]
-growth_appearances: [2026-05-19]
+last_updated: 2026-05-20
+appearances: [2026-05-19, 2026-05-20]
+growth_appearances: [2026-05-19, 2026-05-20]
 has_releases: true
 latest_release: v3.9.2
 tags: [教學資源, Skill 外掛, 多代理編排, 開源替代]

@@ -1,9 +1,9 @@
 ---
 repo: msitarzewski/agency-agents
 first_seen: 2026-05-05
-last_updated: 2026-05-06
-appearances: [2026-05-05, 2026-05-06]
-growth_appearances: [2026-05-06]
+last_updated: 2026-05-20
+appearances: [2026-05-05, 2026-05-06, 2026-05-20]
+growth_appearances: [2026-05-06, 2026-05-20]
 has_releases: false
 latest_release: null
 tags: [AI Agent 框架, Skill 外掛, 開源替代]
@@ -48,3 +48,9 @@ MIT License。主作者 [@msitarzewski](https://github.com/msitarzewski) 累計 
 - 連榜 Day 2（5-05、5-06），絕對榜由 **#9 → #8**（小幅升 1 名）；首次擠入增長率榜（**#9**，growth_rate 0.90% → **1.31%**，+0.41pp）；stars_today 828 → **1,228（+48.3%）**、total stars 92,420 → 93,471（+1,051），距離 100K stars 大關剩 6.5K。
 - Release 端維持 `has_releases: false`，最新 push 仍為 2026-04-12 的文件 PR（無新 release tag），延續以 main branch rolling 發布的模式。
 - 賽道側日報統計顯示 AI Agent 框架今日 3/10 仍為當日最大類別、但比昨日 5/10 縮減；msitarzewski/agency-agents 在類別內以「最大 stars 體量」站穩老牌位置，與新興 [Hmbown/DeepSeek-TUI](https://github.com/Hmbown/DeepSeek-TUI)、[ruvnet/ruflo](https://github.com/ruvnet/ruflo) 形成「老＋新」並列。
+
+### 2026-05-20
+- **隔 14 天從 5-06 後歸隊**為本檔最長空檔回歸；累計 3 次上絕對榜（5-05／5-06／5-20）；今日絕對榜 #9、增長榜 #8。
+- stars_total 93,471（5-06）→ **101,366** —— **14 天內跨過 10 萬 stars 大關**且距首次上榜（5-05）僅 15 天；stars_today **983**、growth_rate **0.97%**——體量擴大兩倍下 growth_rate 仍維持在 1% 區間，反映「達穩定吸星速度」而非單日爆衝。
+- Release 端仍 `has_releases: false`，repo 自 2025-10-15 建立以來始終以 main branch rolling 發布、不打 release tag——14 天空檔內無新版可追，純由 stars 量級累積回到 trending Top 10；本次回榜亦是本站「無 release 專案」最長空檔回歸案例。
+- 環境側：今日 7／10 為 Claude Code 周邊生態（[anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) 官方 marketplace 真新進等），[msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) 144 agent 包定位為「Claude Code agent persona 集合」恰好對接該日主題；類型分布中 AI Agent 框架 4 檔為本檔當日類別最集中（與 [HKUDS/CLI-Anything](https://github.com/HKUDS/CLI-Anything)、[obra/superpowers](https://github.com/obra/superpowers)、[anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) 同框）。

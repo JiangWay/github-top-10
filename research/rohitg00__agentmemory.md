@@ -1,11 +1,11 @@
 ---
 repo: rohitg00/agentmemory
 first_seen: 2026-05-10
-last_updated: 2026-05-14
-appearances: [2026-05-10, 2026-05-13, 2026-05-14]
-growth_appearances: [2026-05-10, 2026-05-13, 2026-05-14]
+last_updated: 2026-05-20
+appearances: [2026-05-10, 2026-05-13, 2026-05-14, 2026-05-20]
+growth_appearances: [2026-05-10, 2026-05-13, 2026-05-14, 2026-05-20]
 has_releases: true
-latest_release: v0.9.12
+latest_release: v0.9.21
 tags: [LLM 基礎建設, 框架, 自架, 資料主權]
 domain: LLM 基礎建設
 form: 框架
@@ -61,3 +61,8 @@ themes: [自架, 資料主權]
 ### 2026-05-14
 - 連 2 日守絕對榜 #2（5-13~5-14）、連 2 日守增長榜 #3；growth_rate 18.86% → **18.24%** 幾乎持平，stars_today 1,067 → 1,335（+25.1%）。
 - 自 v0.9.10 後再發兩版：[v0.9.11](https://github.com/rohitg00/agentmemory/releases/tag/v0.9.11)（2026-05-12 — Codex plugin platform + OpenClaw slot fix + website star button）、[v0.9.12](https://github.com/rohitg00/agentmemory/releases/tag/v0.9.12)（2026-05-13 — BM25 unicode + vector live-write + viewer hardening + plaintext-bearer guard）。從 distroless / docker / proxy 等部署層 bug 轉向 **multi-agent platform 整合（Codex 端）+ 搜尋索引底層強化（BM25 unicode、vector live-write）**，反映 user base 正從 self-host 試水溫進到「跨 IDE 整合 + 搜尋品質」階段。`latest_release` 更新為 **v0.9.12**。
+
+### 2026-05-20
+- 隔 6 日從 5-14 後歸隊，**累計 4 次上絕對榜**（5-10／5-13／5-14／5-20）；今日絕對榜 #6、增長榜 #4；stars_total **13,959**、stars_today **1,626**、growth_rate **11.65%**——回歸後動能仍位居中段。
+- 自 v0.9.12（5-13）至今日連發 9 版補洞：[v0.9.13](https://github.com/rohitg00/agentmemory/releases/tag/v0.9.13)〜[v0.9.16](https://github.com/rohitg00/agentmemory/releases/tag/v0.9.16) 為 5-14 ~ 5-15 連發、[v0.9.17](https://github.com/rohitg00/agentmemory/releases/tag/v0.9.17)（5-16，OpenAI-compatible universal adapter：一組 `OPENAI_API_KEY`+`OPENAI_BASE_URL` 覆蓋 OpenAI／Azure／DeepSeek／SiliconFlow／vLLM／LM Studio／Ollama）、[v0.9.18](https://github.com/rohitg00/agentmemory/releases/tag/v0.9.18)（5-17，DX hardening — lessons 自動進 context payload／viewer CSP 收緊／filesystem watcher 修補）、[v0.9.19](https://github.com/rohitg00/agentmemory/releases/tag/v0.9.19)（5-18，sessions 連結 git commits／OpenAI provider transport 整合 Azure URL 自動偵測）、[v0.9.20](https://github.com/rohitg00/agentmemory/releases/tag/v0.9.20)（5-18 hotfix，回滾 v0.9.19 的 Codex Stop hook 鏈）、[v0.9.21](https://github.com/rohitg00/agentmemory/releases/tag/v0.9.21)（5-19，OpenCode native plugin + Claude Code hook parity 等 11 個 PR）。
+- 6 天 9 版的密集 ship 節奏反映「universal adapter + 跨 agent platform 整合」階段（OpenAI 兼容多 provider→Codex→OpenCode），與 5-12 期 distroless self-host bug 補洞為主的階段顯著不同。`latest_release` 由 v0.9.12 更新為 **v0.9.21**。
