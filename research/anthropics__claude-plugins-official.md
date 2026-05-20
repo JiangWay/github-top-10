@@ -1,9 +1,9 @@
 ---
 repo: anthropics/claude-plugins-official
 first_seen: 2026-05-20
-last_updated: 2026-05-20
-appearances: [2026-05-20]
-growth_appearances: [2026-05-20]
+last_updated: 2026-05-21
+appearances: [2026-05-20, 2026-05-21]
+growth_appearances: [2026-05-20, 2026-05-21]
 has_releases: false
 latest_release: null
 tags: [AI Agent 框架, Skill 外掛, 開源替代, 企業級]

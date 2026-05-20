@@ -1,9 +1,9 @@
 ---
 repo: colbymchenry/codegraph
 first_seen: 2026-05-20
-last_updated: 2026-05-20
-appearances: [2026-05-20]
-growth_appearances: [2026-05-20]
+last_updated: 2026-05-21
+appearances: [2026-05-20, 2026-05-21]
+growth_appearances: [2026-05-20, 2026-05-21]
 has_releases: true
 latest_release: v0.7.10
 tags: [開發者工具, MCP Server, 自架, 資料主權, 開源替代]
