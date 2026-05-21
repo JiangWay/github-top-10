@@ -1,11 +1,11 @@
 ---
 repo: colbymchenry/codegraph
 first_seen: 2026-05-20
-last_updated: 2026-05-21
-appearances: [2026-05-20, 2026-05-21]
-growth_appearances: [2026-05-20, 2026-05-21]
+last_updated: 2026-05-22
+appearances: [2026-05-20, 2026-05-21, 2026-05-22]
+growth_appearances: [2026-05-20, 2026-05-21, 2026-05-22]
 has_releases: true
-latest_release: v0.7.10
+latest_release: v0.8.0
 tags: [開發者工具, MCP Server, 自架, 資料主權, 開源替代]
 domain: 開發者工具
 form: MCP Server
@@ -54,3 +54,9 @@ themes: [自架, 資料主權, 開源替代]
 ### 授權與社群
 
 MIT、open_issues 50、subscribers 21、forks 420、created 2026-01-18（≈4 個月達 6.3k stars）。作者 [colbymchenry](https://github.com/colbymchenry) 為主要維護者，release notes 致謝 [@sashanclrp](https://github.com/sashanclrp)／[@sgrimm](https://github.com/sgrimm)／[@joselhurtado](https://github.com/joselhurtado)／[@starkleek](https://github.com/starkleek)／[@Bortlesboat](https://github.com/Bortlesboat)／[@andreinknv](https://github.com/andreinknv) 提交 issue／PR／fork commit。Wiki 已開、Discussions 未開、社群仍以 issues 為主要接觸點。
+
+## 更新紀錄
+
+### 2026-05-22
+- 新版本：[v0.8.0](https://github.com/colbymchenry/codegraph/releases/tag/v0.8.0)（2026-05-20）
+- 主要變更：minor 版號跳躍至 v0.8.x，距 5-19 v0.7.10 僅 1 日；連續 3 日守增長榜 #1（5-20／5-21／5-22）並於 5-22 首奪絕對榜 #1，stars_total 8,903 → 12,914（+45.1%）寫上榜後最大單日跳幅。具體 changelog 細節以 release notes 為準。

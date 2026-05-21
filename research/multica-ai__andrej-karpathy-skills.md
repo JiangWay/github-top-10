@@ -1,9 +1,9 @@
 ---
 repo: multica-ai/andrej-karpathy-skills
 first_seen: 2026-05-21
-last_updated: 2026-05-21
-appearances: [2026-05-21]
-growth_appearances: [2026-05-21]
+last_updated: 2026-05-22
+appearances: [2026-05-21, 2026-05-22]
+growth_appearances: [2026-05-21, 2026-05-22]
 has_releases: false
 latest_release: null
 tags: [教學資源, Skill 外掛, 開源替代]

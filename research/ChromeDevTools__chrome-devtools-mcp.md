@@ -1,11 +1,11 @@
 ---
 repo: ChromeDevTools/chrome-devtools-mcp
 first_seen: 2026-04-18
-last_updated: 2026-05-10
-appearances: [2026-04-18, 2026-05-10]
-growth_appearances: [2026-05-10]
+last_updated: 2026-05-22
+appearances: [2026-04-18, 2026-05-10, 2026-05-22]
+growth_appearances: [2026-05-10, 2026-05-22]
 has_releases: true
-latest_release: chrome-devtools-mcp-v0.25.0
+latest_release: chrome-devtools-mcp-v1.0.1
 tags: [MCP 協定, MCP Server]
 domain: MCP 協定
 form: MCP Server
@@ -62,3 +62,7 @@ form: MCP Server
   - [v0.24.0](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v0.24.0)（2026-05-04）
   - [v0.25.0](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v0.25.0)（2026-05-06，最新）
 - 主要變更：迭代頻繁（22 天 4 版），維持「官方 Chrome DevTools MCP server」位置；具體 changelog 細節以 Release Notes 為準。
+
+### 2026-05-22
+- 新版本：[chrome-devtools-mcp-v1.0.1](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.0.1)（2026-05-18）
+- 主要變更：12 天內連發 3 版完成首個正式版 1.0 衝刺——[v0.26.0](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v0.26.0)（5-12 由 v0.25.0 升級）→ [v1.0.0](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.0.0)（5-18 為「Chrome DevTools MCP」首個 1.0 release 跨越 milestone）→ [v1.0.1](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.0.1)（5-18 patch）。隔 12 天從 5-10 後歸隊絕對榜，累計 3 次（4-18／5-10／5-22）。

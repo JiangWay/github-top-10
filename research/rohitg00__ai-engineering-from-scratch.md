@@ -1,9 +1,9 @@
 ---
 repo: rohitg00/ai-engineering-from-scratch
 first_seen: 2026-05-21
-last_updated: 2026-05-21
-appearances: [2026-05-21]
-growth_appearances: [2026-05-21]
+last_updated: 2026-05-22
+appearances: [2026-05-21, 2026-05-22]
+growth_appearances: [2026-05-21, 2026-05-22]
 has_releases: false
 latest_release: null
 tags: [教學資源, 課程教材, 開源替代]
