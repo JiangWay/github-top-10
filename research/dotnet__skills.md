@@ -1,9 +1,9 @@
 ---
 repo: dotnet/skills
 first_seen: 2026-05-22
-last_updated: 2026-05-22
-appearances: [2026-05-22]
-growth_appearances: [2026-05-22]
+last_updated: 2026-05-23
+appearances: [2026-05-22, 2026-05-23]
+growth_appearances: [2026-05-22, 2026-05-23]
 has_releases: true
 latest_release: skill-validator-nightly
 tags: [開發者工具, Skill 外掛, 企業級, 開源替代]
