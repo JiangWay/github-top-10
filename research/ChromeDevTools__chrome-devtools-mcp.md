@@ -1,9 +1,9 @@
 ---
 repo: ChromeDevTools/chrome-devtools-mcp
 first_seen: 2026-04-18
-last_updated: 2026-05-23
-appearances: [2026-04-18, 2026-05-10, 2026-05-22, 2026-05-23]
-growth_appearances: [2026-05-10, 2026-05-22, 2026-05-23]
+last_updated: 2026-05-24
+appearances: [2026-04-18, 2026-05-10, 2026-05-22, 2026-05-23, 2026-05-24]
+growth_appearances: [2026-05-10, 2026-05-22, 2026-05-23, 2026-05-24]
 has_releases: true
 latest_release: chrome-devtools-mcp-v1.0.1
 tags: [MCP 協定, MCP Server]

@@ -32,7 +32,7 @@ description: "以節點網絡呈現所有深度研究與分類標籤的關係：
   "nodes": [
     {%- comment -%} Project nodes (one per research file) {%- endcomment -%}
     {%- for rp in research_pages -%}
-      {"id": "p:{{ rp.repo | jsonify | slice: 1, -1 }}",
+      {"id": {{ rp.repo | prepend: "p:" | jsonify }},
        "type": "project",
        "label": {{ rp.repo | jsonify }},
        "url": {{ rp.url | relative_url | jsonify }},

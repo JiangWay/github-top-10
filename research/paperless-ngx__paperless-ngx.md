@@ -1,11 +1,11 @@
 ---
 repo: paperless-ngx/paperless-ngx
 first_seen: 2026-04-20
-last_updated: 2026-04-21
-appearances: [2026-04-20, 2026-04-21]
-growth_appearances: [2026-04-20, 2026-04-21]
+last_updated: 2026-05-25
+appearances: [2026-04-20, 2026-04-21, 2026-05-25]
+growth_appearances: [2026-04-20, 2026-04-21, 2026-05-25]
 has_releases: true
-latest_release: v2.20.14
+latest_release: v2.20.15
 tags: [文件管理, 應用程式, 自架, 資料主權, 開源替代]
 domain: 文件管理
 form: 應用程式
@@ -122,3 +122,17 @@ themes: [自架, 資料主權, 開源替代]
 - 連續第 2 天上榜（絕對榜 #4，+611；增長率榜 #6，1.55%）；stars 累計 39,315（兩天 +558，持續加速靠近 40k）
 - 無新 release（最新仍為 [v2.20.14](https://github.com/paperless-ngx/paperless-ngx/releases/tag/v2.20.14)，2026-04-14）
 - 觀察：與今日另一個新進榜自架工具 [pi-hole/pi-hole](https://github.com/pi-hole/pi-hole) 共組「自架基礎建設老牌專案回流」現象——兩者皆屬建立多年、動能重啟的類型
+
+### 2026-05-25
+- 隔 34 天再度歸隊，累計第 3 次上榜（4-20 / 4-21 / 5-25 絕對榜 #10，+151 stars，growth_rate **0.37%**）；stars 累計 41,179 顆，跨過 40k 大關
+- 今日為候選 10 檔 growth_rate 最低值——以 41k 量級的長線老牌專案而言屬「日常流量碰巧落在 trending 演算法閾值內」型上榜，非單日事件驅動
+- **新 release**：
+  - [v2.20.15](https://github.com/paperless-ngx/paperless-ngx/releases/tag/v2.20.15)（2026-04-27 為最新 production stable）— 2.x 收官 patch
+  - [v3.0.0-beta.rc1](https://github.com/paperless-ngx/paperless-ngx/releases/tag/v3.0.0-beta.rc1)（2026-05-05 pre-release，由 [PR #12713](https://github.com/paperless-ngx/paperless-ngx/pull/12713) 合併）— **跨大版號 milestone**，五大新賣點：
+    1. **Paperless AI**（可全本地 LLM 的 AI 分類與摘要層）
+    2. **搜尋後端從 [mchaput/whoosh](https://github.com/mchaput/whoosh) 切到 [quickwit-oss/tantivy](https://github.com/quickwit-oss/tantivy)**——Rust 寫成、解決 4-21 [Andy Whittaker 評測](https://www.andywhittaker.com/articles/paperless-ngx)點名的「Whoosh 在十萬頁以上會卡」核心痛點
+    3. 原生 document versioning
+    4. OCR 插件框架（Remote OCR / Azure AI 為首發示範）
+    5. Sharelink bundles（分享連結多檔打包）
+- 4-20 首登研究檔已指出社群對 [Paperless-AIssist discussion #12252](https://github.com/paperless-ngx/paperless-ngx/discussions/12252) 的需求——v3.0 的 Paperless AI 等於把第三方 AI 擴充收編進官方主線，**從「Tesseract 純規則式分類」進化到「Tesseract + 本地 LLM 雙軌」**為本檔史上最大架構轉折
+- 維護量化：[shamoon](https://github.com/shamoon) commits 3,569 → 3,603（+34）持續主導 v3 推進；[stumpylog](https://github.com/stumpylog) 1,029 → 1,052（+23）；contributor 增至 390 名；open_issues 自 10 降至 8（更健康）；forks 2,487 → 2,733（+246 / 同期 stars +2,422）forks/stars 比例維持 6.6%

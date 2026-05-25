@@ -1,11 +1,11 @@
 ---
 repo: Fincept-Corporation/FinceptTerminal
 first_seen: 2026-04-20
-last_updated: 2026-04-23
-appearances: [2026-04-20, 2026-04-21, 2026-04-22, 2026-04-23]
-growth_appearances: [2026-04-20, 2026-04-21, 2026-04-22, 2026-04-23]
+last_updated: 2026-05-25
+appearances: [2026-04-20, 2026-04-21, 2026-04-22, 2026-04-23, 2026-05-24, 2026-05-25]
+growth_appearances: [2026-04-20, 2026-04-21, 2026-04-22, 2026-04-23, 2026-05-24, 2026-05-25]
 has_releases: true
-latest_release: v4.0.1
+latest_release: v4.0.3
 tags: [金融科技, 應用程式, 開源替代, 資料主權]
 domain: 金融科技
 form: 應用程式
@@ -126,3 +126,8 @@ README 封面口號把立場寫得露骨：
 - **連續第 4 天雙榜**（絕對榜 #2 -「被 [zilliztech/claude-context](https://github.com/zilliztech/claude-context) 擠下」；stars_today +1,737，growth_rate 13.46%；增長率榜 #1，雙榜首位穿插交替）
 - 無新 release（最新仍為 [v4.0.1](https://github.com/Fincept-Corporation/FinceptTerminal/releases/tag/v4.0.1)）
 - 觀察：stars 從 11,325 → 12,907，4 日累積 +8,631；每日增量 `+1,169 → +3,129 → +2,595 → +1,737` 呈清楚高原後遞減曲線，進入 stars 增長的「下坡段」。雖未追上 [OpenBB-finance/OpenBB](https://github.com/OpenBB-finance/OpenBB) 36k 量級，但已逼近 [wilsonfreitas/awesome-quant](https://github.com/wilsonfreitas/awesome-quant) 等老牌 quant list
+
+### 2026-05-24
+- **隔 31 天從 4-23 後再度歸隊**（絕對榜 #5，stars_today +537，growth_rate 2.33%，自身歷次上榜中 stars_total 規模最大：23,039）；累計第 5 次上榜（4-20／4-21／4-22／4-23／5-24）為本檔最長空檔回歸記錄
+- 期間共 2 個新 release：[v4.0.2](https://github.com/Fincept-Corporation/FinceptTerminal/releases/tag/v4.0.2)（2026-04-24，4-23 上榜次日即發版）→ [v4.0.3](https://github.com/Fincept-Corporation/FinceptTerminal/releases/tag/v4.0.3)（2026-05-12）—— 對應 v4 系列從 4-15 的 v4.0.1 累計第 3 個 patch release，發版節奏約半個月一版
+- 觀察：stars 從 4-23 12,907 → 5-24 23,039（31 天 +10,132 +78.5%）顯示「4 月四連榜」結束後仍維持每日約 +327 stars 的長尾擴散；growth_rate 自 4-23 13.46% 降至 2.33% 為本檔有史以來最低反映 stars 基數放大 1.8 倍後增量收斂；本次歸隊與 [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills) 5-24 隔 1 天歸隊形成「同日 2 檔回歸」並陳，但 FinceptTerminal 為「正典級長空檔回歸」、andrej-karpathy-skills 為「短期歇兵歸隊」兩種模式對照

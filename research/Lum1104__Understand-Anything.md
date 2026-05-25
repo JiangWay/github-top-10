@@ -1,9 +1,9 @@
 ---
 repo: Lum1104/Understand-Anything
 first_seen: 2026-05-23
-last_updated: 2026-05-23
-appearances: [2026-05-23]
-growth_appearances: [2026-05-23]
+last_updated: 2026-05-25
+appearances: [2026-05-23, 2026-05-24, 2026-05-25]
+growth_appearances: [2026-05-23, 2026-05-24, 2026-05-25]
 has_releases: true
 latest_release: v2.7.3
 tags: [開發者工具, Skill 外掛, 自架, 資料主權, 開源替代]
