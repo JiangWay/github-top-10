@@ -41,6 +41,10 @@ defaults:
       path: "research"
     values:
       layout: page
+  - scope:
+      path: "series"
+    values:
+      layout: page
 
 exclude:
   - CLAUDE.md
