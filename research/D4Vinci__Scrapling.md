@@ -1,11 +1,11 @@
 ---
 repo: D4Vinci/Scrapling
 first_seen: 2026-05-06
-last_updated: 2026-05-06
-appearances: [2026-05-06]
-growth_appearances: [2026-05-06]
+last_updated: 2026-05-31
+appearances: [2026-05-06, 2026-05-31]
+growth_appearances: [2026-05-06, 2026-05-31]
 has_releases: true
-latest_release: v0.4.7
+latest_release: v0.4.8
 tags: [開發者工具, 框架, 開源替代]
 domain: 開發者工具
 form: 框架
@@ -65,3 +65,10 @@ themes: [開源替代]
 ### 授權與社群
 
 授權為 BSD 3-Clause，對商用與閉源整合友善。Repo 預設分支 `main`，open issues 僅 5（對近 4.5 萬 stars 的專案而言相當低，可能有積極清理 issue 的策略），開啟 Discussions。貢獻者集中度極高：作者 [@D4Vinci](https://github.com/D4Vinci)（Karim Shoair）獨佔 1,363 commits，第二名 [@AbdullahY36](https://github.com/AbdullahY36) 僅 10 commits，其餘多為個位數，屬於典型「single-maintainer 專案」——優點是路線一致、缺點是 bus factor 為 1。文件站 [scrapling.readthedocs.io](https://scrapling.readthedocs.io/en/latest/index.html) 同步維護中、英、西、德、阿、簡中六語版本（[簡中 README](https://github.com/D4Vinci/Scrapling/blob/main/docs/README_CN.md)），對華語使用者友善度高於多數同類框架。
+
+## 更新紀錄
+
+### 2026-05-31
+- 隔 25 天從 2026-05-06 後再度歸隊（絕對榜 #3，stars_total 56,188，stars_today +639，growth_rate 1.14%；增長率榜 #8）為本檔第 2 次上榜
+- 期間新版：[v0.4.8](https://github.com/D4Vinci/Scrapling/releases/tag/v0.4.8)（2026-05-11，晚於前次 last_updated 的 v0.4.7 / 4-17）
+- 觀察：stars 自 5-06 首登時量級擴張至 56,188，25 天區間維持長尾擴散；今日為「整片榜單換血」中唯一一檔**非首登的回歸專案**，其餘 9 檔皆首次上榜
