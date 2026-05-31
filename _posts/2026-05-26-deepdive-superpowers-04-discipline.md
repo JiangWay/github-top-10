@@ -2,7 +2,7 @@
 layout: post
 title: "深度解析 superpowers Ep.4：TDD / Verification / Debugging 看起來都在驗證，差別在哪"
 date: 2026-05-26
-published: false
+published: true
 series: superpowers-deepdive
 part: 1
 episode: 4

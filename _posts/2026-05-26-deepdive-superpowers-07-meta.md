@@ -2,7 +2,7 @@
 layout: post
 title: "深度解析 superpowers Ep.7：元層 — 自我繁殖的 superpowers"
 date: 2026-05-26
-published: false
+published: true
 series: superpowers-deepdive
 part: 1
 episode: 7

@@ -2,7 +2,7 @@
 layout: post
 title: "深度解析 superpowers Ep.8：寫文件就是 process documentation 的 TDD"
 date: 2026-05-26
-published: false
+published: true
 series: superpowers-deepdive
 part: 2
 episode: 8

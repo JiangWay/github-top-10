@@ -2,7 +2,7 @@
 layout: post
 title: "深度解析 superpowers Ep.9：作者用 4 個壓力測試檔，驗 skill 真的擋得住 agent"
 date: 2026-05-26
-published: false
+published: true
 series: superpowers-deepdive
 part: 2
 episode: 9

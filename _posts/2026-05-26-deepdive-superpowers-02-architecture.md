@@ -2,7 +2,7 @@
 layout: post
 title: "深度解析 superpowers Ep.2：一個 Skill 從你打字到 agent 行動之間的四層機制"
 date: 2026-05-26
-published: false
+published: true
 series: superpowers-deepdive
 part: 1
 episode: 2

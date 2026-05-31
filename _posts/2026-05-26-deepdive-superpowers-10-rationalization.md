@@ -2,7 +2,7 @@
 layout: post
 title: "深度解析 superpowers Ep.10：把 agent 的 verbatim 藉口蒐成 counter-table"
 date: 2026-05-26
-published: false
+published: true
 series: superpowers-deepdive
 part: 2
 episode: 10

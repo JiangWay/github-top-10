@@ -1199,3 +1199,65 @@ body[data-rails="none"] .reader.reader-narrow { grid-template-columns: minmax(0,
 /* Quiet scrollbars */
 .article ::-webkit-scrollbar { height: 8px; width: 8px; }
 .article ::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 4px; }
+
+/* ---------------------------------------------------------
+   Series elements (deep-dive series only)
+   - breadcrumb between hero-kicker and h1
+   - next-episode / series-end card after article content
+   --------------------------------------------------------- */
+.series-breadcrumb {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px; font-weight: 500;
+  color: var(--ink-mute);
+  margin: -8px 0 14px 0;
+  letter-spacing: 0.02em;
+}
+.series-breadcrumb-hub {
+  color: var(--accent);
+  border-bottom: 1px dashed color-mix(in oklab, var(--accent) 50%, transparent);
+  padding-bottom: 1px;
+}
+.series-breadcrumb-hub:hover { border-bottom-style: solid; }
+.series-breadcrumb-sep { color: var(--ink-faint); }
+.series-breadcrumb-name { color: var(--ink-soft); }
+.series-breadcrumb-audience {
+  color: var(--ink-mute);
+  font-style: italic;
+}
+
+.series-next-card {
+  margin: 56px 0 0 0;
+  padding: 24px 28px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: color-mix(in oklab, var(--accent) 4%, var(--bg));
+}
+.series-next-card-end {
+  background: var(--bg-sunken);
+  border-style: dashed;
+}
+.series-next-kicker {
+  font-family: var(--font-mono);
+  font-size: 12px; font-weight: 500;
+  color: var(--ink-mute);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.series-next-link {
+  display: flex; flex-direction: column; gap: 8px;
+  color: var(--ink);
+}
+.series-next-link:hover .series-next-title { color: var(--accent); }
+.series-next-title {
+  font-family: var(--font-body, var(--font-serif));
+  font-size: 20px; font-weight: 600;
+  margin: 0; line-height: 1.4;
+  transition: color 0.15s ease;
+}
+.series-next-arrow {
+  font-family: var(--font-mono);
+  font-size: 13px; font-weight: 500;
+  color: var(--accent);
+}

@@ -9,6 +9,9 @@ latest_release: v5.1.0
 tags: [AI Agent 框架, Skill 外掛]
 domain: AI Agent 框架
 form: Skill 外掛
+deep_dive_series: /series/superpowers/
+deep_dive_series_title: "深度解析 superpowers"
+deep_dive_episode_count: 12
 ---
 
 # [obra/superpowers](https://github.com/obra/superpowers)

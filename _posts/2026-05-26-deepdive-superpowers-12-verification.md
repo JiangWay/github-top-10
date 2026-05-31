@@ -2,7 +2,7 @@
 layout: post
 title: "深度解析 superpowers Ep.12：subagent 跑一輪 RED→GREEN→REFACTOR 驗自己寫的 skill"
 date: 2026-05-26
-published: false
+published: true
 series: superpowers-deepdive
 part: 2
 episode: 12

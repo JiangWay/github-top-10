@@ -2,7 +2,7 @@
 layout: post
 title: "深度解析 superpowers Ep.11：CSO — 讓 skill 在 1024 字以內被找到"
 date: 2026-05-26
-published: false
+published: true
 series: superpowers-deepdive
 part: 2
 episode: 11

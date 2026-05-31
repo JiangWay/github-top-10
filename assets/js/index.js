@@ -30,7 +30,16 @@
   const statResearch = $("#statResearch");
   if (statTotal) statTotal.textContent = ENTRIES.length;
   if (statDaily) statDaily.textContent = ENTRIES.filter(e => e.kind === "post").length;
-  if (statResearch) statResearch.textContent = ENTRIES.filter(e => e.kind === "research").length;
+  if (statResearch) {
+    const researchAll = ENTRIES.filter(e => e.kind === "research");
+    const withSeries  = researchAll.filter(e => e.deepDiveSeries).length;
+    /* Show "<series>/<total>" so visitors see how many research entries have a
+       dedicated deep-dive series. e.g. "1/152" means 1 of 152 research items
+       has a full deep-dive series attached. */
+    statResearch.textContent = withSeries > 0
+      ? `${withSeries}/${researchAll.length}`
+      : researchAll.length;
+  }
 
   /* Count the current consecutive streak ending at the latest appearance.
      A gap of more than one calendar day resets the count — only the most
@@ -114,6 +123,12 @@
     if (e.kind === "research") {
       const isReturning = e.firstSeen && e.lastUpdated && e.firstSeen !== e.lastUpdated;
       kickerSuffix = isReturning ? " · 再次上榜" : " · 首次上榜";
+      if (e.deepDiveSeries) {
+        const epCount = e.deepDiveEpisodeCount || 0;
+        kickerSuffix += epCount > 0
+          ? ` · 含 ${epCount} 集深度解析`
+          : " · 含深度解析系列";
+      }
     }
 
     let tagsHtml = "";
@@ -173,7 +188,13 @@
 
   function render() {
     const posts    = sortEntries(ENTRIES.filter(e => e.kind === "post" && matchesTag(e)));
-    const research = sortEntries(ENTRIES.filter(e => e.kind === "research" && matchesTag(e)));
+    let   research = sortEntries(ENTRIES.filter(e => e.kind === "research" && matchesTag(e)));
+    /* Pin research entries with an attached deep-dive series to the top of
+       the 深入研究 list. Within each group the active sort still applies. */
+    research = [
+      ...research.filter(e => e.deepDiveSeries),
+      ...research.filter(e => !e.deepDiveSeries),
+    ];
 
     let html = "";
     if (state.filter === "all") {

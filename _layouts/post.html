@@ -2,12 +2,31 @@
 layout: default
 ---
 
-{%- assign posts = site.posts -%}
-{%- assign this_idx = 0 -%}
-{%- for p in posts -%}{% if p.url == page.url %}{% assign this_idx = forloop.index0 %}{% endif %}{%- endfor -%}
-{%- assign prev_post = posts[this_idx | plus: 1] -%}
-{%- assign next_idx = this_idx | minus: 1 -%}
-{%- if next_idx >= 0 -%}{% assign next_post = posts[next_idx] %}{%- endif -%}
+{%- comment -%}
+  Series-aware navigation:
+  - If this post has `series:` frontmatter, prev/next walks within the same
+    series ordered by `episode`, so readers don't jump between deep-dive
+    episodes and unrelated daily reports.
+  - Otherwise, fall back to chronological prev/next across all posts.
+{%- endcomment -%}
+{%- if page.series -%}
+  {%- assign series_posts = site.posts | where: "series", page.series | sort: "episode" -%}
+  {%- assign series_count = series_posts.size -%}
+  {%- assign series_last_idx = series_count | minus: 1 -%}
+  {%- assign this_idx = 0 -%}
+  {%- for p in series_posts -%}{% if p.url == page.url %}{% assign this_idx = forloop.index0 %}{% endif %}{%- endfor -%}
+  {%- comment -%}Use inline-filter index access to match the chronological branch
+     and avoid variable-index quirks across Liquid versions.{%- endcomment -%}
+  {%- if this_idx > 0 -%}{%- assign prev_post = series_posts[this_idx | minus: 1] -%}{%- endif -%}
+  {%- if this_idx < series_last_idx -%}{%- assign next_post = series_posts[this_idx | plus: 1] -%}{%- endif -%}
+{%- else -%}
+  {%- assign posts = site.posts -%}
+  {%- assign this_idx = 0 -%}
+  {%- for p in posts -%}{% if p.url == page.url %}{% assign this_idx = forloop.index0 %}{% endif %}{%- endfor -%}
+  {%- assign prev_post = posts[this_idx | plus: 1] -%}
+  {%- assign next_idx = this_idx | minus: 1 -%}
+  {%- if next_idx >= 0 -%}{% assign next_post = posts[next_idx] %}{%- endif -%}
+{%- endif -%}
 
 <main class="reader" id="top">
 
@@ -62,8 +81,16 @@ layout: default
           {% when "5" %}{% assign wd = "週五" %}
           {% when "6" %}{% assign wd = "週六" %}
         {% endcase %}
-        {{ page.date | date: "%Y-%m-%d" }} · {{ wd }} · 每日觀察
+        {{ page.date | date: "%Y-%m-%d" }} · {{ wd }} · {% if page.series %}深度解析系列{% else %}每日觀察{% endif %}
       </div>
+      {% if page.series %}
+        <div class="series-breadcrumb">
+          <a class="series-breadcrumb-hub" href="{{ page.hub | relative_url }}">← 系列入口</a>
+          <span class="series-breadcrumb-sep">·</span>
+          <span class="series-breadcrumb-name">{% if page.part %}Part {{ page.part }} · {% endif %}Ep.{{ page.episode }} / {{ series_count }}</span>
+          {% if page.audience %}<span class="series-breadcrumb-sep">·</span><span class="series-breadcrumb-audience">{{ page.audience }}</span>{% endif %}
+        </div>
+      {% endif %}
       <h1>{{ page.title }}</h1>
       {% if page.summary %}<p class="hero-summary">{{ page.summary | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</p>{% endif %}
       <div class="hero-meta">
@@ -84,6 +111,24 @@ layout: default
     </header>
 
     {{ content }}
+
+    {% if page.series and next_post %}
+      <aside class="series-next-card" aria-label="下一集">
+        <div class="series-next-kicker">下一集 · Ep.{{ next_post.episode }} / {{ series_count }}</div>
+        <a class="series-next-link" href="{{ next_post.url | relative_url }}">
+          <h3 class="series-next-title">{{ next_post.title }}</h3>
+          <span class="series-next-arrow" aria-hidden="true">→ 繼續閱讀</span>
+        </a>
+      </aside>
+    {% elsif page.series and next_post == nil %}
+      <aside class="series-next-card series-next-card-end" aria-label="系列收尾">
+        <div class="series-next-kicker">這是系列最後一集</div>
+        <a class="series-next-link" href="{{ page.hub | relative_url }}">
+          <h3 class="series-next-title">回到系列入口看其他集 / 勘誤</h3>
+          <span class="series-next-arrow" aria-hidden="true">→ {{ page.series }}</span>
+        </a>
+      </aside>
+    {% endif %}
   </article>
 
   <aside class="rail rail-right" aria-label="專案資訊">

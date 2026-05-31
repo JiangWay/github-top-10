@@ -2,7 +2,7 @@
 layout: post
 title: "深度解析 superpowers Ep.6：為什麼 code review 要拆成兩個 skill"
 date: 2026-05-26
-published: false
+published: true
 series: superpowers-deepdive
 part: 1
 episode: 6
