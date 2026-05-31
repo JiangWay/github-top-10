@@ -252,6 +252,90 @@ a { color: var(--accent); text-decoration: none; }
 }
 .icon-btn:hover { background: var(--bg-sunken); color: var(--ink); }
 
+/* -------- Bottom interaction bar (share + back-to-top) -------- */
+.actionbar {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%) translateY(8px);
+  z-index: 35;
+  display: flex; align-items: center; gap: 2px;
+  padding: 6px;
+  background: color-mix(in oklab, var(--bg-elev) 92%, transparent);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.actionbar.is-shown { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+.actionbar-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  height: 36px; padding: 0 12px;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-family: var(--font-sans); font-size: 13px; font-weight: 500;
+  transition: background .15s, color .15s;
+}
+.actionbar-btn:hover { background: var(--bg-sunken); color: var(--ink); }
+.actionbar-btn .ab-label { line-height: 1; }
+.actionbar-btn.is-done { color: var(--positive); }
+.actionbar-sep { width: 1px; height: 20px; background: var(--rule); margin: 0 4px; }
+
+/* -------- Floating TOC (mobile / collapsed-rail) -------- */
+.toc-fab {
+  position: fixed;
+  left: 20px; bottom: 22px;
+  z-index: 35;
+  display: none;
+  align-items: center; gap: 7px;
+  height: 40px; padding: 0 15px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--bg-elev) 92%, transparent);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border: 1px solid var(--rule);
+  box-shadow: var(--shadow-md);
+  color: var(--ink-soft);
+  font-family: var(--font-sans); font-size: 13px; font-weight: 600;
+  transition: background .15s, color .15s;
+}
+.toc-fab:hover { color: var(--ink); }
+.toc-pop {
+  position: fixed;
+  left: 20px; bottom: 72px;
+  z-index: 36;
+  width: min(320px, calc(100vw - 40px));
+  max-height: min(60vh, 460px);
+  overflow-y: auto;
+  padding: 14px 14px 16px;
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.toc-pop[hidden] { display: none; }
+.toc-pop-head {
+  display: flex; align-items: center; justify-content: space-between;
+  font-family: var(--font-sans); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.08em; color: var(--ink-mute);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+/* show the floating TOC only where the left rail is unavailable */
+body[data-nav-collapsed="true"] .toc-fab { display: inline-flex; }
+/* hide both in immersive mode for distraction-free reading */
+body[data-immersive="true"] .actionbar,
+body[data-immersive="true"] .toc-fab,
+body[data-immersive="true"] .toc-pop { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .actionbar { transition: opacity .2s ease; }
+  .actionbar.is-shown { transform: translateX(-50%); }
+}
+
 /* -------- Main layout -------- */
 .reader {
   display: grid;
@@ -444,17 +528,23 @@ body[data-rails="none"] .reader.reader-narrow { grid-template-columns: minmax(0,
   margin: 0 0 24px;
   max-width: 34rem;
 }
+/* Single clean meta line (vocus-style): muted text, middot-separated, no boxes */
 .hero-meta {
-  display: flex; flex-wrap: wrap; gap: 10px 22px;
+  display: flex; flex-wrap: wrap; align-items: center;
+  row-gap: 4px;
   font-family: var(--font-sans);
-  font-size: 12.5px;
+  font-size: 13px;
   color: var(--ink-mute);
 }
-.hero-meta .m-k {
-  font-weight: 500;
+.hero-meta span { display: inline-flex; align-items: baseline; }
+.hero-meta span + span::before {
+  content: "·";
+  margin: 0 12px;
   color: var(--ink-faint);
-  margin-right: 6px;
 }
+.hero-meta b { font-weight: 600; color: var(--ink-soft); margin-left: 5px; }
+/* legacy box style kept as fallback for any older markup */
+.hero-meta .m-k { font-weight: 500; color: var(--ink-faint); margin-right: 6px; }
 .hero-meta .m-v { color: var(--ink-soft); }
 
 /* Word of the day callout */
@@ -1093,9 +1183,17 @@ body[data-rails="none"] .reader.reader-narrow { grid-template-columns: minmax(0,
   .rail-left { display: none; }
   .article h2::before { display: none; }
   .article { font-size: 17px; }
-  .topnav, .idx-topnav { display: none; }
+  /* higher specificity than index.css's base `.idx-topnav { display:flex }`,
+     which is loaded after reader.css and would otherwise win the tie */
+  .topbar-inner .topnav, .topbar-inner .idx-topnav { display: none; }
   .topbar-date { display: none; }
   .tweaks { right: 12px; bottom: 12px; width: calc(100% - 24px); max-width: 320px; }
+  /* left rail is gone here — surface the floating TOC, and keep the
+     action bar compact (icon-only) so it never collides with the FAB */
+  .toc-fab { display: inline-flex; }
+  .actionbar { bottom: 18px; }
+  .actionbar-btn .ab-label { display: none; }
+  .actionbar-btn { padding: 0 10px; }
 }
 
 /* Quiet scrollbars */

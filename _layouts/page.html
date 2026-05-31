@@ -47,11 +47,10 @@ layout: default
       </div>
       <h1 style="font-family: var(--font-mono); font-size: clamp(28px, 3.6vw, 40px); letter-spacing: -0.01em; word-break: break-all;">{{ page.repo }}</h1>
       <div class="hero-meta">
-        {% if page.first_seen %}<span><span class="m-k">首次上榜</span><span class="m-v">{{ page.first_seen }}</span></span>{% endif %}
-        {% if page.last_updated %}<span><span class="m-k">最近更新</span><span class="m-v">{{ page.last_updated }}</span></span>{% endif %}
-        {% if page.latest_release %}<span><span class="m-k">最新 Release</span><span class="m-v">{{ page.latest_release }}</span></span>{% endif %}
-        {% if page.appearances %}<span><span class="m-k">絕對榜上榜</span><span class="m-v">{{ page.appearances.size }} 天</span></span>{% endif %}
-        {% if page.growth_appearances %}<span><span class="m-k">增長榜上榜</span><span class="m-v">{{ page.growth_appearances.size }} 天</span></span>{% endif %}
+        {% if page.first_seen %}<span>首次上榜 <b>{{ page.first_seen }}</b></span>{% endif %}
+        {% if page.last_updated %}<span>最近更新 <b>{{ page.last_updated }}</b></span>{% endif %}
+        {% if page.latest_release %}<span>最新 Release <b>{{ page.latest_release }}</b></span>{% endif %}
+        <span>閱讀 <b id="heroReadTime">—</b></span>
       </div>
     </header>
     {% elsif page.title %}

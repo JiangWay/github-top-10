@@ -67,10 +67,10 @@ layout: default
       <h1>{{ page.title }}</h1>
       {% if page.summary %}<p class="hero-summary">{{ page.summary | markdownify | replace: '<p>', '' | replace: '</p>', '' | strip }}</p>{% endif %}
       <div class="hero-meta">
-        {% if page.dominant_category %}<span><span class="m-k">主導類型</span><span class="m-v">{{ page.dominant_category }}</span></span>{% endif %}
-        {% if page.total_stars_today %}<span><span class="m-k">今日累加</span><span class="m-v">+{{ page.total_stars_today }}</span></span>{% endif %}
-        {% if page.top_project %}<span><span class="m-k">榜首</span><span class="m-v">{{ page.top_project }}</span></span>{% endif %}
-        {% if page.top_growth_project %}<span><span class="m-k">增長王</span><span class="m-v">{{ page.top_growth_project }}</span></span>{% endif %}
+        {% if page.dominant_category %}<span>主導類型 <b>{{ page.dominant_category }}</b></span>{% endif %}
+        {% if page.top_project %}<span>榜首 <b>{{ page.top_project }}</b></span>{% endif %}
+        {% if page.top_growth_project %}<span>增長王 <b>{{ page.top_growth_project }}</b></span>{% endif %}
+        <span>閱讀 <b id="heroReadTime">—</b></span>
       </div>
       {% if page.word_of_day %}
         <div class="wod">

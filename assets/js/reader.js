@@ -9,6 +9,7 @@
   if (!articleEl) return;
 
   const tocEl = $("#toc");
+  const tocFloatEl = $("#tocFloat");
   const progressEl = $("#progressFill");
   const readTimeEl = $("#readTime");
   const wordCountEl = $("#wordCount");
@@ -214,11 +215,14 @@
       tocEl.appendChild(btn);
     });
 
+    // Mirror the contents into the floating TOC (mobile / collapsed rail)
+    if (tocFloatEl) tocFloatEl.innerHTML = tocEl.innerHTML;
+
     observer = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
           const id = e.target.id;
-          $$(".toc-item", tocEl).forEach(i => i.classList.toggle("is-active", i.dataset.target === id));
+          $$(".toc-item").forEach(i => i.classList.toggle("is-active", i.dataset.target === id));
         }
       });
     }, { rootMargin: "-80px 0px -70% 0px", threshold: 0 });
@@ -227,13 +231,14 @@
 
   /* ---------------- Stats ---------------- */
 
+  const heroReadEl = $("#heroReadTime");
   function computeStats() {
-    if (!readTimeEl || !wordCountEl) return;
     const text = articleEl.textContent.replace(/\s+/g, "");
     const chars = text.length;
     const mins = Math.max(1, Math.round(chars / 400));
-    readTimeEl.textContent = mins + " 分鐘";
-    wordCountEl.textContent = chars.toLocaleString() + " 字";
+    if (heroReadEl) heroReadEl.textContent = mins + " 分鐘";
+    if (readTimeEl) readTimeEl.textContent = mins + " 分鐘";
+    if (wordCountEl) wordCountEl.textContent = chars.toLocaleString() + " 字";
   }
 
   function updateProgress() {
@@ -336,6 +341,64 @@
   const immersiveBtn = $("#immersiveToggle");
   if (immersiveBtn) immersiveBtn.addEventListener("click", () => toggleImmersive());
 
+  /* ---------------- Floating TOC (mobile / collapsed rail) ---------------- */
+
+  const tocFab = $("#tocFab");
+  const tocPop = $("#tocPop");
+  const tocPopClose = $("#tocPopClose");
+  function setTocPop(open) {
+    if (!tocPop || !tocFab) return;
+    tocPop.hidden = !open;
+    tocFab.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  if (tocFab) tocFab.addEventListener("click", () => setTocPop(tocPop.hidden));
+  if (tocPopClose) tocPopClose.addEventListener("click", () => setTocPop(false));
+  if (tocFloatEl) tocFloatEl.addEventListener("click", (e) => {
+    if (e.target.closest(".toc-item")) setTocPop(false);
+  });
+  document.addEventListener("click", (e) => {
+    if (!tocPop || tocPop.hidden) return;
+    if (tocPop.contains(e.target) || (tocFab && tocFab.contains(e.target))) return;
+    setTocPop(false);
+  });
+
+  /* ---------------- Action bar (share + back-to-top) ---------------- */
+
+  const actionbar = $("#actionbar");
+  const pageUrl = location.href;
+  const pageTitle = document.title;
+  const shareX = $("#shareX");
+  if (shareX) shareX.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(pageTitle) + "&url=" + encodeURIComponent(pageUrl);
+  const shareThreads = $("#shareThreads");
+  if (shareThreads) shareThreads.href = "https://www.threads.net/intent/post?text=" + encodeURIComponent(pageTitle + " " + pageUrl);
+
+  const copyLink = $("#copyLink");
+  if (copyLink) copyLink.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(pageUrl);
+    } catch (_) {
+      const t = document.createElement("textarea");
+      t.value = pageUrl; t.style.position = "fixed"; t.style.opacity = "0";
+      document.body.appendChild(t); t.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      t.remove();
+    }
+    const label = copyLink.querySelector(".ab-label");
+    copyLink.classList.add("is-done");
+    if (label) label.textContent = "已複製";
+    setTimeout(() => {
+      copyLink.classList.remove("is-done");
+      if (label) label.textContent = "複製連結";
+    }, 1600);
+  });
+
+  const toTopBtn = $("#toTop");
+  if (toTopBtn) toTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  function updateActionbar() {
+    if (actionbar) actionbar.classList.toggle("is-shown", window.scrollY > 280);
+  }
+
   document.addEventListener("keydown", (e) => {
     if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
     if (e.target && e.target.isContentEditable) return;
@@ -343,8 +406,9 @@
     if (e.key === "f" || e.key === "F") {
       e.preventDefault();
       toggleImmersive();
-    } else if (e.key === "Escape" && state.immersive) {
-      toggleImmersive(false);
+    } else if (e.key === "Escape") {
+      if (tocPop && !tocPop.hidden) setTocPop(false);
+      else if (state.immersive) toggleImmersive(false);
     }
   });
 
@@ -357,7 +421,8 @@
   buildTOC();
   computeStats();
   updateProgress();
+  updateActionbar();
 
-  window.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("scroll", () => { updateProgress(); updateActionbar(); }, { passive: true });
   window.addEventListener("resize", updateProgress);
 })();
