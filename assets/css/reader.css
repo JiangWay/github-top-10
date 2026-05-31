@@ -103,6 +103,10 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern", "liga", "calt";
+  transition: background-color .35s ease, color .35s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  body { transition: none; }
 }
 
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
@@ -132,11 +136,16 @@ a { color: var(--accent); text-decoration: none; }
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 24px;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 16px;
 }
+/* brand + nav hug the left; date (margin-left:auto) pushes the right group.
+   Whether or not .topbar-actions renders, the left side stays put — no reflow
+   when navigating between home and post/page. */
+.brand { flex: 0 0 auto; }
+.idx-topnav { flex: 0 1 auto; min-width: 0; }
+.topbar-actions { flex: 0 0 auto; }
 .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); }
 .brand-mark {
   width: 22px; height: 22px; border-radius: 5px;
@@ -1084,7 +1093,8 @@ body[data-rails="none"] .reader.reader-narrow { grid-template-columns: minmax(0,
   .rail-left { display: none; }
   .article h2::before { display: none; }
   .article { font-size: 17px; }
-  .topnav { display: none; }
+  .topnav, .idx-topnav { display: none; }
+  .topbar-date { display: none; }
   .tweaks { right: 12px; bottom: 12px; width: calc(100% - 24px); max-width: 320px; }
 }
 

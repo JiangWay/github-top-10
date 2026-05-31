@@ -13,6 +13,26 @@
 <link rel="stylesheet" href="{{ '/assets/css/reader.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/index.css' | relative_url }}">
 
+<script>
+/* Restore saved appearance before first paint, on EVERY page (incl. home).
+   Applied to <html> so the homepage and inner pages share one theme and
+   there is no flash-of-wrong-theme. reader.js still manages <body> on
+   post/page; both carry identical values so nothing fights. */
+(function () {
+  try {
+    var def = { theme: "paper", bodyFont: "serif", measure: "comfy", density: "cozy", fontSize: 19 };
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem("reader-tweaks") || "{}") || {}; } catch (e) {}
+    var el = document.documentElement;
+    el.setAttribute("data-theme",     saved.theme     || def.theme);
+    el.setAttribute("data-body-font", saved.bodyFont  || def.bodyFont);
+    el.setAttribute("data-measure",   saved.measure   || def.measure);
+    el.setAttribute("data-density",   saved.density   || def.density);
+    el.style.setProperty("--body-fs", (saved.fontSize || def.fontSize) + "px");
+  } catch (e) {}
+})();
+</script>
+
 {%- if site.google_analytics -%}
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
@@ -24,7 +44,7 @@
 </script>
 {%- endif -%}
 </head>
-<body data-theme="paper" data-body-font="serif" data-measure="comfy" data-density="cozy">
+<body>
 
 {% if page.layout == 'post' or page.layout == 'page' %}
 <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
