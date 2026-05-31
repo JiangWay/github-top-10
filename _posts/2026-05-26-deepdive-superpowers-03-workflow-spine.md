@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "深度解析 superpowers Ep.3：流程主幹 — brainstorm → plan → execute"
+title: "深度解析 superpowers Ep.3：brainstorm → plan → execute 為什麼必須拆三個 skill"
 date: 2026-05-26
 published: false
 series: superpowers-deepdive

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "深度解析 superpowers Ep.2：架構解剖 — 一個 Skill 怎麼被觸發"
+title: "深度解析 superpowers Ep.2：一個 Skill 從你打字到 agent 行動之間的四層機制"
 date: 2026-05-26
 published: false
 series: superpowers-deepdive

@@ -14,7 +14,9 @@ tags: [深度解析, superpowers, AI Agent 框架, Skill 外掛]
 
 # 深度解析：[obra/superpowers](https://github.com/obra/superpowers)
 
-這個系列把 [obra/superpowers](https://github.com/obra/superpowers) 從外觀拆到內部，分兩 Part：
+**這是一份把 [obra/superpowers](https://github.com/obra/superpowers) v5.1.0 拆解到 skill 內部設計動機的中文系列。**不需要先讀完原文 RELEASE-NOTES、不需要懂 Anthropic SDK 內部，重度用戶讀完能診斷自己的 session 卡在哪一步，skill 開發者讀完能寫出經得起壓力測試的 skill。
+
+分兩 Part：
 
 - **Part 1（Ep.1–7）重度用戶篇**：看懂自己每次叫 Claude Code 做事時，背後這套外掛到底如何介入、為什麼這樣設計、怎麼配合才不會撞牆。
 - **Part 2（Ep.8–12）Skill 開發者篇**：拆 superpowers 自己的方法論祕密——**寫 skill 就是 process documentation 的 TDD**。從 pressure test scenario 設計、rationalization 表蒐集，到 CSO 與 subagent 驗證流程，完整走一遍如何寫出一個經得起壓力的 skill。

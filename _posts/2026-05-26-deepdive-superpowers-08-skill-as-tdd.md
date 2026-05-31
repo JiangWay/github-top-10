@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "深度解析 superpowers Ep.8：Skill 即 TDD — 寫 skill 的元方法論"
+title: "深度解析 superpowers Ep.8：寫文件就是 process documentation 的 TDD"
 date: 2026-05-26
 published: false
 series: superpowers-deepdive

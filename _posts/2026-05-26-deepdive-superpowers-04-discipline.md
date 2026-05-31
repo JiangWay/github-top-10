@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "深度解析 superpowers Ep.4：紀律三件套 — TDD / Verification / Debugging"
+title: "深度解析 superpowers Ep.4：TDD / Verification / Debugging 看起來都在驗證，差別在哪"
 date: 2026-05-26
 published: false
 series: superpowers-deepdive

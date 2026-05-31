@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "深度解析 superpowers Ep.10：Rationalization 表 — 抓出 agent 的真實藉口"
+title: "深度解析 superpowers Ep.10：把 agent 的 verbatim 藉口蒐成 counter-table"
 date: 2026-05-26
 published: false
 series: superpowers-deepdive

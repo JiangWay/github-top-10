@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "深度解析 superpowers Ep.5：並發與隔離 — worktree / subagent / parallel"
+title: "深度解析 superpowers Ep.5：worktree 為什麼比 branch 切換更適合 agent"
 date: 2026-05-26
 published: false
 series: superpowers-deepdive

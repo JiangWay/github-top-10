@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "深度解析 superpowers Ep.9：Pressure Test 拆解 — scenario 檔的設計"
+title: "深度解析 superpowers Ep.9：作者用 4 個壓力測試檔，驗 skill 真的擋得住 agent"
 date: 2026-05-26
 published: false
 series: superpowers-deepdive

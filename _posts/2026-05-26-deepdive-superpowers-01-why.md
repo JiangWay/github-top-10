@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "深度解析 superpowers Ep.1：為什麼需要 superpowers"
+title: "深度解析 superpowers Ep.1：為什麼資深工程師紀律可以寫成 markdown gate"
 date: 2026-05-26
 published: false
 series: superpowers-deepdive

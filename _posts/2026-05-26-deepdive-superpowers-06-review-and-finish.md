@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "深度解析 superpowers Ep.6：Review 雙環與 branch 收尾"
+title: "深度解析 superpowers Ep.6：為什麼 code review 要拆成兩個 skill"
 date: 2026-05-26
 published: false
 series: superpowers-deepdive

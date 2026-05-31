@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "深度解析 superpowers Ep.12：驗證 skill 可用 — subagent 測試完整流程"
+title: "深度解析 superpowers Ep.12：subagent 跑一輪 RED→GREEN→REFACTOR 驗自己寫的 skill"
 date: 2026-05-26
 published: false
 series: superpowers-deepdive
