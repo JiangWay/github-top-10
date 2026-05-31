@@ -7,6 +7,35 @@
 
 This repo is the output directory for the `github-top-10` scheduled task (defined in `~/.claude/scheduled-tasks/github-top-10/SKILL.md`). Each run produces one daily markdown report of GitHub's top-10 trending projects. There is no build, no tests, no app code — the "product" is the daily `.md` file.
 
+## 寫作守則（反 AI 寫作）
+
+所有 `_posts/` 與 `research/` markdown 輸出，**完成前內部走一遍 [.claude/skills/avoid-ai-writing](.claude/skills/avoid-ai-writing/) 的 P0+P1 quick pass**。本檔已內化以下高頻雷區，無需重讀 skill 全文（除非處理特殊情境）。
+
+排程 prompt 的主要意圖是「抓榜 + 生成日報」，Forced Skill Activation hook 不會自動掃到寫作 skill（skill description 鎖在「remove AI patterns」這類顯式請求）。這條規則把寫作品質檢查內化進每次輸出，避免日報落入 AI 公式句。
+
+### 必檢清單（中文寫作高頻 AI 模式）
+
+| 類別 | AI 寫法（避免） | 改寫方向 |
+|---|---|---|
+| 吹捧詞 | 強大、靈活、先進、業界領先、現代化 | 具體事實（stars、版本、commit 頻率） |
+| 空洞 -ing | 強調…、展現…、彰顯…、凸顯… | 具體動作（整合 X、替換 Y） |
+| 動詞代用 | 作為、象徵、體現 | 「是」「做」「有」 |
+| 誇大評價 | 劃時代、革命性、里程碑、破天荒 | 描述具體變化 |
+| 未來結語 | 拭目以待、未來可期、值得期待、前景看好 | 可證偽預測或刪除 |
+| 避實就虛堆疊 | 「可能會」+「或將」+「有望」連用 | 擇一 |
+| 假對比形容詞 | 真正的 X、實質的 Y、真實的 Z | 點名被對比的對象 |
+| 負面排比 | 不只是 X，更是 Y | 一句正面陳述 |
+| vague attribution | 社群普遍認為、業界看好、外界評論 | **必附來源超連結**（已是研究檔守則） |
+| em dash 過用 | 中文「——」每千字 ≤ 1 | 改逗號或斷句 |
+| 旅遊文宣化 | 蓬勃發展、百花齊放、方興未艾 | 具體數字或刪除 |
+| 三段式強迫 | 「A、B、C」三項 | 用兩項或四項 |
+
+### 不修飾的例外
+
+- **技術名詞**保留不換詞：framework、kernel、Skill、MCP server、agent、RAG、embedding、kv cache、Trainer 等
+- **既有風格的歷史紀錄段**（「連 N 日守榜」「首例」「歷來首見」）視為事實陳述，不視為吹捧——前提是同句附上實際數字或日期
+- **第二輪審計**：改寫後重讀「一句話總結」與「每日一字」段，這兩段最容易在第一輪改寫後仍留 AI 殘餘
+
 ## Daily report contract
 
 Each run must produce a single file at this **Jekyll post path**:
