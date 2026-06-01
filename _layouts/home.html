@@ -104,8 +104,18 @@ layout: default
   {%- for rp in research_pages -%}
     {%- assign repo_slug = rp.repo -%}
     {%- assign project_match = "" -%}
-    {%- for p in latest_post.projects -%}
-      {%- if p.repo == repo_slug -%}{%- assign project_match = p -%}{%- endif -%}
+    {%- comment -%}Scan all posts (latest first by default) for this repo's most
+       recent stars/language snapshot. Research entries that dropped off the
+       trending list still need their last-known stats; only checking the
+       latest post would zero them out.{%- endcomment -%}
+    {%- for post in site.posts -%}
+      {%- if project_match == "" -%}
+        {%- for p in post.projects -%}
+          {%- if p.repo == repo_slug and project_match == "" -%}
+            {%- assign project_match = p -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
     {%- endfor -%}
     {%- assign summary = rp.content | strip_html | strip_newlines | replace: "　", " " | truncate: 140 -%}
     {%- assign first_seen_str = rp.first_seen | date: "%Y-%m-%d" -%}

@@ -141,12 +141,23 @@
       tagsHtml = '<div class="idx-card-tags">' + chips + more + "</div>";
     }
 
+    /* For research entries with an attached deep-dive series, the card's
+       primary destination is the series hub (the headline content) rather
+       than the research snapshot. The hub links back to research for users
+       who want the trending history. */
+    const hasSeries = e.kind === "research" && e.deepDiveSeries;
+    const cardHref  = hasSeries ? e.deepDiveSeries : e.url;
+    const cardKind  = hasSeries ? `${e.kind} has-series` : e.kind;
+    const seriesBadge = hasSeries
+      ? `<span class="idx-card-series-badge">深度解析系列 →</span>`
+      : "";
+
     return `
-      <a class="idx-card" data-kind="${e.kind}" href="${escapeHtml(e.url)}">
+      <a class="idx-card" data-kind="${cardKind}" href="${escapeHtml(cardHref)}">
         <div class="idx-card-head">
           <span class="idx-card-kicker"><span class="dot"></span>${kindLabel}${kickerSuffix}</span>
         </div>
-        <div class="idx-card-title">${titleHtml}</div>
+        <div class="idx-card-title">${titleHtml}${seriesBadge}</div>
         <div class="idx-card-sub">${escapeHtml(e.summary || "")}</div>
         ${tagsHtml}
         ${wordTag}

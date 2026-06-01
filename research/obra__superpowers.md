@@ -16,6 +16,10 @@ deep_dive_episode_count: 12
 
 # [obra/superpowers](https://github.com/obra/superpowers)
 
+> **此專案有完整的 12 集深度解析系列** → [深度解析 superpowers]({{ site.baseurl }}{% link series/superpowers/index.md %})
+>
+> 從架構、設計理念，到 skill 寫作方法論全方位拆解。本頁為趨勢觀察紀錄，系列為深度拆解。
+
 ## 深度研究（2026-04-18 首次）
 
 ### 專案定位
