@@ -15,17 +15,25 @@ layout: default
   {%- assign series_last_idx = series_count | minus: 1 -%}
   {%- assign this_idx = 0 -%}
   {%- for p in series_posts -%}{% if p.url == page.url %}{% assign this_idx = forloop.index0 %}{% endif %}{%- endfor -%}
-  {%- comment -%}Use inline-filter index access to match the chronological branch
-     and avoid variable-index quirks across Liquid versions.{%- endcomment -%}
-  {%- if this_idx > 0 -%}{%- assign prev_post = series_posts[this_idx | minus: 1] -%}{%- endif -%}
-  {%- if this_idx < series_last_idx -%}{%- assign next_post = series_posts[this_idx | plus: 1] -%}{%- endif -%}
+  {%- comment -%}Pre-assign indices: Liquid does not allow filters inside array
+     index access (`arr[i | minus: 1]` emits a syntax warning and returns nil
+     on GitHub Pages' Liquid 4.x). Use `assign` for the filter step.{%- endcomment -%}
+  {%- if this_idx > 0 -%}
+    {%- assign prev_idx = this_idx | minus: 1 -%}
+    {%- assign prev_post = series_posts[prev_idx] -%}
+  {%- endif -%}
+  {%- if this_idx < series_last_idx -%}
+    {%- assign next_idx = this_idx | plus: 1 -%}
+    {%- assign next_post = series_posts[next_idx] -%}
+  {%- endif -%}
 {%- else -%}
   {%- assign posts = site.posts -%}
   {%- assign this_idx = 0 -%}
   {%- for p in posts -%}{% if p.url == page.url %}{% assign this_idx = forloop.index0 %}{% endif %}{%- endfor -%}
-  {%- assign prev_post = posts[this_idx | plus: 1] -%}
+  {%- assign prev_idx = this_idx | plus: 1 -%}
+  {%- assign prev_post = posts[prev_idx] -%}
   {%- assign next_idx = this_idx | minus: 1 -%}
-  {%- if next_idx >= 0 -%}{% assign next_post = posts[next_idx] %}{%- endif -%}
+  {%- if next_idx >= 0 -%}{%- assign next_post = posts[next_idx] -%}{%- endif -%}
 {%- endif -%}
 
 <main class="reader" id="top">

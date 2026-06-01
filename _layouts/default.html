@@ -63,7 +63,12 @@
       <a class="idx-topnav-link{% if page.url == '/graph/' %} is-active{% endif %}" href="{{ '/graph/' | relative_url }}">圖譜</a>
       {% assign latest_post = site.posts | first %}
       {% if latest_post %}
-        <a class="idx-topnav-link{% if page.layout == 'post' or (page.layout == 'page' and page.url != '/tags/' and page.url != '/graph/') %} is-active{% endif %}" href="{{ latest_post.url | relative_url }}">閱讀</a>
+        {%- comment -%}Liquid does not support parentheses for grouping in
+           conditionals. Pre-compute the "is non-meta page" branch.{%- endcomment -%}
+        {%- assign is_reader_page = false -%}
+        {%- if page.layout == 'post' -%}{%- assign is_reader_page = true -%}{%- endif -%}
+        {%- if page.layout == 'page' and page.url != '/tags/' and page.url != '/graph/' -%}{%- assign is_reader_page = true -%}{%- endif -%}
+        <a class="idx-topnav-link{% if is_reader_page %} is-active{% endif %}" href="{{ latest_post.url | relative_url }}">閱讀</a>
       {% endif %}
     </nav>
 
