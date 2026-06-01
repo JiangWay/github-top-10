@@ -1,9 +1,9 @@
 ---
 repo: revfactory/harness
 first_seen: 2026-05-31
-last_updated: 2026-05-31
-appearances: [2026-05-31]
-growth_appearances: [2026-05-31]
+last_updated: 2026-06-01
+appearances: [2026-05-31, 2026-06-01]
+growth_appearances: [2026-05-31, 2026-06-01]
 has_releases: false
 latest_release: null
 tags: [AI Agent 框架, Skill 外掛, 自進化, 多代理編排, 開源替代]

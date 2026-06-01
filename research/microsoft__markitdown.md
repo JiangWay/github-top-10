@@ -1,9 +1,9 @@
 ---
 repo: microsoft/markitdown
 first_seen: 2026-05-31
-last_updated: 2026-05-31
-appearances: [2026-05-31]
-growth_appearances: [2026-05-31]
+last_updated: 2026-06-01
+appearances: [2026-05-31, 2026-06-01]
+growth_appearances: [2026-05-31, 2026-06-01]
 has_releases: true
 latest_release: v0.1.6
 tags: [文件管理, 框架, 開源替代, 資料主權]

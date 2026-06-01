@@ -1,9 +1,9 @@
 ---
 repo: EveryInc/compound-engineering-plugin
 first_seen: 2026-05-31
-last_updated: 2026-05-31
-appearances: [2026-05-31]
-growth_appearances: [2026-05-31]
+last_updated: 2026-06-01
+appearances: [2026-05-31, 2026-06-01]
+growth_appearances: [2026-05-31, 2026-06-01]
 has_releases: true
 latest_release: compound-engineering-v3.9.3
 tags: [AI Agent 框架, Skill 外掛, 多代理編排, 自進化]

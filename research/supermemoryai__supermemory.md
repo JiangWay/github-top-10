@@ -1,9 +1,9 @@
 ---
 repo: supermemoryai/supermemory
 first_seen: 2026-05-31
-last_updated: 2026-05-31
-appearances: [2026-05-31]
-growth_appearances: [2026-05-31]
+last_updated: 2026-06-01
+appearances: [2026-05-31, 2026-06-01]
+growth_appearances: [2026-05-31, 2026-06-01]
 has_releases: true
 latest_release: server-v0.0.1-rc.4
 tags: [AI Agent 框架, 框架, 開源替代, 企業級]

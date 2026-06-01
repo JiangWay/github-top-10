@@ -1,11 +1,11 @@
 ---
 repo: TauricResearch/TradingAgents
 first_seen: 2026-04-28
-last_updated: 2026-05-05
-appearances: [2026-04-28, 2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04, 2026-05-05]
-growth_appearances: [2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04, 2026-05-05]
+last_updated: 2026-06-01
+appearances: [2026-04-28, 2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04, 2026-05-05, 2026-06-01]
+growth_appearances: [2026-05-01, 2026-05-02, 2026-05-03, 2026-05-04, 2026-05-05, 2026-06-01]
 has_releases: true
-latest_release: v0.2.4
+latest_release: v0.2.5
 tags: [金融科技, 框架, 多代理編排]
 domain: 金融科技
 form: 框架
@@ -199,3 +199,15 @@ README 同時也把研究框架的邊界寫得很清楚：
 ### 2026-05-05
 - 連榜 Day 5（5-01～5-05），絕對榜守 **#2**；stars_today +3,315 → +2,181（−34.2%）首度回落但仍居當日第二高絕對增量；total stars 64,875 → 67,044 過 6.7 萬；growth_rate 5.11% → 3.25%（−1.86pp）。增長率榜由 #4 退至 **#6**。
 - Release 端**仍無新版本**（[v0.2.4](https://github.com/TauricResearch/TradingAgents/releases/tag/v0.2.4) 已 10 天未更）；今日金融科技賽道新增 [virattt/dexter](https://github.com/virattt/dexter)（rank #10，首次）形成同類兩檔同框，連榜的 TradingAgents 維持絕對量領先地位。
+
+### 2026-06-01
+- 隔 27 天回歸絕對榜 **#9**（5-05 後連 26 天缺席，期間經歷 5-26~5-30 排程斷檔與 5-31 補產日榜單上未見），stars_today +284、total stars 81,517（5-05 67,044 → 6-01 81,517 約 +14.5k／27 天 ≈ 日均 +537 stars 累積基礎面持續走升）、growth_rate 0.35%（增長榜 #10）。
+- 新版本：[v0.2.5](https://github.com/TauricResearch/TradingAgents/releases/tag/v0.2.5)（2026-05-11，距 v0.2.4 16 天）。主要變更：
+  - **Sentiment Analyst** 改名並接上真實 Yahoo News / StockTwits / Reddit 抓取，解決 [issue #86](https://github.com/TauricResearch/TradingAgents/issues/86) 「Reddit 為離線靜態快照」的長期痛點——v0.2.4 之前情緒源為空，v0.2.5 補回 live 資料
+  - 新增 **MiniMax M2.x**（204K context）與 **雙區 Qwen／GLM／MiniMax**（Global vs China API key），配合二級 region prompt 不污染主 provider 選單
+  - **環境變數驅動**：`TRADINGAGENTS_*` 全面接管 `DEFAULT_CONFIG`（llm_provider、deep/quick model IDs、backend_url、output_language、debate-round counts、checkpoint flag、benchmark ticker），CLI 偵測 API key 缺失會 prompt 並寫回 `.env`
+  - **遠端 Ollama**：`OLLAMA_BASE_URL` 一級支援，自架 LLM 路線正式可用
+  - **多語言完整覆蓋**：`output_language` 傳遞到所有 user-facing agent（researchers／risk debators／research manager／trader），結束 v0.2.4 之前「只有 analyst 與 portfolio manager 守設定」的部分本地化
+  - **alpha 計算改用區域 benchmark**：`.NS`/`.T`/`.HK`/`.L`/`.TO`/`.AX`/`.BO` 對應 ^NSEI／^N225／^HSI／^FTSE／^GSPTSE／^AXJO／^BSESN，US 仍走 SPY，消除 FX 漂移污染 alpha
+  - **資安**：ticker path-traversal validation；其餘修正 `pip install .` 拾不到 `.env`、reports save 串流 chunks 漏寫、Docker 首寫權限、config 跨 run 洩漏、`max_recur_limit` 未套用、missing API key 錯誤未點名 env var
+- 模型 catalog 同步刷新：GPT-5.5 frontier、Claude Opus 4.7、Gemini 3.1 Flash-Lite GA、Grok 4.20、Qwen 3.6 line；DeepSeek V4／reasoner 與 MiniMax M2.x 的 structured output 修復（自動跳過 `tool_choice` binding）。
