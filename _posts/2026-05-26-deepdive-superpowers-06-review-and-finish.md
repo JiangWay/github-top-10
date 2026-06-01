@@ -16,7 +16,7 @@ tags: [深度解析, superpowers, AI Agent 框架, Skill 外掛]
 
 > 系列入口：[深度解析 superpowers]({{ site.baseurl }}{% link series/superpowers/index.md %})
 
-Ep.5 把並發與隔離拆完，這集走到一條 task 的最後兩段：code review 與 branch 收尾。多數 AI agent 寫完碼就直接交差，最多自己讀一遍 diff 說「LGTM」——這正是 [Ep.1]({{ site.baseurl }}{% link _posts/2026-05-21-deepdive-superpowers-01-why.md %}) 表上第 1 種「直覺修沒抓根因」與第 2 種「TDD 補測沒驗到邊界」最後會穿過的口。superpowers 把這道口拆成三個 skill：`requesting-code-review` 派人來看、`receiving-code-review` 處理回來的意見、`finishing-a-development-branch` 把 branch 從工作態回到乾淨態。
+Ep.5 把並發與隔離拆完，這集走到一條 task 的最後兩段：code review 與 branch 收尾。多數 AI agent 寫完碼就直接交差，最多自己讀一遍 diff 說「LGTM」——這正是 [Ep.1]({{ site.baseurl }}{% link _posts/2026-05-26-deepdive-superpowers-01-why.md %}) 表上第 1 種「直覺修沒抓根因」與第 2 種「TDD 補測沒驗到邊界」最後會穿過的口。superpowers 把這道口拆成三個 skill：`requesting-code-review` 派人來看、`receiving-code-review` 處理回來的意見、`finishing-a-development-branch` 把 branch 從工作態回到乾淨態。
 
 這集要回答的三個問題：為什麼 review 要拆 request 與 receive 兩個 skill 而不寫成一個 hook、嚴重度怎麼分才不會被自己安撫掉、為什麼 branch 收尾被中斷時可以放心重跑。
 
@@ -73,7 +73,7 @@ Push back 的判準也釘死：suggestion 會弄壞既有功能、reviewer 缺 c
 
 ## finishing-a-development-branch：lifecycle 收尾與 idempotent 的工程意義
 
-[finishing-a-development-branch](https://github.com/obra/superpowers/blob/main/skills/finishing-a-development-branch/SKILL.md) 處理 branch 從「實作完成」到「乾淨收尾」這段路。它跟 [verification-before-completion]({{ site.baseurl }}{% link _posts/2026-05-24-deepdive-superpowers-04-discipline-trio.md %})（Ep.4）守的東西不同：verification 守的是「程式碼在 runtime 跑得起來」，finishing-branch 守的是「branch 在版控系統裡的狀態收得乾淨」。前者是執行面，後者是版控面。
+[finishing-a-development-branch](https://github.com/obra/superpowers/blob/main/skills/finishing-a-development-branch/SKILL.md) 處理 branch 從「實作完成」到「乾淨收尾」這段路。它跟 [verification-before-completion]({{ site.baseurl }}{% link _posts/2026-05-26-deepdive-superpowers-04-discipline.md %})（Ep.4）守的東西不同：verification 守的是「程式碼在 runtime 跑得起來」，finishing-branch 守的是「branch 在版控系統裡的狀態收得乾淨」。前者是執行面，後者是版控面。
 
 skill 的流程是六步：
 
