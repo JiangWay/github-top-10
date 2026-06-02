@@ -18,11 +18,11 @@ tags: [深度解析, superpowers, AI Agent 框架, Skill 外掛]
 
 Ep.4 講的是單線推進時用什麼 skill 把 agent 拉住：TDD、verification、systematic-debugging。但 Claude Code session 跑久了會出現另一種失控：你叫 agent 做 A 任務，它先跑去看了 B 任務的檔案，回來時 working tree 已經被改過，context 裡塞滿了不相干的程式碼片段。這就是 Ep.1 那張失敗表裡第 3 種「context 污染」。
 
-並發在這套外掛裡不是為了把事情做得更快——是為了把工作切到互不污染的盒子裡。這集拆三個跟「隔離」直接相關的 skill：`using-git-worktrees` 管檔案層、`subagent-driven-development` 管 context 層、`dispatching-parallel-agents` 管「多個獨立失敗」的分派。看完你會知道為什麼這三件事在 superpowers 裡是分開的 skill，以及踩到 worktree 散落、subagent 沒收回、parallel agent 卡住時分別該從哪裡查。
+並發在這套外掛裡不是為了把事情做得更快，是為了把工作切到互不污染的盒子裡。這集拆三個跟「隔離」直接相關的 skill：`using-git-worktrees` 管檔案層、`subagent-driven-development` 管 context 層、`dispatching-parallel-agents` 管「多個獨立失敗」的分派。看完你會知道為什麼這三件事在 superpowers 裡是分開的 skill，以及踩到 worktree 散落、subagent 沒收回、parallel agent 卡住時分別該從哪裡查。
 
 ## using-git-worktrees：先偵測，再建立
 
-[using-git-worktrees](https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/SKILL.md) 的 description 寫得很直白：「Use when starting feature work that needs isolation from current workspace」。但這個 skill 真正有意思的地方不是「建立 worktree」，是它在建立之前先做的一件事——**偵測你是不是已經在 worktree 裡了**。
+[using-git-worktrees](https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/SKILL.md) 的 description 寫得很直白：「Use when starting feature work that needs isolation from current workspace」。但這個 skill 在建立 worktree 之前，會先做一件事：**偵測你是不是已經在 worktree 裡了**。
 
 v5.1.0 把這段邏輯改寫過。SKILL.md 的 Step 0 給的指令是：
 
@@ -31,11 +31,11 @@ GIT_DIR=$(cd "$(git rev-parse --git-dir)" 2>/dev/null && pwd -P)
 GIT_COMMON=$(cd "$(git rev-parse --git-common-dir)" 2>/dev/null && pwd -P)
 ```
 
-`GIT_DIR != GIT_COMMON` 就代表你身在一個 linked worktree。skill 接著做一道 submodule guard——因為 submodule 也會讓這兩個路徑不同，必須排除掉再下判斷。這個 detect-first 設計在重度用戶這邊有具體後果：你叫 agent 去新分支實作功能時，它不會盲目跑 `git worktree add`，而是先看看你是不是已經在 IDE 的 worktree session 裡。SKILL.md 的 Red Flags 區甚至把這條列為「#1 mistake」：有 native worktree 工具（例如 harness 提供的 `EnterWorktree`）卻硬跑 `git worktree add`，會製造 harness 看不見的 phantom state。
+`GIT_DIR != GIT_COMMON` 就代表你身在一個 linked worktree。skill 接著做一道 submodule guard，因為 submodule 也會讓這兩個路徑不同，必須排除掉再下判斷。這個 detect-first 設計在重度用戶這邊有具體後果：你叫 agent 去新分支實作功能時，它不會盲目跑 `git worktree add`，而是先看看你是不是已經在 IDE 的 worktree session 裡。SKILL.md 的 Red Flags 區甚至把這條列為「#1 mistake」：有 native worktree 工具（例如 harness 提供的 `EnterWorktree`）卻硬跑 `git worktree add`，會製造 harness 看不見的 phantom state。
 
 實際工作流長這樣：用戶請 agent 開一個新功能 → skill 跑 detect → 沒在 worktree 裡 → 問用戶要不要建（除非已經有指示）→ 優先用 native 工具 → 沒有的話 fallback 到 `git worktree add` → 預設放在 `.worktrees/`（必須先 `git check-ignore` 驗證已 ignore，沒 ignore 就先補進 `.gitignore` 並 commit）→ 跑 setup → 跑 baseline test → 確認綠燈才開始實作。
 
-這套流程的價值不在快，在於每一個分歧都把你會踩到的坑寫在 SKILL.md 裡：sandbox 阻擋建立怎麼 fallback 留原地、`.worktrees/` 與 `worktrees/` 都存在時誰優先、legacy 全域路徑 `~/.config/superpowers/worktrees/$project` 怎麼維持向下相容。重度用戶看 session log 時，這些步驟會以「I'm using the using-git-worktrees skill to set up an isolated workspace.」開頭——這句宣告本身也是 skill 強制的，方便你判斷現在在哪一步。
+這套流程的價值不在快，在於每一個分歧都把你會踩到的坑寫在 SKILL.md 裡：sandbox 阻擋建立怎麼 fallback 留原地、`.worktrees/` 與 `worktrees/` 都存在時誰優先、legacy 全域路徑 `~/.config/superpowers/worktrees/$project` 怎麼維持向下相容。重度用戶看 session log 時，這些步驟會以「I'm using the using-git-worktrees skill to set up an isolated workspace.」開頭。這句宣告本身也是 skill 強制的，方便你判斷現在在哪一步。
 
 worktree 散滿地是常見的後續問題。SKILL.md 沒寫清理流程，那是 `finishing-a-development-branch` 的事（Ep.6 細講）。短期內你可以靠 `git worktree list` 看清還剩什麼、`git worktree prune` 收掉孤兒紀錄，但真正的回收動作要等 branch 收尾 skill 主導。
 
@@ -45,17 +45,17 @@ worktree 散滿地是常見的後續問題。SKILL.md 沒寫清理流程，那�
 
 > Fresh subagent per task + two-stage review (spec then quality) = high quality, fast iteration
 
-這跟一般用戶想像的 subagent 不太一樣。多數人以為 subagent 是「拿來跑大型搜尋的工具」，但這個 skill 把 subagent 當成**執行紀律的單位**——每個 plan task 派一個 fresh subagent 進來實作，完成後不留 context；接著再派一個 spec reviewer subagent 檢查程式碼有沒有對齊 spec；通過後再派一個 code quality reviewer subagent 檢查程式品質；兩道 review 都過了才 mark complete，繼續下一個 task。
+這跟一般用戶想像的 subagent 不太一樣。多數人以為 subagent 是「拿來跑大型搜尋的工具」，但這個 skill 的用法是每個 plan task 派一個 fresh subagent 進來實作，完成後不留 context；接著再派一個 spec reviewer subagent 檢查程式碼有沒有對齊 spec；通過後再派一個 code quality reviewer subagent 檢查程式品質；兩道 review 都過了才 mark complete，繼續下一個 task。
 
 為什麼要這樣切？SKILL.md 給的理由是「You delegate tasks to specialized agents with isolated context」——主 agent 的 context 拿來做協調（讀 plan、curate context、整合結果），實作細節留在 subagent 裡用完即拋。這對應到 Ep.1 那張表的「context 污染」失敗：主 agent 如果自己下海實作 5 個 task，session 結束時它的 context 裡會混雜這 5 個 task 的所有試錯紀錄，後面再叫它判斷時就會被前面的雜訊干擾。
 
 實戰上要注意 SKILL.md 在 Red Flags 區明文禁止的幾件事：
-- **不要平行派多個 implementer subagent**（會撞檔案）——parallel 是 `dispatching-parallel-agents` 的場域，不是這個 skill 的。
-- **不要讓 subagent 自己去讀 plan 檔**——主 agent 必須把 task 全文 + scene-setting context 直接塞給 subagent。
-- **不要跳過 review loop**——reviewer 找到問題就讓同一個 implementer subagent 修，修完再 review，不能「差不多就好」。
-- **Spec compliance review 必須在 code quality review 之前**——順序顛倒會檢查到不對的東西。
+- **不要平行派多個 implementer subagent**（會撞檔案）：parallel 是 `dispatching-parallel-agents` 的場域，不是這個 skill 的。
+- **不要讓 subagent 自己去讀 plan 檔**：主 agent 必須把 task 全文 + scene-setting context 直接塞給 subagent。
+- **不要跳過 review loop**：reviewer 找到問題就讓同一個 implementer subagent 修，修完再 review，不能「差不多就好」。
+- **Spec compliance review 必須在 code quality review 之前**：順序顛倒會檢查到不對的東西。
 
-SKILL.md 還列了 4 種 implementer 回傳的 status：`DONE`、`DONE_WITH_CONCERNS`、`NEEDS_CONTEXT`、`BLOCKED`。BLOCKED 的處置分支寫得最細：先判斷是 context 不夠（補 context 重派）、推理不夠（換更強的 model 重派）、任務太大（拆小）、還是 plan 本身錯（escalate 給人）。「Never force the same model to retry without changes」這句是用來防止 agent 陷入無限迴圈的——這也是重度用戶最容易在 session 卡住時忽略的。
+SKILL.md 還列了 4 種 implementer 回傳的 status：`DONE`、`DONE_WITH_CONCERNS`、`NEEDS_CONTEXT`、`BLOCKED`。BLOCKED 的處置分支寫得最細：先判斷是 context 不夠（補 context 重派）、推理不夠（換更強的 model 重派）、任務太大（拆小）、還是 plan 本身錯（escalate 給人）。「Never force the same model to retry without changes」這句是用來防止 agent 陷入無限迴圈的，這也是重度用戶最容易在 session 卡住時忽略的。
 
 最後一個重要約束來自 SKILL.md 的 Continuous execution 段：
 
@@ -84,7 +84,7 @@ Agent 3 → Fix tool-approval-race-conditions.test.ts
 
 如果你誤用，會發生的情況是：3 個 agent 都改了 `package.json`、回來時 merge 不掉；或 agent A 修了一個 race condition 結果 agent B 那邊的 test 反而過了，但你已經派 agent B 去改實作了。
 
-「parallel agent 卡其中一個」是用過 fan-out 都會遇到的場景。SKILL.md 沒給卡住的 recovery，但 Agent Prompt Structure 那段給出預防的線索：每個 agent prompt 必須 focused（單一 problem domain）、self-contained（不需要 session 歷史）、specific about output（要回傳什麼明確寫死）。換句話說，agent 會卡通常是 prompt 沒寫清楚 fan-in 要的 output 格式——它做完不知道要怎麼回報才算完成。回去看 agent 拿到的 prompt 是不是缺了「Return: Summary of what you found and what you fixed.」這種末段指令，多半就找到根因。
+「parallel agent 卡其中一個」是用過 fan-out 都會遇到的場景。SKILL.md 沒給卡住的 recovery，但 Agent Prompt Structure 那段給出預防的線索：每個 agent prompt 必須 focused（單一 problem domain）、self-contained（不需要 session 歷史）、specific about output（要回傳什麼明確寫死）。換句話說，agent 會卡通常是 prompt 沒寫清楚 fan-in 要的 output 格式，它做完不知道要怎麼回報才算完成。回去看 agent 拿到的 prompt 是不是缺了「Return: Summary of what you found and what you fixed.」這種末段指令，多半就找到根因。
 
 SKILL.md 在 Verification 段還補了一條 fan-in 之後的義務：「Spot check - Agents can make systematic errors.」三個獨立 agent 可能犯同一種錯（例如都用了同樣的 anti-pattern 來 fix test），整合完跑全套測試只是必要條件，不是充分條件，主 agent 還要抽看 diff。
 
@@ -102,12 +102,12 @@ SKILL.md 在 Verification 段還補了一條 fan-in 之後的義務：「Spot ch
 
 幾條從 SKILL.md 文本可以直接抽出的可操作守則：
 
-- session 一開始如果想叫 agent 進獨立工作區，明說「set up an isolated worktree」之類的字眼——它對應到 `using-git-worktrees` 的 description 觸發詞「starting feature work that needs isolation」。
-- 看到 agent 宣告「I'm using the using-git-worktrees skill...」就確認下一步是 Step 0 detect，不是直接 `git worktree add`——後者代表它跳過了 detect。
-- 給 agent plan 之後請它用 `subagent-driven-development` 跑，不要自己手動 dispatch——這樣 spec / quality 兩段 review 是 by skill 強制的，不會被省。
+- session 一開始如果想叫 agent 進獨立工作區，明說「set up an isolated worktree」之類的字眼，它對應到 `using-git-worktrees` 的 description 觸發詞「starting feature work that needs isolation」。
+- 看到 agent 宣告「I'm using the using-git-worktrees skill...」就確認下一步是 Step 0 detect，不是直接 `git worktree add`，後者代表它跳過了 detect。
+- 給 agent plan 之後請它用 `subagent-driven-development` 跑，不要自己手動 dispatch，這樣 spec / quality 兩段 review 是 by skill 強制的，不會被省。
 - 看到 agent 在 task 之間問「要繼續嗎」，可以直接引述 SKILL.md 的 Continuous execution 段叫它繼續。
 - 有多個獨立 test 失敗時明確說「these are independent」，免得它誤觸 `subagent-driven-development`（那是順序執行的）而非 `dispatching-parallel-agents`。
-- worktree 散落時，先 `git worktree list`，再判斷哪些可以 `git worktree remove`——不要直接砍目錄，會留 phantom state，Ep.6 會講 `finishing-a-development-branch` 的正規收尾。
+- worktree 散落時，先 `git worktree list`，再判斷哪些可以 `git worktree remove`，不要直接砍目錄，會留 phantom state，Ep.6 會講 `finishing-a-development-branch` 的正規收尾。
 
 ## 下集預告
 

@@ -150,7 +150,7 @@ using-superpowers 是 meta 層而非執行層。它不教你 debug、不教你 b
 
 最後一層機制是主 agent / subagent 切割。superpowers 在 `using-superpowers/SKILL.md` 開頭就放了 `<SUBAGENT-STOP>` 標籤，subagent 被 dispatch 時直接跳過 using-superpowers 入口。理由很實際：subagent 接的是獨立子任務（code review、research、worktree 內隔離工作），它的 context 不該被主 agent 的 router 規則塞滿。
 
-切割原則三條：context 大小（subagent 處理可以單獨完成的子問題）、可重複性（同樣的 prompt 同樣的工具，dispatch 出去結果可比對）、權限隔離（subagent 不知道主 session 的全貌，誤動破壞範圍受限）。Ep.5 會把 [dispatching-parallel-agents](https://github.com/obra/superpowers/blob/main/skills/dispatching-parallel-agents/SKILL.md) 與 [subagent-driven-development](https://github.com/obra/superpowers/blob/main/skills/subagent-driven-development/SKILL.md) 拆開細講。
+切割看三件事。context 大小，subagent 處理可以單獨完成的子問題；可重複性，同樣的 prompt 同樣的工具，dispatch 出去結果可比對；權限隔離，subagent 不知道主 session 的全貌，誤動破壞範圍受限。Ep.5 會把 [dispatching-parallel-agents](https://github.com/obra/superpowers/blob/main/skills/dispatching-parallel-agents/SKILL.md) 與 [subagent-driven-development](https://github.com/obra/superpowers/blob/main/skills/subagent-driven-development/SKILL.md) 拆開細講。
 
 ## 實戰：session 卡住時定位到哪一層
 

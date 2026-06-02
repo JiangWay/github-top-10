@@ -1,6 +1,6 @@
 ---
 title: "深度解析系列：obra/superpowers"
-description: "拆解 obra/superpowers 的架構、設計理念、14 個 skill 如何運作，以及 skill 開發者必懂的 TDD 寫作方法論——分兩 Part，先用戶後開發者。"
+description: "拆解 obra/superpowers 的架構、設計理念、14 個 skill 如何運作，以及 skill 開發者必懂的 TDD 寫作方法論。分兩 Part，先用戶後開發者。"
 permalink: /series/superpowers/
 series: superpowers-deepdive
 target_repo: obra/superpowers
@@ -8,7 +8,7 @@ based_on_version: v5.1.0
 parts:
   - { id: 1, name: "重度用戶篇", episodes: "Ep.1–Ep.7", audience: "想用 superpowers 的 Claude Code 重度用戶" }
   - { id: 2, name: "Skill 開發者篇", episodes: "Ep.8–Ep.12", audience: "想自己寫 skill 並驗證可用的開發者" }
-status: drafting
+status: published
 tags: [深度解析, superpowers, AI Agent 框架, Skill 外掛]
 ---
 
@@ -51,13 +51,13 @@ Superpowers 是 2026 年 [GitHub Trending 榜上最持續的 AI agent 方法論�
 
 | 集數 | 主題 | 涵蓋 skill | 狀態 |
 |---|---|---|---|
-| Ep.1 | 為什麼需要 superpowers | — | 規劃 |
-| Ep.2 | 架構解剖：一個 Skill 怎麼被觸發 | 全系統機制 | 規劃 |
-| Ep.3 | 流程主幹：brainstorm → plan → execute | brainstorming、writing-plans、executing-plans | 規劃 |
-| Ep.4 | 紀律三件套：TDD / Verification / Debugging | test-driven-development、verification-before-completion、systematic-debugging | 規劃 |
-| Ep.5 | 並發與隔離 | using-git-worktrees、dispatching-parallel-agents、subagent-driven-development | 規劃 |
-| Ep.6 | Review 雙環與 branch 收尾 | requesting-code-review、receiving-code-review、finishing-a-development-branch | 規劃 |
-| Ep.7 | 元層：自我繁殖的 superpowers | using-superpowers、writing-skills | 規劃 |
+| [Ep.1]({{ site.baseurl }}{% link _posts/2026-05-26-deepdive-superpowers-01-why.md %}) | 為什麼需要 superpowers | — | 已發佈 |
+| [Ep.2]({{ site.baseurl }}{% link _posts/2026-05-26-deepdive-superpowers-02-architecture.md %}) | 架構解剖：一個 Skill 怎麼被觸發 | 全系統機制 | 已發佈 |
+| [Ep.3]({{ site.baseurl }}{% link _posts/2026-05-26-deepdive-superpowers-03-workflow-spine.md %}) | 流程主幹：brainstorm → plan → execute | brainstorming、writing-plans、executing-plans | 已發佈 |
+| [Ep.4]({{ site.baseurl }}{% link _posts/2026-05-26-deepdive-superpowers-04-discipline.md %}) | 紀律三件套：TDD / Verification / Debugging | test-driven-development、verification-before-completion、systematic-debugging | 已發佈 |
+| [Ep.5]({{ site.baseurl }}{% link _posts/2026-05-26-deepdive-superpowers-05-concurrency.md %}) | 並發與隔離 | using-git-worktrees、dispatching-parallel-agents、subagent-driven-development | 已發佈 |
+| [Ep.6]({{ site.baseurl }}{% link _posts/2026-05-26-deepdive-superpowers-06-review-and-finish.md %}) | Review 雙環與 branch 收尾 | requesting-code-review、receiving-code-review、finishing-a-development-branch | 已發佈 |
+| [Ep.7]({{ site.baseurl }}{% link _posts/2026-05-26-deepdive-superpowers-07-meta.md %}) | 元層：自我繁殖的 superpowers | using-superpowers、writing-skills | 已發佈 |
 
 ### Ep.1 — 為什麼需要 superpowers：問題、人、設計理念
 
@@ -67,7 +67,7 @@ AI agent 跳進去就寫碼的失敗模式。作者 Jesse Vincent 與 Prime Radi
 
 ### Ep.2 — 架構解剖：一個 Skill 在 runtime 怎麼被觸發
 
-`plugin.json` / `SKILL.md` frontmatter 結構。description 為什麼是「Use when…」句型——它就是 router。`skills/<name>/` 內部解剖：references/、scripts/、examples/、SKILL.md 各自角色。`hooks/` 與 `scripts/` 怎麼把 markdown 變成 enforceable gate。Skill 之間的鏈式調用：為什麼 `using-superpowers` 是 SessionStart 必經入口。主 agent ↔ subagent 的職責切割。
+`plugin.json` / `SKILL.md` frontmatter 結構。description 為什麼是「Use when…」句型，因為它就是 router。`skills/<name>/` 內部解剖：references/、scripts/、examples/、SKILL.md 各自角色。`hooks/` 與 `scripts/` 怎麼把 markdown 變成 enforceable gate。Skill 之間的鏈式調用：為什麼 `using-superpowers` 是 SessionStart 必經入口。主 agent ↔ subagent 的職責切割。
 
 **重度用戶能拿走什麼**：看懂 session 開頭那段 system-reminder、知道某個 skill 為什麼沒被觸發、判斷自己的提示是否撞到 description 觸發語。
 
@@ -79,7 +79,7 @@ AI agent 跳進去就寫碼的失敗模式。作者 Jesse Vincent 與 Prime Radi
 
 ### Ep.4 — 紀律三件套：TDD / Verification / Debugging
 
-`test-driven-development`：RED-GREEN-REFACTOR 為什麼要強制刪除「先寫的 code」。`verification-before-completion`：完成前 hard gate 的設計。`systematic-debugging`：bug 為什麼要走方法論而非直覺修。三者為什麼分開不合一。
+`test-driven-development`：RED-GREEN-REFACTOR 為什麼要強制刪除「先寫的 code」。`verification-before-completion`：完成前硬性 gate 的設計。`systematic-debugging`：bug 為什麼要走方法論而非直覺修。三者為什麼分開不合一。
 
 **重度用戶能拿走什麼**：判斷 agent 在 TDD 時為什麼「倒退」是設計、什麼時候 verification 在過度檢查。
 
@@ -101,7 +101,7 @@ AI agent 跳進去就寫碼的失敗模式。作者 Jesse Vincent 與 Prime Radi
 
 **重度用戶能拿走什麼**：要不要寫自己的 skill、寫了之後怎麼讓它和 superpowers 共存。
 
-**走到這裡你會發現一個更深的問題**：作者怎麼確定他寫的 skill 真的能讓 agent 守紀律？線索藏在 `skills/<name>/` 內 `test-pressure-*.md` 這些檔——那是真正的「壓力測試案例」。如果你有興趣動手寫，Part 2 從這裡接著拆。
+**走到這裡你會發現一個更深的問題**：作者怎麼確定他寫的 skill 真的能讓 agent 守紀律？線索藏在 `skills/<name>/` 內 `test-pressure-*.md` 這些檔，那是真正的「壓力測試案例」。如果你有興趣動手寫，Part 2 從這裡接著拆。
 
 ---
 
@@ -109,11 +109,11 @@ AI agent 跳進去就寫碼的失敗模式。作者 Jesse Vincent 與 Prime Radi
 
 | 集數 | 主題 | 拆解對象 | 狀態 |
 |---|---|---|---|
-| Ep.8 | Skill 即 TDD：寫 skill 的元方法論 | `writing-skills`、`test-driven-development` 對照 | 規劃 |
-| Ep.9 | Pressure Test 拆解：scenario 檔的設計 | `systematic-debugging/test-pressure-*.md`、`test-academic.md` | 規劃 |
-| Ep.10 | Rationalization 表：抓出 agent 的真實藉口 | skill 內 counter-table / 紅旗清單的生成 | 規劃 |
-| Ep.11 | CSO：讓 skill 在 1024 字以內被找到 | description、命名、token 預算 | 規劃 |
-| Ep.12 | 驗證 skill 可用：subagent 測試完整流程 | RED→GREEN→REFACTOR end-to-end | 規劃 |
+| [Ep.8]({{ site.baseurl }}{% link _posts/2026-05-26-deepdive-superpowers-08-skill-as-tdd.md %}) | Skill 即 TDD：寫 skill 的元方法論 | `writing-skills`、`test-driven-development` 對照 | 已發佈 |
+| [Ep.9]({{ site.baseurl }}{% link _posts/2026-05-26-deepdive-superpowers-09-pressure-test.md %}) | Pressure Test 拆解：scenario 檔的設計 | `systematic-debugging/test-pressure-*.md`、`test-academic.md` | 已發佈 |
+| [Ep.10]({{ site.baseurl }}{% link _posts/2026-05-26-deepdive-superpowers-10-rationalization.md %}) | Rationalization 表：抓出 agent 的真實藉口 | skill 內 counter-table / 紅旗清單的生成 | 已發佈 |
+| [Ep.11]({{ site.baseurl }}{% link _posts/2026-05-26-deepdive-superpowers-11-cso.md %}) | CSO：讓 skill 在 1024 字元以內被找到 | description、命名、token 預算 | 已發佈 |
+| [Ep.12]({{ site.baseurl }}{% link _posts/2026-05-26-deepdive-superpowers-12-verification.md %}) | 驗證 skill 可用：subagent 測試完整流程 | RED→GREEN→REFACTOR end-to-end | 已發佈 |
 
 ### Ep.8 — Skill 即 TDD：寫 skill 的元方法論
 
@@ -132,7 +132,7 @@ AI agent 跳進去就寫碼的失敗模式。作者 Jesse Vincent 與 Prime Radi
 | [test-pressure-2.md](https://github.com/obra/superpowers/blob/main/skills/systematic-debugging/test-pressure-2.md) | （Ep.9 內補拆解） | （補拆解） |
 | [test-pressure-3.md](https://github.com/obra/superpowers/blob/main/skills/systematic-debugging/test-pressure-3.md) | （Ep.9 內補拆解） | （補拆解） |
 
-壓力類型分類：時間 / 沉沒成本 / 權威 / 疲勞 / 社會壓力。為什麼要疊加多種壓力而不是單一壓力測。A/B/C 選項設計——為什麼提供「妥協 C」是關鍵陷阱。
+壓力類型分類：時間 / 沉沒成本 / 權威 / 疲勞 / 社會壓力。為什麼要疊加多種壓力而不是單一壓力測。A/B/C 選項設計：為什麼提供「妥協 C」是關鍵陷阱。
 
 **開發者能拿走什麼**：能自己為自己寫的 skill 設計可重複的壓力測試。
 
@@ -144,7 +144,7 @@ baseline test 怎麼跑（沒有 skill 時 dispatch subagent）。怎麼收集 a
 
 ### Ep.11 — CSO（Claude Search Optimization）：讓 skill 被正確找到
 
-description = router，不是 summary。為什麼 description 不能 summarize workflow（會讓 agent 跳過正文）。命名守則：active voice、動詞優先、gerund 句型。Token 預算：getting-started < 150 字、其他 < 500 字。關鍵字覆蓋：error message、症狀同義詞、工具名。
+description = router，不是 summary。為什麼 description 不能 summarize workflow（會讓 agent 跳過正文）。命名守則：active voice、動詞優先、gerund 句型。Token 預算：description ≤1024 字元；SKILL.md 正文 getting-started < 150 words、其他 < 500 words。關鍵字覆蓋：error message、症狀同義詞、工具名。
 
 **開發者能拿走什麼**：寫得出讓 Claude 在對的時機載入、又不爆 token 的 skill description。
 

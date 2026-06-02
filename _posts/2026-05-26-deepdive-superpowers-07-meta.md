@@ -18,11 +18,11 @@ tags: [深度解析, superpowers, AI Agent 框架, Skill 外掛]
 
 Ep.6 收完了一個完整的 task lifecycle：從 brainstorm 起頭、走過 plan / execute / TDD / verification、最後在 review 雙環與 branch 收尾結束。這一條主線能被串起來，靠的並不只是 14 個 skill 各自寫得多漂亮，更關鍵的是兩個藏在背後的 meta skill；它們不做任務本身，只規範「skill 要怎麼被找到、被選擇、被孵化」。
 
-這集進元層。要拆的就是這兩個 skill：`using-superpowers` 與 `writing-skills`。前者是每個 session 必經的 router，後者是作者教你寫 skill 的 skill。看完這兩節，你會明白為什麼把 superpowers 講成「一組外掛」其實低估了它。它更像是一個能自我繁殖的方法論軟體：方法論長成 skill，skill 又長出寫 skill 的 skill，循環不止。
+這集進元層。要拆的就是這兩個 skill：`using-superpowers` 與 `writing-skills`。前者是每個 session 必經的 router，後者是作者教你寫 skill 的 skill。看完這兩節，你會明白為什麼把 superpowers 講成「一組外掛」其實低估了它。它更像是一個能自我繁殖的方法論軟體：方法論長成 skill，skill 又長出寫 skill 的 skill。
 
 ## using-superpowers：紅旗清單與優先順序
 
-[using-superpowers/SKILL.md](https://github.com/obra/superpowers/blob/main/skills/using-superpowers/SKILL.md) 是 SessionStart 必經入口。每次 session 一開始，它一定先被載入。它的職責不是執行任務、不是寫碼、也不是 debug；它的職責是 router，在 agent 還沒動手以前，告訴它「你眼前這件事，應該走哪個 skill」。
+[using-superpowers/SKILL.md](https://github.com/obra/superpowers/blob/main/skills/using-superpowers/SKILL.md) 是 SessionStart 必經入口。每次 session 一開始，它一定先被載入。它的職責是當 router：在 agent 還沒動手以前，告訴它「你眼前這件事，應該走哪個 skill」。它自己不執行任務、不寫碼、不 debug。
 
 這個 router 對應到 Ep.1 那張失敗表的第 3、4 種：context 污染（不該載入的 skill 被載入、或不必要的探索把對話塞滿）與跳過設計（agent 還沒想清楚就先動手）。前者靠 routing 紀律：skill 規定只要有「1% 可能適用」就應該 invoke 對應 skill，但 invoke 之前不准先到處讀檔案、不准先 grep、不准先 clarify。後者靠紅旗清單，直接把 agent 在 session 裡會冒出來的內心戲列出來，再逐條打掉。
 
@@ -36,7 +36,7 @@ Ep.6 收完了一個完整的 task lifecycle：從 brainstorm 起頭、走過 pl
 
 清單裡還有「I remember this skill」、「The skill is overkill」、「I'll just do this one thing first」這幾條，每一條都可以對到你 session 裡看過的具體 LLM 行為。「我記得這個 skill」對應到 agent 憑印象跳過載入；「skill 太重」對應到 agent 把自己的偷懶包裝成效率；「我先做這一件事」對應到那個你最熟悉的橋段：明明只給了一個需求，它先回你「我先快速 check 一下檔案結構」就直接開幹了。重度用戶讀這份清單會有特別的辨識感：很多你以為是 agent「個性」的怪毛病，其實只是它在某條 rationalization 上鑽出去而已。
 
-router 另一個重點是 skill 優先順序。當多個 skill 可能適用時，先走 process skill（brainstorming、systematic-debugging），再走 implementation skill（前端設計、MCP builder 之類）。「Let's build X」永遠先 brainstorm；「Fix this bug」永遠先走 systematic-debugging。這個順序看似簡單，但它在主 agent 行為上展現出來的，就是 Ep.3、Ep.4 你看過的那種「明明我只想趕快試一下，它卻先要我設計」的觀感。那不是 agent 不聽話，是 router 在按優先序執行。
+router 另一個重點是 skill 優先順序。當多個 skill 可能適用時，先走 process skill（brainstorming、systematic-debugging），再走 implementation skill（前端設計、MCP builder 之類）。「Let's build X」永遠先 brainstorm；「Fix this bug」永遠先走 systematic-debugging。這個順序看似簡單，但它在主 agent 行為上展現出來的，就是 Ep.3、Ep.4 你看過的那種「明明我只想趕快試一下，它卻先要我設計」的觀感。這是 router 在按優先序執行的結果。
 
 理解這層之後再看 Ep.2 提過的「為什麼 description 寫成 `Use when…` 句型」就會通了：router 不是靠關鍵字匹配，是靠每個 skill description 提供的「觸發條件」做近似分類。description 寫得越像 router 線索（症狀、錯誤訊息、情境），router 就越可能命中；description 一旦寫成「這個 skill 在做什麼」，agent 反而會跳過正文、直接照 description 行事。這條觀察在 Part 2 的 CSO 章節會再用到。
 
@@ -64,11 +64,11 @@ skill 自己舉的例子很直接：如果 CLAUDE.md 寫「不要用 TDD」，�
 
 寫 skill 就是把 TDD 套用在流程文件上。一般 prompt engineering tutorial 的做法是先寫 prompt、跑一跑、覺得不錯就發；writing-skills 反過來。你必須先讓 agent 在沒有 skill 的情況下失敗一次（RED 階段：baseline pressure scenario），記錄它逐字的 rationalization；然後寫最小化的 skill 去堵那些具體藉口（GREEN）；最後在新的壓力情境裡再壓一次，找新的藉口，再回頭堵（REFACTOR）。它甚至列了一條 Iron Law：「沒有先看到 agent 失敗，就不准寫 skill。」
 
-對 Part 1 的讀者來說，這節先點到為止。重點只有一個：你之前在 Ep.2 到 Ep.6 看到的所有 skill，例如 TDD 的「刪除先寫的程式碼」、verification 的 hard gate、systematic-debugging 的紅旗清單，它們長那個樣子並不是作者文筆風格，而是 RED-GREEN-REFACTOR 循環跑出來的副產品。skill 裡每一條看起來囉嗦的 rationalization counter，背後都有一個 baseline test 裡的 agent 真的講過那句話。
+對 Part 1 的讀者來說，這節先點到為止。重點只有一個：你之前在 Ep.2 到 Ep.6 看到的所有 skill，例如 TDD 的「刪除先寫的程式碼」、verification 的 hard gate、systematic-debugging 的紅旗清單，它們長那個樣子，是 RED-GREEN-REFACTOR 循環跑出來的副產品。skill 裡每一條看起來囉嗦的 rationalization counter，背後都有一個 baseline test 裡的 agent 真的講過那句話。
 
 這也是為什麼 superpowers 能「自我繁殖」：它不只給你 skill，它把生產 skill 的方法也 skill 化了。任何一個重度用戶只要願意走完那條 RED-GREEN-REFACTOR 循環，就能把自己手上的內部紀律（code review 慣例、release checklist、on-call runbook、資安守則）壓成同等強度的 skill，並透過 marketplace 機制散播給其他人。Part 2 從 Ep.8 開始就是專門拆這條生產線。
 
-從重度用戶的角度看，writing-skills 還提供了一個間接好處：它讓你看一個 skill 時，能評估它「測過沒」。skill 寫得好不好的訊號很具體：有沒有 Red Flags 清單、有沒有 rationalization counter table、Iron Law 是不是封住了常見漏洞、description 是不是只描述觸發條件而沒總結流程。如果一個外部 skill 缺了這些痕跡，那它八成沒走過 pressure scenario，遇到實戰壓力會破。換句話說，writing-skills 同時把品檢標準也外顯了，你以後看別人寫的 plugin、看 Anthropic 官方 skills repo，都能用同一把尺量。
+從重度用戶的角度看，writing-skills 還提供了一個間接好處：它讓你看一個 skill 時，能評估它「測過沒」。skill 寫得好不好的訊號很具體：有沒有 Red Flags 清單、有沒有 rationalization counter table、Iron Law 是不是封住了常見漏洞、description 是不是只描述觸發條件而沒總結流程。如果一個外部 skill 缺了這些痕跡，那它八成沒走過 pressure scenario，遇到實戰壓力會破。換句話說，writing-skills 把品檢標準變成一張可逐項打勾的清單：有沒有 Red Flags 清單、有沒有 rationalization counter table、Iron Law 封不封得住常見漏洞、description 是否只寫觸發條件。你以後看別人寫的 plugin、看 Anthropic 官方 skills repo，都能用同一把尺量。
 
 ## Part 1 結語
 
@@ -78,6 +78,6 @@ skill 自己舉的例子很直接：如果 CLAUDE.md 寫「不要用 TDD」，�
 
 ## 接 Part 2：想自己寫 skill 嗎？
 
-到這你已經會解釋 superpowers 在做什麼，但有個更深的問題：作者怎麼**知道**他寫的 skill 真的能讓 agent 守紀律？線索藏在每個 skill 目錄下的 `test-*.md`（包含 academic 與 pressure-1/2/3），那是真正的測試案例。Part 2 從這裡開始拆 skill 寫作的元方法論。
+到這你已經會解釋 superpowers 在做什麼，但有個更深的問題：作者怎麼**知道**他寫的 skill 真的能讓 agent 守紀律？線索散在三處：`skills/systematic-debugging/` 目錄下有一組 `test-academic.md` 與 `test-pressure-1/2/3.md` 壓力測試案例，repo 頂層的 `tests/`（例如 `tests/skill-triggering/`）放整體 runner 與觸發測試，`skills/writing-skills/testing-skills-with-subagents.md` 則寫明用 subagent 壓測 skill 的方法。Part 2 從這裡開始拆 skill 寫作的元方法論。
 
 回到[系列入口]({{ site.baseurl }}{% link series/superpowers/index.md %})可查 Part 2 所有集數與勘誤。

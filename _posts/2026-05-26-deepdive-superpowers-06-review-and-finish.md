@@ -16,7 +16,7 @@ tags: [深度解析, superpowers, AI Agent 框架, Skill 外掛]
 
 > 系列入口：[深度解析 superpowers]({{ site.baseurl }}{% link series/superpowers/index.md %})
 
-Ep.5 把並發與隔離拆完，這集走到一條 task 的最後兩段：code review 與 branch 收尾。多數 AI agent 寫完碼就直接交差，最多自己讀一遍 diff 說「LGTM」——這正是 [Ep.1]({{ site.baseurl }}{% link _posts/2026-05-26-deepdive-superpowers-01-why.md %}) 表上第 1 種「直覺修沒抓根因」與第 2 種「TDD 補測沒驗到邊界」最後會穿過的口。superpowers 把這道口拆成三個 skill：`requesting-code-review` 派人來看、`receiving-code-review` 處理回來的意見、`finishing-a-development-branch` 把 branch 從工作態回到乾淨態。
+Ep.5 把並發與隔離拆完，這集走到一條 task 的最後兩段：code review 與 branch 收尾。多數 AI agent 寫完碼就直接交差，最多自己讀一遍 diff 說「LGTM」。這正是 [Ep.1]({{ site.baseurl }}{% link _posts/2026-05-26-deepdive-superpowers-01-why.md %}) 表上第 1 種「直覺修沒抓根因」與第 2 種「TDD 補測沒驗到邊界」最後會穿過的口。superpowers 把這道口拆成三個 skill：`requesting-code-review` 派人來看、`receiving-code-review` 處理回來的意見、`finishing-a-development-branch` 把 branch 從工作態回到乾淨態。
 
 這集要回答的三個問題：為什麼 review 要拆 request 與 receive 兩個 skill 而不寫成一個 hook、嚴重度怎麼分才不會被自己安撫掉、為什麼 branch 收尾被中斷時可以放心重跑。
 
@@ -28,7 +28,7 @@ Ep.5 把並發與隔離拆完，這集走到一條 task 的最後兩段：code r
 
 skill 列了什麼時候算 mandatory：subagent-driven development 每完成一個 task 之後、做完一個大 feature、merge 到 main 之前。Optional 但值得：卡住的時候要新觀點、refactor 之前先抓 baseline、修完複雜 bug 想確認沒留尾巴。Core principle 一句話：「Review early, review often」。
 
-值得注意的是 v5.1.0 沒有把 review 拆成 factual 與 consistency 兩個獨立 subagent，而是用**一份結構化 prompt 跑一次**，要求 reviewer 在同一份報告裡分別交付：
+v5.1.0 沒有把 review 拆成 factual 與 consistency 兩個獨立 subagent，而是用**一份結構化 prompt 跑一次**，要求 reviewer 在同一份報告裡分別交付：
 
 - **Plan alignment**：實作有沒有照 plan、偏離是改善還是失控、有沒有少做。
 - **Code quality**：關注點分離、錯誤處理、型別、DRY 不過度、邊界。
@@ -52,9 +52,9 @@ reviewer 回的格式被釘死成四塊：Strengths、Issues（依 Critical / Im
 - **Important（Should Fix）**：架構問題、缺功能、錯誤處理不佳、測試有缺口。例子：CLI 沒有 `--help`、ISO date 沒驗證會靜默回空、缺少 progress indicator 讓使用者不知道在等什麼。這類不會立即炸，但留著一定回頭咬。
 - **Minor（Nice to Have）**：風格、優化機會、文件潤色。magic number、命名小瑕疵這類。
 
-critical 怎麼 enforce 不被跳過？skill 用幾條互鎖規則：Forbidden Responses 把所有「performative agreement」打死，所以 agent 不能用「我覺得這條沒這麼嚴重」帶過；YAGNI Check 反過來給 agent 一個合法的 pushback 出口——如果 reviewer 要求加一個沒人在用的 feature，可以 `grep` 出來說「沒被叫到，YAGNI 砍掉？」這設計很重要：它把 pushback 變成有合法管道的動作，agent 就不會用「我覺得他講錯」這種純情緒理由跳過 critical。
+critical 怎麼 enforce 不被跳過？skill 用幾條互鎖規則：Forbidden Responses 把所有「performative agreement」打死，所以 agent 不能用「我覺得這條沒這麼嚴重」帶過；YAGNI Check 反過來給 agent 一個合法的 pushback 出口：如果 reviewer 要求加一個沒人在用的 feature，可以 `grep` 出來說「沒被叫到，YAGNI 砍掉？」這設計很重要：它把 pushback 變成有合法管道的動作，agent 就不會用「我覺得他講錯」這種純情緒理由跳過 critical。
 
-Push back 的判準也釘死：suggestion 會弄壞既有功能、reviewer 缺 context、違反 YAGNI、在這個 stack 技術上不對、有相容性歷史包袱、與 human partner 既有架構決策衝突——只有這六條算合法 push back，講出來要附技術理由與測試或 code 證據。其他狀況都得實作。
+Push back 的判準也釘死：suggestion 會弄壞既有功能、reviewer 缺 context、違反 YAGNI、在這個 stack 技術上不對、有相容性歷史包袱、與 human partner 既有架構決策衝突。只有這六條算合法 push back，講出來要附技術理由與測試或 code 證據。其他狀況都得實作。
 
 最反直覺的細節是 Acknowledging Correct Feedback 那節：feedback 對的時候，**也不准講 thanks**。skill 寫得直接：「If you catch yourself about to write 'Thanks': DELETE IT. State the fix instead.」邏輯是 action speaks louder——修了就好，謝來謝去是 token 浪費也容易模糊技術焦點。
 
@@ -67,7 +67,7 @@ Push back 的判準也釘死：suggestion 會弄壞既有功能、reviewer 缺 c
 | requesting | 「我做完了，請別人看」 | 跳過 subagent、自己讀 diff 蓋章 |
 | receiving | 「別人指出問題，我要判斷」 | performative agreement 或防衛性 pushback |
 
-合成一個 skill 會發生什麼？主 agent 同一個 context 裡同時扮演送審者與處理者，會出現一種典型的 anti-pattern：「我自己 review 過了，沒問題」——這就是自我安撫。拆開以後，requesting 階段強制把 review 動作外包給 subagent（不同 agent、不同 context），receiving 階段強制走六步 pattern。**兩個 skill 各自有獨立的 description 觸發**，主 agent 想偷懶要連跳兩次，比跳一次難多了。
+合成一個 skill 會發生什麼？主 agent 同一個 context 裡同時扮演送審者與處理者，會出現一種典型的 anti-pattern：「我自己 review 過了，沒問題」，這就是自我安撫。拆開以後，requesting 階段強制把 review 動作外包給 subagent（不同 agent、不同 context），receiving 階段強制走六步 pattern。**兩個 skill 各自有獨立的 description 觸發**，主 agent 想偷懶要連跳兩次，比跳一次難多了。
 
 這也是為什麼 review 不直接做成 hook：hook 是動作之後機械式檢查，review 則要求 agent 用語意處理品質與接受度，而非 regex 處理。把它放在 skill 層、用 description 驅動 routing，agent 才會把 review 視為流程的一部分而不是 CI 噪訊。
 
@@ -77,16 +77,16 @@ Push back 的判準也釘死：suggestion 會弄壞既有功能、reviewer 缺 c
 
 skill 的流程是六步：
 
-1. **Verify Tests**——跑專案的 test suite（`npm test` / `cargo test` / `pytest` / `go test ./...`）。fail 就停在這步，不准進選項。
-2. **Detect Environment**——用 `git rev-parse --git-dir` 與 `--git-common-dir` 比對，分三種狀態：一般 repo、worktree 上的具名 branch、worktree 上的 detached HEAD。決定下一步給哪個 menu。
-3. **Determine Base Branch**——`git merge-base HEAD main` 或 `master`，不確定就問。
-4. **Present Options**——一般 repo 與具名 branch worktree 給四個選項（merge 回 base、push + PR、保留 branch、丟棄）；detached HEAD 給三個（沒有 merge 選項）。SKILL.md 寫「Don't add explanation - keep options concise」，要逼使用者表態而不是被解釋淹沒。
-5. **Execute Choice**——依選項執行。Option 1 要先 `cd` 回 main repo root 再 merge，merge 完再驗一次 test，**確認 merge 成功才能清 worktree、刪 branch**。Option 2 push + `gh pr create`，**不清 worktree**，因為 PR 會收到 review 還要回來改。Option 3 什麼都不動。Option 4 必須要使用者打字 `discard` 確認。
-6. **Cleanup Workspace**——只在 Option 1 與 4 跑。靠 worktree 路徑判斷 provenance：路徑在 `.worktrees/`、`worktrees/`、`~/.config/superpowers/worktrees/` 之下才是 superpowers 建立、可以清；不在這些路徑的代表是 harness 自己管的 workspace，不能動。`git worktree remove` 之後一律補一次 `git worktree prune`。
+1. **Verify Tests**：跑專案的 test suite（`npm test` / `cargo test` / `pytest` / `go test ./...`）。fail 就停在這步，不准進選項。
+2. **Detect Environment**：用 `git rev-parse --git-dir` 與 `--git-common-dir` 比對，分三種狀態：一般 repo、worktree 上的具名 branch、worktree 上的 detached HEAD。決定下一步給哪個 menu。
+3. **Determine Base Branch**：`git merge-base HEAD main` 或 `master`，不確定就問。
+4. **Present Options**：一般 repo 與具名 branch worktree 給四個選項（merge 回 base、push + PR、保留 branch、丟棄）；detached HEAD 給三個（沒有 merge 選項）。SKILL.md 寫「Don't add explanation - keep options concise」，要逼使用者表態而不是被解釋淹沒。
+5. **Execute Choice**：依選項執行。Option 1 要先 `cd` 回 main repo root 再 merge，merge 完再驗一次 test，**確認 merge 成功才能清 worktree、刪 branch**。Option 2 push + `gh pr create`，**不清 worktree**，因為 PR 會收到 review 還要回來改。Option 3 什麼都不動。Option 4 必須要使用者打字 `discard` 確認。
+6. **Cleanup Workspace**：只在 Option 1 與 4 跑。靠 worktree 路徑判斷 provenance：路徑在 `.worktrees/`、`worktrees/`、`~/.config/superpowers/worktrees/` 之下才是 superpowers 建立、可以清；不在這些路徑的代表是 harness 自己管的 workspace，不能動。`git worktree remove` 之後一律補一次 `git worktree prune`。
 
-idempotent 的工程意義在這裡最明顯。每一步都先檢查再動：tests 先跑、環境先偵測、base branch 先確認、worktree 路徑先驗 provenance——這些檢查讓「再跑一次」變成安全動作。中斷在第 4 步重跑就再選一次；中斷在第 5 步的 merge 中間，下次重跑會發現 tests 還是過、環境還是 worktree、base branch 還是 main，只差還沒 merge，繼續就好。中斷在第 6 步 worktree 已經 removed，重跑 `git worktree prune` 也只是再次清掉殘留註冊。**重跑不會造成多刪一份 branch、多 push 一次、多開一個 PR**，因為每個動作前面都有狀態檢查。
+idempotent 的工程意義在這裡最明顯。每一步都先檢查再動：tests 先跑、環境先偵測、base branch 先確認、worktree 路徑先驗 provenance，這些檢查讓「再跑一次」變成安全動作。中斷在第 4 步重跑就再選一次；中斷在第 5 步的 merge 中間，下次重跑會發現 tests 還是過、環境還是 worktree、base branch 還是 main，只差還沒 merge，繼續就好。中斷在第 6 步 worktree 已經 removed，重跑 `git worktree prune` 也只是再次清掉殘留註冊。**重跑不會造成多刪一份 branch、多 push 一次、多開一個 PR**，因為每個動作前面都有狀態檢查。
 
-對重度用戶意義很實際：finishing-branch 是少數可以「壞了就再跑一次」的 skill，不必擔心副作用累積。對照 verification——verification 失敗你要回去改 code、改完再重跑 verification，這也是 idempotent，但語意不同：verification 重跑是「驗一次」，finishing-branch 重跑是「接著做沒做完的那部分」。兩個 skill 都把狀態檢查放在動作之前，這是 superpowers 對「可重入」這件事的一致設計。
+對重度用戶意義很實際：finishing-branch 是少數可以「壞了就再跑一次」的 skill，不必擔心副作用累積。對照 verification：verification 失敗你要回去改 code、改完再重跑 verification，這也是 idempotent，但語意不同：verification 重跑是「驗一次」，finishing-branch 重跑是「接著做沒做完的那部分」。兩個 skill 都把狀態檢查放在動作之前，這是 superpowers 對「可重入」這件事的一致設計。
 
 ## 把這集放回流程地圖
 
@@ -107,4 +107,4 @@ idempotent 的工程意義在這裡最明顯。每一步都先檢查再動：tes
 
 ## 下集預告
 
-到這集為止 Part 1 走完七個流程支柱：brainstorming、plan、execute、TDD、verification、debugging、並發隔離、review 與 branch 收尾。下集進元層，拆 `using-superpowers` 與 `writing-skills` 這兩個「skill 的 skill」——前者是每次 session 開頭那段強制 router，後者是作者教 agent 怎麼自己寫 skill 的方法論。Part 1 的最後一塊，也是通往 Part 2 開發者篇的橋。
+到這集為止 Part 1 走完七個流程支柱：規劃—實作（brainstorming／plan／execute）、TDD、verification、debugging、並發隔離、review、branch 收尾。下集進元層，拆 `using-superpowers` 與 `writing-skills` 這兩個「skill 的 skill」：前者是每次 session 開頭那段強制 router，後者是作者教 agent 怎麼自己寫 skill 的方法論。Part 1 的最後一塊，也是通往 Part 2 開發者篇的橋。

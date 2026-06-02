@@ -9,7 +9,7 @@ episode: 12
 target_repo: obra/superpowers
 based_on_version: v5.1.0
 hub: /series/superpowers/
-audience: "想自己寫 skill 的開發者"
+audience: "想自己寫 skill 並驗證可用的開發者"
 related_skills: [writing-skills, subagent-driven-development, dispatching-parallel-agents]
 tags: [深度解析, superpowers, AI Agent 框架, Skill 外掛]
 ---
@@ -18,11 +18,11 @@ tags: [深度解析, superpowers, AI Agent 框架, Skill 外掛]
 
 Ep.8–Ep.11 給你寫一個 skill 的完整工具：TDD 心法、pressure scenario、rationalization 表、CSO。這集把工具串起來做一輪端到端：派 subagent 跑 baseline、寫 skill、重跑、抓新 rationalization、補 counter、再驗。完成這集你會有一條「寫 → 測 → 改 → 發佈」可重複的個人工作流。
 
-範例題目我固定為「**不准 commit 不含測試的 PR**」。這條規則簡單到讀者可以自己照做、但壓力足夠多（hotfix、deadline、reviewer 沒看到、覆蓋率已經很高），剛好把整套 RED→GREEN→REFACTOR 走完一輪。
+範例題目我固定為「不准 commit 不含測試的 PR」。這條規則簡單到讀者可以自己照做、但壓力足夠多（hotfix、deadline、reviewer 沒看到、覆蓋率已經很高），剛好把整套 RED→GREEN→REFACTOR 走完一輪。
 
 ## Subagent dry-run 怎麼跑
 
-用 Task tool 派 general-purpose subagent 跑你寫的 pressure scenario。寫 skill 的人最常踩的坑是「自己在主 session 跑 scenario」——主 session 已經載了你寫的 skill、看過你的 plan、知道你的偏好，等於連考卷帶答案一起餵下去，測不到任何東西。subagent 的價值就是**乾淨的 context**：它只看到你給的 prompt，看不到你的內心戲。
+用 Task tool 派 general-purpose subagent 跑你寫的 pressure scenario。寫 skill 的人最常踩的坑是「自己在主 session 跑 scenario」。主 session 已經載了你寫的 skill、看過你的 plan、知道你的偏好，等於連考卷帶答案一起餵下去，測不到任何東西。subagent 的價值就是乾淨的 context：它只看到你給的 prompt，看不到你的內心戲。
 
 baseline 階段（RED）的 prompt template，可以這樣寫：
 
@@ -46,10 +46,10 @@ Choose A, B, or C, and act. Justify in 2 sentences.
 
 幾條我每次都會檢查的硬規則：
 
-- **不要載入你正在開發的 skill**——這是 baseline，要看的是「沒有紀律時的真實行為」
-- **不要在 prompt 內透露這是測試**——agent 一旦察覺是 quiz 就會背書
-- **強迫 A/B/C 三選一**——open-ended 問題會被「我會跟 partner 確認」帶過
-- **記下 verbatim 回答**——藉口的原話就是 REFACTOR 階段要堵的洞，不要自己改寫
+- 不要載入你正在開發的 skill。這是 baseline，要看的是「沒有紀律時的真實行為」
+- 不要在 prompt 內透露這是測試。agent 一旦察覺是 quiz 就會背書
+- 強迫 A/B/C 三選一。open-ended 問題會被「我會跟 partner 確認」帶過
+- 記下 verbatim 回答。藉口的原話就是 REFACTOR 階段要堵的洞，不要自己改寫
 
 跑完一輪只夠看趨勢。同一個 scenario 跑 3–5 次、再加上另外兩個壓力組合不同的 scenario，總共 10 次左右的樣本，才有資格進 GREEN 階段。
 
@@ -63,9 +63,9 @@ Choose A, B, or C, and act. Justify in 2 sentences.
 
 `compliance rate = 正確選項次數 / 總執行次數`。`writing-skills` 在 Testing 段點得很白：discipline skill（TDD、verification、本集的 commit gate）的成功標準是「**under maximum pressure 仍然 100% 守規則**」；technique skill（condition-based-waiting 那類）容許 80% 上下，因為失敗多半是不熟練而不是抗拒。
 
-判斷分母是 N=10 還是 N=30，看 skill 的代價：強制性愈強、誤觸成本愈高，N 就要愈大。我自己的 rule of thumb 是 discipline skill 至少跑 15 次、跨 3 個壓力組合（時間／沉沒成本／權威）。一次跑完不要急著結論，先看「失敗集中在哪個 scenario」——這比平均 compliance rate 更有用。如果 15 次裡 14 次過、唯一一次失敗都是同一個 scenario，那洞還沒堵住。
+判斷分母是 N=10 還是 N=30，看 skill 的代價：強制性愈強、誤觸成本愈高，N 就要愈大。我自己的 rule of thumb 是 discipline skill 至少跑 15 次、跨 3 個壓力組合（時間／沉沒成本／權威）。一次跑完不要急著結論，先看「失敗集中在哪個 scenario」，這比平均 compliance rate 更有用。如果 15 次裡 14 次過、唯一一次失敗都是同一個 scenario，那洞還沒堵住。
 
-`writing-skills` 還給了一個我覺得最有效的診斷招式：meta-test。agent 選了錯的選項之後，直接問它「你看了 skill 為什麼還是選 C？要怎麼改 skill 才能讓 A 變成唯一可接受選項？」三種回答對應三種修法——它說 skill 寫得很清楚但它選擇忽略，那就要加 foundational principle（「letter ≠ spirit」那一行）；它說「skill 應該寫 X」，把 X 抄進去；它說「我沒看到第 Y 段」，是排版問題，把關鍵段移前。
+`writing-skills` 還給了一個我覺得最有效的診斷招式：meta-test。agent 選了錯的選項之後，直接問它「你看了 skill 為什麼還是選 C？要怎麼改 skill 才能讓 A 變成唯一可接受選項？」三種回答對應三種修法：它說 skill 寫得很清楚但它選擇忽略，那就要加 foundational principle（「letter ≠ spirit」那一行）；它說「skill 應該寫 X」，把 X 抄進去；它說「我沒看到第 Y 段」，是排版問題，把關鍵段移前。
 
 ## 端到端範例：寫一個 minimal skill 走完 RED→GREEN→REFACTOR
 
@@ -89,7 +89,7 @@ baseline 結果（範例數字，實作時要換成你自己的）：
 | Approved PR | 0 | 5 | 0 | 「reviewer 已過」「覆蓋率沒降」 |
 | Staff 同意 | 0 | 4 | 1 | 「資深判斷」「組織效率」 |
 
-15 次裡 13 次直接 commit、2 次走假測試。**這就是你要堵的東西**——不是你想像中的藉口，而是 agent 在這個 codebase、這個壓力下真的會講的話。
+15 次裡 13 次直接 commit、2 次走假測試。這就是你要堵的東西，不是你想像中的藉口，而是 agent 在這個 codebase、這個壓力下真的會講的話。
 
 ### Step 2：GREEN — 寫最小 skill
 
@@ -147,7 +147,7 @@ If either answer is "no", STOP. Do not commit.
 
 同樣三個 scenario、同樣每個跑 5 次，但 subagent prompt 改成「You have access to: no-commit-without-tests skill (load it before answering)」。期望 15 次全 A。
 
-實務上第一輪 GREEN 通常會有 1–2 次失敗，多半在 Scenario C（權威壓力）。`writing-skills` 文中說的「discipline skill must be bulletproof under maximum pressure」就是指這個——通過率不是 14/15，是 15/15。
+實務上第一輪 GREEN 通常會有 1–2 次失敗，多半在 Scenario C（權威壓力）。`writing-skills` 文中說的「discipline skill must be bulletproof under maximum pressure」就是指這個：通過率不是 14/15，是 15/15。
 
 ### Step 4：REFACTOR — 補新藉口
 
@@ -155,7 +155,7 @@ If either answer is "no", STOP. Do not commit.
 
 > 「這個 patch 只動了字串常數，跑 existing test 全綠，新增 test 等同 hardcode 字串，沒有測試價值。」
 
-這條沒在 baseline 出現過，但它**完全合理**——這就是 REFACTOR 階段要堵的東西。在 counter-table 補一行：
+這條沒在 baseline 出現過，但它完全合理，正是 REFACTOR 階段要堵的東西。在 counter-table 補一行：
 
 ```markdown
 | 「patch 只改常數，新 test 等同 hardcode」 | 改常數 = 改 contract。test 該驗的是 caller 對新常數的行為，不是常數本身。 |
@@ -175,17 +175,17 @@ description: Use when about to commit ... or when tempted to skip tests because 
 
 ### Step 5：再驗 — 直到 15/15
 
-重跑同樣 15 次。若仍有失敗，回到 Step 4，把新藉口抄進表。`writing-skills` 在 TDD bulletproofing 案例給的數字是「6 個 RED-GREEN-REFACTOR iteration 才打到 100% compliance」——這不是寫太爛，是 discipline skill 的常態。
+重跑同樣 15 次。若仍有失敗，回到 Step 4，把新藉口抄進表。`writing-skills` 在 TDD bulletproofing 案例給的數字是「6 個 RED-GREEN-REFACTOR iteration 才打到 100% compliance」，這不是寫太爛，是 discipline skill 的常態。
 
 當 15/15 都選 A、agent 還會主動引述 skill 的 counter-table 條目當理由、meta-test 問它「skill 哪裡可以更清楚」它回答「skill 已經很清楚」時，這個 skill 就 bulletproof 了。把這次的測試紀錄（baseline rationalization 清單、final compliance rate、meta-test transcript）連同 SKILL.md 一起 commit，下次有人質疑「你怎麼確定這 skill 真的有效」，你拿得出數字。
 
 ## 持續迭代：發現新 rationalization 怎麼處理
 
-skill 上線之後，最有價值的測試案例會從**真實 session** 出現——某次你（或你的 agent）在 production code 撞牆，agent 講出一個 baseline 階段沒覆蓋到的藉口，這比任何 synthetic scenario 都珍貴。把那段對話原文存到 skill 目錄下的 `test-real-N.md`、把藉口加進 counter-table，這是 skill 的長期維護循環。
+skill 上線之後，最有價值的測試案例會從真實 session 出現。某次你（或你的 agent）在 production code 撞牆，agent 講出一個 baseline 階段沒覆蓋到的藉口，這比任何 synthetic scenario 都珍貴。把那段對話原文存進 skill 目錄、自己取個檔名（例如 `test-real-N.md`，upstream 沒有固定慣例），再把藉口加進 counter-table，這是 skill 的長期維護循環。
 
 要避免的反向動作：**不要因為現場一次例外就放寬規則本身**。Counter-table 是擴的，規則不動。一旦你開始改規則去配合某個 context，這個 skill 就退化回普通的 prompt template，失去了「pressure-tested」的價值。
 
-什麼時候該寫新 skill 而不是擴充舊的：當你發現某個藉口的根源不是「agent 不知道該守紀律」，而是「agent 不知道該做什麼動作」——例如「我不知道怎麼為這個 race condition 寫 deterministic test」——這時要寫的是 technique skill（`condition-based-waiting` 那類），把它從本 skill 內 cross-reference 出去，保持 discipline skill 的單一焦點。
+什麼時候該寫新 skill 而不是擴充舊的：當你發現某個藉口的根源不是「agent 不知道該守紀律」，而是「agent 不知道該做什麼動作」，例如「我不知道怎麼為這個 race condition 寫 deterministic test」，這時要寫的是 technique skill（`condition-based-waiting` 那類），把它從本 skill 內 cross-reference 出去，保持 discipline skill 的單一焦點。
 
 ## 把 skill 提交回 marketplace
 
@@ -194,7 +194,7 @@ skill 上線之後，最有價值的測試案例會從**真實 session** 出現�
 - pressure scenario 原稿 + baseline 結果（哪些藉口、出現幾次）
 - 完整 rationalization counter-table
 - 至少一輪 GREEN 驗證（compliance rate 數字）
-- description 通過 CSO 檢查（「Use when...」、不 summarize workflow、≤500 字元）
+- description 通過 CSO 檢查（「Use when...」、不 summarize workflow、name + description 總長度 ≤1024 字元）
 - 至少一份 meta-test transcript（agent 確認 skill 清楚）
 
 <!-- 撰寫前需查證 --> 具體 PR template 與退件理由清單以 marketplace 倉的 `CONTRIBUTING` 或 issue tracker 為準，發稿前再對一次最新版。常見退件方向：fork-specific 的硬編碼路徑、未附 baseline 證據的「我覺得這 skill 有用」、與既有 skill 重疊但沒說明差異、description 寫成 workflow summary。

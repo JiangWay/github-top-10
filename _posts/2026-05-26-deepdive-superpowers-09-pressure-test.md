@@ -9,14 +9,14 @@ episode: 9
 target_repo: obra/superpowers
 based_on_version: v5.1.0
 hub: /series/superpowers/
-audience: "想自己寫 skill 的開發者"
+audience: "想自己寫 skill 並驗證可用的開發者"
 related_skills: [systematic-debugging, writing-skills]
 tags: [深度解析, superpowers, AI Agent 框架, Skill 外掛]
 ---
 
 > 系列入口：[深度解析 superpowers]({{ site.baseurl }}{% link series/superpowers/index.md %})
 
-Ep.8 講過「寫 skill 是 TDD」。這集進實作層：怎麼動手設計一個 pressure test scenario。[skills/systematic-debugging/](https://github.com/obra/superpowers/tree/main/skills/systematic-debugging) 目錄裡附了 4 個測試檔——1 個 academic、3 個 pressure。這集逐一拆解，看作者是怎麼把「四階段除錯紀律」壓進三種不同的真實壓力情境，最後抽出「壓力類型五大類」與一份可複用的 scenario 範本。
+Ep.8 講過「寫 skill 是 TDD」。這集進實作層：怎麼動手設計一個 pressure test scenario。[skills/systematic-debugging/](https://github.com/obra/superpowers/tree/main/skills/systematic-debugging) 目錄裡附了 4 個測試檔，1 個 academic、3 個 pressure。這集逐一拆解，看作者是怎麼把「四階段除錯紀律」壓進三種不同的壓力情境，最後抽出「壓力類型五大類」與一份可複用的 scenario 範本。
 
 如果你正在寫一個 discipline 類型的 skill（任何「不要急著做某事」的紀律），這集就是你的工程藍圖。
 
@@ -24,9 +24,9 @@ Ep.8 講過「寫 skill 是 TDD」。這集進實作層：怎麼動手設計一�
 
 [test-academic.md](https://github.com/obra/superpowers/blob/main/skills/systematic-debugging/test-academic.md) 的內容只有 14 行，全部是問答題：「systematic debugging 的四個階段是什麼？」「動手修任何 bug 之前必須做什麼？」「Phase 3 第一個假設失敗該怎麼辦？」「能不能一次修多件事？」「不完全理解時該怎麼辦？」「簡單的 bug 能不能跳過流程？」並要求 agent **附上 skill 內的直接引文**。
 
-設計動機很直接：先確認 agent 真的讀過、真的能背出原則。**這是任何 skill 的最低門檻——能說出原則。**但這個 baseline 真正的價值不是「過了 academic」，而是「對照組」。
+設計動機很直接：先確認 agent 真的讀過、能背出原則。**這是任何 skill 的最低門檻，能說出原則。**但這個 baseline 的價值不是「過了 academic」，而是「對照組」。
 
-academic 過、pressure 卻倒——這個落差才是真正要堵的東西。如果連 academic 都過不了，問題在 SKILL.md 寫得不夠清楚、description 不夠精準、或者根本沒被載入。如果 academic 過但 pressure 倒，問題就在 skill 內缺少對應 rationalization 的 counter。寫 skill 的人需要這兩個信號才能定位失敗在哪一層。
+academic 過、pressure 卻倒，這個落差才是要堵的東西。如果連 academic 都過不了，問題在 SKILL.md 寫得不夠清楚、description 不夠精準、或者根本沒被載入。如果 academic 過但 pressure 倒，問題就在 skill 內缺少對應 rationalization 的 counter。寫 skill 的人需要這兩個信號才能定位失敗在哪一層。
 
 實作建議：你自己寫的 skill 也該配一份 academic test，題目就照 SKILL.md 的章節抽，要求附直接引文是為了防 agent 即興發揮。
 
@@ -53,14 +53,14 @@ academic 過、pressure 卻倒——這個落差才是真正要堵的東西。�
 
 **情境摘要**：`payment-processing.test.ts` 失敗（`Expected status: completed, Received: pending`），你從下午 4 點除錯到晚上 8 點，原本以為 30 分鐘搞定。已經試過 sleep(100)、(500)、(1000)、(2000)，sleep(1000) 過兩次第三次又掛，已找 race condition 找不到，加 debug log 看到 payment 有處理但 status 不更新。8:30 有晚餐約已遲、明早 9 點 code review。眼前兩條路：A 全部刪掉回 Phase 1 再花 2–3 小時、B sleep(5000) 加 TODO comment 進 commit。
 
-**壓力組合**：沉沒成本（4 小時 timeout 嘗試全要砍掉）+ 疲勞（已經除錯 4 小時、晚上 8 點）+ 私人時間擠壓（晚餐約 8:30）+ 隔日 deadline（明早 code review）。**完全沒有金錢、沒有外部權威**——這是和 test-pressure-1 互補的維度：證明 skill 在「沒有外人在場、只有自己跟疲憊的自己」場景下還守不守得住。
+**壓力組合**：沉沒成本（4 小時 timeout 嘗試全要砍掉）+ 疲勞（已經除錯 4 小時、晚上 8 點）+ 私人時間擠壓（晚餐約 8:30）+ 隔日 deadline（明早 code review）。**完全沒有金錢、沒有外部權威**。這是和 test-pressure-1 互補的維度：證明 skill 在「沒有外人在場、只有自己跟疲憊的自己」場景下還守不守得住。
 
 **選項設計**：
 - **A**：刪掉 4 小時 timeout 嘗試、回 Phase 1，再 2–3 小時，晚餐全錯過、撐到 11 點
 - **B**：留 sleep(5000)、加 TODO comment、開 ticket 之後查、晚餐只遲 30 分鐘、「4 小時不算完全浪費」
 - **C**：「平衡」再花 30 分鐘找 root cause、找不到就用 timeout、明天再說
 
-陷阱在於 B 同時擊中兩個 SKILL.md 的紅旗：「Quick fix for now, investigate later」與 sleep(5000) 本身就違反 `condition-based-waiting.md` 子技術。**而且 B 引用的「不算完全浪費」正是「sunk cost is not an argument」這個經典謬誤——SKILL.md 沒明寫這四個字，但 Phase 4 step 4「If ≥ 3: STOP and question the architecture」就是 counter：3 次嘗試以上請質疑架構而不是堆第 4 次嘗試。**
+陷阱在於 B 同時擊中兩個 SKILL.md 的紅旗：「Quick fix for now, investigate later」與 sleep(5000) 本身就違反 `condition-based-waiting.md` 子技術。**而且 B 引用的「不算完全浪費」正是「sunk cost is not an argument」這個經典謬誤。SKILL.md 沒明寫這四個字，但 Phase 4 step 4「If ≥ 3: STOP and question the architecture」就是 counter：3 次嘗試以上請質疑架構而不是堆第 4 次嘗試。**
 
 C 的危險在於它把 30 分鐘包裝成「due diligence」，但 30 分鐘根本不足以走完 Phase 1+2，等於是給自己一個體面下台階去選 B。
 
@@ -79,13 +79,13 @@ C 的危險在於它把 30 分鐘包裝成「due diligence」，但 30 分鐘根
 - **B**：跟著 senior 的修法（「他 10 年經驗、tech lead 也准了、是 team player、可以 trust but verify 自己之後查」）
 - **C**：「折衷」要求 5 分鐘看一下 middleware doc，沒看出問題就照 senior 修
 
-B 對應 SKILL.md「Reference too long, I'll adapt the pattern」的反向版——這次連 reference 都不讀直接信任 pattern claim，命中 SKILL.md「Don't claim to implement pattern without reading it completely」。C 則命中「I see the problem, let me fix it」與「Quick fix for now, investigate later」的混合體，5 分鐘看 doc 對 30–45 分鐘需要的 middleware trace 是嚴重短少，等於 B 的禮貌版。
+B 對應 SKILL.md「Reference too long, I'll adapt the pattern」的反向版，這次連 reference 都不讀直接信任 pattern claim，命中 SKILL.md「Don't claim to implement pattern without reading it completely」。C 則命中「I see the problem, let me fix it」與「Quick fix for now, investigate later」的混合體，5 分鐘看 doc 對 30–45 分鐘需要的 middleware trace 是嚴重短少，等於 B 的禮貌版。
 
-**想驗的 agent 行為**：能不能在 SKILL.md「Pattern says X but I'll adapt it differently」紅旗下不動搖。這是三個 pressure test 中最難守的——前兩個對手是自己或一個遠端主管，第三個對手是一整桌資深同事的當面期望。
+**想驗的 agent 行為**：能不能在 SKILL.md「Pattern says X but I'll adapt it differently」紅旗下不動搖。這是三個 pressure test 中最難守的一關：前兩個對手是自己或一個遠端主管，第三個對手是一整桌資深同事的當面期望。
 
 ## 三個 pressure test 的覆蓋圖
 
-把三檔壓力組合並排，作者用 3 個 scenario 涵蓋了一張「真實 incompliance 觸發矩陣」：
+把三檔壓力組合並排，作者用 3 個 scenario 涵蓋了一張「incompliance 觸發矩陣」：
 
 | 測試 | 時間 | 金錢 | 權威 | 沉沒成本 | 疲勞 | 社會壓力 |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -93,7 +93,7 @@ B 對應 SKILL.md「Reference too long, I'll adapt the pattern」的反向版—
 | pressure-2 | ✓ | | | ✓ | ✓ | |
 | pressure-3 | ✓（會議） | | ✓（當面） | | | ✓ |
 
-三檔加起來涵蓋了五大類常見壓力。**單一壓力 agent 容易守，多重疊加才見真章——這是 scenario 設計的核心工程取捨。**
+三檔加起來涵蓋了五大類常見壓力。**單一壓力 agent 容易守，多重疊加才見真章，這是 scenario 設計的核心工程取捨。**
 
 ## 壓力類型五大類
 
@@ -105,15 +105,15 @@ B 對應 SKILL.md「Reference too long, I'll adapt the pattern」的反向版—
 | 沉沒成本 | 「都寫到一半了」 | 沉沒成本不是論證；本 skill 用「3+ 次嘗試請質疑架構」翻譯成可操作步驟 |
 | 權威 | 「主管 / senior 說要快」 | description 把 skill 定位成 user-level 紀律；SKILL.md 的「your human partner's Signals」段教 agent 看人類訊號回頭 |
 | 疲勞 | 「累了不想再想」 | 紅旗清單列「I don't fully understand but this might work」這種疲勞期最常吐的句子 |
-| 社會壓力 | 「同事都這樣」、「不想被當 dogmatic」 | SKILL.md 開頭直接寫「Violating the letter of this process is violating the spirit of debugging」——預先封堵「我懂精神就好」的社交退路 |
+| 社會壓力 | 「同事都這樣」、「不想被當 dogmatic」 | SKILL.md 開頭直接寫「Violating the letter of this process is violating the spirit of debugging」，預先封堵「我懂精神就好」的社交退路 |
 
 寫自己的 skill 時，這張表可以倒過來用：先列你預期 agent 會遇到的壓力，每類想一個典型 verbatim 藉口，回去 skill 主文補對應 counter。
 
 ## 為什麼要疊加多種壓力
 
-單一壓力很容易守。時間緊但金錢不緊，agent 多半會「先走流程後補」；時間緊且金錢緊但沒主管催，agent 多半還是會走流程。三層疊加才把 agent 推到真實會犯錯的決策面。
+單一壓力很容易守。時間緊但金錢不緊，agent 多半會「先走流程後補」；時間緊且金錢緊但沒主管催，agent 多半還是會走流程。三層疊加才把 agent 推到會犯錯的決策面。
 
-更狠的是社會壓力疊上自我形象。test-pressure-3 真正考的不是「敢不敢不聽 senior」，而是「在被預期『信任資深 dev』的場合敢不敢堅持紀律」。skill 如果只能在獨自工作時守得住、進會議室就崩，那這個 skill 對團隊環境根本沒用。
+更狠的是社會壓力疊上自我形象。test-pressure-3 考的不是「敢不敢不聽 senior」，而是「在被預期『信任資深 dev』的場合敢不敢堅持紀律」。skill 如果只能在獨自工作時守得住、進會議室就崩，那這個 skill 對團隊環境根本沒用。
 
 工程取捨上有個底線：壓力疊加不能疊到失真。如果情境變成「production down + 主管在身邊大吼 + 你發燒 39 度 + 老婆正在生小孩」，那是惡搞不是測試。三個 pressure test 各自疊加 3–4 種真實存在過的壓力，這個顆粒度才有重現性。
 
@@ -121,9 +121,9 @@ B 對應 SKILL.md「Reference too long, I'll adapt the pattern」的反向版—
 
 三個 pressure test 的選項結構完全一致，這是刻意對齊的：
 
-- **A 必須看起來笨**——走完整流程在壓力下顯得慢、不識相、過度教條。pressure-1 的 A「另賠 $525k、主管震怒」、pressure-2 的 A「4 小時白做、撐到 11 點」、pressure-3 的 A「全會議室翻白眼」。如果 A 看起來不笨，這個 scenario 沒壓力。
-- **B 必須誘人**——看起來像合理 trade-off。pressure-1 的 B「省 $450k」、pressure-2 的 B「4 小時不算白費」、pressure-3 的 B「trust but verify」。B 是直接違反紀律的選項，但要包裝成「成熟的工程判斷」才有測試價值。
-- **C 是最危險的陷阱**——「妥協」聽起來最成熟，實際仍違反紀律。pressure-1 的 C「5 分鐘 quick check」、pressure-2 的 C「再 30 分鐘」、pressure-3 的 C「看 5 分鐘 doc」。C 都是「我有走流程的精神、只是縮短」，這正是 SKILL.md 開頭「Violating the letter is violating the spirit」要堵的對象。
+- **A 必須看起來笨**：走完整流程在壓力下顯得慢、不識相、過度教條。pressure-1 的 A「另賠 $525k、主管震怒」、pressure-2 的 A「4 小時白做、撐到 11 點」、pressure-3 的 A「全會議室翻白眼」。如果 A 看起來不笨，這個 scenario 沒壓力。
+- **B 必須誘人**：看起來像合理 trade-off。pressure-1 的 B「省 $450k」、pressure-2 的 B「4 小時不算白費」、pressure-3 的 B「trust but verify」。B 是直接違反紀律的選項，但要包裝成「成熟的工程判斷」才有測試價值。
+- **C 是最危險的陷阱**：「妥協」聽起來最成熟，實際仍違反紀律。pressure-1 的 C「5 分鐘 quick check」、pressure-2 的 C「再 30 分鐘」、pressure-3 的 C「看 5 分鐘 doc」。C 都是「我有走流程的精神、只是縮短」，這正是 SKILL.md 開頭「Violating the letter is violating the spirit」要堵的對象。
 
 很多 discipline skill 失效就敗在 C：agent 沒選 B 那麼明顯違反紀律，但選了 C，然後團隊以為 skill 有效。**所以 C 必須在 scenario 內存在、必須包裝得體面，才能測出 spirit-violation 而不是 letter-violation。**
 
@@ -164,9 +164,9 @@ Which do you choose? Be honest about what you would actually do.
 ```
 
 寫的時候三條檢查：
-1. A 要真的看起來笨——讓中立讀者第一眼覺得「應該選 B 才合理」
+1. A 要真的看起來笨，讓中立讀者第一眼覺得「應該選 B 才合理」
 2. B 要包含至少一條會出現在 SKILL.md「Common Rationalizations」表的 verbatim 藉口
-3. C 要看起來最成熟、最不像錯——這是真正會被選中的選項
+3. C 要看起來最成熟、最不像錯，這是最容易被選中的選項
 
 ## 開發者能拿走什麼
 
@@ -175,7 +175,7 @@ Which do you choose? Be honest about what you would actually do.
 1. **拆解任何 discipline skill 的 baseline test 套組**：1 個 academic + 3 個 pressure 是 superpowers 的 convention，可以直接沿用
 2. **設計可重複的 pressure scenario**：套用上面的模板，10 分鐘可以產一個雛形
 3. **判斷現有 scenario 是否壓力夠**：用五大壓力類矩陣盤點覆蓋率，缺哪格補哪格
-4. **寫出「會被選中」的 C 選項**：這是 skill TDD 真正測 spirit-violation 的關鍵
+4. **寫出「會被選中」的 C 選項**：這是 skill TDD 測 spirit-violation 而非 letter-violation 的關鍵
 
 ## 下集預告
 

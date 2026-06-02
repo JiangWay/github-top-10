@@ -16,7 +16,7 @@ tags: [深度解析, superpowers, AI Agent 框架, Skill 外掛]
 
 > 系列入口：[深度解析 superpowers]({{ site.baseurl }}{% link series/superpowers/index.md %})
 
-Ep.3 的流程主幹定義「該做什麼、按什麼順序」。但流程跑完不代表品質達標：agent 還是可能寫出沒測過的 code、宣稱完成但 build 沒過、遇到 bug 直覺猜一發就 push。這集講三個專門守品質的 skill：`test-driven-development`、`verification-before-completion`、`systematic-debugging`。三者看起來都在「驗證」，但管的是不同階段：TDD 守寫之前、verification 守收尾、debugging 守出錯之後。看懂這個職責切割，下次 agent 卡在「自己刪了剛寫的 code」或「verification 死活不肯讓你結案」時你就有 mental model 去診斷。
+Ep.3 的流程主幹定義「該做什麼、按什麼順序」。但流程跑完不代表品質達標：agent 還是可能寫出沒測過的 code、宣稱完成但 build 沒過、遇到 bug 直覺猜一發就 push。這集講 [obra/superpowers](https://github.com/obra/superpowers) 裡三個專門守品質的 skill：`test-driven-development`、`verification-before-completion`、`systematic-debugging`。三者看起來都在「驗證」，但管的是不同階段：TDD 守寫之前、verification 守收尾、debugging 守出錯之後。看懂這個職責切割，下次 agent 卡在「自己刪了剛寫的 code」或「verification 死活不肯讓你結案」時你就有 mental model 去診斷。
 
 ## test-driven-development：RED-GREEN-REFACTOR 強制
 
@@ -54,7 +54,7 @@ skill 還列了一張長達 11 列的 rationalization 表預先擋藉口。摘�
 
 這對應 Ep.1 表第 2 種失敗：先寫 implementation 才補測試，只能驗「沒壞」。TDD skill 直接堵住這條路徑。
 
-## verification-before-completion：完成前 hard gate
+## verification-before-completion：完成前的硬性 gate
 
 如果 TDD 是「寫之前」的閘，[verification-before-completion/SKILL.md](https://github.com/obra/superpowers/blob/main/skills/verification-before-completion/SKILL.md) 就是「宣稱完成之前」的閘。它的 Iron Law 同樣寫得很重：
 

@@ -18,7 +18,7 @@ tags: [深度解析, superpowers, AI Agent 框架, Skill 外掛]
 
 讓 Claude Code 寫個 feature，最常見的失敗其實很少是寫錯字、走錯邏輯，而是該問的沒問、該停的沒停。你叫它「加個 OAuth 登入」，它五秒鐘後就在 `app/auth.py` 動手；你叫它「修這個測試壞掉」，它直接改 assertion 讓綠燈亮起來。看起來在工作，實際在規避工程紀律。
 
-[obra/superpowers](https://github.com/obra/superpowers)（v5.1.0，2026-05-04 釋出，截至 2026-05-27 累計 207,687 stars）把這些「該停、該問、該驗」用 markdown 寫成可機械強制的規則，由 agent 自己讀、自己擋、自己 routing。整套外掛的本質是一個**讓 agent 自我抑制**的軟體系統，而非另一份 prompt template。
+[obra/superpowers](https://github.com/obra/superpowers)（v5.1.0，2026-05-04 釋出，截至 2026-05-26 累計 207,687 stars）把這些「該停、該問、該驗」用 markdown 寫成可機械強制的規則，由 agent 自己讀、自己擋、自己 routing。整套外掛的本質是一個**讓 agent 自我抑制**的軟體系統，而非另一份 prompt template。
 
 第一集要回答兩件事：作者看到了什麼問題，以及為什麼這個答案值得 Claude Code 重度用戶花時間搞懂。整集後面講的「設計理念三支柱」會持續扣回前段的失敗模式表，每講一個機制都要對得回某一種具體崩潰。對不回的，就是 over-engineering。
 
@@ -45,7 +45,7 @@ superpowers 的作者是 [Jesse Vincent](https://blog.fsck.com/)，他與 [Prime
 
 讀作者的部落格與專案 README 可以歸納出一個核心觀察：資深工程師之所以資深，關鍵在**懂得在該停下來釐清的時刻真的停下來**，這比能寫多複雜的演算法更重要。這個習慣很難用「教 prompt」教給 LLM。你寫一句「請先 clarify」它聽得進去，五個 turn 之後它會忘記。把這個習慣編碼成可以**在每個 session 自動載入、在每個關鍵動作前被檢查**的 markdown skill，是 superpowers 的設計動機。
 
-值得注意的是 [CLAUDE.md 開頭那段給 AI agent 的提醒](https://github.com/obra/superpowers/blob/main/CLAUDE.md)：作者明說這個 repo 的 PR 拒絕率 94%，幾乎全部是「agent 沒讀 PR template、沒搜既有 PR、捏造問題敘述」。這段話揭露作者對 agent 的真實態度：他不相信 agent 會自律，他相信**規則必須寫成 agent 跳不過去的形狀**。整套 superpowers 的設計都從這個前提長出來。
+[CLAUDE.md 開頭那段給 AI agent 的提醒](https://github.com/obra/superpowers/blob/main/CLAUDE.md)很直接：作者明說這個 repo 的 PR 拒絕率 94%，幾乎全部是「agent 沒讀 PR template、沒搜既有 PR、捏造問題敘述」。這段話揭露作者對 agent 的真實態度：他不相信 agent 會自律，他相信**規則必須寫成 agent 跳不過去的形狀**。整套 superpowers 的設計都從這個前提長出來。
 
 <!-- 撰寫前需查證: Jesse Vincent 過去開源作品列表（從 blog.fsck.com 取得），用一兩句帶出他的工程脈絡，避免淪為 marketing 介紹。 -->
 
@@ -157,7 +157,7 @@ v5.0.7（2026-03-31）把 GitHub Copilot CLI 拉進支援清單，靠的就是 S
 
 - **自己的 workflow 是否真的需要強制紀律層**。你如果每一步都會自己 review、會主動要 agent 先 clarify，superpowers 的 `<HARD-GATE>` 可能感覺多餘。但只要你曾經有「跑了 90 分鐘才發現 agent 整段方向錯了」的經驗，那就是紀律層在補你不想每秒盯著的部分。
 - **哪些任務 superpowers 是 overhead**。「grep 一下這個 function 在哪用到」、「把這個檔轉 markdown」這種 30 秒能完成的單步任務，觸發 brainstorming 是純浪費。`description` 的 Use when 句型其實就在區分這種情境，但實務上仍會誤觸。遇到時手動跳過、或在你的 CLAUDE.md 寫 override（記得 `using-superpowers` 明文承認 user instructions 永遠優先）。
-- **哪些任務 superpowers 是救命**。多步驟 production feature、容易踩雷的 refactor、long-running autonomous session（作者在 README 提到「a couple hours at a time」），這三類是 superpowers 真正發揮的場景。對這些場景，agent 自己擋自己一手比你事後 review 便宜得多。
+- **哪些任務 superpowers 是救命**。多步驟 production feature、容易踩雷的 refactor、long-running autonomous session（作者在 README 提到「a couple hours at a time」），這三類是 superpowers 發揮作用的場景。對這些場景，agent 自己擋自己一手比你事後 review 便宜得多。
 
 判斷工具：把過去一週 Claude Code session 的失敗點抓出來，對照前段那張四類失敗表。每出現一次「該停沒停」、「該問沒問」、「該驗沒驗」，就是一票 superpowers。沒有就不需要。
 

@@ -40,7 +40,7 @@ Ep.2 拆完架構，這集進入流程主幹三步：brainstorming → writing-p
 
 實際 session 的訊號是這樣的：你說「幫我加個 dark mode toggle」，agent 不會直接寫 React component，它會反問「現在 theme state 放在哪？localStorage 還是 context？要不要尊重 system preference？」三個 clarifying 走完才提 approach。這時用戶最常見的反應是不耐，想直接喊「就寫吧」，但因為 HARD-GATE 寫死了「user explicit approval」這個條件，跳過它需要的不是耐心，而是繞過整個 skill。設計者用 markdown 把這條繞道堵掉了。
 
-值得注意的還有第二步「Offer Visual Companion」的格式規定：SKILL.md 強制這個提案必須獨佔一則訊息，不能跟 clarifying 問題或情境摘要混在一起。乍看是體驗細節，實際上是在防一種典型的 agent 行為：把好幾個問題塞同一則訊息以求節省 turn。HARD-GATE 之後的整段 checklist 都在用類似手法收束 agent 的 throughput 衝動，讓每個決定都有獨立的回應點。
+第二步「Offer Visual Companion」還有一條格式規定：SKILL.md 強制這個提案必須獨佔一則訊息，不能跟 clarifying 問題或情境摘要混在一起。乍看是體驗細節，實際上是在防一種典型的 agent 行為：把好幾個問題塞同一則訊息以求節省 turn。HARD-GATE 之後的整段 checklist 都在用類似手法收束 agent 的 throughput 衝動，讓每個決定都有獨立的回應點。
 
 ## writing-plans：2–5 分鐘細粒度任務
 
@@ -64,7 +64,7 @@ SKILL.md 還寫了一張「No Placeholders」清單明列哪些東西是 plan fa
 
 當 plan 寫完，writing-plans 的最後一步是給用戶兩個選項：subagent-driven（推薦）或 inline executing-plans。前者把每個 task 派給獨立 subagent，後者在當前 session 直接做完。Part 1 重度用戶最常碰到的是後者，所以這集集中拆 [executing-plans](https://github.com/obra/superpowers/blob/main/skills/executing-plans/SKILL.md)。
 
-它的 process 短得近乎可疑：SKILL.md 只有三個 step：Load and Review Plan、Execute Tasks、Complete Development。但 Step 1 寫了一句關鍵的銜接訊號：「Create TodoWrite and proceed.」這就是「plan 即 todo」的具體實作，plan 檔案裡每個 `- [ ]` checkbox 會被 1-to-1 灌進 Claude Code 的 TodoWrite 工具，session UI 上你會直接看到一張同步的 progress 清單。
+它的 process 出乎意料地短，SKILL.md 只有三個 step：Load and Review Plan、Execute Tasks、Complete Development。但 Step 1 寫了一句關鍵的銜接訊號：「Create TodoWrite and proceed.」這就是「plan 即 todo」的具體實作，plan 檔案裡每個 `- [ ]` checkbox 會被 1-to-1 灌進 Claude Code 的 TodoWrite 工具，session UI 上你會直接看到一張同步的 progress 清單。
 
 執行迴圈本身被壓到三行：「Mark as in_progress → Follow each step exactly (plan has bite-sized steps) → Run verifications as specified → Mark as completed」。重度用戶最常觀察到的訊號是 TodoWrite 面板在每個 step 結束時翻一次狀態，這個翻面就是 SKILL.md 在執行的證據。如果你發現 agent 寫完 code 沒翻 todo，幾乎可以斷定它沒走 executing-plans，或是走到一半被別的指令打斷。
 

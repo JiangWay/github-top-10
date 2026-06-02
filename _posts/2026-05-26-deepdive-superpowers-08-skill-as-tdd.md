@@ -9,7 +9,7 @@ episode: 8
 target_repo: obra/superpowers
 based_on_version: v5.1.0
 hub: /series/superpowers/
-audience: "想自己寫 skill 的開發者"
+audience: "想自己寫 skill 並驗證可用的開發者"
 related_skills: [writing-skills, test-driven-development]
 tags: [深度解析, superpowers, AI Agent 框架, Skill 外掛]
 ---
@@ -44,17 +44,13 @@ writing-skills 內附一張對應表，把 TDD 的概念逐一映射到 skill �
 | GREEN（測試通過） | 有 skill 時 agent 守規則 | 重跑同 scenario |
 | Refactor | 找新 rationalization 並堵漏 | 寫進 counter-table |
 
-逐格讀有幾個地方值得停下來想。
+表格列得很乾淨，但有兩格的轉譯藏著最容易出錯的地方，值得單獨展開。
 
-**Test case = pressure scenario with subagent**。原版 TDD 的 test case 是一段 `assert` 程式碼，這裡換成一份描述情境的 markdown。`skills/systematic-debugging/` 目錄下的 `test-academic.md`、`test-pressure-1.md` 等檔就是這層的具體實作；它們長得像 RPG 劇本，故意給 agent 製造時間壓力、金錢壓力、權威壓力，看它會不會走捷徑。下一集會逐檔拆解。
+第一個是 RED。這格最容易被誤解。RED 不能只是「我覺得 agent 大概會做錯」這種預測，必須要有 verbatim 記錄：agent 在實際 scenario 裡用了什麼藉口、做了什麼動作。writing-skills 寫得很直接：「Run pressure scenario with subagent WITHOUT the skill. Document exact behavior: What choices did they make? What rationalizations did they use (verbatim)?」沒看過真實失敗，就沒有 RED。
 
-**Production code = SKILL.md**。Skill 本文不是說明書，是「被測試保護的 production 程式碼」。任何改動都要重新跑一遍 baseline 與 GREEN scenario 驗證，邏輯跟改了一個 function 之後要重跑 test suite 一樣。
+第二個是 GREEN，關鍵在「同樣 scenario」這四個字。Baseline 與驗證是同一份壓力測試檔，差別只在是否載入 skill。這保證了測到的是 skill 本身的效果，而不是換了一個比較好回答的問題。
 
-**RED = agent 在沒 skill 時違反規則**。這格最容易被誤解。RED 不能只是「我覺得 agent 大概會做錯」這種預測，必須要有 verbatim 記錄：agent 在實際 scenario 裡用了什麼藉口、做了什麼動作。writing-skills 寫得很直接：「Run pressure scenario with subagent WITHOUT the skill. Document exact behavior: What choices did they make? What rationalizations did they use (verbatim)?」沒看過真實失敗，就沒有 RED。
-
-**GREEN = 同樣 scenario 加上 skill 後 agent 守規則**。注意「同樣 scenario」這四個字。Baseline 與驗證是同一份壓力測試檔，差別只在是否載入 skill。這保證了測到的是 skill 本身的效果，而不是換了一個比較好回答的問題。
-
-**Refactor = 找新 rationalization 堵漏**。原版 TDD 的 refactor 是清理重複、改名、抽 helper；這裡的 refactor 是「跑更多 scenario，看 agent 還能想出什麼新藉口，把這些藉口寫進 counter-table」。一個經得起壓力的 discipline skill 通常會經過好幾輪 refactor，每一輪都會在 SKILL.md 內多一條 rationalization 表的列。
+其餘三格大致照字面理解就好。test case 是一份描述情境的 markdown，不是一段 `assert` 程式碼，`skills/systematic-debugging/` 目錄下的 `test-academic.md`、`test-pressure-1.md` 等檔就是這層的具體實作，下一集會逐檔拆解。SKILL.md 是被測試保護的 production 程式碼，任何改動都要重新跑一遍 baseline 與 GREEN scenario，邏輯跟改了一個 function 之後要重跑 test suite 一樣。Refactor 則是跑更多 scenario、看 agent 還能想出什麼新藉口、把這些藉口寫進 counter-table，一個經得起壓力的 discipline skill 通常會經過好幾輪，每一輪都在 SKILL.md 內多一條 rationalization 表的列。
 
 對應表底下還有一句作者沒大寫但很重要的話：「The entire skill creation process follows RED-GREEN-REFACTOR.」這是 Part 2 後面幾集（Ep.9 pressure test、Ep.10 rationalization 表、Ep.12 端到端驗證）會反覆回扣的骨幹。
 
@@ -86,7 +82,7 @@ writing-skills 反過來。它的源頭是 baseline failure：先讓 agent 在 s
 
 ## 對照其他 prompt engineering tutorial
 
-把這套方法論放回 skill 生態裡看會比較立體。市面上最主流的兩個 skill 集是 [anthropics/skills](https://github.com/anthropics/skills) 跟 [obra/superpowers](https://github.com/obra/superpowers)，看起來都是 SKILL.md 加 frontmatter 的格式，但設計目的完全不同。
+拿 [anthropics/skills](https://github.com/anthropics/skills) 來對照，這套方法論的邊界會清楚很多。它跟 [obra/superpowers](https://github.com/obra/superpowers) 是市面上最主流的兩個 skill 集，看起來都是 SKILL.md 加 frontmatter 的格式，但設計目的完全不同。
 
 **anthropics/skills 走 capability 路線**。它的 skill 像 `pdf`、`docx`、`xlsx`、`pptx` 這類，目的是給 agent 一個它本來不具備（或不熟練）的能力：怎麼操作 Word 文件、怎麼解析 Excel、怎麼生成 PowerPoint。Skill 內容偏重「怎麼做」的 reference 與 tool 整合（附 script、API 範例）。成功標準是 agent 能正確完成 task。這類 skill 用 application scenario 測就夠了：丟一個 PDF 給 agent，看它能不能正確抽出表格。
 
@@ -100,11 +96,11 @@ writing-skills 自己把 skill 分成四類：discipline-enforcing、technique�
 
 讀完這集，你動筆寫第一個 skill 之前可以先回答三個問題。
 
-**第一，分類**。你想寫的是 capability 還是 discipline？兩種都合法，但方法論不同。寫之前先想清楚是哪一種，不然會用錯工具：拿 application scenario 去驗 discipline skill，會誤判 skill 有效；拿 pressure scenario 去驗 capability skill，會把測試寫得過度複雜。
+先分類：你想寫的是 capability 還是 discipline？兩種都合法，但方法論不同。寫之前先想清楚是哪一種，不然會用錯工具：拿 application scenario 去驗 discipline skill，會誤判 skill 有效；拿 pressure scenario 去驗 capability skill，會把測試寫得過度複雜。
 
-**第二，baseline scenario**。如果你寫的是 discipline skill，動筆前先準備好一份 pressure scenario：一段任務描述、一組外部壓力（時間、金錢、權威、疲勞），以及 agent 可能被誘導去選的「妥協選項」。然後 dispatch 一個沒有載入你那份 skill 的 subagent，把它的回應逐字存下來。這份 verbatim transcript 就是你後面寫 SKILL.md 時所有 counter-table、紅旗清單、Spirit-vs-Letter 預先聲明的素材來源。
+接著備好 baseline scenario。如果你寫的是 discipline skill，動筆前先準備好一份 pressure scenario：一段任務描述、一組外部壓力（時間、金錢、權威、疲勞），以及 agent 可能被誘導去選的「妥協選項」。然後 dispatch 一個沒有載入你那份 skill 的 subagent，把它的回應逐字存下來。這份 verbatim transcript 就是你後面寫 SKILL.md 時所有 counter-table、紅旗清單、Spirit-vs-Letter 預先聲明的素材來源。
 
-**第三，最小可寫範圍**。Skill 的第一版只該回應 baseline 裡真實出現過的藉口，不要為「萬一未來 agent 會這樣想」的假想敵預先加防線。GREEN phase 結束後再進 REFACTOR，跑更多 scenario、收更多新藉口、回頭擴 counter-table。這個順序跟 TDD 的 YAGNI 原則完全平行：don't add features beyond the test。
+最後守住最小可寫範圍。Skill 的第一版只該回應 baseline 裡真實出現過的藉口，不要為「萬一未來 agent 會這樣想」的假想敵預先加防線。GREEN phase 結束後再進 REFACTOR，跑更多 scenario、收更多新藉口、回頭擴 counter-table。這個順序跟 TDD 的 YAGNI 原則完全平行：don't add features beyond the test。
 
 如果這三個問題現在還沒有具體答案，那是正常的，下一集會給你逐檔可參考的 pressure test 範本。
 

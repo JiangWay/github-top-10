@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "深度解析 superpowers Ep.11：CSO — 讓 skill 在 1024 字以內被找到"
+title: "深度解析 superpowers Ep.11：CSO — 讓 skill 在 1024 字元以內被找到"
 date: 2026-05-26
 published: true
 series: superpowers-deepdive
@@ -9,22 +9,22 @@ episode: 11
 target_repo: obra/superpowers
 based_on_version: v5.1.0
 hub: /series/superpowers/
-audience: "想自己寫 skill 的開發者"
+audience: "想自己寫 skill 並驗證可用的開發者"
 related_skills: [writing-skills, using-superpowers]
 tags: [深度解析, superpowers, AI Agent 框架, Skill 外掛]
 ---
 
 > 系列入口：[深度解析 superpowers]({{ site.baseurl }}{% link series/superpowers/index.md %})
 
-Ep.9–10 把 skill 內部寫好（pressure scenario + rationalization 表），只完成一半。另一半是讓 Claude 在對的時機把這個 skill 叫出來——沒有這一半，skill 等於沒寫。SKILL.md 的 description 欄位是 router input：寫得太籠統會撞語意，寫得太具體會漏觸，寫得像 workflow summary 會讓 agent 直接照 description 做事而跳過正文。這集拆「Claude Search Optimization」（CSO）的具體寫法。
+Ep.9–10 把 skill 內部寫好（pressure scenario + rationalization 表），只完成一半。另一半是讓 Claude 在對的時機把這個 skill 叫出來，沒有這一半，skill 等於沒寫。SKILL.md 的 description 欄位是 router input：寫得太籠統會撞語意，寫得太具體會漏觸，寫得像 workflow summary 會讓 agent 直接照 description 做事而跳過正文。這集拆「Claude Search Optimization」（CSO）的具體寫法。
 
 ## description = router，不是 summary
 
-description 在這套系統裡的角色，是告訴 Claude「什麼情境該載入這個 skill」，而非「介紹這個 skill 做什麼」。前者是 routing 決策的輸入，後者是 README 的開場白。寫法上的差異看似細微，效果差很多。
+description 在這套系統裡的角色，是告訴 Claude「什麼情境該載入這個 skill」，而非「介紹這個 skill 做什麼」。前者是 routing 決策的輸入，後者是 README 的開場白。把 description 寫成開場白，會讓 router 找不到該載入的時機。
 
-技術背景：SKILL.md 的 frontmatter 會在 session 啟動或 skill 索引建立時被讀進 system prompt，作為 router 的候選清單。每一條 entry 的 `name + description` 總長度上限是 1024 字元（agentskills.io 規範）。Claude 在判斷「現在要不要載入這個 skill」時，看的就是這一段——不是 SKILL.md 的正文。
+技術背景：SKILL.md 的 frontmatter 會在 session 啟動或 skill 索引建立時被讀進 system prompt，作為 router 的候選清單。每一條 entry 的 `name + description` 總長度上限是 1024 字元（agentskills.io 規範）。Claude 在判斷「現在要不要載入這個 skill」時，看的就是這一段，不是 SKILL.md 的正文。
 
-換句話說，description 出現在「決定要不要讀 skill」的那一刻；正文要等決定載入之後才會被讀。description 寫錯，正文寫得再好都沒用——它根本不會被翻開。
+換句話說，description 出現在「決定要不要讀 skill」的那一刻；正文要等決定載入之後才會被讀。description 寫錯，正文寫得再好都沒用，它根本不會被翻開。
 
 這也解釋了 1024 字元上限為什麼存在：每一個 skill 的 description 都會與其他 skill 競爭 system prompt 的空間，預算超過就要被擠掉或截斷。CSO 的整套技巧，本質上是「在 1024 字元預算內把 routing signal 寫到最強」。
 
@@ -40,7 +40,7 @@ Use when executing plans - dispatches subagent per task with code review between
 
 句子裡有兩個動作：「dispatch subagent per task」與「code review between tasks」。看起來像是觸發條件加上一小段流程說明，很自然的寫法。
 
-問題出在實測：Claude 讀完 description 後，**直接照 description 描述的流程做事，跳過 SKILL.md 正文**。正文的 flowchart 其實明確要求做兩次 review——一次驗 spec compliance、一次驗 code quality——但 description 只提到「code review」單數一次，agent 就只做了一次。
+問題出在實測：Claude 讀完 description 後，**直接照 description 描述的流程做事，跳過 SKILL.md 正文**。正文的 flowchart 其實明確要求做兩次 review，一次驗 spec compliance、一次驗 code quality，但 description 只提到「code review」單數一次，agent 就只做了一次。
 
 修正方式是把 description 砍成純觸發條件：
 
@@ -102,7 +102,7 @@ description: Use when you have a written implementation plan to execute in a sep
 
 三個都遵守同樣的結構：`Use when` + trigger 條件 + 可選的「before X」收尾。沒有任何一個提到「步驟」、「方法」、「流程」這類字眼。trigger 是症狀（encountering a bug）或狀態（have a written plan），不是動作。
 
-`brainstorming` 是一個刻意的例外：它用「You MUST use this before any creative work...」開頭而非「Use when…」，因為作者要把 routing signal 推到「強制」的層級。這種破格是設計選擇，不是格式錯誤——但除非你能明確說出破格的理由，預設仍然應該守住「Use when…」公式。
+`brainstorming` 是一個刻意的例外：它用「You MUST use this before any creative work...」開頭而非「Use when…」，因為作者要把 routing signal 推到「強制」的層級。這種破格是設計選擇，不是格式錯誤。但除非你能明確說出破格的理由，預設仍然應該守住「Use when…」公式。
 
 ## 命名守則
 
@@ -131,9 +131,9 @@ skill name 也是 routing signal 的一部分。它出現在 description 之前�
 
 description 受 1024 字元限制，正文則受「載入頻率」限制。常被載入的 skill 每次都會吃 context，正文越短越好。
 
-| Skill 類型 | 預算 | 代表 |
+| Skill 類型 | 正文預算（words／字數） | 代表 |
 |---|---|---|
-| SessionStart 必載（如 using-superpowers） | < 150 words | `using-superpowers` |
+| SessionStart 必載（如 using-superpowers） | getting-started < 150 words | `using-superpowers` |
 | 常被載入 | < 200 words | `executing-plans` |
 | 偶爾載入 | < 500 words | `writing-skills` 主文（重型 reference 已外移） |
 | 重型 reference | 拆 separate file | `writing-skills/persuasion-principles.md`、`testing-skills-with-subagents.md` |
@@ -163,7 +163,7 @@ Always use subagents (50-100x context savings).
 **REQUIRED:** Use [other-skill-name] for workflow.
 ```
 
-注意是 `[skill-name]` 形式而非 `@skill-name`——後者會強制立即載入該檔，把 200k token 燒掉一大塊。
+注意是 `[skill-name]` 形式而非 `@skill-name`，後者會強制立即載入該檔，把 200k token 燒掉一大塊。
 
 **省字技巧三：壓縮範例**
 
@@ -195,13 +195,13 @@ description 與正文都要鋪 Claude 會主動搜尋的詞。這個動作叫 ke
 
 三類詞要覆蓋：
 
-- **錯誤訊息原文**：「Hook timed out」、「ENOTEMPTY」、「race condition」——agent 遇到 error 時會直接拿錯誤訊息當搜尋 query，原文出現過的 skill 命中率最高
+- **錯誤訊息原文**：「Hook timed out」、「ENOTEMPTY」、「race condition」。agent 遇到 error 時會直接拿錯誤訊息當搜尋 query，原文出現過的 skill 命中率最高
 - **症狀同義詞**：同一個現象有多種說法，全部鋪一遍。「flaky / hanging / freeze / zombie / pollution」、「cleanup / teardown / afterEach」都是同義群
 - **工具與庫名**：實際的指令名、library 名、檔案副檔名。寫「pytest」「jest」「playwright」而不是「testing framework」
 
 為什麼這個動作叫「未來 Claude 怎麼找到你的 skill」：當你寫完 skill 部署出去，未來某個 session 的 Claude 遇到某個 bug，它的搜尋 query 不會剛好用你寫 description 時的措辭。它會用 user 報錯的原文、用它自己內建詞庫的同義詞。覆蓋這些變體，是讓 routing 命中的關鍵。
 
-`systematic-debugging` 的 description 是反例值得學的對象——它只寫「Use when encountering any bug, test failure, or unexpected behavior」，看似很泛。但「bug」「test failure」「unexpected behavior」三個都是 user 真實會用的描述語，幾乎涵蓋所有 debug 觸發場景。泛中有準。
+`systematic-debugging` 的 description 是「泛中有準」的範例。它只寫「Use when encountering any bug, test failure, or unexpected behavior」，看似很泛。但「bug」「test failure」「unexpected behavior」三個都是 user 真實會用的描述語，幾乎涵蓋所有 debug 觸發場景。泛中有準。
 
 ## 校稿清單：寫完 description 自我檢查
 
@@ -215,7 +215,7 @@ description 與正文都要鋪 Claude 會主動搜尋的詞。這個動作叫 ke
 - 是否鋪了錯誤訊息原文、症狀同義詞、工具庫名？
 - 是否 name 用 active voice、動詞優先？
 
-任一項打勾不過就回去修。description 的 ROI 極高——多花 10 分鐘把這張表跑完，省下未來 skill 被誤觸或漏觸的所有 debug 時間。
+任一項打勾不過就回去修。多花 10 分鐘把這張表跑完，省下未來 skill 被誤觸或漏觸的 debug 時間。
 
 ## 開發者能拿走什麼
 
