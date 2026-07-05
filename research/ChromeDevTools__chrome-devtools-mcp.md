@@ -1,11 +1,11 @@
 ---
 repo: ChromeDevTools/chrome-devtools-mcp
 first_seen: 2026-04-18
-last_updated: 2026-05-24
-appearances: [2026-04-18, 2026-05-10, 2026-05-22, 2026-05-23, 2026-05-24]
-growth_appearances: [2026-05-10, 2026-05-22, 2026-05-23, 2026-05-24]
+last_updated: 2026-07-05
+appearances: [2026-04-18, 2026-05-10, 2026-05-22, 2026-05-23, 2026-05-24, 2026-07-05]
+growth_appearances: [2026-05-10, 2026-05-22, 2026-05-23, 2026-05-24, 2026-07-05]
 has_releases: true
-latest_release: chrome-devtools-mcp-v1.0.1
+latest_release: chrome-devtools-mcp-v1.5.0
 tags: [MCP 協定, MCP Server]
 domain: MCP 協定
 form: MCP Server
@@ -66,3 +66,14 @@ form: MCP Server
 ### 2026-05-22
 - 新版本：[chrome-devtools-mcp-v1.0.1](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.0.1)（2026-05-18）
 - 主要變更：12 天內連發 3 版完成首個正式版 1.0 衝刺——[v0.26.0](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v0.26.0)（5-12 由 v0.25.0 升級）→ [v1.0.0](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.0.0)（5-18 為「Chrome DevTools MCP」首個 1.0 release 跨越 milestone）→ [v1.0.1](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.0.1)（5-18 patch）。隔 12 天從 5-10 後歸隊絕對榜，累計 3 次（4-18／5-10／5-22）。
+
+### 2026-07-05
+- 隔 42 天從 5-24 後歸隊，累計 **6 次**（絕對榜 #5、增長榜 #9，growth_rate 0.66%）。stars_total 由 5-24 的 35,756 漲至 **45,825**（+10,069，日均 240 stars）、stars_today +304 屬穩態基線值。
+- 6 個新 release（Google 官方持續高頻迭代）：
+  - [v1.1.0](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.1.0)（2026-05-26）：新增 `extraHttpHeaders` emulation
+  - [v1.1.1](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.1.1)（2026-05-27）：CLI 修 `pageId` 為第一個 argument
+  - [v1.2.0](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.2.0)（2026-06-08）：新增實驗性 TOON 結構化輸出
+  - [v1.3.0](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.3.0)（2026-06-18）：新增 `get_heapsnapshot_dominators` MCP tool
+  - [v1.4.0](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.4.0)（2026-06-23）：正式 publish `skills/` 資料夾
+  - [v1.5.0](https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.5.0)（2026-07-03，最新）：新增 `get_heapsnapshot_duplicate_strings` MCP tool
+- 42 天發 6 版屬約 7 天一版節奏，比 4-18 至 5-24 首月更穩定。今日曝光可能與 v1.5.0 發布後兩日社群傳播有關。

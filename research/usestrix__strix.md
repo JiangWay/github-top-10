@@ -1,9 +1,9 @@
 ---
 repo: usestrix/strix
 first_seen: 2026-06-30
-last_updated: 2026-06-30
-appearances: [2026-06-30]
-growth_appearances: [2026-06-30]
+last_updated: 2026-07-05
+appearances: [2026-06-30, 2026-07-05]
+growth_appearances: [2026-06-30, 2026-07-05]
 has_releases: true
 latest_release: v1.0.4
 tags: [資安, 應用程式, 自進化, 開源替代]
@@ -149,3 +149,8 @@ README「Use Cases」段列了四種定位：
 - [BurpSuite](https://portswigger.net/burp)（PortSwigger 商業工具，含 AI augmentation）
 
 ## 更新紀錄
+
+### 2026-07-05
+- 隔 5 日從 6-30 首次上榜後歸隊，累計 **2 次**（絕對榜 #4、增長榜 #1，growth_rate 5.25%）。5 天內 stars_total 由 27,813 漲至 **36,244**（+8,431，日均約 1,686 stars）、stars_today 由 +395 躍升至 **+1,904**（+382%）。
+- 版本無新 release：6-09 v1.0.4 至今無新 tag，`gh api repos/usestrix/strix/releases` 篩 `published_at > 2026-06-30` 無命中。star 竄升純為社群長尾曝光，非 event-driven。
+- 6-30「換血」日 10 檔中唯一今日仍在榜的專案，其他 9 檔全部下榜。這反映 1.17 億美元 A 輪的媒體週期並未在 6-30 那日結束，反而在後續 5 天持續發酵。

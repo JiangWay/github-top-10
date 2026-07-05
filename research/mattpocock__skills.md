@@ -1,9 +1,9 @@
 ---
 repo: mattpocock/skills
 first_seen: 2026-04-27
-last_updated: 2026-05-16
-appearances: [2026-04-27, 2026-04-28, 2026-04-29, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-13, 2026-05-14, 2026-05-16]
-growth_appearances: [2026-04-27, 2026-04-28, 2026-04-29, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-13, 2026-05-14, 2026-05-16]
+last_updated: 2026-07-05
+appearances: [2026-04-27, 2026-04-28, 2026-04-29, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-13, 2026-05-14, 2026-05-16, 2026-07-05]
+growth_appearances: [2026-04-27, 2026-04-28, 2026-04-29, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-13, 2026-05-14, 2026-05-16, 2026-07-05]
 has_releases: false
 latest_release: null
 tags: [開發者工具, Skill 外掛]
@@ -114,3 +114,9 @@ README 沒有獨立 ETHOS 章節，這句 repo 描述本身就是宣言：直接
 - **隔 1 日從 5-14 後歸隊**、累計 **9 次**——刷新本檔自家紀錄；名次落到 #10（總 84,641 / 今日 +3,155），stars_today 由昨日 3,372 略降至 3,155（−6.4%）；growth_rate 4.29% → **3.73%** 增長榜 #4。stars 由 5-14 的 78,634 漲至 **84,641**（2 天 +6,007，雙日均增約 3,000）。
 - 與 [obra/superpowers](https://github.com/obra/superpowers) #2、[anthropics/skills](https://github.com/anthropics/skills) **首次上榜** #7、[K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) 首次上榜 #3 四檔「Skill 外掛 / Agent 編碼方法論」同框，打破 5-14 三足鼎立紀錄為**單日 4 檔同框新高**；本檔由「個人 dotfiles 整批開源」承接源頭角色。
 - 仍無 GitHub Release，靠 git tag/commit 演進，本日無 release 紀錄更新。
+
+### 2026-07-05
+- 隔 50 天從 5-16 後歸隊，累計 **10 次**——本檔跨越雙位數上榜門檻。名次落到 **絕對榜 #10、增長榜 #10**（growth_rate 0.62%，全榜最低），今日 +973 stars 屬低增長率高總量的長尾曝光。
+- stars_total 由 5-16 的 84,641 漲到 **156,722**（50 天 +72,081，日均 1,441 stars），50 天累積量已超過首月 30 天累積量。
+- 仍無 GitHub Release（`has_releases: false`），維持 git tag / commit 演進路線。
+- 今日同榜另有 [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) #2（84,119 stars、+1,089）與 [openai/codex-plugin-cc](https://github.com/openai/codex-plugin-cc) #1（+718）兩檔 Claude Code 生態 Skill / Plugin 同框，形成「skill 三巨頭」局面——本檔仍以「個人 dotfiles 整批開源」的形式領跑總量榜，但單日 stars_today 已被兩個新血超車。
