@@ -1,11 +1,11 @@
 ---
 repo: pbakaus/impeccable
 first_seen: 2026-06-01
-last_updated: 2026-06-01
-appearances: [2026-06-01]
-growth_appearances: [2026-06-01]
+last_updated: 2026-10-25
+appearances: [2026-06-01, 2026-10-25]
+growth_appearances: [2026-06-01, 2026-10-25]
 has_releases: true
-latest_release: cli-v2.3.2
+latest_release: skill-v4.7.0
 tags: [開發者工具, Skill 外掛, 開源替代]
 domain: 開發者工具
 form: Skill 外掛
@@ -61,3 +61,14 @@ themes: [開源替代]
 - 個人 repo（owner: pbakaus，作者 Paul Bakaus），非組織專案
 - 主語言：JavaScript
 - 提供 homepage [impeccable.style](https://impeccable.style/) 作為官網與安裝引導
+
+## 更新紀錄
+
+### 2026-10-25
+- 隔 146 天（6-01 → 10-25）回到絕對榜，排 #6（+619）；stars 從 32,370 增至 87,061，forks 1,766 → 5,198；GitHub 主語言標示由 JavaScript 改為 Rust（新增預編譯 engine）
+- 6-01 之後共 74 個 release，分 `cli-`、`skill-`、`engine-` 三條 tag 線；最新為 [skill-v4.7.0](https://github.com/pbakaus/impeccable/releases/tag/skill-v4.7.0) / [cli-v4.7.0](https://github.com/pbakaus/impeccable/releases/tag/cli-v4.7.0)（10-19）與 [engine-v0.1.17](https://github.com/pbakaus/impeccable/releases/tag/engine-v0.1.17)（10-23）
+- 主要變更：
+  - [cli-v3.0.0](https://github.com/pbakaus/impeccable/releases/tag/cli-v3.0.0)（06-15）：breaking，Node 24 起跳；指令縮短為 `impeccable install / update / link / check`，安裝器會列出偵測到的 harness
+  - [skill-v4.0.0](https://github.com/pbakaus/impeccable/releases/tag/skill-v4.0.0)（07-22）：改由外部 seed 決定設計方向，另發 6 個「challenger world」（共 188 個人工審過的 world）與模型推導的方向競爭，避免同一 brief 每次都落到同樣字體與米色背景；每次 roll 附可重現的 key
+  - engine 線（09-06 起）：發佈預編譯 engine binary，launcher 與 npm shim 首次執行時下載
+  - [skill-v4.7.0](https://github.com/pbakaus/impeccable/releases/tag/skill-v4.7.0)（10-19）：`impeccable detect --cdp 9222` 可掃描 Electron / NW.js / CEF / WebView2 桌面 app；新增 `straggler`（段落末行孤字）與 `unbalanced-heading` 兩條排版檢查；降低真實頁面誤報
