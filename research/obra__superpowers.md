@@ -1,11 +1,11 @@
 ---
 repo: obra/superpowers
 first_seen: 2026-04-18
-last_updated: 2026-05-22
-appearances: [2026-04-18, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-14, 2026-05-16, 2026-05-20, 2026-05-21, 2026-05-22]
-growth_appearances: [2026-04-18, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-14, 2026-05-16, 2026-05-20, 2026-05-21, 2026-05-22]
+last_updated: 2026-11-26
+appearances: [2026-04-18, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-14, 2026-05-16, 2026-05-20, 2026-05-21, 2026-05-22, 2026-11-26]
+growth_appearances: [2026-04-18, 2026-04-30, 2026-05-01, 2026-05-02, 2026-05-14, 2026-05-16, 2026-05-20, 2026-05-21, 2026-05-22, 2026-11-26]
 has_releases: true
-latest_release: v5.1.0
+latest_release: v7.0.2
 tags: [AI Agent 框架, Skill 外掛]
 domain: AI Agent 框架
 form: Skill 外掛
@@ -62,3 +62,12 @@ MIT License；主要作者 Jesse Vincent（obra）及 Prime Radiant 團隊，透
 - 隔 1 日從 5-14 後歸隊，**累計 6 次上榜**；名次升至 #2（總 192,618 / 今日 +1,646）、growth_rate 0.85%、增長榜 #8。stars 由 5-14 的 189,326 漲至 192,618（2 天 +3,292），續穩定累積。
 - 同日 [mattpocock/skills](https://github.com/mattpocock/skills) 守 #10、[anthropics/skills](https://github.com/anthropics/skills) **首次上榜** #7、[K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) 首次上榜 #3——「Skill 外掛 / Agent 編碼方法論」單日 4 檔同框打破 5-14 三足鼎立紀錄。
 - `latest_release` 自 v5.1.0（2026-05-04）後 12 天無新 release——12 天無發版為自進入 5.x 以來最長空檔。
+
+### 2026-11-26
+- 隔 188 天（上次 2026-05-22）再入絕對榜，名次 #2（總 326,394 / 今日 +902），growth_rate 0.28%、增長榜 #10。
+- 自 v5.1.0 之後新增 12 個 release，最新為 [v7.0.2](https://github.com/obra/superpowers/releases/tag/v7.0.2)（2026-11-03）：
+  - [v6.0.0](https://github.com/obra/superpowers/releases/tag/v6.0.0)（2026-06-16）：`subagent-driven-development` 改寫，兩份 per-task reviewer prompt 合成一份 `task-reviewer-prompt.md`；官方評測稱 Claude Code 與 Codex 速度約兩倍、token 少近一半；新增 Kimi Code、Pi、Antigravity 三個 harness。
+  - [v6.4.1](https://github.com/obra/superpowers/releases/tag/v6.4.1)（2026-09-19）：新增 `diagnosing-superpowers` skill（回頭查 session 哪裡出錯）；`executing-plans` 重寫為 Native 執行，跑完整份計畫後才給一次 review。
+  - [v7.0.0](https://github.com/obra/superpowers/releases/tag/v7.0.0)（2026-10-10）：brainstorming 整個重寫，先問使用者想要什麼再提方案，並以 builder check 取代 spec 文件 reviewer。
+  - [v7.0.2](https://github.com/obra/superpowers/releases/tag/v7.0.2)（2026-11-03）：brainstorming 再減問題數（官方測試對話中 filler 問題由 41 降到 23），修 `start-server.sh --project-dir .` 路徑問題。
+- 2026-05-22 至今共 12 個版本（v6.0.0 至 v7.0.2），中間最長空檔為 v6.3.0（2026-08-12）到 v6.4.1（2026-09-19）的 38 天。

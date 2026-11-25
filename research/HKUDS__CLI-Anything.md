@@ -1,11 +1,11 @@
 ---
 repo: HKUDS/CLI-Anything
 first_seen: 2026-05-18
-last_updated: 2026-05-22
-appearances: [2026-05-18, 2026-05-19, 2026-05-20, 2026-05-21, 2026-05-22]
-growth_appearances: [2026-05-18, 2026-05-19, 2026-05-20, 2026-05-21, 2026-05-22]
+last_updated: 2026-11-26
+appearances: [2026-05-18, 2026-05-19, 2026-05-20, 2026-05-21, 2026-05-22, 2026-11-26]
+growth_appearances: [2026-05-18, 2026-05-19, 2026-05-20, 2026-05-21, 2026-05-22, 2026-11-26]
 has_releases: true
-latest_release: v0.3.0
+latest_release: v0.4.0
 tags: [AI Agent 框架, 框架, 開源替代, 多代理編排]
 domain: AI Agent 框架
 form: 框架
@@ -46,3 +46,12 @@ CLI-Anything 不是另一個 agent runtime，而是「為 agent 製造工具的�
 ## 授權與社群
 
 Apache-2.0 授權，主導者為 HKUDS（港大 Data Intelligence Lab，校內亦為 [HKUDS/RAG-Anything](https://github.com/HKUDS/RAG-Anything)、[HKUDS/LightRAG](https://github.com/HKUDS/LightRAG) 同源），釋出者 [@yuh-yang](https://github.com/yuh-yang) 為主要 release 簽署人。v0.2.0 → v0.3.0 之間湧入 60+ 位首次貢獻者，多以「為某軟體新增 harness」的形式 PR，呈現典型的「核心 + 外部廣域擴張」社群模式；151 watchers、3,471 forks 與 54 open issues 顯示活躍但仍處早期成長期。
+
+## 更新紀錄
+
+### 2026-11-26
+- 隔 188 天（上次 2026-05-22）再入絕對榜，名次 #3（總 65,483 / 今日 +1,094），growth_rate 1.67%、增長榜 #3。
+- 自 v0.3.0（2026-04-24）之後新增 1 個 release：[v0.4.0](https://github.com/HKUDS/CLI-Anything/releases/tag/v0.4.0)（2026-06-25）。
+  - 新增 `cli-hub matrix` 指令族，把多個 CLI 組成的 workflow 一次安裝，並可用 `cli-hub can <task>` 查詢。
+  - 新增 30 個 CLI（ArcGIS Pro、Calibre、Stata、SiYuan、Joplin、OpenWebUI 等）、修 17 個 bug、4 項安全強化（不受信任的 XML 改走 `defusedxml`、token 與設定檔限本人讀寫）。
+  - 該版有 42 位新貢獻者，並新增德文 README。
