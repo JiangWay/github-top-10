@@ -1,9 +1,9 @@
 ---
 repo: openvinotoolkit/openvino
 first_seen: 2026-11-26
-last_updated: 2026-11-26
-appearances: [2026-11-26]
-growth_appearances: [2026-11-26]
+last_updated: 2026-11-27
+appearances: [2026-11-26, 2026-11-27]
+growth_appearances: [2026-11-26, 2026-11-27]
 has_releases: true
 latest_release: 2026.4.1
 tags: [LLM 基礎建設, 框架, 開源替代]

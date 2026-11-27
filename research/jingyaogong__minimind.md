@@ -1,9 +1,9 @@
 ---
 repo: jingyaogong/minimind
 first_seen: 2026-11-26
-last_updated: 2026-11-26
-appearances: [2026-11-26]
-growth_appearances: [2026-11-26]
+last_updated: 2026-11-27
+appearances: [2026-11-26, 2026-11-27]
+growth_appearances: [2026-11-26, 2026-11-27]
 has_releases: true
 latest_release: v2
 tags: [LLM 訓練, 框架]

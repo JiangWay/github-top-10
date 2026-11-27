@@ -1,11 +1,11 @@
 ---
 repo: mvanhorn/last30days-skill
 first_seen: 2026-11-26
-last_updated: 2026-11-26
-appearances: [2026-11-26]
-growth_appearances: [2026-11-26]
+last_updated: 2026-11-27
+appearances: [2026-11-26, 2026-11-27]
+growth_appearances: [2026-11-26, 2026-11-27]
 has_releases: true
-latest_release: v4.6.0
+latest_release: v4.8.0
 tags: [情報監測, Skill 外掛, 資料主權]
 domain: 情報監測
 form: Skill 外掛
@@ -117,3 +117,9 @@ Perplexity 也被整合為本專案的一個來源（Agent API 與 Search API）
   - [assafelovic/gpt-researcher](https://github.com/assafelovic/gpt-researcher)
 
 ## 更新紀錄
+
+### 2026-11-27
+- 連 2 日絕對榜 #10，growth_rate 由 1.27% 降為 1.00%（stars_today 950 → 755，stars_total 75,628）。
+- 新版本：[v4.7.0](https://github.com/mvanhorn/last30days-skill/releases/tag/v4.7.0)（2026-11-26 21:30 UTC）與 [v4.8.0](https://github.com/mvanhorn/last30days-skill/releases/tag/v4.8.0)（2026-11-27 04:32 UTC）。
+- v4.7.0 主要變更：單次 release 合併 65 支 PR，其中 38 支由貢獻者 `@iliaal` 提交、52 支標題以 security 或 fix 開頭，涵蓋 SSRF、ReDoS、Reddit/X/YouTube/Bluesky/LinkedIn 抓取管線的 session 隔離、cookie 擷取、CDP 流程、HTML renderer URL sanitization、Grok/xAI 授權驗證、SQLite 並行、subprocess 輸出邊界、watchlist webhook、Polymarket outcome 解析、UTC 時區 grounding；另由作者加 DeepSeek Harness 文件與 Codex plugin 圖示。
+- v4.8.0 主要變更：加入 [Juejin（掘金）](https://juejin.cn/)作為可選的 keyless 資料源（PR #1642，作者 `@typ646632922`）；修正 Darwin Rust core build 改用 `macos-latest` runner（PR #1640）；版本號 bump 至 4.8.0。
